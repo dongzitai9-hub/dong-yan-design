@@ -538,13 +538,12 @@ h2 {
 .contact-actions {
   display: flex;
   align-items: center;
-  gap: 22px;
 }
 
 .wechat-card {
-  width: 210px;
+  width: 220px;
   margin: 0;
-  padding: 10px;
+  padding: 12px;
   background: var(--white);
   color: var(--ink);
 }
@@ -552,14 +551,6 @@ h2 {
 .wechat-card img {
   background: var(--white);
   object-fit: contain;
-}
-
-.wechat-card figcaption {
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.4;
-  text-align: center;
 }
 
 .lightbox {
