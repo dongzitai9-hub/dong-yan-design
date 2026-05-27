@@ -399,8 +399,8 @@ const moreWorksButton = document.querySelector("[data-more-works]");
 const caseView = document.querySelector("[data-case-view]");
 const caseViewGrid = document.querySelector("[data-case-view-grid]");
 const caseViewTitle = document.querySelector("[data-case-view-title]");
-const caseViewBack = document.querySelector("[data-case-view-back]");
 let caseViewReturnTarget = null;
+let currentView = "home";
 
 function setText(selector, text) {
   document.querySelector(selector).textContent = text;
@@ -427,9 +427,19 @@ function openLightbox(image, alt) {
   lightbox.hidden = false;
 }
 
-function openCaseView(caseIndex) {
+function syncHistory(state, hash) {
+  const nextUrl = `${location.pathname}${location.search}${hash}`;
+  if (location.hash === hash) {
+    history.replaceState(state, "", nextUrl);
+    return;
+  }
+  history.pushState(state, "", nextUrl);
+}
+
+function openCaseView(caseIndex, updateHistory = true) {
   const item = cases[caseIndex];
   caseViewReturnTarget = document.activeElement;
+  currentView = "case";
   caseViewTitle.textContent = item.name;
   caseViewGrid.innerHTML = `
     <article class="case-detail">
@@ -458,12 +468,12 @@ function openCaseView(caseIndex) {
         <p>${item.copyTwo}</p>
       </div>
 
-      <div class="case-detail-gallery">
+      <div class="case-detail-flow">
         ${item.images
           .slice(3)
           .map(
             (image, index) => `
-              <button class="case-view-item" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
+              <button class="case-flow-item ${index % 5 === 0 ? "wide" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
                 <img src="${image}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" />
               </button>
             `,
@@ -475,11 +485,14 @@ function openCaseView(caseIndex) {
   caseView.hidden = false;
   document.body.classList.add("case-view-open");
   caseView.scrollTop = 0;
-  caseViewBack.focus();
+  if (updateHistory) {
+    syncHistory({ view: "case", caseIndex }, `#case-${caseIndex}`);
+  }
 }
 
-function openCaseList() {
+function openCaseList(updateHistory = true) {
   caseViewReturnTarget = document.activeElement;
+  currentView = "list";
   caseViewTitle.textContent = "更多室内设计作品";
   caseViewGrid.innerHTML = cases
     .map(
@@ -494,10 +507,13 @@ function openCaseList() {
   caseView.hidden = false;
   document.body.classList.add("case-view-open");
   caseView.scrollTop = 0;
-  caseViewBack.focus();
+  if (updateHistory) {
+    syncHistory({ view: "list" }, "#works-list");
+  }
 }
 
 function closeCaseView() {
+  currentView = "home";
   caseView.hidden = true;
   document.body.classList.remove("case-view-open");
   if (caseViewReturnTarget) {
@@ -505,7 +521,24 @@ function closeCaseView() {
   }
 }
 
+function applyHistoryState(state) {
+  if (!state || state.view === "home") {
+    closeCaseView();
+    return;
+  }
+
+  if (state.view === "list") {
+    openCaseList(false);
+    return;
+  }
+
+  if (state.view === "case") {
+    openCaseView(state.caseIndex, false);
+  }
+}
+
 renderWorks();
+history.replaceState({ view: "home" }, "", `${location.pathname}${location.search}`);
 
 workGrid.addEventListener("click", (event) => {
   const button = event.target.closest("[data-work-case]");
@@ -513,9 +546,7 @@ workGrid.addEventListener("click", (event) => {
   openCaseView(Number(button.dataset.workCase));
 });
 
-moreWorksButton.addEventListener("click", openCaseList);
-
-caseViewBack.addEventListener("click", closeCaseView);
+moreWorksButton.addEventListener("click", () => openCaseList());
 
 caseViewGrid.addEventListener("click", (event) => {
   const caseButton = event.target.closest("[data-case-list-index]");
@@ -546,7 +577,11 @@ document.addEventListener("keydown", (event) => {
       return;
     }
     if (!caseView.hidden) {
-      closeCaseView();
+      history.back();
     }
   }
+});
+
+window.addEventListener("popstate", (event) => {
+  applyHistoryState(event.state);
 });

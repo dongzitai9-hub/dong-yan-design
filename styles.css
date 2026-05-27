@@ -635,10 +635,38 @@ h2 {
   margin-bottom: clamp(46px, 8vw, 112px);
 }
 
-.case-detail-gallery {
+.case-detail-flow {
   display: grid;
-  gap: 18px;
+  gap: clamp(28px, 4vw, 46px);
   grid-template-columns: repeat(3, 1fr);
+}
+
+.case-flow-item {
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.case-flow-item.wide {
+  grid-column: span 2;
+}
+
+.case-flow-item img {
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.case-flow-item.wide img {
+  aspect-ratio: 16 / 10;
+}
+
+.case-flow-item:hover img {
+  opacity: 0.94;
+  transform: scale(1.025);
 }
 
 .case-view-item {
@@ -711,10 +739,14 @@ h2 {
   .profile,
   .works-grid,
   .case-gallery,
-  .case-detail-gallery,
+  .case-detail-flow,
   .story-block.pair,
   .contact {
     grid-template-columns: 1fr;
+  }
+
+  .case-flow-item.wide {
+    grid-column: auto;
   }
 
   .case-view-header {
