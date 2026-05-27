@@ -227,7 +227,7 @@ const cases = [
     "title": "自然序曲",
     "subtitle": "私宅设计",
     "name": "自然序曲",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "上海 · 静安",
     "area": "180 m²",
     "type": "私宅设计",
@@ -240,7 +240,7 @@ const cases = [
     "title": "云境公馆",
     "subtitle": "大平层设计",
     "name": "云境公馆",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "杭州 · 钱江新城",
     "area": "220 m²",
     "type": "大平层设计",
@@ -253,7 +253,7 @@ const cases = [
     "title": "松弛之家",
     "subtitle": "改善型住宅",
     "name": "松弛之家",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "苏州 · 金鸡湖",
     "area": "150 m²",
     "type": "改善型住宅",
@@ -266,118 +266,118 @@ const cases = [
     "title": "湖畔平层",
     "subtitle": "客餐厅",
     "name": "湖畔平层",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "杭州 · 西湖",
     "area": "353 m²",
     "type": "大平层设计",
     "hero": "assets/photos/33/021F0BF8-C6B5-47EE-8A74-35BD2B3B6E15.webp",
     "images": caseImageSets[3],
     "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+    "copyTwo": "从整体视角到局部细节，图像可作为沟通户型、预算、材质与风格偏好的参考。"
   },
   {
     "title": "静谧套房",
     "subtitle": "主卧套间",
     "name": "静谧套房",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "常州",
     "area": "120 m²",
     "type": "住宅设计",
     "hero": "assets/photos/05/1418F8E5-CDF6-43DD-A99D-BB296E42ED93.webp",
     "images": caseImageSets[4],
     "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+    "copyTwo": "从整体视角到局部细节，图像可作为沟通户型、预算、材质与风格偏好的参考。"
   },
   {
     "title": "城市公寓",
     "subtitle": "现代住宅",
     "name": "城市公寓",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "南京",
     "area": "98 m²",
     "type": "公寓设计",
     "hero": "assets/photos/02/153CB9C7-81EB-4ABB-ABD2-6461087CAC04.webp",
     "images": caseImageSets[5],
     "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+    "copyTwo": "从整体视角到局部细节，图像可作为沟通户型、预算、材质与风格偏好的参考。"
   },
   {
     "title": "木色秩序",
     "subtitle": "餐厨空间",
     "name": "木色秩序",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "苏州",
     "area": "165 m²",
     "type": "改善型住宅",
     "hero": "assets/photos/20/1786B725-E753-49F4-8C28-7B47AE0A05E0.webp",
     "images": caseImageSets[6],
     "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+    "copyTwo": "从整体视角到局部细节，图像可作为沟通户型、预算、材质与风格偏好的参考。"
   },
   {
     "title": "光影客厅",
     "subtitle": "客厅设计",
     "name": "光影客厅",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "上海",
     "area": "140 m²",
     "type": "私宅设计",
     "hero": "assets/photos/18/2ABB8A32-DFC8-4D2D-93C3-7F9628158710.webp",
     "images": caseImageSets[7],
     "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+    "copyTwo": "从整体视角到局部细节，图像可作为沟通户型、预算、材质与风格偏好的参考。"
   },
   {
     "title": "餐厨生活",
     "subtitle": "餐厨一体",
     "name": "餐厨生活",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "杭州",
     "area": "188 m²",
     "type": "大平层设计",
     "hero": "assets/photos/27/07F81851-AF4D-4D66-81D3-C183884482CB.webp",
     "images": caseImageSets[8],
     "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+    "copyTwo": "从整体视角到局部细节，图像可作为沟通户型、预算、材质与风格偏好的参考。"
   },
   {
     "title": "雅致私宅",
     "subtitle": "功能空间",
     "name": "雅致私宅",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "常州",
     "area": "130 m²",
     "type": "私宅设计",
     "hero": "assets/photos/11/0091F79A-DA5F-4991-8086-00178BDC94EF.webp",
     "images": caseImageSets[9],
     "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+    "copyTwo": "从整体视角到局部细节，图像可作为沟通户型、预算、材质与风格偏好的参考。"
   },
   {
     "title": "现代居所",
     "subtitle": "客厅设计",
     "name": "现代居所",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "南京",
     "area": "160 m²",
     "type": "住宅设计",
     "hero": "assets/photos/29/0C5EB07D-F554-4E47-82DC-7593B5C45759.webp",
     "images": caseImageSets[10],
     "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+    "copyTwo": "从整体视角到局部细节，图像可作为沟通户型、预算、材质与风格偏好的参考。"
   },
   {
     "title": "温润之家",
     "subtitle": "亲子住宅",
     "name": "温润之家",
-    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "summary": "以空间灵感呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
     "location": "苏州",
     "area": "145 m²",
     "type": "改善型住宅",
     "hero": "assets/photos/16/1636DC5C-0296-464B-96E1-C6780D9DB4FE.webp",
     "images": caseImageSets[11],
     "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+    "copyTwo": "从整体视角到局部细节，图像可作为沟通户型、预算、材质与风格偏好的参考。"
   }
 ];
 
@@ -423,7 +423,7 @@ function renderWorks() {
 
 function openLightbox(image, alt) {
   lightboxImg.src = image;
-  lightboxImg.alt = alt || "作品图片";
+  lightboxImg.alt = alt || "空间参考图片";
   lightbox.hidden = false;
 }
 
@@ -493,7 +493,7 @@ function openCaseView(caseIndex, updateHistory = true) {
 function openCaseList(updateHistory = true) {
   caseViewReturnTarget = document.activeElement;
   currentView = "list";
-  caseViewTitle.textContent = "更多室内设计作品";
+  caseViewTitle.textContent = "更多空间设计参考";
   caseViewGrid.innerHTML = cases
     .map(
       (item, index) => `

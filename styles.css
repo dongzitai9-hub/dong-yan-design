@@ -538,6 +538,14 @@ h2 {
   color: rgba(255, 255, 255, 0.72);
 }
 
+.copyright-note {
+  max-width: 900px;
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 12px;
+  grid-column: 1 / -1;
+}
+
 .contact-actions {
   display: flex;
   align-items: center;
