@@ -85,112 +85,312 @@ const caseImageSets = [
     "assets/photos/34/E4470AFE-E732-41B9-B717-9A50F65E9C5B.webp",
     "assets/photos/34/EB2BD551-5135-4112-917C-282C7DACF978.webp",
     "assets/photos/34/ED6C63B4-5AF2-45BE-A6B6-39B4E3D63212.webp"
+  ],
+  [
+    "assets/photos/33/021F0BF8-C6B5-47EE-8A74-35BD2B3B6E15.webp",
+    "assets/photos/33/10311F14-2D87-444C-B840-18C93419D9B6.webp",
+    "assets/photos/33/1202BE94-E67C-43ED-A7DB-E20F80C2819B.webp",
+    "assets/photos/33/4A3F8775-478D-4CF6-90F9-038E049A3A9C.webp",
+    "assets/photos/33/655EBF63-C307-43D6-BBCC-25ABE23CA270.webp",
+    "assets/photos/33/6E0A08A6-1FBC-4E89-A51F-D2B791BDF058.webp",
+    "assets/photos/33/72F42E78-0600-4453-9E1F-0581B9A62344.webp",
+    "assets/photos/33/9AE103EA-C261-4708-AC59-735605C50DE3.webp",
+    "assets/photos/33/9F9F54E2-9501-409F-8CD9-6B322F0A5995.webp",
+    "assets/photos/33/BDD95AA8-AE02-49B6-9A47-0668A043427D.webp",
+    "assets/photos/33/C71291BE-97A8-49A1-9F8B-3EB35CEDB451.webp",
+    "assets/photos/33/CBD95CC8-8DE7-4637-AAAF-018888640153.webp",
+    "assets/photos/33/D4A9E38F-FD09-44B6-BF0D-E4D210229544.webp",
+    "assets/photos/33/DCD734FC-7E20-43B8-BCAB-3BE66ACC8BBA.webp",
+    "assets/photos/33/E1759803-0F3E-44DF-8572-10BE998F1025.webp",
+    "assets/photos/33/ED2B6060-6F04-4AFF-BBF1-1775E627E33B.webp",
+    "assets/photos/33/EFACD6BE-0445-4505-AFC8-1BB22F032640.webp",
+    "assets/photos/33/F11C8CDE-E96E-44C0-A992-6BD947CFCA68.webp"
+  ],
+  [
+    "assets/photos/05/1418F8E5-CDF6-43DD-A99D-BB296E42ED93.webp",
+    "assets/photos/05/143FC9F8-4281-4752-BFF3-CFC84BC0BA8B.webp",
+    "assets/photos/05/2D110AEA-AA11-40B9-891B-922622B14C69.webp",
+    "assets/photos/05/5330D601-90F5-4ACC-A3D9-3B5CB2858510.webp",
+    "assets/photos/05/6149FB9B-9935-429D-BB3D-99C3403829F9.webp",
+    "assets/photos/05/61F5B047-679C-4866-A2CD-8479C45921A6.webp",
+    "assets/photos/05/A944B1A6-6372-451F-90DE-D585E96AAA7F.webp",
+    "assets/photos/05/B1CB3624-0C18-46E2-B906-CDF81CF5CD8E.webp",
+    "assets/photos/05/BEE56DB5-7024-47E0-AFC1-B7B3755FF200.webp",
+    "assets/photos/05/C4034DB6-E175-4F2F-A658-FB6C74F6A195.webp",
+    "assets/photos/05/C630A639-2621-412F-A1E7-92F92420D92A.webp",
+    "assets/photos/05/CC35B62F-2DE0-4504-AC24-5ED605352C91.webp",
+    "assets/photos/05/D484D3A3-F0E4-4D46-8E7D-6B79C9C7DD89.webp",
+    "assets/photos/05/F38DA93E-928D-486B-8070-8C415D8E0931.webp"
+  ],
+  [
+    "assets/photos/02/153CB9C7-81EB-4ABB-ABD2-6461087CAC04.webp",
+    "assets/photos/02/28E1B682-2992-40E8-94E6-EF5CE6A2082C.webp",
+    "assets/photos/02/67E42068-C4C4-448A-89FB-DE6D051ADC2B.webp",
+    "assets/photos/02/718B5CC6-6A96-4A09-AC21-8179264760AB.webp",
+    "assets/photos/02/75E29D06-CECA-46E2-9C9D-2AD2E8C7CEA5.webp",
+    "assets/photos/02/87C6FFEC-A13C-46B5-B062-10D9E08B0FC9.webp",
+    "assets/photos/02/988A5BAC-24D1-4413-A663-F68B83E518A4.webp",
+    "assets/photos/02/C4433935-8C51-4132-AFB1-738335C3111D.webp",
+    "assets/photos/02/CA84E458-DEC8-48B0-8A5B-B3012794FC33.webp",
+    "assets/photos/02/E76C1D61-ABA6-445A-BDA5-EB08CCDE5644.webp",
+    "assets/photos/02/ED574502-520A-4EA5-B689-932939C652B0.webp",
+    "assets/photos/02/EEFCC69F-8C5E-4E42-8A02-84C7644E9977.webp",
+    "assets/photos/02/FFF3BC4A-E928-4322-B8BD-A7CC22616C9F.webp"
+  ],
+  [
+    "assets/photos/20/1786B725-E753-49F4-8C28-7B47AE0A05E0.webp",
+    "assets/photos/20/29DC291B-647E-46E2-8D0A-1F4C313F9830.webp",
+    "assets/photos/20/3F40F2A6-08E9-41C7-9957-33A309C05856.webp",
+    "assets/photos/20/577A812A-DB93-454A-8C67-D469652FEF53.webp",
+    "assets/photos/20/D4381071-21A2-449A-96BC-E692C36B0F55.webp",
+    "assets/photos/20/E96AA166-E268-4383-BFC7-4DC8AD704AE8.webp",
+    "assets/photos/20/F3A92E50-2D83-4A41-A7DF-8A85319A540D.webp",
+    "assets/photos/20/F3D46074-4C4F-4B4A-BD07-2AC91184F5F1.webp",
+    "assets/photos/20/F92A1F5F-0245-4107-8042-85C4E018CA80.webp"
+  ],
+  [
+    "assets/photos/18/2ABB8A32-DFC8-4D2D-93C3-7F9628158710.webp",
+    "assets/photos/18/2FE8BB78-F942-41C5-AEDF-3709E8C47227.webp",
+    "assets/photos/18/6C5B708C-BD26-4AE3-91F3-FAAB26BC0789.webp",
+    "assets/photos/18/8646D3AE-A4A0-4838-8BD1-AA8D0C4B15E3.webp",
+    "assets/photos/18/A9F17E92-FCC7-454F-9C51-468B9018F3EB.webp",
+    "assets/photos/18/AAED0DF3-4B86-4971-9923-37FF60AB9DA7.webp",
+    "assets/photos/18/B0EA588F-D5BD-4DB4-99D3-9E2FB36C1A42.webp",
+    "assets/photos/18/B8AA123D-560E-4E75-9172-242EB390BA51.webp",
+    "assets/photos/18/C353C713-C805-4393-91F2-FAD696B30B2D.webp",
+    "assets/photos/18/E13746DB-542A-4707-A759-B67837D214D6.webp",
+    "assets/photos/18/FE2C1315-C6EE-4F09-BC2F-3968D3A4B338.webp"
+  ],
+  [
+    "assets/photos/27/07F81851-AF4D-4D66-81D3-C183884482CB.webp",
+    "assets/photos/27/083237D6-A7E7-4CCD-81D8-7F299AA034EE.webp",
+    "assets/photos/27/19BD6810-2BC7-4653-82DA-48BCB116DA0A.webp",
+    "assets/photos/27/4D3B7F0B-22BF-40B2-B33D-5EA62FBBD740.webp",
+    "assets/photos/27/62EB2BE2-5F0D-42E9-A333-6846CC3AFC37.webp",
+    "assets/photos/27/87E63B1B-CE3F-4C73-848D-796698F8A42A.webp",
+    "assets/photos/27/A6A54E99-AADF-42DE-A3BA-B8DFB8727726.webp",
+    "assets/photos/27/AD78084A-1F90-4723-B826-681228E06942.webp",
+    "assets/photos/27/B5D8D3C4-EB4A-49DD-9F98-574601A458CF.webp",
+    "assets/photos/27/B615FF37-71DB-4C50-9C90-CFB5746D69F3.webp",
+    "assets/photos/27/BA66D135-8699-4933-B363-892D2E4583B8.webp",
+    "assets/photos/27/BAFDE060-572D-4D10-B5D9-76D4880F0EB9.webp",
+    "assets/photos/27/C1DBDF99-1967-477C-A431-C33EED78F8AA.webp",
+    "assets/photos/27/EF5EFF1B-6180-47AC-BD1D-F035AAB4A4A0.webp",
+    "assets/photos/27/F2977CA8-D616-4586-96F5-2772F347DC7A.webp"
+  ],
+  [
+    "assets/photos/11/0091F79A-DA5F-4991-8086-00178BDC94EF.webp",
+    "assets/photos/11/087941D4-8E83-4C47-9A6F-ECA241A52C24.webp",
+    "assets/photos/11/08D0F06B-0936-4F89-AE0E-6538F7AF543D.webp",
+    "assets/photos/11/1452E200-758E-4E59-9D33-02A96C3520B0.webp",
+    "assets/photos/11/5B41E222-206D-4438-92EE-BC874D9C3CC7.webp",
+    "assets/photos/11/61A00C77-CB4D-46F5-9D2A-99FE97E99147.webp",
+    "assets/photos/11/6C63C74A-12A0-414D-85A3-7283FDA8180A.webp",
+    "assets/photos/11/7DCA0D03-0D8D-41ED-8298-EAF5E18CA6CB.webp",
+    "assets/photos/11/9A47571E-C92C-439A-9B3C-9DFD87702AE7.webp",
+    "assets/photos/11/A265CD83-0EC9-442A-8BE7-DBF1F1D04851.webp",
+    "assets/photos/11/A2D799A3-5D6F-480E-B67D-822497530CD7.webp",
+    "assets/photos/11/C9AC9F6A-3ECD-4D94-89A5-ED968C41CB49.webp",
+    "assets/photos/11/CF9B8B9B-6DE1-489C-8D5D-4D3D9E75AEFD.webp",
+    "assets/photos/11/ED87D7C5-B539-49CD-88C5-986BE8AAACBD.webp"
+  ],
+  [
+    "assets/photos/29/0C5EB07D-F554-4E47-82DC-7593B5C45759.webp",
+    "assets/photos/29/2B1C36DD-87C1-4680-971E-05A86ADE81A8.webp",
+    "assets/photos/29/3993A868-8027-42C4-AF2E-18499A1AA22C.webp",
+    "assets/photos/29/7A4F679D-D88D-46D5-89D2-758F0D9B019C.webp",
+    "assets/photos/29/864570D6-AD4D-4519-B190-74FF56921D83.webp",
+    "assets/photos/29/9D413C79-2A58-4076-8C36-121C04C36958.webp",
+    "assets/photos/29/A532D4DE-757D-4670-A034-3EA891D14D86.webp",
+    "assets/photos/29/B9B0321F-E345-43CC-A957-0B2E79D05B6B.webp",
+    "assets/photos/29/C5962955-EC3A-4199-BA2E-7C8B3E0596E4.webp",
+    "assets/photos/29/D9DF3053-7CED-4753-BCA4-9528E7ED3BD7.webp"
+  ],
+  [
+    "assets/photos/16/1636DC5C-0296-464B-96E1-C6780D9DB4FE.webp",
+    "assets/photos/16/17A44794-CEBF-4473-B581-E0B2BF142C4A.webp",
+    "assets/photos/16/21626DCD-CAD0-43A2-8580-B9B70E4DC598.webp",
+    "assets/photos/16/45695A46-8DB7-466E-9468-8B18DF38B80F.webp",
+    "assets/photos/16/488382C8-553B-48B2-B154-F15888957513.webp",
+    "assets/photos/16/5D075255-2EBD-42A2-8E5A-54CAE4CAC94F.webp",
+    "assets/photos/16/68366991-358E-44E7-A762-C26A05ED9E30.webp",
+    "assets/photos/16/868CABC1-69C8-45A0-B52A-12A2D2F114C5.webp",
+    "assets/photos/16/9543DBC1-3A40-4CF7-AA2D-26FE30C4F036.webp",
+    "assets/photos/16/BE6F9F1B-2290-4DA9-B2DA-1FC617B4DA8C.webp",
+    "assets/photos/16/DEA161EA-6B08-4D47-BC54-4EB22C024E3F.webp",
+    "assets/photos/16/F20A5688-5EBF-4AD2-9AD3-7A125C1ED141.webp"
   ]
 ];
 
 const cases = [
   {
-    title: "林宅 - 自然序曲",
-    subtitle: "The Lin Residence - Prelude of Nature",
-    name: "林宅 - 自然序曲",
-    summary:
-      "以温润木质、自然石材与开放动线构成家的主要表情，让会客、用餐与休憩在同一片柔和光线中自然发生。",
-    location: "上海 · 静安",
-    area: "180 m²",
-    type: "私宅设计",
-    hero:
-      "assets/photos/32/03778B94-D40C-4256-991A-AA0CE21DF340.webp",
-    images: caseImageSets[0],
-    copyOne:
-      "设计从客户真实的生活习惯出发，保留大尺度的公共区域，让光线从窗边延展至餐厅与书房。材质选择克制而细腻，强调触感、光影与日常使用之间的平衡。",
-    copyTwo:
-      "客餐厅之间不再以硬隔断划分，而是通过家具尺度、灯光层次和地面材质完成温和过渡。客户接待时，空间显得开阔；家人独处时，又能保有安静的包裹感。",
-  },
-  {
-    title: "云境公馆",
-    subtitle: "Cloud Residence",
-    name: "云境公馆",
-    summary:
-      "以酒店式归家体验为主轴，整合玄关、客厅、餐厨与主卧套间，呈现更利落的城市生活秩序。",
-    location: "杭州 · 钱江新城",
-    area: "220 m²",
-    type: "大平层设计",
-    hero:
-      "assets/photos/35/177EC569-0B86-4588-900C-2FE576FCAB7C.webp",
-    images: caseImageSets[1],
-    copyOne:
-      "空间以浅色石材和深色木饰面形成对比，公共区域强调仪式感，私密区域则收束为安静、轻松、便于长期居住的尺度。",
-    copyTwo:
-      "厨房与餐厅采用半开放关系，适合家庭聚会与客户接待。隐藏收纳系统让视觉保持干净，也让日常维护变得更轻松。",
-  },
-  {
-    title: "松弛之家",
-    subtitle: "A Relaxed Home",
-    name: "松弛之家",
-    summary:
-      "围绕亲子陪伴和长期成长设计，减少装饰堆叠，强化收纳、洄游动线与自然采光。",
-    location: "苏州 · 金鸡湖",
-    area: "150 m²",
-    type: "改善型住宅",
-    hero:
-      "assets/photos/34/5366D28E-DEA2-4DAB-99B8-E0A7FD1080F0.webp",
-    images: caseImageSets[2],
-    copyOne:
-      "设计把孩子活动、阅读、餐厨互动放在同一条生活线上，让家人在不同状态下都能自然交流。",
-    copyTwo:
-      "墙面、柜体和家具尽量保持统一的色彩关系，减少视觉压力。可调整的房间功能也为未来几年的生活变化留下余地。",
-  },
-];
-
-const workGroups = [
-  {
     "title": "自然序曲",
-    "category": "私宅设计"
+    "subtitle": "私宅设计",
+    "name": "自然序曲",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "上海 · 静安",
+    "area": "180 m²",
+    "type": "私宅设计",
+    "hero": "assets/photos/32/03778B94-D40C-4256-991A-AA0CE21DF340.webp",
+    "images": caseImageSets[0],
+    "copyOne": "设计从客户真实的生活习惯出发，保留大尺度的公共区域，让光线从窗边延展至餐厅与书房。材质选择克制而细腻，强调触感、光影与日常使用之间的平衡。",
+    "copyTwo": "客餐厅之间不再以硬隔断划分，而是通过家具尺度、灯光层次和地面材质完成温和过渡。客户接待时，空间显得开阔；家人独处时，又能保有安静的包裹感。"
   },
   {
     "title": "云境公馆",
-    "category": "大平层设计"
+    "subtitle": "大平层设计",
+    "name": "云境公馆",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "杭州 · 钱江新城",
+    "area": "220 m²",
+    "type": "大平层设计",
+    "hero": "assets/photos/35/177EC569-0B86-4588-900C-2FE576FCAB7C.webp",
+    "images": caseImageSets[1],
+    "copyOne": "空间以浅色石材和深色木饰面形成对比，公共区域强调仪式感，私密区域则收束为安静、轻松、便于长期居住的尺度。",
+    "copyTwo": "厨房与餐厅采用半开放关系，适合家庭聚会与客户接待。隐藏收纳系统让视觉保持干净，也让日常维护变得更轻松。"
   },
   {
     "title": "松弛之家",
-    "category": "改善型住宅"
+    "subtitle": "改善型住宅",
+    "name": "松弛之家",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "苏州 · 金鸡湖",
+    "area": "150 m²",
+    "type": "改善型住宅",
+    "hero": "assets/photos/34/5366D28E-DEA2-4DAB-99B8-E0A7FD1080F0.webp",
+    "images": caseImageSets[2],
+    "copyOne": "设计把孩子活动、阅读、餐厨互动放在同一条生活线上，让家人在不同状态下都能自然交流。",
+    "copyTwo": "墙面、柜体和家具尽量保持统一的色彩关系，减少视觉压力。可调整的房间功能也为未来几年的生活变化留下余地。"
+  },
+  {
+    "title": "湖畔平层",
+    "subtitle": "客餐厅",
+    "name": "湖畔平层",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "杭州 · 西湖",
+    "area": "353 m²",
+    "type": "大平层设计",
+    "hero": "assets/photos/33/021F0BF8-C6B5-47EE-8A74-35BD2B3B6E15.webp",
+    "images": caseImageSets[3],
+    "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
+    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+  },
+  {
+    "title": "静谧套房",
+    "subtitle": "主卧套间",
+    "name": "静谧套房",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "常州",
+    "area": "120 m²",
+    "type": "住宅设计",
+    "hero": "assets/photos/05/1418F8E5-CDF6-43DD-A99D-BB296E42ED93.webp",
+    "images": caseImageSets[4],
+    "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
+    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+  },
+  {
+    "title": "城市公寓",
+    "subtitle": "现代住宅",
+    "name": "城市公寓",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "南京",
+    "area": "98 m²",
+    "type": "公寓设计",
+    "hero": "assets/photos/02/153CB9C7-81EB-4ABB-ABD2-6461087CAC04.webp",
+    "images": caseImageSets[5],
+    "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
+    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+  },
+  {
+    "title": "木色秩序",
+    "subtitle": "餐厨空间",
+    "name": "木色秩序",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "苏州",
+    "area": "165 m²",
+    "type": "改善型住宅",
+    "hero": "assets/photos/20/1786B725-E753-49F4-8C28-7B47AE0A05E0.webp",
+    "images": caseImageSets[6],
+    "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
+    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+  },
+  {
+    "title": "光影客厅",
+    "subtitle": "客厅设计",
+    "name": "光影客厅",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "上海",
+    "area": "140 m²",
+    "type": "私宅设计",
+    "hero": "assets/photos/18/2ABB8A32-DFC8-4D2D-93C3-7F9628158710.webp",
+    "images": caseImageSets[7],
+    "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
+    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+  },
+  {
+    "title": "餐厨生活",
+    "subtitle": "餐厨一体",
+    "name": "餐厨生活",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "杭州",
+    "area": "188 m²",
+    "type": "大平层设计",
+    "hero": "assets/photos/27/07F81851-AF4D-4D66-81D3-C183884482CB.webp",
+    "images": caseImageSets[8],
+    "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
+    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+  },
+  {
+    "title": "雅致私宅",
+    "subtitle": "功能空间",
+    "name": "雅致私宅",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "常州",
+    "area": "130 m²",
+    "type": "私宅设计",
+    "hero": "assets/photos/11/0091F79A-DA5F-4991-8086-00178BDC94EF.webp",
+    "images": caseImageSets[9],
+    "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
+    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+  },
+  {
+    "title": "现代居所",
+    "subtitle": "客厅设计",
+    "name": "现代居所",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "南京",
+    "area": "160 m²",
+    "type": "住宅设计",
+    "hero": "assets/photos/29/0C5EB07D-F554-4E47-82DC-7593B5C45759.webp",
+    "images": caseImageSets[10],
+    "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
+    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
+  },
+  {
+    "title": "温润之家",
+    "subtitle": "亲子住宅",
+    "name": "温润之家",
+    "summary": "以真实空间案例呈现设计完成后的生活质感，帮助客户快速判断风格、材质与落地效果。",
+    "location": "苏州",
+    "area": "145 m²",
+    "type": "改善型住宅",
+    "hero": "assets/photos/16/1636DC5C-0296-464B-96E1-C6780D9DB4FE.webp",
+    "images": caseImageSets[11],
+    "copyOne": "通过完整图库呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
+    "copyTwo": "从整体视角到局部细节，案例图片可作为沟通户型、预算、材质与风格偏好的参考。"
   }
 ];
 
-const works = cases.map((item, caseIndex) => ({
-  title: workGroups[caseIndex].title,
-  category: workGroups[caseIndex].category,
+const featuredWorks = cases.slice(0, 3).map((item, caseIndex) => ({
+  title: item.name,
+  category: item.type,
   image: item.hero,
   count: item.images.length,
   type: "case",
   caseIndex,
 }));
 
-const allPortfolioImages = cases.flatMap((item, caseIndex) =>
-  item.images.map((image, imageIndex) => ({
-    title: workGroups[caseIndex].title,
-    category: workGroups[caseIndex].category,
-    image,
-    imageIndex,
-    caseIndex,
-  })),
-);
-
-const selectedImageWorks = allPortfolioImages
-  .filter((work) => !cases.some((item) => item.hero === work.image))
-  .slice(0, 9)
-  .map((work) => ({
-    ...work,
-    type: "image",
-  }));
-
-const featuredWorks = [...works, ...selectedImageWorks];
-const moreWorks = allPortfolioImages.filter(
-  (work) => !featuredWorks.some((featured) => featured.image === work.image),
-);
-
 let activeCase = 0;
-
 const hero = document.querySelector("[data-case-hero]");
 const lightbox = document.querySelector("[data-lightbox]");
 const lightboxImg = document.querySelector("[data-lightbox-img]");
@@ -232,13 +432,11 @@ function renderCase(index) {
 function renderWorks() {
   workGrid.innerHTML = featuredWorks
     .map(
-      (work, index) => `
-        <button class="work-card" type="button" ${work.type === "case" ? `data-work-case="${work.caseIndex}"` : `data-work-image="${work.image}" data-work-title="${work.title} 第 ${work.imageIndex + 1} 张"`}>
+      (work) => `
+        <button class="work-card" type="button" data-work-case="${work.caseIndex}">
           <img src="${work.image}" alt="${work.title}" loading="lazy" />
-          <span class="work-number">${String(index + 1).padStart(2, "0")}</span>
           <span class="work-info">
             <strong>${work.title}</strong>
-            <small>${work.type === "case" ? `${work.category} · ${work.count} 张` : work.category}</small>
           </span>
         </button>
       `,
@@ -284,14 +482,15 @@ function openCaseView(caseIndex) {
   caseViewBack.focus();
 }
 
-function openImageCollection(title, images) {
+function openCaseList() {
   caseViewReturnTarget = document.activeElement;
-  caseViewTitle.textContent = title;
-  caseViewGrid.innerHTML = images
+  caseViewTitle.textContent = "更多室内设计作品";
+  caseViewGrid.innerHTML = cases
     .map(
-      (work, index) => `
-        <button class="case-view-item" type="button" data-case-view-image="${work.image}" data-case-view-image-title="${work.title} 第 ${work.imageIndex + 1} 张">
-          <img src="${work.image}" alt="${work.title} 第 ${index + 1} 张" loading="lazy" />
+      (item, index) => `
+        <button class="case-index-card" type="button" data-case-list-index="${index}">
+          <img src="${item.hero}" alt="${item.name}" loading="lazy" />
+          <span>${item.name}</span>
         </button>
       `,
     )
@@ -315,19 +514,11 @@ renderCaseGallery(cases[activeCase]);
 
 workGrid.addEventListener("click", (event) => {
   const button = event.target.closest("[data-work-case]");
-  if (button) {
-    openCaseView(Number(button.dataset.workCase));
-    return;
-  }
-
-  const imageButton = event.target.closest("[data-work-image]");
-  if (!imageButton) return;
-  openLightbox(imageButton.dataset.workImage, imageButton.dataset.workTitle);
+  if (!button) return;
+  openCaseView(Number(button.dataset.workCase));
 });
 
-moreWorksButton.addEventListener("click", () => {
-  openImageCollection("更多作品", moreWorks);
-});
+moreWorksButton.addEventListener("click", openCaseList);
 
 if (caseGallery) {
   caseGallery.addEventListener("click", (event) => {
@@ -340,6 +531,12 @@ if (caseGallery) {
 caseViewBack.addEventListener("click", closeCaseView);
 
 caseViewGrid.addEventListener("click", (event) => {
+  const caseButton = event.target.closest("[data-case-list-index]");
+  if (caseButton) {
+    openCaseView(Number(caseButton.dataset.caseListIndex));
+    return;
+  }
+
   const button = event.target.closest("[data-case-view-image]");
   if (!button) return;
   openLightbox(button.dataset.caseViewImage, button.dataset.caseViewImageTitle);
