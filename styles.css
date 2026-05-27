@@ -317,7 +317,7 @@ h2 {
 .works-grid {
   display: grid;
   gap: 22px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .work-card {
@@ -350,6 +350,12 @@ h2 {
 .work-card:hover img {
   opacity: 1;
   transform: scale(1.05);
+}
+
+.works-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .work-number {

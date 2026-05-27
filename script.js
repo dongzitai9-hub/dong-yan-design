@@ -162,8 +162,32 @@ const works = cases.map((item, caseIndex) => ({
   category: workGroups[caseIndex].category,
   image: item.hero,
   count: item.images.length,
+  type: "case",
   caseIndex,
 }));
+
+const allPortfolioImages = cases.flatMap((item, caseIndex) =>
+  item.images.map((image, imageIndex) => ({
+    title: workGroups[caseIndex].title,
+    category: workGroups[caseIndex].category,
+    image,
+    imageIndex,
+    caseIndex,
+  })),
+);
+
+const selectedImageWorks = allPortfolioImages
+  .filter((work) => !cases.some((item) => item.hero === work.image))
+  .slice(0, 9)
+  .map((work) => ({
+    ...work,
+    type: "image",
+  }));
+
+const featuredWorks = [...works, ...selectedImageWorks];
+const moreWorks = allPortfolioImages.filter(
+  (work) => !featuredWorks.some((featured) => featured.image === work.image),
+);
 
 let activeCase = 0;
 
@@ -171,6 +195,7 @@ const hero = document.querySelector("[data-case-hero]");
 const lightbox = document.querySelector("[data-lightbox]");
 const lightboxImg = document.querySelector("[data-lightbox-img]");
 const workGrid = document.querySelector("[data-work-grid]");
+const moreWorksButton = document.querySelector("[data-more-works]");
 const caseGallery = document.querySelector("[data-case-gallery]");
 const caseView = document.querySelector("[data-case-view]");
 const caseViewGrid = document.querySelector("[data-case-view-grid]");
@@ -205,15 +230,15 @@ function renderCase(index) {
 }
 
 function renderWorks() {
-  workGrid.innerHTML = works
+  workGrid.innerHTML = featuredWorks
     .map(
       (work, index) => `
-        <button class="work-card" type="button" data-work-case="${work.caseIndex}">
+        <button class="work-card" type="button" ${work.type === "case" ? `data-work-case="${work.caseIndex}"` : `data-work-image="${work.image}" data-work-title="${work.title} 第 ${work.imageIndex + 1} 张"`}>
           <img src="${work.image}" alt="${work.title}" loading="lazy" />
           <span class="work-number">${String(index + 1).padStart(2, "0")}</span>
           <span class="work-info">
             <strong>${work.title}</strong>
-            <small>${work.category} · ${work.count} 张</small>
+            <small>${work.type === "case" ? `${work.category} · ${work.count} 张` : work.category}</small>
           </span>
         </button>
       `,
@@ -259,6 +284,24 @@ function openCaseView(caseIndex) {
   caseViewBack.focus();
 }
 
+function openImageCollection(title, images) {
+  caseViewReturnTarget = document.activeElement;
+  caseViewTitle.textContent = title;
+  caseViewGrid.innerHTML = images
+    .map(
+      (work, index) => `
+        <button class="case-view-item" type="button" data-case-view-image="${work.image}" data-case-view-image-title="${work.title} 第 ${work.imageIndex + 1} 张">
+          <img src="${work.image}" alt="${work.title} 第 ${index + 1} 张" loading="lazy" />
+        </button>
+      `,
+    )
+    .join("");
+  caseView.hidden = false;
+  document.body.classList.add("case-view-open");
+  caseView.scrollTop = 0;
+  caseViewBack.focus();
+}
+
 function closeCaseView() {
   caseView.hidden = true;
   document.body.classList.remove("case-view-open");
@@ -272,8 +315,18 @@ renderCaseGallery(cases[activeCase]);
 
 workGrid.addEventListener("click", (event) => {
   const button = event.target.closest("[data-work-case]");
-  if (!button) return;
-  openCaseView(Number(button.dataset.workCase));
+  if (button) {
+    openCaseView(Number(button.dataset.workCase));
+    return;
+  }
+
+  const imageButton = event.target.closest("[data-work-image]");
+  if (!imageButton) return;
+  openLightbox(imageButton.dataset.workImage, imageButton.dataset.workTitle);
+});
+
+moreWorksButton.addEventListener("click", () => {
+  openImageCollection("更多作品", moreWorks);
 });
 
 if (caseGallery) {
