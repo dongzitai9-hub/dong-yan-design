@@ -219,27 +219,27 @@ h2 {
   color: rgba(255, 255, 255, 0.76);
 }
 
-.project-meta {
+.contact-meta {
   display: grid;
   gap: 12px;
-  margin: 0;
+  margin: 28px 0 0;
 }
 
-.project-meta div {
+.contact-meta div {
   display: grid;
   gap: 6px;
   grid-template-columns: 56px 1fr;
 }
 
-.project-meta dt {
+.contact-meta dt {
   color: rgba(255, 255, 255, 0.45);
 }
 
-.project-meta dd {
+.contact-meta dd {
   margin: 0;
 }
 
-.project-meta a {
+.contact-meta a {
   color: inherit;
   text-decoration: none;
 }
@@ -472,6 +472,32 @@ h2 {
   max-width: 640px;
 }
 
+.case-gallery {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.case-gallery-item {
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: var(--charcoal);
+  cursor: zoom-in;
+}
+
+.case-gallery-item img {
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.case-gallery-item:hover img {
+  opacity: 0.92;
+  transform: scale(1.04);
+}
+
 .related {
   padding-top: 12px;
   padding-bottom: 92px;
@@ -608,6 +634,7 @@ h2 {
   .intro-grid,
   .profile,
   .works-grid,
+  .case-gallery,
   .story-block.pair,
   .related-grid,
   .contact {
