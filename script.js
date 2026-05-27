@@ -381,7 +381,7 @@ const cases = [
   }
 ];
 
-const featuredWorks = cases.slice(0, 3).map((item, caseIndex) => ({
+const featuredWorks = cases.slice(0, 6).map((item, caseIndex) => ({
   title: item.name,
   category: item.type,
   image: item.hero,
@@ -396,7 +396,6 @@ const lightbox = document.querySelector("[data-lightbox]");
 const lightboxImg = document.querySelector("[data-lightbox-img]");
 const workGrid = document.querySelector("[data-work-grid]");
 const moreWorksButton = document.querySelector("[data-more-works]");
-const caseGallery = document.querySelector("[data-case-gallery]");
 const caseView = document.querySelector("[data-case-view]");
 const caseViewGrid = document.querySelector("[data-case-view-grid]");
 const caseViewTitle = document.querySelector("[data-case-view-title]");
@@ -405,28 +404,6 @@ let caseViewReturnTarget = null;
 
 function setText(selector, text) {
   document.querySelector(selector).textContent = text;
-}
-
-function renderCase(index) {
-  const item = cases[index];
-  activeCase = index;
-
-  hero.style.backgroundImage = `url("${item.hero}")`;
-  setText("[data-case-title]", "董揅空间设计");
-  setText("[data-case-subtitle]", "个人设计顾问 · 私宅空间 · 作品案例");
-  setText("[data-copy-one]", item.copyOne);
-  setText("[data-copy-two]", item.copyTwo);
-
-  document.querySelectorAll("[data-gallery-img]").forEach((image) => {
-    const galleryIndex = Number(image.dataset.galleryImg);
-    image.src = item.images[galleryIndex];
-  });
-
-  renderCaseGallery(item);
-
-  document.querySelectorAll(".case-tab").forEach((tab) => {
-    tab.classList.toggle("is-active", Number(tab.dataset.case) === index);
-  });
 }
 
 function renderWorks() {
@@ -444,19 +421,6 @@ function renderWorks() {
     .join("");
 }
 
-function renderCaseGallery(item) {
-  if (!caseGallery) return;
-  caseGallery.innerHTML = item.images
-    .map(
-      (image, index) => `
-        <button class="case-gallery-item" type="button" data-case-image="${image}" data-case-image-title="${item.name} 第 ${index + 1} 张">
-          <img src="${image}" alt="${item.name} 第 ${index + 1} 张" loading="lazy" />
-        </button>
-      `,
-    )
-    .join("");
-}
-
 function openLightbox(image, alt) {
   lightboxImg.src = image;
   lightboxImg.alt = alt || "作品图片";
@@ -467,15 +431,47 @@ function openCaseView(caseIndex) {
   const item = cases[caseIndex];
   caseViewReturnTarget = document.activeElement;
   caseViewTitle.textContent = item.name;
-  caseViewGrid.innerHTML = item.images
-    .map(
-      (image, index) => `
-        <button class="case-view-item" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 1} 张">
-          <img src="${image}" alt="${item.name} 第 ${index + 1} 张" loading="lazy" />
-        </button>
-      `,
-    )
-    .join("");
+  caseViewGrid.innerHTML = `
+    <article class="case-detail">
+      <button class="image-button" type="button" data-case-view-image="${item.images[0]}" data-case-view-image-title="${item.name} 第 1 张">
+        <img src="${item.images[0]}" alt="${item.name} 第 1 张" loading="lazy" />
+      </button>
+
+      <div class="story-copy">
+        <p>${item.copyOne}</p>
+      </div>
+
+      <div class="story-block pair">
+        ${item.images
+          .slice(1, 3)
+          .map(
+            (image, index) => `
+              <button class="image-button ${index === 1 ? "offset" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 2} 张">
+                <img src="${image}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" />
+              </button>
+            `,
+          )
+          .join("")}
+      </div>
+
+      <div class="story-copy narrow">
+        <p>${item.copyTwo}</p>
+      </div>
+
+      <div class="case-detail-gallery">
+        ${item.images
+          .slice(3)
+          .map(
+            (image, index) => `
+              <button class="case-view-item" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
+                <img src="${image}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" />
+              </button>
+            `,
+          )
+          .join("")}
+      </div>
+    </article>
+  `;
   caseView.hidden = false;
   document.body.classList.add("case-view-open");
   caseView.scrollTop = 0;
@@ -510,7 +506,6 @@ function closeCaseView() {
 }
 
 renderWorks();
-renderCaseGallery(cases[activeCase]);
 
 workGrid.addEventListener("click", (event) => {
   const button = event.target.closest("[data-work-case]");
@@ -519,14 +514,6 @@ workGrid.addEventListener("click", (event) => {
 });
 
 moreWorksButton.addEventListener("click", openCaseList);
-
-if (caseGallery) {
-  caseGallery.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-case-image]");
-    if (!button) return;
-    openLightbox(button.dataset.caseImage, button.dataset.caseImageTitle);
-  });
-}
 
 caseViewBack.addEventListener("click", closeCaseView);
 
@@ -540,21 +527,6 @@ caseViewGrid.addEventListener("click", (event) => {
   const button = event.target.closest("[data-case-view-image]");
   if (!button) return;
   openLightbox(button.dataset.caseViewImage, button.dataset.caseViewImageTitle);
-});
-
-document.querySelectorAll("[data-case]").forEach((button) => {
-  button.addEventListener("click", () => {
-    renderCase(Number(button.dataset.case));
-    document.querySelector("#story").scrollIntoView({ behavior: "smooth" });
-  });
-});
-
-document.querySelectorAll("[data-gallery-index]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const imageIndex = Number(button.dataset.galleryIndex);
-    const image = cases[activeCase].images[imageIndex];
-    openLightbox(image, button.querySelector("img").alt);
-  });
 });
 
 document.querySelector(".lightbox-close").addEventListener("click", () => {
