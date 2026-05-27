@@ -27,6 +27,10 @@ body {
   line-height: 1.8;
 }
 
+body.case-view-open {
+  overflow: hidden;
+}
+
 img {
   display: block;
   width: 100%;
@@ -613,6 +617,66 @@ h2 {
   cursor: pointer;
 }
 
+.case-view {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  overflow: auto;
+  padding: 34px clamp(20px, 5vw, 70px) 76px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.case-view[hidden] {
+  display: none;
+}
+
+.case-view-header {
+  display: grid;
+  align-items: end;
+  max-width: 1180px;
+  margin: 0 auto 34px;
+  gap: 24px;
+  grid-template-columns: auto 1fr;
+}
+
+.case-view-back {
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.case-view-grid {
+  display: grid;
+  max-width: 1180px;
+  margin: 0 auto;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.case-view-item {
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: var(--charcoal);
+  cursor: zoom-in;
+}
+
+.case-view-item img {
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.case-view-item:hover img {
+  opacity: 0.92;
+  transform: scale(1.04);
+}
+
 @media (max-width: 820px) {
   .site-header {
     align-items: flex-start;
@@ -635,9 +699,15 @@ h2 {
   .profile,
   .works-grid,
   .case-gallery,
+  .case-view-grid,
   .story-block.pair,
   .related-grid,
   .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .case-view-header {
+    align-items: start;
     grid-template-columns: 1fr;
   }
 

@@ -157,15 +157,13 @@ const workGroups = [
   }
 ];
 
-const works = caseImageSets.flatMap((images, caseIndex) =>
-  images.map((image, imageIndex) => ({
-    title: workGroups[caseIndex].title,
-    category: workGroups[caseIndex].category,
-    image,
-    imageIndex,
-    caseIndex,
-  })),
-);
+const works = cases.map((item, caseIndex) => ({
+  title: workGroups[caseIndex].title,
+  category: workGroups[caseIndex].category,
+  image: item.hero,
+  count: item.images.length,
+  caseIndex,
+}));
 
 let activeCase = 0;
 
@@ -174,6 +172,11 @@ const lightbox = document.querySelector("[data-lightbox]");
 const lightboxImg = document.querySelector("[data-lightbox-img]");
 const workGrid = document.querySelector("[data-work-grid]");
 const caseGallery = document.querySelector("[data-case-gallery]");
+const caseView = document.querySelector("[data-case-view]");
+const caseViewGrid = document.querySelector("[data-case-view-grid]");
+const caseViewTitle = document.querySelector("[data-case-view-title]");
+const caseViewBack = document.querySelector("[data-case-view-back]");
+let caseViewReturnTarget = null;
 
 function setText(selector, text) {
   document.querySelector(selector).textContent = text;
@@ -205,12 +208,12 @@ function renderWorks() {
   workGrid.innerHTML = works
     .map(
       (work, index) => `
-        <button class="work-card" type="button" data-work-image="${work.image}" data-work-title="${work.title}">
+        <button class="work-card" type="button" data-work-case="${work.caseIndex}">
           <img src="${work.image}" alt="${work.title}" loading="lazy" />
           <span class="work-number">${String(index + 1).padStart(2, "0")}</span>
           <span class="work-info">
             <strong>${work.title}</strong>
-            <small>${work.category}</small>
+            <small>${work.category} · ${work.count} 张</small>
           </span>
         </button>
       `,
@@ -237,13 +240,40 @@ function openLightbox(image, alt) {
   lightbox.hidden = false;
 }
 
+function openCaseView(caseIndex) {
+  const item = cases[caseIndex];
+  caseViewReturnTarget = document.activeElement;
+  caseViewTitle.textContent = item.name;
+  caseViewGrid.innerHTML = item.images
+    .map(
+      (image, index) => `
+        <button class="case-view-item" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 1} 张">
+          <img src="${image}" alt="${item.name} 第 ${index + 1} 张" loading="lazy" />
+        </button>
+      `,
+    )
+    .join("");
+  caseView.hidden = false;
+  document.body.classList.add("case-view-open");
+  caseView.scrollTop = 0;
+  caseViewBack.focus();
+}
+
+function closeCaseView() {
+  caseView.hidden = true;
+  document.body.classList.remove("case-view-open");
+  if (caseViewReturnTarget) {
+    caseViewReturnTarget.focus();
+  }
+}
+
 renderWorks();
 renderCaseGallery(cases[activeCase]);
 
 workGrid.addEventListener("click", (event) => {
-  const button = event.target.closest("[data-work-image]");
+  const button = event.target.closest("[data-work-case]");
   if (!button) return;
-  openLightbox(button.dataset.workImage, button.dataset.workTitle);
+  openCaseView(Number(button.dataset.workCase));
 });
 
 if (caseGallery) {
@@ -253,6 +283,14 @@ if (caseGallery) {
     openLightbox(button.dataset.caseImage, button.dataset.caseImageTitle);
   });
 }
+
+caseViewBack.addEventListener("click", closeCaseView);
+
+caseViewGrid.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-case-view-image]");
+  if (!button) return;
+  openLightbox(button.dataset.caseViewImage, button.dataset.caseViewImageTitle);
+});
 
 document.querySelectorAll("[data-case]").forEach((button) => {
   button.addEventListener("click", () => {
@@ -281,6 +319,12 @@ lightbox.addEventListener("click", (event) => {
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
-    lightbox.hidden = true;
+    if (!lightbox.hidden) {
+      lightbox.hidden = true;
+      return;
+    }
+    if (!caseView.hidden) {
+      closeCaseView();
+    }
   }
 });
