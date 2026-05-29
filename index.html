@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>董揅｜空间辑选</title>
+    <title>董揅｜空间与方案辑选</title>
     <meta
       name="description"
-      content="董揅空间设计顾问页面，用于展示空间辑选、风格方向与联系方式。"
+      content="董揅空间设计顾问页面，用于展示空间辑选、方案辑选、风格方向与联系方式。"
     />
-    <link rel="stylesheet" href="styles.css?v=20260527-selection" />
+    <link rel="stylesheet" href="styles.css?v=20260529-scheme-selection" />
   </head>
   <body>
     <header class="site-header">
@@ -22,7 +22,8 @@
 
       <nav class="site-nav" aria-label="主导航">
         <a href="#profile">个人</a>
-        <a href="#works">辑选</a>
+        <a href="#works">空间</a>
+        <a href="#schemes">方案</a>
         <a href="#contact">咨询</a>
       </nav>
     </header>
@@ -87,12 +88,27 @@
         </div>
       </section>
 
+      <section class="works scheme-selection" id="schemes">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow dark">Selection</p>
+            <h2>方案辑选</h2>
+          </div>
+        </div>
+        <div class="works-grid" data-scheme-grid></div>
+        <div class="works-more">
+          <button class="button button-line" type="button" data-more-schemes>
+            更多方案辑选
+          </button>
+        </div>
+      </section>
+
       <section class="contact" id="contact">
         <div>
           <p class="eyebrow">Contact</p>
           <h2>咨询</h2>
           <p>
-            欢迎把这个页面直接发给客户，客户可以先浏览空间辑选，再通过电话或微信与你沟通需求、户型和预算。
+            设计像一门岁月回春术。十多年前别人问我多大，我说四十了；如今再问，我说还不到四十。家也一样，老户型、旧习惯、过时审美，都可以重新长出年轻的秩序和气质。想让房子回到更好的年纪，欢迎电话或微信聊聊。
           </p>
           <dl class="contact-meta">
             <div>
@@ -105,7 +121,7 @@
             </div>
             <div>
               <dt>微信</dt>
-              <dd>肆室</dd>
+              <dd>揅室</dd>
             </div>
           </dl>
         </div>
@@ -135,6 +151,6 @@
       <div class="case-view-grid" data-case-view-grid></div>
     </section>
 
-    <script src="script.js?v=20260527-selection"></script>
+    <script src="script.js?v=20260529-scheme-selection"></script>
   </body>
 </html>

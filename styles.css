@@ -358,6 +358,11 @@ h2 {
   transform: scale(1.05);
 }
 
+.scheme-card img {
+  background: #f8f5ef;
+  object-fit: contain;
+}
+
 .works-more {
   display: flex;
   justify-content: center;
@@ -369,6 +374,18 @@ h2 {
   border-color: #333;
   background: #333;
   color: var(--white);
+}
+
+.scheme-selection {
+  border-top: 1px solid #ece5d9;
+  background: var(--paper);
+}
+
+.scheme-detail .image-button img,
+.scheme-detail .case-flow-item img,
+.scheme-detail .case-flow-item.wide img {
+  background: #fff;
+  object-fit: contain;
 }
 
 .work-number {
@@ -784,6 +801,10 @@ h2 {
 @media (max-width: 520px) {
   .site-nav a {
     font-size: 13px;
+  }
+
+  .site-nav {
+    gap: 12px;
   }
 
   .brand strong {

@@ -390,12 +390,105 @@ const featuredWorks = cases.slice(0, 6).map((item, caseIndex) => ({
   caseIndex,
 }));
 
+const schemeImageSets = [
+  [
+    "assets/schemes/layout-study/layout-study-01.webp",
+    "assets/schemes/layout-study/layout-study-02.webp",
+    "assets/schemes/layout-study/layout-study-03.webp",
+    "assets/schemes/layout-study/layout-study-04.webp",
+  ],
+  [
+    "assets/schemes/function-rework/function-rework-01.webp",
+    "assets/schemes/function-rework/function-rework-02.webp",
+    "assets/schemes/function-rework/function-rework-03.webp",
+    "assets/schemes/function-rework/function-rework-04.webp",
+  ],
+  [
+    "assets/schemes/circulation-plan/circulation-plan-01.webp",
+    "assets/schemes/circulation-plan/circulation-plan-02.webp",
+    "assets/schemes/circulation-plan/circulation-plan-03.webp",
+    "assets/schemes/circulation-plan/circulation-plan-04.webp",
+  ],
+  [
+    "assets/schemes/suite-layout/suite-layout-01.webp",
+    "assets/schemes/suite-layout/suite-layout-02.webp",
+    "assets/schemes/suite-layout/suite-layout-03.webp",
+    "assets/schemes/suite-layout/suite-layout-04.webp",
+  ],
+  [
+    "assets/schemes/family-scale/family-scale-01.webp",
+    "assets/schemes/family-scale/family-scale-02.webp",
+    "assets/schemes/family-scale/family-scale-03.webp",
+    "assets/schemes/family-scale/family-scale-04.webp",
+  ],
+  [
+    "assets/schemes/large-flat/large-flat-01.webp",
+    "assets/schemes/large-flat/large-flat-02.webp",
+    "assets/schemes/large-flat/large-flat-03.webp",
+    "assets/schemes/large-flat/large-flat-04.webp",
+  ],
+];
+
+const schemeCases = [
+  {
+    name: "格局推演",
+    hero: schemeImageSets[0][0],
+    images: schemeImageSets[0],
+    copyOne: "从原始户型出发，梳理公共区、卧室、收纳与动线的关系，让空间使用逻辑更清晰。",
+    copyTwo: "图面把墙体、家具尺度和功能分区放在同一张图里，方便快速讨论调整方向。",
+  },
+  {
+    name: "功能重组",
+    hero: schemeImageSets[1][1],
+    images: schemeImageSets[1],
+    copyOne: "围绕家庭成员的生活节奏重新组织功能，让客餐厅、休息区与储物系统形成更顺畅的关系。",
+    copyTwo: "不同图面展示从空置结构到完整布置的变化，便于比较每一种尺度取舍。",
+  },
+  {
+    name: "动线优化",
+    hero: schemeImageSets[2][2],
+    images: schemeImageSets[2],
+    copyOne: "重点观察入口、餐厨、卧室和卫生间之间的路径，把日常使用频率高的位置先处理顺。",
+    copyTwo: "通过连续图面呈现调整过程，让沟通不只停留在想象里，而是能落在具体墙体和家具尺度上。",
+  },
+  {
+    name: "套房规划",
+    hero: schemeImageSets[3][1],
+    images: schemeImageSets[3],
+    copyOne: "围绕主卧、衣帽、卫浴和休闲区的组合方式，推敲私密空间里的舒适尺度。",
+    copyTwo: "图面展示不同房间之间的开合关系，也帮助判断收纳、采光与活动区是否自然。",
+  },
+  {
+    name: "家庭尺度",
+    hero: schemeImageSets[4][2],
+    images: schemeImageSets[4],
+    copyOne: "以家庭长期居住为核心，平衡公共互动、独立休息和弹性功能之间的比例。",
+    copyTwo: "每张图都保留户型边界和主要尺寸，便于后续继续深化空间结构。",
+  },
+  {
+    name: "大宅推敲",
+    hero: schemeImageSets[5][1],
+    images: schemeImageSets[5],
+    copyOne: "针对更大尺度的居住空间，先建立清晰的主次动线，再安排会客、休闲、收纳和套房关系。",
+    copyTwo: "方案图把复杂空间拆成可讨论的层次，让客户更容易看懂每个区域的使用方式。",
+  },
+];
+
+const featuredSchemes = schemeCases.map((item, schemeIndex) => ({
+  title: item.name,
+  image: item.hero,
+  count: item.images.length,
+  schemeIndex,
+}));
+
 let activeCase = 0;
 const hero = document.querySelector("[data-case-hero]");
 const lightbox = document.querySelector("[data-lightbox]");
 const lightboxImg = document.querySelector("[data-lightbox-img]");
 const workGrid = document.querySelector("[data-work-grid]");
 const moreWorksButton = document.querySelector("[data-more-works]");
+const schemeGrid = document.querySelector("[data-scheme-grid]");
+const moreSchemesButton = document.querySelector("[data-more-schemes]");
 const caseView = document.querySelector("[data-case-view]");
 const caseViewGrid = document.querySelector("[data-case-view-grid]");
 const caseViewTitle = document.querySelector("[data-case-view-title]");
@@ -414,6 +507,21 @@ function renderWorks() {
           <img src="${work.image}" alt="${work.title}" loading="lazy" />
           <span class="work-info">
             <strong>${work.title}</strong>
+          </span>
+        </button>
+      `,
+    )
+    .join("");
+}
+
+function renderSchemes() {
+  schemeGrid.innerHTML = featuredSchemes
+    .map(
+      (scheme) => `
+        <button class="work-card scheme-card" type="button" data-scheme-case="${scheme.schemeIndex}">
+          <img src="${scheme.image}" alt="${scheme.title}" loading="lazy" />
+          <span class="work-info">
+            <strong>${scheme.title}</strong>
           </span>
         </button>
       `,
@@ -512,6 +620,82 @@ function openCaseList(updateHistory = true) {
   }
 }
 
+function openSchemeView(schemeIndex, updateHistory = true) {
+  const item = schemeCases[schemeIndex];
+  caseViewReturnTarget = document.activeElement;
+  currentView = "scheme";
+  caseViewTitle.textContent = item.name;
+  caseViewGrid.innerHTML = `
+    <article class="case-detail scheme-detail">
+      <button class="image-button" type="button" data-case-view-image="${item.images[0]}" data-case-view-image-title="${item.name} 第 1 张">
+        <img src="${item.images[0]}" alt="${item.name} 第 1 张" loading="lazy" />
+      </button>
+
+      <div class="story-copy">
+        <p>${item.copyOne}</p>
+      </div>
+
+      <div class="story-block pair">
+        ${item.images
+          .slice(1, 3)
+          .map(
+            (image, index) => `
+              <button class="image-button ${index === 1 ? "offset" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 2} 张">
+                <img src="${image}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" />
+              </button>
+            `,
+          )
+          .join("")}
+      </div>
+
+      <div class="story-copy narrow">
+        <p>${item.copyTwo}</p>
+      </div>
+
+      <div class="case-detail-flow">
+        ${item.images
+          .slice(3)
+          .map(
+            (image, index) => `
+              <button class="case-flow-item wide" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
+                <img src="${image}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" />
+              </button>
+            `,
+          )
+          .join("")}
+      </div>
+    </article>
+  `;
+  caseView.hidden = false;
+  document.body.classList.add("case-view-open");
+  caseView.scrollTop = 0;
+  if (updateHistory) {
+    syncHistory({ view: "scheme", schemeIndex }, `#scheme-${schemeIndex}`);
+  }
+}
+
+function openSchemeList(updateHistory = true) {
+  caseViewReturnTarget = document.activeElement;
+  currentView = "scheme-list";
+  caseViewTitle.textContent = "更多方案辑选";
+  caseViewGrid.innerHTML = schemeCases
+    .map(
+      (item, index) => `
+        <button class="case-index-card scheme-card" type="button" data-scheme-list-index="${index}">
+          <img src="${item.hero}" alt="${item.name}" loading="lazy" />
+          <span>${item.name}</span>
+        </button>
+      `,
+    )
+    .join("");
+  caseView.hidden = false;
+  document.body.classList.add("case-view-open");
+  caseView.scrollTop = 0;
+  if (updateHistory) {
+    syncHistory({ view: "scheme-list" }, "#schemes-list");
+  }
+}
+
 function closeCaseView() {
   currentView = "home";
   caseView.hidden = true;
@@ -534,10 +718,21 @@ function applyHistoryState(state) {
 
   if (state.view === "case") {
     openCaseView(state.caseIndex, false);
+    return;
+  }
+
+  if (state.view === "scheme-list") {
+    openSchemeList(false);
+    return;
+  }
+
+  if (state.view === "scheme") {
+    openSchemeView(state.schemeIndex, false);
   }
 }
 
 renderWorks();
+renderSchemes();
 history.replaceState({ view: "home" }, "", `${location.pathname}${location.search}`);
 
 workGrid.addEventListener("click", (event) => {
@@ -548,10 +743,24 @@ workGrid.addEventListener("click", (event) => {
 
 moreWorksButton.addEventListener("click", () => openCaseList());
 
+schemeGrid.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-scheme-case]");
+  if (!button) return;
+  openSchemeView(Number(button.dataset.schemeCase));
+});
+
+moreSchemesButton.addEventListener("click", () => openSchemeList());
+
 caseViewGrid.addEventListener("click", (event) => {
   const caseButton = event.target.closest("[data-case-list-index]");
   if (caseButton) {
     openCaseView(Number(caseButton.dataset.caseListIndex));
+    return;
+  }
+
+  const schemeButton = event.target.closest("[data-scheme-list-index]");
+  if (schemeButton) {
+    openSchemeView(Number(schemeButton.dataset.schemeListIndex));
     return;
   }
 
