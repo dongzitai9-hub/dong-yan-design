@@ -334,6 +334,71 @@ h2 {
   font-size: 18px;
 }
 
+.profile-lead {
+  line-height: 1.9;
+}
+
+.resume-list {
+  display: grid;
+  max-width: 680px;
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+}
+
+.selection-notes {
+  display: grid;
+  max-width: 680px;
+  margin-top: 28px;
+  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.selection-notes div {
+  padding: 18px 16px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.36);
+}
+
+.selection-notes strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 17px;
+}
+
+.selection-notes span {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.resume-list.compact {
+  margin-top: 24px;
+}
+
+.resume-list div {
+  display: grid;
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  grid-template-columns: 92px 1fr;
+}
+
+.resume-list time {
+  color: var(--terracotta);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+}
+
+.resume-list span {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
 .profile-actions {
   display: flex;
   gap: 14px;
@@ -850,6 +915,15 @@ h2 {
 
   .profile-photo img {
     min-height: 420px;
+  }
+
+  .selection-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-list div {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .story-block.pair .offset {
