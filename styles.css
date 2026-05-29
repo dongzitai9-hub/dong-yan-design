@@ -100,7 +100,7 @@ a {
 .hero {
   position: relative;
   min-height: 86vh;
-  background-image: url("assets/photos/32/03778B94-D40C-4256-991A-AA0CE21DF340.webp");
+  background-image: url("assets/optimized/hero/hero-01.webp");
   background-position: center;
   background-size: cover;
   overflow: hidden;
@@ -663,6 +663,13 @@ h2 {
   background: var(--charcoal);
   color: var(--white);
   grid-template-columns: 1fr auto;
+}
+
+.profile,
+.works,
+.contact {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
 }
 
 .contact h2,

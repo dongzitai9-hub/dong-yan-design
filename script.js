@@ -381,22 +381,37 @@ const cases = [
   }
 ];
 
-const featuredWorks = cases.slice(0, 6).map((item, caseIndex) => ({
+const caseThumbs = [
+  "assets/optimized/cases/case-01.webp",
+  "assets/optimized/cases/case-02.webp",
+  "assets/optimized/cases/case-03.webp",
+  "assets/optimized/cases/case-04.webp",
+  "assets/optimized/cases/case-05.webp",
+  "assets/optimized/cases/case-06.webp",
+  "assets/optimized/cases/case-07.webp",
+  "assets/optimized/cases/case-08.webp",
+  "assets/optimized/cases/case-09.webp",
+  "assets/optimized/cases/case-10.webp",
+  "assets/optimized/cases/case-11.webp",
+  "assets/optimized/cases/case-12.webp",
+];
+
+const featuredWorks = cases.slice(0, 3).map((item, caseIndex) => ({
   title: item.name,
   category: item.type,
-  image: item.hero,
+  image: caseThumbs[caseIndex],
   count: item.images.length,
   type: "case",
   caseIndex,
 }));
 
 const heroSlides = [
-  caseImageSets[0][0],
-  caseImageSets[1][2],
-  caseImageSets[2][5],
-  caseImageSets[3][0],
-  caseImageSets[4][0],
-  caseImageSets[5][0],
+  "assets/optimized/hero/hero-01.webp",
+  "assets/optimized/hero/hero-02.webp",
+  "assets/optimized/hero/hero-03.webp",
+  "assets/optimized/hero/hero-04.webp",
+  "assets/optimized/hero/hero-05.webp",
+  "assets/optimized/hero/hero-06.webp",
 ];
 
 const schemeImageSets = [
@@ -483,9 +498,18 @@ const schemeCases = [
   },
 ];
 
-const featuredSchemes = schemeCases.map((item, schemeIndex) => ({
+const schemeThumbs = [
+  "assets/optimized/schemes/scheme-01.webp",
+  "assets/optimized/schemes/scheme-02.webp",
+  "assets/optimized/schemes/scheme-03.webp",
+  "assets/optimized/schemes/scheme-04.webp",
+  "assets/optimized/schemes/scheme-05.webp",
+  "assets/optimized/schemes/scheme-06.webp",
+];
+
+const featuredSchemes = schemeCases.slice(0, 3).map((item, schemeIndex) => ({
   title: item.name,
-  image: item.hero,
+  image: schemeThumbs[schemeIndex],
   count: item.images.length,
   schemeIndex,
 }));
@@ -514,7 +538,7 @@ function renderWorks() {
     .map(
       (work) => `
         <button class="work-card" type="button" data-work-case="${work.caseIndex}">
-          <img src="${work.image}" alt="${work.title}" loading="lazy" />
+          <img src="${work.image}" alt="${work.title}" loading="lazy" decoding="async" />
           <span class="work-info">
             <strong>${work.title}</strong>
           </span>
@@ -528,7 +552,7 @@ function renderHeroSlider() {
   heroSlider.innerHTML = heroSlides
     .map(
       (image, index) => `
-        <img class="hero-slide ${index === 0 ? "is-active" : ""}" src="${image}" alt="空间轮播图 ${index + 1}" ${index === 0 ? "" : "loading=\"lazy\""} />
+        <img class="hero-slide ${index === 0 ? "is-active" : ""}" src="${image}" alt="空间轮播图 ${index + 1}" ${index === 0 ? "fetchpriority=\"high\"" : "loading=\"lazy\""} decoding="async" />
       `,
     )
     .join("");
@@ -547,7 +571,7 @@ function renderSchemes() {
     .map(
       (scheme) => `
         <button class="work-card scheme-card" type="button" data-scheme-case="${scheme.schemeIndex}">
-          <img src="${scheme.image}" alt="${scheme.title}" loading="lazy" />
+          <img src="${scheme.image}" alt="${scheme.title}" loading="lazy" decoding="async" />
           <span class="work-info">
             <strong>${scheme.title}</strong>
           </span>
@@ -581,7 +605,7 @@ function openCaseView(caseIndex, updateHistory = true) {
   caseViewGrid.innerHTML = `
     <article class="case-detail">
       <button class="image-button" type="button" data-case-view-image="${item.images[0]}" data-case-view-image-title="${item.name} 第 1 张">
-        <img src="${item.images[0]}" alt="${item.name} 第 1 张" loading="lazy" />
+        <img src="${item.images[0]}" alt="${item.name} 第 1 张" loading="lazy" decoding="async" />
       </button>
 
       <div class="story-copy">
@@ -594,7 +618,7 @@ function openCaseView(caseIndex, updateHistory = true) {
           .map(
             (image, index) => `
               <button class="image-button ${index === 1 ? "offset" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 2} 张">
-                <img src="${image}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" />
+                <img src="${image}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" decoding="async" />
               </button>
             `,
           )
@@ -611,7 +635,7 @@ function openCaseView(caseIndex, updateHistory = true) {
           .map(
             (image, index) => `
               <button class="case-flow-item ${index % 5 === 0 ? "wide" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
-                <img src="${image}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" />
+                <img src="${image}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" decoding="async" />
               </button>
             `,
           )
@@ -636,7 +660,7 @@ function openCaseList(updateHistory = true) {
     .map(
       (item, index) => `
         <button class="case-index-card" type="button" data-case-list-index="${index}">
-          <img src="${item.hero}" alt="${item.name}" loading="lazy" />
+          <img src="${caseThumbs[index]}" alt="${item.name}" loading="lazy" decoding="async" />
           <span>${item.name}</span>
         </button>
       `,
@@ -659,7 +683,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
   caseViewGrid.innerHTML = `
     <article class="case-detail scheme-detail">
       <button class="image-button" type="button" data-case-view-image="${item.images[0]}" data-case-view-image-title="${item.name} 第 1 张">
-        <img src="${item.images[0]}" alt="${item.name} 第 1 张" loading="lazy" />
+        <img src="${item.images[0]}" alt="${item.name} 第 1 张" loading="lazy" decoding="async" />
       </button>
 
       <div class="story-copy">
@@ -672,7 +696,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
           .map(
             (image, index) => `
               <button class="image-button ${index === 1 ? "offset" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 2} 张">
-                <img src="${image}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" />
+                <img src="${image}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" decoding="async" />
               </button>
             `,
           )
@@ -689,7 +713,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
           .map(
             (image, index) => `
               <button class="case-flow-item wide" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
-                <img src="${image}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" />
+                <img src="${image}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" decoding="async" />
               </button>
             `,
           )
@@ -714,7 +738,7 @@ function openSchemeList(updateHistory = true) {
     .map(
       (item, index) => `
         <button class="case-index-card scheme-card" type="button" data-scheme-list-index="${index}">
-          <img src="${item.hero}" alt="${item.name}" loading="lazy" />
+          <img src="${schemeThumbs[index]}" alt="${item.name}" loading="lazy" decoding="async" />
           <span>${item.name}</span>
         </button>
       `,
