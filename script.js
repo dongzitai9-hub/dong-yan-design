@@ -390,6 +390,15 @@ const featuredWorks = cases.slice(0, 6).map((item, caseIndex) => ({
   caseIndex,
 }));
 
+const heroSlides = [
+  caseImageSets[0][0],
+  caseImageSets[1][2],
+  caseImageSets[2][5],
+  caseImageSets[3][0],
+  caseImageSets[4][0],
+  caseImageSets[5][0],
+];
+
 const schemeImageSets = [
   [
     "assets/schemes/layout-study/layout-study-01.webp",
@@ -483,6 +492,7 @@ const featuredSchemes = schemeCases.map((item, schemeIndex) => ({
 
 let activeCase = 0;
 const hero = document.querySelector("[data-case-hero]");
+const heroSlider = document.querySelector("[data-hero-slider]");
 const lightbox = document.querySelector("[data-lightbox]");
 const lightboxImg = document.querySelector("[data-lightbox-img]");
 const workGrid = document.querySelector("[data-work-grid]");
@@ -512,6 +522,24 @@ function renderWorks() {
       `,
     )
     .join("");
+}
+
+function renderHeroSlider() {
+  heroSlider.innerHTML = heroSlides
+    .map(
+      (image, index) => `
+        <img class="hero-slide ${index === 0 ? "is-active" : ""}" src="${image}" alt="空间轮播图 ${index + 1}" ${index === 0 ? "" : "loading=\"lazy\""} />
+      `,
+    )
+    .join("");
+
+  const slides = [...heroSlider.querySelectorAll(".hero-slide")];
+  let currentSlide = 0;
+  setInterval(() => {
+    slides[currentSlide].classList.remove("is-active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("is-active");
+  }, 5200);
 }
 
 function renderSchemes() {
@@ -548,6 +576,7 @@ function openCaseView(caseIndex, updateHistory = true) {
   const item = cases[caseIndex];
   caseViewReturnTarget = document.activeElement;
   currentView = "case";
+  caseViewGrid.classList.remove("is-index");
   caseViewTitle.textContent = item.name;
   caseViewGrid.innerHTML = `
     <article class="case-detail">
@@ -601,6 +630,7 @@ function openCaseView(caseIndex, updateHistory = true) {
 function openCaseList(updateHistory = true) {
   caseViewReturnTarget = document.activeElement;
   currentView = "list";
+  caseViewGrid.classList.add("is-index");
   caseViewTitle.textContent = "更多空间辑选";
   caseViewGrid.innerHTML = cases
     .map(
@@ -624,6 +654,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
   const item = schemeCases[schemeIndex];
   caseViewReturnTarget = document.activeElement;
   currentView = "scheme";
+  caseViewGrid.classList.remove("is-index");
   caseViewTitle.textContent = item.name;
   caseViewGrid.innerHTML = `
     <article class="case-detail scheme-detail">
@@ -677,6 +708,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
 function openSchemeList(updateHistory = true) {
   caseViewReturnTarget = document.activeElement;
   currentView = "scheme-list";
+  caseViewGrid.classList.add("is-index");
   caseViewTitle.textContent = "更多方案辑选";
   caseViewGrid.innerHTML = schemeCases
     .map(
@@ -699,6 +731,7 @@ function openSchemeList(updateHistory = true) {
 function closeCaseView() {
   currentView = "home";
   caseView.hidden = true;
+  caseViewGrid.classList.remove("is-index");
   document.body.classList.remove("case-view-open");
   if (caseViewReturnTarget) {
     caseViewReturnTarget.focus();
@@ -732,6 +765,7 @@ function applyHistoryState(state) {
 }
 
 renderWorks();
+renderHeroSlider();
 renderSchemes();
 history.replaceState({ view: "home" }, "", `${location.pathname}${location.search}`);
 

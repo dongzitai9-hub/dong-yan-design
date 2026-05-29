@@ -8,7 +8,7 @@
       name="description"
       content="董揅空间设计顾问页面，用于展示空间辑选、方案辑选、风格方向与联系方式。"
     />
-    <link rel="stylesheet" href="styles.css?v=20260529-scheme-selection" />
+    <link rel="stylesheet" href="styles.css?v=20260529-carousel" />
   </head>
   <body>
     <header class="site-header">
@@ -30,29 +30,21 @@
 
     <main id="top">
       <section class="hero" data-case-hero>
+        <div class="hero-slider" data-hero-slider></div>
         <div class="hero-shade"></div>
         <div class="hero-content">
           <p class="eyebrow">空间设计顾问</p>
-          <h1 data-case-title>董揅空间设计</h1>
+          <h1 class="hero-title" data-case-title>
+            <span class="hero-title-cn">董揅</span>
+            <span class="hero-title-en">Interior Design</span>
+          </h1>
           <p class="hero-subtitle" data-case-subtitle>
-            以空间图像与风格方向，帮助客户先看见未来生活的质感。
+            以空间图像与风格方向，帮助客户先看见未来生活的<span class="nowrap">质感。</span>
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#works">查看辑选</a>
             <a class="button button-ghost" href="tel:13372293939">电话咨询</a>
           </div>
-        </div>
-      </section>
-
-      <section class="intro-band">
-        <div class="intro-grid">
-          <div>
-            <p class="eyebrow dark">Designer</p>
-            <h2>董揅</h2>
-          </div>
-          <p>
-            专注住宅、改善型空间与高品质私宅设计，以客户的生活方式为起点，把审美、功能、预算和落地细节放在同一张图纸里思考。
-          </p>
         </div>
       </section>
 
@@ -151,6 +143,6 @@
       <div class="case-view-grid" data-case-view-grid></div>
     </section>
 
-    <script src="script.js?v=20260529-scheme-selection"></script>
+    <script src="script.js?v=20260529-carousel"></script>
   </body>
 </html>
