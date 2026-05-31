@@ -8,7 +8,7 @@
       name="description"
       content="董揅空间设计顾问页面，用于展示空间辑选、方案辑选、风格方向与联系方式。"
     />
-    <link rel="stylesheet" href="styles.css?v=20260531-detail-fast" />
+    <link rel="stylesheet" href="styles.css?v=20260531-lightbox-nav" />
   </head>
   <body>
     <header class="site-header">
@@ -154,7 +154,9 @@
 
     <div class="lightbox" data-lightbox hidden>
       <button class="lightbox-close" type="button" aria-label="关闭图片">×</button>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="上一张" data-lightbox-prev>‹</button>
       <img src="" alt="" data-lightbox-img />
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="下一张" data-lightbox-next>›</button>
     </div>
 
     <section class="case-view" data-case-view hidden>
@@ -167,6 +169,6 @@
       <div class="case-view-grid" data-case-view-grid></div>
     </section>
 
-    <script src="script.js?v=20260531-detail-fast"></script>
+    <script src="script.js?v=20260531-lightbox-nav"></script>
   </body>
 </html>

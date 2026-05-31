@@ -416,8 +416,8 @@ const heroSlides = [
 
 const schemeImageSets = [
   [
-    "assets/schemes/layout-study/layout-study-01.webp",
     "assets/schemes/layout-study/layout-study-02.webp",
+    "assets/schemes/layout-study/layout-study-01.webp",
     "assets/schemes/layout-study/layout-study-03.webp",
     "assets/schemes/layout-study/layout-study-04.webp",
   ],
@@ -519,6 +519,8 @@ const hero = document.querySelector("[data-case-hero]");
 const heroSlider = document.querySelector("[data-hero-slider]");
 const lightbox = document.querySelector("[data-lightbox]");
 const lightboxImg = document.querySelector("[data-lightbox-img]");
+const lightboxPrev = document.querySelector("[data-lightbox-prev]");
+const lightboxNext = document.querySelector("[data-lightbox-next]");
 const workGrid = document.querySelector("[data-work-grid]");
 const moreWorksButton = document.querySelector("[data-more-works]");
 const schemeGrid = document.querySelector("[data-scheme-grid]");
@@ -528,6 +530,10 @@ const caseViewGrid = document.querySelector("[data-case-view-grid]");
 const caseViewTitle = document.querySelector("[data-case-view-title]");
 let caseViewReturnTarget = null;
 let currentView = "home";
+let lightboxImages = [];
+let lightboxIndex = 0;
+let lightboxTouchStartX = 0;
+let lightboxTouchStartY = 0;
 
 function setText(selector, text) {
   document.querySelector(selector).textContent = text;
@@ -593,10 +599,24 @@ function renderSchemes() {
     .join("");
 }
 
-function openLightbox(image, alt) {
-  lightboxImg.src = image;
-  lightboxImg.alt = alt || "空间图片";
+function setLightboxImage(index) {
+  if (!lightboxImages.length) return;
+  lightboxIndex = (index + lightboxImages.length) % lightboxImages.length;
+  const item = lightboxImages[lightboxIndex];
+  lightboxImg.src = item.image;
+  lightboxImg.alt = item.title || "空间图片";
+}
+
+function openLightbox(image, alt, gallery = []) {
+  lightboxImages = gallery.length ? gallery : [{ image, title: alt }];
+  const nextIndex = lightboxImages.findIndex((item) => item.image === image);
+  setLightboxImage(nextIndex >= 0 ? nextIndex : 0);
   lightbox.hidden = false;
+}
+
+function moveLightbox(direction) {
+  if (lightbox.hidden || lightboxImages.length < 2) return;
+  setLightboxImage(lightboxIndex + direction);
 }
 
 function syncHistory(state, hash) {
@@ -862,11 +882,25 @@ caseViewGrid.addEventListener("click", (event) => {
 
   const button = event.target.closest("[data-case-view-image]");
   if (!button) return;
-  openLightbox(button.dataset.caseViewImage, button.dataset.caseViewImageTitle);
+  const gallery = [...caseViewGrid.querySelectorAll("[data-case-view-image]")].map((item) => ({
+    image: item.dataset.caseViewImage,
+    title: item.dataset.caseViewImageTitle,
+  }));
+  openLightbox(button.dataset.caseViewImage, button.dataset.caseViewImageTitle, gallery);
 });
 
 document.querySelector(".lightbox-close").addEventListener("click", () => {
   lightbox.hidden = true;
+});
+
+lightboxPrev.addEventListener("click", (event) => {
+  event.stopPropagation();
+  moveLightbox(-1);
+});
+
+lightboxNext.addEventListener("click", (event) => {
+  event.stopPropagation();
+  moveLightbox(1);
 });
 
 lightbox.addEventListener("click", (event) => {
@@ -874,6 +908,28 @@ lightbox.addEventListener("click", (event) => {
     lightbox.hidden = true;
   }
 });
+
+lightbox.addEventListener(
+  "touchstart",
+  (event) => {
+    const touch = event.changedTouches[0];
+    lightboxTouchStartX = touch.clientX;
+    lightboxTouchStartY = touch.clientY;
+  },
+  { passive: true },
+);
+
+lightbox.addEventListener(
+  "touchend",
+  (event) => {
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - lightboxTouchStartX;
+    const deltaY = touch.clientY - lightboxTouchStartY;
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) < Math.abs(deltaY) * 1.4) return;
+    moveLightbox(deltaX < 0 ? 1 : -1);
+  },
+  { passive: true },
+);
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
@@ -884,6 +940,12 @@ document.addEventListener("keydown", (event) => {
     if (!caseView.hidden) {
       history.back();
     }
+  }
+  if (event.key === "ArrowLeft") {
+    moveLightbox(-1);
+  }
+  if (event.key === "ArrowRight") {
+    moveLightbox(1);
   }
 });
 

@@ -715,6 +715,7 @@ h2 {
   padding: 52px;
   place-items: center;
   background: rgba(0, 0, 0, 0.86);
+  touch-action: pan-y;
 }
 
 .lightbox[hidden] {
@@ -739,6 +740,36 @@ h2 {
   color: var(--white);
   font-size: 28px;
   cursor: pointer;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  width: 58px;
+  height: 74px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(0, 0, 0, 0.24);
+  color: var(--white);
+  font-family: Georgia, serif;
+  font-size: 58px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.25s ease, opacity 0.25s ease;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.lightbox-prev {
+  left: clamp(16px, 4vw, 64px);
+}
+
+.lightbox-next {
+  right: clamp(16px, 4vw, 64px);
 }
 
 .case-view {
@@ -1040,5 +1071,19 @@ h2 {
 
   .lightbox {
     padding: 20px;
+  }
+
+  .lightbox-nav {
+    width: 44px;
+    height: 58px;
+    font-size: 42px;
+  }
+
+  .lightbox-prev {
+    left: 10px;
+  }
+
+  .lightbox-next {
+    right: 10px;
   }
 }
