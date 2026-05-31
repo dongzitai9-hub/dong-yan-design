@@ -416,9 +416,9 @@ const heroSlides = [
 
 const schemeImageSets = [
   [
+    "assets/schemes/layout-study/layout-study-03.webp",
     "assets/schemes/layout-study/layout-study-02.webp",
     "assets/schemes/layout-study/layout-study-01.webp",
-    "assets/schemes/layout-study/layout-study-03.webp",
     "assets/schemes/layout-study/layout-study-04.webp",
   ],
   [
@@ -639,7 +639,7 @@ function openCaseView(caseIndex, updateHistory = true) {
   caseViewTitle.textContent = item.name;
   caseViewGrid.innerHTML = `
     <article class="case-detail">
-      <button class="image-button" type="button" data-case-view-image="${readingImages[0]}" data-case-view-image-title="${item.name} 第 1 张">
+      <button class="image-button" type="button" data-case-view-image="${caseMediumImage(readingImages[0])}" data-case-view-image-title="${item.name} 第 1 张">
         <img src="${caseMediumImage(readingImages[0])}" alt="${item.name} 第 1 张" loading="lazy" decoding="async" />
       </button>
 
@@ -652,7 +652,7 @@ function openCaseView(caseIndex, updateHistory = true) {
           .slice(1, 3)
           .map(
             (image, index) => `
-              <button class="image-button ${index === 1 ? "offset" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 2} 张">
+              <button class="image-button ${index === 1 ? "offset" : ""}" type="button" data-case-view-image="${caseMediumImage(image)}" data-case-view-image-title="${item.name} 第 ${index + 2} 张">
                 <img src="${caseMediumImage(image)}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" decoding="async" />
               </button>
             `,
@@ -669,7 +669,7 @@ function openCaseView(caseIndex, updateHistory = true) {
           .slice(3)
           .map(
             (image, index) => `
-              <button class="case-flow-item ${index % 5 === 0 ? "wide" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
+              <button class="case-flow-item ${index % 5 === 0 ? "wide" : ""}" type="button" data-case-view-image="${caseMediumImage(image)}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
                 <img src="${caseMediumImage(image)}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" decoding="async" />
               </button>
             `,
@@ -685,7 +685,7 @@ function openCaseView(caseIndex, updateHistory = true) {
                 ${thumbImages
                   .map(
                     (image, index) => `
-                      <button class="case-thumb-item" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 7} 张">
+                      <button class="case-thumb-item" type="button" data-case-view-image="${caseMediumImage(image)}" data-case-view-image-title="${item.name} 第 ${index + 7} 张">
                         <img src="${caseThumbImage(image)}" alt="${item.name} 第 ${index + 7} 张" loading="lazy" decoding="async" />
                       </button>
                     `,
@@ -738,7 +738,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
   caseViewTitle.textContent = item.name;
   caseViewGrid.innerHTML = `
     <article class="case-detail scheme-detail">
-      <button class="image-button" type="button" data-case-view-image="${item.images[0]}" data-case-view-image-title="${item.name} 第 1 张">
+      <button class="image-button" type="button" data-case-view-image="${schemeDisplayImage(item.images[0])}" data-case-view-image-title="${item.name} 第 1 张">
         <img src="${schemeDisplayImage(item.images[0])}" alt="${item.name} 原始结构图" loading="lazy" decoding="async" />
       </button>
 
@@ -751,7 +751,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
           .slice(1, 3)
           .map(
             (image, index) => `
-              <button class="image-button ${index === 1 ? "offset" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 2} 张">
+              <button class="image-button ${index === 1 ? "offset" : ""}" type="button" data-case-view-image="${schemeDisplayImage(image)}" data-case-view-image-title="${item.name} 第 ${index + 2} 张">
                 <img src="${schemeDisplayImage(image)}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" decoding="async" />
               </button>
             `,
@@ -768,7 +768,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
           .slice(3)
           .map(
             (image, index) => `
-              <button class="case-flow-item wide" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
+              <button class="case-flow-item wide" type="button" data-case-view-image="${schemeDisplayImage(image)}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
                 <img src="${schemeDisplayImage(image)}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" decoding="async" />
               </button>
             `,
