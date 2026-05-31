@@ -503,7 +503,7 @@ h2 {
 .scheme-detail .image-button img,
 .scheme-detail .case-flow-item img,
 .scheme-detail .case-flow-item.wide img {
-  background: #fff;
+  background: transparent;
   object-fit: contain;
 }
 
@@ -751,6 +751,10 @@ h2 {
   color: var(--ink);
 }
 
+.case-view.is-scheme-detail {
+  background: #f1ece2;
+}
+
 .case-view[hidden] {
   display: none;
 }
@@ -826,6 +830,38 @@ h2 {
   transform: scale(1.025);
 }
 
+.case-thumb-section {
+  margin-top: clamp(54px, 8vw, 108px);
+  padding-top: clamp(28px, 4vw, 46px);
+  border-top: 1px solid var(--line);
+}
+
+.case-thumb-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.case-thumb-item {
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.case-thumb-item img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  filter: saturate(0.94);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.case-thumb-item:hover img {
+  opacity: 0.92;
+  transform: scale(1.04);
+}
+
 .case-view-item {
   overflow: hidden;
   padding: 0;
@@ -897,6 +933,7 @@ h2 {
   .works-grid,
   .case-gallery,
   .case-detail-flow,
+  .case-thumb-grid,
   .story-block.pair,
   .contact {
     grid-template-columns: 1fr;
@@ -986,6 +1023,10 @@ h2 {
 
   .case-view-grid.is-index {
     grid-template-columns: 1fr;
+  }
+
+  .case-thumb-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .case-tab {

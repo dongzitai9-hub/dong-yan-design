@@ -233,8 +233,8 @@ const cases = [
     "type": "私宅设计",
     "hero": "assets/photos/32/03778B94-D40C-4256-991A-AA0CE21DF340.webp",
     "images": caseImageSets[0],
-    "copyOne": "这一组空间以真实居住习惯为线索，保留大尺度的公共区域，让光线从窗边延展至餐厅与书房。材质选择克制而细腻，强调触感、光影与日常使用之间的平衡。",
-    "copyTwo": "客餐厅之间以家具尺度、灯光层次和地面材质完成温和过渡。接待时空间显得开阔，日常独处时也能保有安静的包裹感。"
+    "copyOne": "自然序曲像一间刚被阳光唤醒的家。弧形顶面把客厅的边界放柔，浅色石材、木色墙面和低矮家具一起把视线放低，让空间先有安定感，再慢慢显出精致。",
+    "copyTwo": "设计的重点不是堆满造型，而是让会客、阅读、用餐和独处都能在同一片开阔里自然发生。温润材质负责放慢节奏，局部深色与艺术细节则让家保留一点沉静的力量。"
   },
   {
     "title": "云境公馆",
@@ -246,8 +246,8 @@ const cases = [
     "type": "大平层设计",
     "hero": "assets/photos/35/177EC569-0B86-4588-900C-2FE576FCAB7C.webp",
     "images": caseImageSets[1],
-    "copyOne": "空间以浅色石材和深色木饰面形成对比，公共区域强调仪式感，私密区域则收束为安静、轻松、便于长期居住的尺度。",
-    "copyTwo": "厨房与餐厅采用半开放关系，适合家庭聚会与客户接待。收纳系统保持视觉干净，也让日常维护变得更轻松。"
+    "copyOne": "云境公馆更像一段从城市喧闹回到室内秩序的过渡。灰色、木色与金属线条形成冷静的基调，餐桌、岛台与客厅保持连续，让生活动线看起来利落，也用起来顺手。",
+    "copyTwo": "这里适合需要兼顾社交与家庭的人：公共区域有尺度、有气场，私密区域则收得安静。灯光不抢戏，只在材质边缘留下层次，让空间在傍晚之后变得更有包裹感。"
   },
   {
     "title": "松弛之家",
@@ -259,8 +259,8 @@ const cases = [
     "type": "改善型住宅",
     "hero": "assets/photos/34/5366D28E-DEA2-4DAB-99B8-E0A7FD1080F0.webp",
     "images": caseImageSets[2],
-    "copyOne": "这一类布局把孩子活动、阅读、餐厨互动放在同一条生活线上，让家人在不同状态下都能自然交流。",
-    "copyTwo": "墙面、柜体和家具尽量保持统一的色彩关系，减少视觉压力。可调整的房间功能也为未来几年的生活变化留下余地。"
+    "copyOne": "松弛之家把家的表情做得更轻。木格栅、白色柜体和柔软织物共同降低空间压力，餐厨与客厅之间不刻意分隔，让一家人的活动可以互相看见。",
+    "copyTwo": "它不是样板间式的完整，而是留给生活一些呼吸：孩子可以在餐桌旁写字，家人可以在沙发边聊天，收纳被藏进立面里，日常的凌乱也有地方被温柔收起。"
   },
   {
     "title": "湖畔平层",
@@ -272,8 +272,8 @@ const cases = [
     "type": "大平层设计",
     "hero": "assets/photos/33/021F0BF8-C6B5-47EE-8A74-35BD2B3B6E15.webp",
     "images": caseImageSets[3],
-    "copyOne": "下拉图像依次呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，图像可用于沟通户型、预算、材质与风格偏好。"
+    "copyOne": "湖畔平层的关键词是安静和留白。卧室、餐厨和公共区都尽量减少过多装饰，用大面积柔和墙面承接自然光，让窗外的明亮成为空间里最重要的背景。",
+    "copyTwo": "细节集中在比例、线条和材质交接处：柜体不喧哗，灯光只负责把质感托出来。这样的家适合长期居住，越用越能感到干净、舒展和耐看。"
   },
   {
     "title": "静谧套房",
@@ -285,8 +285,8 @@ const cases = [
     "type": "住宅设计",
     "hero": "assets/photos/05/1418F8E5-CDF6-43DD-A99D-BB296E42ED93.webp",
     "images": caseImageSets[4],
-    "copyOne": "下拉图像依次呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，图像可用于沟通户型、预算、材质与风格偏好。"
+    "copyOne": "静谧套房把卧室当成一天的收口来设计。低饱和色、柔软墙面和隐藏式灯光减少外界刺激，床头、衣柜与休闲角形成连续的私密场景。",
+    "copyTwo": "这类空间最怕只好看、不好住，所以重点放在夜间动线、床边尺度、收纳与光线控制。早晨有自然光，夜晚有低照度，人的状态可以慢慢从紧绷回到安稳。"
   },
   {
     "title": "城市公寓",
@@ -298,8 +298,8 @@ const cases = [
     "type": "公寓设计",
     "hero": "assets/photos/02/153CB9C7-81EB-4ABB-ABD2-6461087CAC04.webp",
     "images": caseImageSets[5],
-    "copyOne": "下拉图像依次呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，图像可用于沟通户型、预算、材质与风格偏好。"
+    "copyOne": "城市公寓需要在有限面积里做出完整生活。奶油色立面、弧形门洞和集成收纳把小空间整理得更轻盈，餐厨、卧室和过道之间保持清楚的功能边界。",
+    "copyTwo": "它适合年轻家庭或独居改善：不追求夸张的奢华，而是把每一处可用面积都变得舒服。浅色负责放大空间，局部石材和灯光负责留下质感。"
   },
   {
     "title": "木色秩序",
@@ -311,8 +311,8 @@ const cases = [
     "type": "改善型住宅",
     "hero": "assets/photos/20/1786B725-E753-49F4-8C28-7B47AE0A05E0.webp",
     "images": caseImageSets[6],
-    "copyOne": "下拉图像依次呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，图像可用于沟通户型、预算、材质与风格偏好。"
+    "copyOne": "木色秩序关注的是餐厨关系。木作、石材与黑色线条把区域分得清楚，却不把家切碎；人在备餐、用餐、聊天时可以顺着同一条动线移动。",
+    "copyTwo": "深浅材质的比例决定了空间气质：深色让画面稳住，浅色让采光进来。岛台和餐桌承担社交中心，背后的收纳系统则把生活杂物留在视线之外。"
   },
   {
     "title": "光影客厅",
@@ -324,8 +324,8 @@ const cases = [
     "type": "私宅设计",
     "hero": "assets/photos/18/2ABB8A32-DFC8-4D2D-93C3-7F9628158710.webp",
     "images": caseImageSets[7],
-    "copyOne": "下拉图像依次呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，图像可用于沟通户型、预算、材质与风格偏好。"
+    "copyOne": "光影客厅用光线来组织空间。大面窗帘、低矮家具和柔和墙面让客厅不显拥挤，阳光经过材质表面后，空间会在一天里呈现不同的表情。",
+    "copyTwo": "这里的设计重点是让客厅既能接待，也能放松。电视墙、沙发、边柜和单椅之间保留适当距离，动线不绕，视觉也不堵，日常使用会更轻松。"
   },
   {
     "title": "餐厨生活",
@@ -337,8 +337,8 @@ const cases = [
     "type": "大平层设计",
     "hero": "assets/photos/27/07F81851-AF4D-4D66-81D3-C183884482CB.webp",
     "images": caseImageSets[8],
-    "copyOne": "下拉图像依次呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，图像可用于沟通户型、预算、材质与风格偏好。"
+    "copyOne": "餐厨生活把家里最容易热闹的地方做成主场。餐桌不只是吃饭，也可以是聊天、办公、陪孩子做手工的地方；厨房与餐区保持互动，生活气自然会出来。",
+    "copyTwo": "材质上用木色与石材控制温度，灯具和柜体线条保持简洁。空间看起来不复杂，但每一个转身、拿取和停留都经过了推敲。"
   },
   {
     "title": "雅致私宅",
@@ -350,8 +350,8 @@ const cases = [
     "type": "私宅设计",
     "hero": "assets/photos/11/0091F79A-DA5F-4991-8086-00178BDC94EF.webp",
     "images": caseImageSets[9],
-    "copyOne": "下拉图像依次呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，图像可用于沟通户型、预算、材质与风格偏好。"
+    "copyOne": "雅致私宅更重视细节里的体面。功能空间不需要过度张扬，通过木作比例、石材肌理和灯光层级，就能让每个角落保持清爽和克制。",
+    "copyTwo": "这样的空间适合对品质有要求、但不喜欢浮夸的人。它把预算花在长期可感知的位置：柜体、五金、灯光、收口和每天都会接触到的材质。"
   },
   {
     "title": "现代居所",
@@ -363,8 +363,8 @@ const cases = [
     "type": "住宅设计",
     "hero": "assets/photos/29/0C5EB07D-F554-4E47-82DC-7593B5C45759.webp",
     "images": caseImageSets[10],
-    "copyOne": "下拉图像依次呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，图像可用于沟通户型、预算、材质与风格偏好。"
+    "copyOne": "现代居所强调清晰的生活秩序。客厅、书房、餐厅之间既独立又互相借景，线条尽量干净，让家具和人的活动成为画面中心。",
+    "copyTwo": "设计在冷静中保留温度：浅色墙面降低压迫，木色与软装增加亲近感。它适合希望家看起来高级，但住起来不拘束的客户。"
   },
   {
     "title": "温润之家",
@@ -376,8 +376,8 @@ const cases = [
     "type": "改善型住宅",
     "hero": "assets/photos/16/1636DC5C-0296-464B-96E1-C6780D9DB4FE.webp",
     "images": caseImageSets[11],
-    "copyOne": "下拉图像依次呈现空间尺度、材质关系、灯光层次与细部处理，让客户能更直观地理解设计方向。",
-    "copyTwo": "从整体视角到局部细节，图像可用于沟通户型、预算、材质与风格偏好。"
+    "copyOne": "温润之家把亲子生活放在前面考虑。公共空间需要足够开放，方便陪伴和交流；卧室与独立区域则需要安静，让每个人都能找到自己的节奏。",
+    "copyTwo": "色彩和材质选择偏柔和，避免过几年就看腻。可成长的收纳、可调整的房间功能和耐看的立面关系，是这类家庭空间真正重要的部分。"
   }
 ];
 
@@ -533,6 +533,18 @@ function setText(selector, text) {
   document.querySelector(selector).textContent = text;
 }
 
+function caseMediumImage(image) {
+  return image.replace("assets/photos/", "assets/optimized/detail/medium/");
+}
+
+function caseThumbImage(image) {
+  return image.replace("assets/photos/", "assets/optimized/detail/thumb/");
+}
+
+function schemeDisplayImage(image) {
+  return image.replace("assets/schemes/", "assets/optimized/schemes-detail/");
+}
+
 function renderWorks() {
   workGrid.innerHTML = featuredWorks
     .map(
@@ -598,14 +610,17 @@ function syncHistory(state, hash) {
 
 function openCaseView(caseIndex, updateHistory = true) {
   const item = cases[caseIndex];
+  const readingImages = item.images.slice(0, 6);
+  const thumbImages = item.images.slice(6);
   caseViewReturnTarget = document.activeElement;
   currentView = "case";
+  caseView.classList.remove("is-scheme-detail");
   caseViewGrid.classList.remove("is-index");
   caseViewTitle.textContent = item.name;
   caseViewGrid.innerHTML = `
     <article class="case-detail">
-      <button class="image-button" type="button" data-case-view-image="${item.images[0]}" data-case-view-image-title="${item.name} 第 1 张">
-        <img src="${item.images[0]}" alt="${item.name} 第 1 张" loading="lazy" decoding="async" />
+      <button class="image-button" type="button" data-case-view-image="${readingImages[0]}" data-case-view-image-title="${item.name} 第 1 张">
+        <img src="${caseMediumImage(readingImages[0])}" alt="${item.name} 第 1 张" loading="lazy" decoding="async" />
       </button>
 
       <div class="story-copy">
@@ -613,12 +628,12 @@ function openCaseView(caseIndex, updateHistory = true) {
       </div>
 
       <div class="story-block pair">
-        ${item.images
+        ${readingImages
           .slice(1, 3)
           .map(
             (image, index) => `
               <button class="image-button ${index === 1 ? "offset" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 2} 张">
-                <img src="${image}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" decoding="async" />
+                <img src="${caseMediumImage(image)}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" decoding="async" />
               </button>
             `,
           )
@@ -630,17 +645,36 @@ function openCaseView(caseIndex, updateHistory = true) {
       </div>
 
       <div class="case-detail-flow">
-        ${item.images
+        ${readingImages
           .slice(3)
           .map(
             (image, index) => `
               <button class="case-flow-item ${index % 5 === 0 ? "wide" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
-                <img src="${image}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" decoding="async" />
+                <img src="${caseMediumImage(image)}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" decoding="async" />
               </button>
             `,
           )
           .join("")}
       </div>
+
+      ${
+        thumbImages.length
+          ? `<div class="case-thumb-section">
+              <p class="eyebrow dark">More Images</p>
+              <div class="case-thumb-grid">
+                ${thumbImages
+                  .map(
+                    (image, index) => `
+                      <button class="case-thumb-item" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 7} 张">
+                        <img src="${caseThumbImage(image)}" alt="${item.name} 第 ${index + 7} 张" loading="lazy" decoding="async" />
+                      </button>
+                    `,
+                  )
+                  .join("")}
+              </div>
+            </div>`
+          : ""
+      }
     </article>
   `;
   caseView.hidden = false;
@@ -654,6 +688,7 @@ function openCaseView(caseIndex, updateHistory = true) {
 function openCaseList(updateHistory = true) {
   caseViewReturnTarget = document.activeElement;
   currentView = "list";
+  caseView.classList.remove("is-scheme-detail");
   caseViewGrid.classList.add("is-index");
   caseViewTitle.textContent = "更多空间辑选";
   caseViewGrid.innerHTML = cases
@@ -678,12 +713,13 @@ function openSchemeView(schemeIndex, updateHistory = true) {
   const item = schemeCases[schemeIndex];
   caseViewReturnTarget = document.activeElement;
   currentView = "scheme";
+  caseView.classList.add("is-scheme-detail");
   caseViewGrid.classList.remove("is-index");
   caseViewTitle.textContent = item.name;
   caseViewGrid.innerHTML = `
     <article class="case-detail scheme-detail">
       <button class="image-button" type="button" data-case-view-image="${item.images[0]}" data-case-view-image-title="${item.name} 第 1 张">
-        <img src="${item.images[0]}" alt="${item.name} 第 1 张" loading="lazy" decoding="async" />
+        <img src="${schemeDisplayImage(item.images[0])}" alt="${item.name} 原始结构图" loading="lazy" decoding="async" />
       </button>
 
       <div class="story-copy">
@@ -696,7 +732,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
           .map(
             (image, index) => `
               <button class="image-button ${index === 1 ? "offset" : ""}" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 2} 张">
-                <img src="${image}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" decoding="async" />
+                <img src="${schemeDisplayImage(image)}" alt="${item.name} 第 ${index + 2} 张" loading="lazy" decoding="async" />
               </button>
             `,
           )
@@ -713,7 +749,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
           .map(
             (image, index) => `
               <button class="case-flow-item wide" type="button" data-case-view-image="${image}" data-case-view-image-title="${item.name} 第 ${index + 4} 张">
-                <img src="${image}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" decoding="async" />
+                <img src="${schemeDisplayImage(image)}" alt="${item.name} 第 ${index + 4} 张" loading="lazy" decoding="async" />
               </button>
             `,
           )
@@ -732,6 +768,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
 function openSchemeList(updateHistory = true) {
   caseViewReturnTarget = document.activeElement;
   currentView = "scheme-list";
+  caseView.classList.remove("is-scheme-detail");
   caseViewGrid.classList.add("is-index");
   caseViewTitle.textContent = "更多方案辑选";
   caseViewGrid.innerHTML = schemeCases
@@ -755,6 +792,7 @@ function openSchemeList(updateHistory = true) {
 function closeCaseView() {
   currentView = "home";
   caseView.hidden = true;
+  caseView.classList.remove("is-scheme-detail");
   caseViewGrid.classList.remove("is-index");
   document.body.classList.remove("case-view-open");
   if (caseViewReturnTarget) {
