@@ -99,7 +99,8 @@ a {
 
 .hero {
   position: relative;
-  min-height: 86vh;
+  min-height: 100vh;
+  min-height: 100svh;
   background-image: url("assets/optimized/hero/hero-01.webp");
   background-position: center;
   background-size: cover;
@@ -143,7 +144,8 @@ a {
   position: relative;
   z-index: 1;
   display: flex;
-  min-height: 86vh;
+  min-height: 100vh;
+  min-height: 100svh;
   max-width: 1180px;
   margin: 0 auto;
   padding: 150px clamp(20px, 5vw, 56px) 76px;
@@ -304,12 +306,15 @@ h2 {
 
 .profile {
   display: grid;
-  align-items: start;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
   max-width: 1120px;
   margin: 0 auto;
   padding: 76px clamp(20px, 5vw, 56px) 60px;
   gap: clamp(32px, 5vw, 64px);
   grid-template-columns: minmax(300px, 0.85fr) minmax(420px, 1fr);
+  scroll-margin-top: 76px;
 }
 
 .profile-side {
@@ -440,9 +445,15 @@ h2 {
 }
 
 .works {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
   max-width: none;
   padding: 82px clamp(20px, 5vw, 56px) 78px;
   background: var(--white);
+  flex-direction: column;
+  justify-content: center;
+  scroll-margin-top: 76px;
 }
 
 .works .section-heading {
@@ -671,11 +682,14 @@ h2 {
 .contact {
   display: grid;
   align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
   gap: 32px;
   padding: 76px clamp(20px, 5vw, 72px);
   background: var(--charcoal);
   color: var(--white);
   grid-template-columns: 1fr auto;
+  scroll-margin-top: 76px;
 }
 
 .profile,
@@ -711,12 +725,12 @@ h2 {
   width: 220px;
   margin: 0;
   padding: 12px;
-  background: var(--white);
-  color: var(--ink);
+  background: transparent;
+  color: var(--white);
 }
 
 .wechat-card img {
-  background: var(--white);
+  background: transparent;
   object-fit: contain;
 }
 
@@ -1061,12 +1075,7 @@ h2 {
     height: 34px;
   }
 
-  .hero {
-    min-height: 78vh;
-  }
-
   .hero-content {
-    min-height: 78vh;
     padding-bottom: 48px;
   }
 
