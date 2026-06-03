@@ -101,7 +101,7 @@ a {
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
-  background-image: url("assets/optimized/hero/hero-01.webp");
+  background-image: url("https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/hero/hero-01.webp");
   background-position: center;
   background-size: cover;
   overflow: hidden;
