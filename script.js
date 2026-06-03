@@ -1,28 +1,30 @@
+const ossNatureRhythmBase = "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/space-selection/nature-rhythm";
+
 const caseImageSets = [
   [
-    "assets/photos/32/03778B94-D40C-4256-991A-AA0CE21DF340.webp",
-    "assets/photos/32/262D37B7-933E-42D3-B328-356168A7E261.webp",
-    "assets/photos/32/2E665617-915C-4A78-A13E-294DA169577A.webp",
-    "assets/photos/32/369473E6-2D70-4C67-A9D8-5B15F032D920.webp",
-    "assets/photos/32/3967872F-2CA1-4324-AE47-6A4E70EA21A6.webp",
-    "assets/photos/32/3CAD64A8-51E0-40D4-8F87-FE240DEDA22A.webp",
-    "assets/photos/32/5F820263-0B5C-4F9D-89A1-228984279CC0.webp",
-    "assets/photos/32/63A3BCF0-AB57-4D25-937E-B686D0BE9356.webp",
-    "assets/photos/32/698CA023-8BDE-4FDE-AD4D-F5934E1BCA65.webp",
-    "assets/photos/32/6C645D01-6F2D-47E8-9D7D-E3EDDE0C46C2.webp",
-    "assets/photos/32/7E19C8CE-BBB1-44F8-ABBC-294FDBBA5E69.webp",
-    "assets/photos/32/832DD710-4BE1-4EC3-8BE8-EDB7F4879C02.webp",
-    "assets/photos/32/90BCBF67-4E09-42E7-80B7-18D04951E4EE.webp",
-    "assets/photos/32/91122E8E-2ED4-4096-BDED-110720531E0B.webp",
-    "assets/photos/32/97E5C230-4F9D-457E-92FE-9A74EE71173E.webp",
-    "assets/photos/32/9E23A26A-C51D-4F2A-B1F6-82B38E410D16.webp",
-    "assets/photos/32/AA2160E4-0004-415D-82B8-F8830AC55BD0.webp",
-    "assets/photos/32/AD0CEF0A-B129-47FE-A82B-1733AA95A8FA.webp",
-    "assets/photos/32/AE85F7DB-F724-4826-ABF6-E4EF033F992F.webp",
-    "assets/photos/32/B2CD5F38-C9D7-49CE-A22C-B764B6760390.webp",
-    "assets/photos/32/B6411385-0643-402B-B119-CA3A96AC98FC.webp",
-    "assets/photos/32/BF24AF4F-F093-439F-855D-562BECDF7868.webp",
-    "assets/photos/32/BFE976B3-72EF-4A31-8EFE-5ED0D82BF2F1.webp"
+    `${ossNatureRhythmBase}/original/03778B94-D40C-4256-991A-AA0CE21DF340.webp`,
+    `${ossNatureRhythmBase}/original/262D37B7-933E-42D3-B328-356168A7E261.webp`,
+    `${ossNatureRhythmBase}/original/2E665617-915C-4A78-A13E-294DA169577A.webp`,
+    `${ossNatureRhythmBase}/original/369473E6-2D70-4C67-A9D8-5B15F032D920.webp`,
+    `${ossNatureRhythmBase}/original/3967872F-2CA1-4324-AE47-6A4E70EA21A6.webp`,
+    `${ossNatureRhythmBase}/original/3CAD64A8-51E0-40D4-8F87-FE240DEDA22A.webp`,
+    `${ossNatureRhythmBase}/original/5F820263-0B5C-4F9D-89A1-228984279CC0.webp`,
+    `${ossNatureRhythmBase}/original/63A3BCF0-AB57-4D25-937E-B686D0BE9356.webp`,
+    `${ossNatureRhythmBase}/original/698CA023-8BDE-4FDE-AD4D-F5934E1BCA65.webp`,
+    `${ossNatureRhythmBase}/original/6C645D01-6F2D-47E8-9D7D-E3EDDE0C46C2.webp`,
+    `${ossNatureRhythmBase}/original/7E19C8CE-BBB1-44F8-ABBC-294FDBBA5E69.webp`,
+    `${ossNatureRhythmBase}/original/832DD710-4BE1-4EC3-8BE8-EDB7F4879C02.webp`,
+    `${ossNatureRhythmBase}/original/90BCBF67-4E09-42E7-80B7-18D04951E4EE.webp`,
+    `${ossNatureRhythmBase}/original/91122E8E-2ED4-4096-BDED-110720531E0B.webp`,
+    `${ossNatureRhythmBase}/original/97E5C230-4F9D-457E-92FE-9A74EE71173E.webp`,
+    `${ossNatureRhythmBase}/original/9E23A26A-C51D-4F2A-B1F6-82B38E410D16.webp`,
+    `${ossNatureRhythmBase}/original/AA2160E4-0004-415D-82B8-F8830AC55BD0.webp`,
+    `${ossNatureRhythmBase}/original/AD0CEF0A-B129-47FE-A82B-1733AA95A8FA.webp`,
+    `${ossNatureRhythmBase}/original/AE85F7DB-F724-4826-ABF6-E4EF033F992F.webp`,
+    `${ossNatureRhythmBase}/original/B2CD5F38-C9D7-49CE-A22C-B764B6760390.webp`,
+    `${ossNatureRhythmBase}/original/B6411385-0643-402B-B119-CA3A96AC98FC.webp`,
+    `${ossNatureRhythmBase}/original/BF24AF4F-F093-439F-855D-562BECDF7868.webp`,
+    `${ossNatureRhythmBase}/original/BFE976B3-72EF-4A31-8EFE-5ED0D82BF2F1.webp`
   ],
   [
     "assets/photos/35/02813289-3092-4E05-9D96-0F12831843A4.webp",
@@ -231,7 +233,7 @@ const cases = [
     "location": "上海 · 静安",
     "area": "180 m²",
     "type": "私宅设计",
-    "hero": "assets/photos/32/03778B94-D40C-4256-991A-AA0CE21DF340.webp",
+    "hero": caseImageSets[0][0],
     "images": caseImageSets[0],
     "copyOne": "自然序曲像一间刚被阳光唤醒的家。弧形顶面把客厅的边界放柔，浅色石材、木色墙面和低矮家具一起把视线放低，让空间先有安定感，再慢慢显出精致。",
     "copyTwo": "设计的重点不是堆满造型，而是让会客、阅读、用餐和独处都能在同一片开阔里自然发生。温润材质负责放慢节奏，局部深色与艺术细节则让家保留一点沉静的力量。"
@@ -382,7 +384,7 @@ const cases = [
 ];
 
 const caseThumbs = [
-  "assets/optimized/cases/case-01.webp",
+  `${ossNatureRhythmBase}/cover/case-01.webp`,
   "assets/optimized/cases/case-02.webp",
   "assets/optimized/cases/case-03.webp",
   "assets/optimized/cases/case-04.webp",
@@ -540,10 +542,16 @@ function setText(selector, text) {
 }
 
 function caseMediumImage(image) {
+  if (image.includes("/website/space-selection/nature-rhythm/original/")) {
+    return image.replace("/original/", "/medium/");
+  }
   return image.replace("assets/photos/", "assets/optimized/detail/medium/");
 }
 
 function caseThumbImage(image) {
+  if (image.includes("/website/space-selection/nature-rhythm/original/")) {
+    return image.replace("/original/", "/thumb/");
+  }
   return image.replace("assets/photos/", "assets/optimized/detail/thumb/");
 }
 
