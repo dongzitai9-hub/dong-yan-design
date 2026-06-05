@@ -1160,6 +1160,84 @@ h2 {
   background: #f4efe8;
 }
 
+.service-scope,
+.faq-section {
+  padding: 82px min(6vw, 78px);
+  background: #fbf8f2;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.service-grid article {
+  border-top: 1px solid rgba(54, 46, 38, 0.18);
+  padding-top: 18px;
+}
+
+.service-grid h3 {
+  margin: 0 0 14px;
+  color: #352f28;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.service-grid p {
+  margin: 0;
+  color: #665d54;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.faq-section {
+  background: #fbfaf6;
+}
+
+.faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 24px;
+  margin-top: 28px;
+}
+
+.faq-list details {
+  border-bottom: 1px solid rgba(54, 46, 38, 0.16);
+  padding: 0 0 16px;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  color: #352f28;
+  font-size: 18px;
+  font-weight: 500;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  content: "+";
+  float: right;
+  color: #8c8379;
+  font-weight: 300;
+}
+
+.faq-list details[open] summary::after {
+  content: "-";
+}
+
+.faq-list p {
+  margin: 14px 0 0;
+  color: #665d54;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
 .case-link-columns {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
@@ -1207,6 +1285,16 @@ h2 {
 @media (max-width: 760px) {
   .case-index-links {
     padding: 64px 22px;
+  }
+
+  .service-scope,
+  .faq-section {
+    padding: 64px 22px;
+  }
+
+  .service-grid,
+  .faq-list {
+    grid-template-columns: 1fr;
   }
 
   .case-link-columns,
