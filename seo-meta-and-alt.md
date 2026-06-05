@@ -42,6 +42,46 @@ URL：https://dongyandesign.cn/#contact
 <link rel="canonical" href="https://dongyandesign.cn/#contact">
 ```
 
+### 案例索引
+URL：https://dongyandesign.cn/cases/
+
+```html
+<title>案例索引｜董揅设计空间与方案案例</title>
+<meta name="description" content="董揅设计案例索引，整理私宅设计、大平层设计、公寓设计、改善型住宅、户型方案与动线优化案例，便于查看空间辑选和方案辑选详情。">
+<meta name="keywords" content="董揅设计案例,室内设计案例,私宅设计案例,大平层设计,户型方案设计">
+<link rel="canonical" href="https://dongyandesign.cn/cases/">
+```
+
+### 服务范围
+URL：https://dongyandesign.cn/services/
+
+```html
+<title>服务范围与设计方向｜董揅设计</title>
+<meta name="description" content="董揅设计提供私宅设计、改善型住宅设计、大平层与公寓空间设计、户型方案和动线优化服务，主要覆盖上海、苏州、常州、杭州、南京等城市。">
+<meta name="keywords" content="室内设计服务,私宅设计,改善型住宅设计,大平层设计,公寓设计,户型优化">
+<link rel="canonical" href="https://dongyandesign.cn/services/">
+```
+
+### 常见问题
+URL：https://dongyandesign.cn/faq/
+
+```html
+<title>常见问题｜董揅设计室内设计咨询</title>
+<meta name="description" content="董揅设计常见问题，解答室内设计咨询从哪里开始、空间辑选和方案辑选区别、适合哪些住宅项目，以及上海、苏州、常州等服务城市。">
+<meta name="keywords" content="室内设计咨询,装修设计问题,空间辑选,方案辑选,董揅设计常见问题">
+<link rel="canonical" href="https://dongyandesign.cn/faq/">
+```
+
+### 设计札记
+URL：https://dongyandesign.cn/notes/
+
+```html
+<title>设计札记｜董揅设计</title>
+<meta name="description" content="董揅设计札记，用于记录室内设计学习、空间观察、材料理解、住宅生活方式和后续 GEO 内容整理，按时间沉淀设计思考。">
+<meta name="keywords" content="设计札记,室内设计学习,空间设计思考,GEO内容,董揅设计">
+<link rel="canonical" href="https://dongyandesign.cn/notes/">
+```
+
 ### 空间案例 space-001
 URL：https://dongyandesign.cn/cases/space-001
 
