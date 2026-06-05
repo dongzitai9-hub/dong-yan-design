@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dongyandesign.cn/sitemap.xml
