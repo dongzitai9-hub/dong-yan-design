@@ -1153,3 +1153,64 @@ h2 {
     right: 10px;
   }
 }
+
+
+.case-index-links {
+  padding: 82px min(6vw, 78px);
+  background: #f4efe8;
+}
+
+.case-link-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: 42px;
+  margin-top: 28px;
+}
+
+.case-link-columns h3 {
+  margin: 0 0 18px;
+  color: #3b332b;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.case-link-columns ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-link-columns a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgba(54, 46, 38, 0.16);
+  color: #342d26;
+  text-decoration: none;
+}
+
+.case-link-columns a:hover {
+  color: #8c6748;
+}
+
+.case-link-columns span {
+  flex: 0 0 auto;
+  color: #8c8379;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .case-index-links {
+    padding: 64px 22px;
+  }
+
+  .case-link-columns,
+  .case-link-columns ul {
+    grid-template-columns: 1fr;
+  }
+}
