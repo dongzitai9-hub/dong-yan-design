@@ -1155,15 +1155,41 @@ h2 {
 }
 
 
-.case-index-links {
-  padding: 82px min(6vw, 78px);
-  background: #f4efe8;
-}
-
 .service-scope,
 .faq-section {
   padding: 82px min(6vw, 78px);
   background: #fbf8f2;
+}
+
+.case-index-cta {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 72px min(6vw, 78px);
+  background: #f4efe8;
+}
+
+.case-index-cta h2 {
+  color: #342d26;
+}
+
+.case-index-cta p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: #665d54;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.case-index-cta .button {
+  flex: 0 0 auto;
+  color: #3b332b;
+}
+
+.case-index-links {
+  padding: 0;
+  background: #f4efe8;
 }
 
 .service-grid {
@@ -1245,11 +1271,13 @@ h2 {
   margin-top: 28px;
 }
 
+.case-link-columns h2,
 .case-link-columns h3 {
   margin: 0 0 18px;
   color: #3b332b;
   font-size: 18px;
   font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .case-link-columns ul {
@@ -1282,14 +1310,66 @@ h2 {
   font-size: 13px;
 }
 
-@media (max-width: 760px) {
-  .case-index-links {
-    padding: 64px 22px;
-  }
+.case-directory-page {
+  min-height: 100vh;
+  background: #f4efe8;
+}
 
+.case-directory-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px min(6vw, 78px);
+}
+
+.case-directory-header a {
+  color: #4a4036;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.case-directory-header nav {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.case-directory-logo {
+  color: #3b332b;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+
+.case-directory-main {
+  padding: 72px min(6vw, 78px) 96px;
+}
+
+.case-directory-main .section-heading {
+  margin-bottom: 42px;
+}
+
+@media (max-width: 760px) {
   .service-scope,
   .faq-section {
     padding: 64px 22px;
+  }
+
+  .case-index-cta {
+    align-items: flex-start;
+    padding: 64px 22px;
+    flex-direction: column;
+  }
+
+  .case-directory-header {
+    align-items: flex-start;
+    padding: 22px;
+    flex-direction: column;
+  }
+
+  .case-directory-main {
+    padding: 52px 22px 72px;
   }
 
   .service-grid,
