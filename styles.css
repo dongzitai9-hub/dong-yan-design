@@ -97,9 +97,18 @@ a {
   margin: -18px 0;
 }
 
+.nav-dropdown::after {
+  position: absolute;
+  top: 100%;
+  left: -28px;
+  right: -28px;
+  height: 18px;
+  content: "";
+}
+
 .nav-dropdown-panel {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 6px);
   left: 50%;
   z-index: 30;
   display: grid;
@@ -111,7 +120,7 @@ a {
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -6px);
-  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  transition: opacity 0.28s ease 0.18s, transform 0.28s ease 0.18s, visibility 0s linear 0.46s;
   visibility: hidden;
   backdrop-filter: blur(18px);
 }
@@ -121,6 +130,7 @@ a {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, 0);
+  transition-delay: 0s;
   visibility: visible;
 }
 
