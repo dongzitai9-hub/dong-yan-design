@@ -82,6 +82,16 @@ URL：https://dongyandesign.cn/notes/
 <link rel="canonical" href="https://dongyandesign.cn/notes/">
 ```
 
+### 关于董揅
+URL：https://dongyandesign.cn/about/
+
+```html
+<title>关于董揅｜董揅设计室内空间设计顾问</title>
+<meta name="description" content="关于董揅，记录董揅设计从设计助理到室内空间设计顾问的经历，关注私宅、大平层、改善型住宅、公寓设计、户型优化、收纳系统和长期居住体验。">
+<meta name="keywords" content="董揅设计,关于董揅,室内设计师,私宅设计,住宅设计顾问,常州室内设计">
+<link rel="canonical" href="https://dongyandesign.cn/about/">
+```
+
 ### 空间案例 space-001
 URL：https://dongyandesign.cn/cases/space-001
 

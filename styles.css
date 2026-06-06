@@ -1416,6 +1416,71 @@ h2 {
   padding: 0;
 }
 
+.about-profile {
+  padding: 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 82px);
+  align-items: start;
+}
+
+.about-portrait {
+  overflow: hidden;
+  background: #e6ded2;
+}
+
+.about-portrait img {
+  aspect-ratio: 4 / 5;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-copy p {
+  margin: 0 0 18px;
+  color: #5f574f;
+  font-size: 16px;
+  line-height: 1.95;
+}
+
+.about-copy .directory-lead {
+  margin: 0 0 24px;
+}
+
+.about-summary {
+  padding-top: 18px;
+  border-top: 1px solid rgba(54, 46, 38, 0.16);
+}
+
+.about-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 54px;
+}
+
+.about-points article {
+  border-top: 1px solid rgba(54, 46, 38, 0.18);
+  padding-top: 18px;
+}
+
+.about-points h2 {
+  margin: 0 0 12px;
+  color: #352f28;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.about-points p {
+  margin: 0;
+  color: #665d54;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
 .notes-list {
   display: grid;
   gap: 0;
@@ -1470,6 +1535,11 @@ h2 {
 
   .case-directory-main {
     padding: 52px 22px 72px;
+  }
+
+  .about-grid,
+  .about-points {
+    grid-template-columns: 1fr;
   }
 
   .note-row {
