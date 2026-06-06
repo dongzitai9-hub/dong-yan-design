@@ -227,7 +227,7 @@ URL：https://dongyandesign.cn/cases/scheme-002
 
 ```html
 <title>功能重组｜方案设计｜董揅设计案例002</title>
-<meta name="description" content="功能重组是董揅设计方案案例，围绕户型结构、功能布局、居住动线和空间尺度展开。围绕家庭成员的生活节奏重新组织功能，让客餐厅、休息区与储物系统形成更顺畅的关系。不同图面展示从空置结构到完整布置的变化，便于比较每一种尺度取舍。董揅设计关注现代室内设计、空间比例、功能动线、材质搭配与居住体验，适合私宅、大平层、公寓和改善型住。">
+<meta name="description" content="功能重组是董揅设计户型方案案例，重点围绕客餐厅关系、休息区比例、收纳系统和家庭成员动线重新组织空间功能。通过平面方案推演，帮助业主在装修前看清功能分区、家具尺度和后续深化方向，适合私宅、大平层、公寓和改善型住宅参考。">
 <meta name="keywords" content="董揅设计,功能重组,方案设计,户型优化,平面方案,室内设计方案">
 <link rel="canonical" href="https://dongyandesign.cn/cases/scheme-002">
 ```
@@ -237,7 +237,7 @@ URL：https://dongyandesign.cn/cases/scheme-003
 
 ```html
 <title>动线优化｜方案设计｜董揅设计案例003</title>
-<meta name="description" content="动线优化是董揅设计方案案例，围绕户型结构、功能布局、居住动线和空间尺度展开。重点观察入口、餐厨、卧室和卫生间之间的路径，把日常使用频率高的位置先处理顺。通过连续图面呈现调整过程，让沟通不只停留在想象里，而是能落在具体墙体和家具尺度上。董揅设计关注现代室内设计、空间比例、功能动线、材质搭配与居住体验，适合私宅、大平层、。">
+<meta name="description" content="动线优化是董揅设计户型方案案例，重点观察玄关、餐厨、卧室、卫生间和公共区之间的使用路径，把日常高频路线先处理顺。通过平面方案推演，提前判断通道宽度、功能顺序、收纳位置和家具尺度，适合准备装修、旧房改善和大平层方案优化的业主参考。">
 <meta name="keywords" content="董揅设计,动线优化,方案设计,户型优化,平面方案,室内设计方案">
 <link rel="canonical" href="https://dongyandesign.cn/cases/scheme-003">
 ```
