@@ -157,7 +157,7 @@ URL：https://dongyandesign.cn/cases/space-007
 
 ```html
 <title>木色秩序｜改善型住宅｜董揅设计案例007</title>
-<meta name="description" content="木色秩序是董揅设计改善型住宅案例，位于苏州，面积165m²。木色秩序关注的是餐厨关系。木作、石材与黑色线条把区域分得清楚，却不把家切碎；人在备餐、用餐、聊天时可以顺着同一条动线移动。深浅材质的比例决定了空间气质：深色让画面稳住，浅色让采光进来。岛台和餐桌承担社交中心，背后的收纳系统则把生活杂物留在视线之外。">
+<meta name="description" content="木色秩序是董揅改善型住宅案例，位于苏州，面积165平方米。案例聚焦餐厨关系，以木作、石材和黑色线条划分区域，同时保持备餐、用餐和聊天动线连续。岛台与餐桌承担社交中心，背后收纳系统隐藏生活杂物，适合餐厨改造参考。">
 <meta name="keywords" content="董揅设计,木色秩序,改善型住宅,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-007">
 ```
@@ -167,7 +167,7 @@ URL：https://dongyandesign.cn/cases/space-008
 
 ```html
 <title>光影客厅｜私宅设计｜董揅设计案例008</title>
-<meta name="description" content="光影客厅是董揅设计私宅设计案例，位于上海，面积140m²。光影客厅用光线来组织空间。大面窗帘、低矮家具和柔和墙面让客厅不显拥挤，阳光经过材质表面后，空间会在一天里呈现不同的表情。这里的设计重点是让客厅既能接待，也能放松。电视墙、沙发、边柜和单椅之间保留适当距离，动线不绕，视觉也不堵，日常使用会更轻松。">
+<meta name="description" content="光影客厅是董揅私宅设计案例，位于上海，面积140平方米。案例用光线组织客厅空间，通过大面窗帘、低矮家具和柔和墙面减轻拥挤感，并在电视墙、沙发、边柜和单椅之间保留舒适距离，适合关注客厅采光、动线和放松感的业主参考。">
 <meta name="keywords" content="董揅设计,光影客厅,私宅设计,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-008">
 ```
@@ -177,7 +177,7 @@ URL：https://dongyandesign.cn/cases/space-009
 
 ```html
 <title>餐厨生活｜大平层设计｜董揅设计案例009</title>
-<meta name="description" content="餐厨生活是董揅设计大平层设计案例，位于杭州，面积188m²。餐厨生活把家里最容易热闹的地方做成主场。餐桌不只是吃饭，也可以是聊天、办公、陪孩子做手工的地方；厨房与餐区保持互动，生活气自然会出来。材质上用木色与石材控制温度，灯具和柜体线条保持简洁。空间看起来不复杂，但每一个转身、拿取和停留都经过了推敲。">
+<meta name="description" content="餐厨生活是董揅大平层设计案例，位于杭州，面积188平方米。案例把餐厨区作为家庭主场，餐桌兼具吃饭、聊天、办公和亲子手工功能，厨房与餐区保持互动，并通过木色、石材、灯具和柜体线条控制温度与秩序，适合餐厨一体化参考。">
 <meta name="keywords" content="董揅设计,餐厨生活,大平层设计,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-009">
 ```
@@ -187,7 +187,7 @@ URL：https://dongyandesign.cn/cases/space-010
 
 ```html
 <title>雅致私宅｜私宅设计｜董揅设计案例010</title>
-<meta name="description" content="雅致私宅是董揅设计私宅设计案例，位于常州，面积130m²。雅致私宅更重视细节里的体面。功能空间不需要过度张扬，通过木作比例、石材肌理和灯光层级，就能让每个角落保持清爽和克制。这样的空间适合对品质有要求、但不喜欢浮夸的人。它把预算花在长期可感知的位置：柜体、五金、灯光、收口和每天都会接触到的材质。董揅设计关注现代室内设。">
+<meta name="description" content="雅致私宅是董揅私宅设计案例，位于常州，面积130平方米。案例重视细节里的体面，通过木作比例、石材肌理、灯光层级、柜体五金和收口处理保持清爽克制，把预算放在长期可感知的位置，适合关注品质但不喜欢浮夸的业主参考。">
 <meta name="keywords" content="董揅设计,雅致私宅,私宅设计,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-010">
 ```
@@ -197,7 +197,7 @@ URL：https://dongyandesign.cn/cases/space-011
 
 ```html
 <title>现代居所｜住宅设计｜董揅设计案例011</title>
-<meta name="description" content="现代居所是董揅设计住宅设计案例，位于南京，面积160m²。现代居所强调清晰的生活秩序。客厅、书房、餐厅之间既独立又互相借景，线条尽量干净，让家具和人的活动成为画面中心。设计在冷静中保留温度：浅色墙面降低压迫，木色与软装增加亲近感。它适合希望家看起来高级，但住起来不拘束的客户。董揅设计关注现代室内设计、空间比例、功能动。">
+<meta name="description" content="现代居所是董揅住宅设计案例，位于南京，面积160平方米。案例强调清晰生活秩序，让客厅、书房和餐厅既独立又互相借景，以干净线条、浅色墙面、木色与软装降低压迫并保留温度，适合希望住宅高级但不拘束的业主参考。">
 <meta name="keywords" content="董揅设计,现代居所,住宅设计,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-011">
 ```
@@ -207,7 +207,7 @@ URL：https://dongyandesign.cn/cases/space-012
 
 ```html
 <title>温润之家｜改善型住宅｜董揅设计案例012</title>
-<meta name="description" content="温润之家是董揅设计改善型住宅案例，位于苏州，面积145m²。温润之家把亲子生活放在前面考虑。公共空间需要足够开放，方便陪伴和交流；卧室与独立区域则需要安静，让每个人都能找到自己的节奏。色彩和材质选择偏柔和，避免过几年就看腻。可成长的收纳、可调整的房间功能和耐看的立面关系，是这类家庭空间真正重要的部分。">
+<meta name="description" content="温润之家是董揅改善型住宅案例，位于苏州，面积145平方米。案例把亲子生活放在前面考虑，让公共空间保持开放以方便陪伴交流，同时保留安静卧室和独立区域，并通过柔和色彩、可成长收纳和可调整房间功能回应长期家庭生活。">
 <meta name="keywords" content="董揅设计,温润之家,改善型住宅,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-012">
 ```
