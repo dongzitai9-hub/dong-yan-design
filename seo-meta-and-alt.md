@@ -97,7 +97,7 @@ URL：https://dongyandesign.cn/cases/space-001
 
 ```html
 <title>自然序曲｜私宅设计｜董揅设计案例001</title>
-<meta name="description" content="自然序曲是董揅设计私宅设计案例，位于上海·静安，面积180m²。自然序曲像一间刚被阳光唤醒的家。弧形顶面把客厅的边界放柔，浅色石材、木色墙面和低矮家具一起把视线放低，让空间先有安定感，再慢慢显出精致。设计的重点不是堆满造型，而是让会客、阅读、用餐和独处都能在同一片开阔里自然发生。温润材质负责放慢节奏，局部深色与艺。">
+<meta name="description" content="自然序曲是董揅私宅设计案例，位于上海静安，面积180平方米。案例以弧形顶面、浅色石材、木色墙面和低矮家具组织开阔客厅，让会客、阅读、用餐与独处在同一空间自然发生，适合关注温润材质、空间比例和现代住宅气质的业主参考。">
 <meta name="keywords" content="董揅设计,自然序曲,私宅设计,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-001">
 ```
@@ -217,7 +217,7 @@ URL：https://dongyandesign.cn/cases/scheme-001
 
 ```html
 <title>格局推演｜方案设计｜董揅设计案例001</title>
-<meta name="description" content="格局推演是董揅设计方案案例，围绕户型结构、功能布局、居住动线和空间尺度展开。从原始户型出发，梳理公共区、卧室、收纳与动线的关系，让空间使用逻辑更清晰。图面把墙体、家具尺度和功能分区放在同一张图里，方便快速讨论调整方向。董揅设计关注现代室内设计、空间比例、功能动线、材质搭配与居住体验，适合私宅、大平层、公寓和改善型住宅。">
+<meta name="description" content="格局推演是董揅户型方案案例，从原始结构出发梳理公共区、卧室、收纳和居住动线关系。通过平面方案把墙体、家具尺度、功能分区和通道宽度放在一起比较，帮助业主在装修前判断户型优化方向，适合私宅、大平层、公寓和改善型住宅参考。">
 <meta name="keywords" content="董揅设计,格局推演,方案设计,户型优化,平面方案,室内设计方案">
 <link rel="canonical" href="https://dongyandesign.cn/cases/scheme-001">
 ```
