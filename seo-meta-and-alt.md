@@ -107,7 +107,7 @@ URL：https://dongyandesign.cn/cases/space-002
 
 ```html
 <title>云境公馆｜大平层设计｜董揅设计案例002</title>
-<meta name="description" content="云境公馆是董揅设计大平层设计案例，位于杭州·钱江新城，面积220m²。云境公馆更像一段从城市喧闹回到室内秩序的过渡。灰色、木色与金属线条形成冷静的基调，餐桌、岛台与客厅保持连续，让生活动线看起来利落，也用起来顺手。这里适合需要兼顾社交与家庭的人：公共区域有尺度、有气场，私密区域则收得安静。灯光不抢戏，只在材质边缘。">
+<meta name="description" content="云境公馆是董揅大平层设计案例，位于杭州钱江新城，面积220平方米。案例以灰色、木色和金属线条建立冷静秩序，让餐桌、岛台与客厅保持连续，兼顾家庭日常、社交会客和私密休息，适合关注大平层尺度、公共区动线和材质质感的业主参考。">
 <meta name="keywords" content="董揅设计,云境公馆,大平层设计,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-002">
 ```
@@ -117,7 +117,7 @@ URL：https://dongyandesign.cn/cases/space-003
 
 ```html
 <title>松弛之家｜改善型住宅｜董揅设计案例003</title>
-<meta name="description" content="松弛之家是董揅设计改善型住宅案例，位于苏州·金鸡湖，面积150m²。松弛之家把家的表情做得更轻。木格栅、白色柜体和柔软织物共同降低空间压力，餐厨与客厅之间不刻意分隔，让一家人的活动可以互相看见。它不是样板间式的完整，而是留给生活一些呼吸：孩子可以在餐桌旁写字，家人可以在沙发边聊天，收纳被藏进立面里，日常的凌乱也有。">
+<meta name="description" content="松弛之家是董揅改善型住宅案例，位于苏州金鸡湖，面积150平方米。案例以木格栅、白色柜体和柔软织物降低空间压力，让餐厨与客厅保持开放互动，同时把收纳藏进立面，适合关注亲子陪伴、轻松客餐厅和旧房改善的业主参考。">
 <meta name="keywords" content="董揅设计,松弛之家,改善型住宅,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-003">
 ```
@@ -127,7 +127,7 @@ URL：https://dongyandesign.cn/cases/space-004
 
 ```html
 <title>湖畔平层｜大平层设计｜董揅设计案例004</title>
-<meta name="description" content="湖畔平层是董揅设计大平层设计案例，位于杭州·西湖，面积353m²。湖畔平层的关键词是安静和留白。卧室、餐厨和公共区都尽量减少过多装饰，用大面积柔和墙面承接自然光，让窗外的明亮成为空间里最重要的背景。细节集中在比例、线条和材质交接处：柜体不喧哗，灯光只负责把质感托出来。这样的家适合长期居住，越用越能感到干净、舒展和。">
+<meta name="description" content="湖畔平层是董揅大平层设计案例，位于杭州西湖，面积353平方米。案例以安静留白为核心，用柔和墙面承接自然光，减少过多装饰，把重点放在比例、线条、柜体收口和材质交接，适合关注长期居住、干净视觉和舒展尺度的业主参考。">
 <meta name="keywords" content="董揅设计,湖畔平层,大平层设计,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-004">
 ```
@@ -137,7 +137,7 @@ URL：https://dongyandesign.cn/cases/space-005
 
 ```html
 <title>静谧套房｜住宅设计｜董揅设计案例005</title>
-<meta name="description" content="静谧套房是董揅设计住宅设计案例，位于常州，面积120m²。静谧套房把卧室当成一天的收口来设计。低饱和色、柔软墙面和隐藏式灯光减少外界刺激，床头、衣柜与休闲角形成连续的私密场景。这类空间最怕只好看、不好住，所以重点放在夜间动线、床边尺度、收纳与光线控制。早晨有自然光，夜晚有低照度，人的状态可以慢慢从紧绷回到安稳。">
+<meta name="description" content="静谧套房是董揅住宅设计案例，位于常州，面积120平方米。案例把卧室作为一天的收口来设计，以低饱和色、柔软墙面和隐藏式灯光减少外界刺激，重点处理夜间动线、床边尺度、收纳和光线控制，适合关注卧室套房舒适度的业主参考。">
 <meta name="keywords" content="董揅设计,静谧套房,住宅设计,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-005">
 ```
@@ -147,7 +147,7 @@ URL：https://dongyandesign.cn/cases/space-006
 
 ```html
 <title>城市公寓｜公寓设计｜董揅设计案例006</title>
-<meta name="description" content="城市公寓是董揅设计公寓设计案例，位于南京，面积98m²。城市公寓需要在有限面积里做出完整生活。奶油色立面、弧形门洞和集成收纳把小空间整理得更轻盈，餐厨、卧室和过道之间保持清楚的功能边界。它适合年轻家庭或独居改善：不追求夸张的奢华，而是把每一处可用面积都变得舒服。浅色负责放大空间，局部石材和灯光负责留下质感。">
+<meta name="description" content="城市公寓是董揅公寓设计案例，位于南京，面积98平方米。案例在有限面积里组织完整生活，以奶油色立面、弧形门洞和集成收纳让小空间更轻盈，并明确餐厨、卧室和过道边界，适合年轻家庭、独居改善和小户型公寓装修参考。">
 <meta name="keywords" content="董揅设计,城市公寓,公寓设计,空间案例,住宅设计,室内设计案例">
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-006">
 ```
