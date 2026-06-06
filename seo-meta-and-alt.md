@@ -247,7 +247,7 @@ URL：https://dongyandesign.cn/cases/scheme-004
 
 ```html
 <title>套房规划｜方案设计｜董揅设计案例004</title>
-<meta name="description" content="套房规划是董揅设计方案案例，围绕户型结构、功能布局、居住动线和空间尺度展开。围绕主卧、衣帽、卫浴和休闲区的组合方式，推敲私密空间里的舒适尺度。图面展示不同房间之间的开合关系，也帮助判断收纳、采光与活动区是否自然。董揅设计关注现代室内设计、空间比例、功能动线、材质搭配与居住体验，适合私宅、大平层、公寓和改善型住宅业主参。">
+<meta name="description" content="套房规划是董揅户型方案案例，围绕主卧、衣帽间、卫浴和休闲区之间的组合关系推敲私密空间尺度。通过平面方案比较开合关系、收纳位置、采光路径和活动区比例，帮助业主在装修前判断套房是否舒适、独立且便于长期使用。">
 <meta name="keywords" content="董揅设计,套房规划,方案设计,户型优化,平面方案,室内设计方案">
 <link rel="canonical" href="https://dongyandesign.cn/cases/scheme-004">
 ```
@@ -257,7 +257,7 @@ URL：https://dongyandesign.cn/cases/scheme-005
 
 ```html
 <title>家庭尺度｜方案设计｜董揅设计案例005</title>
-<meta name="description" content="家庭尺度是董揅设计方案案例，围绕户型结构、功能布局、居住动线和空间尺度展开。以家庭长期居住为核心，平衡公共互动、独立休息和弹性功能之间的比例。每张图都保留户型边界和主要尺寸，便于后续继续深化空间结构。董揅设计关注现代室内设计、空间比例、功能动线、材质搭配与居住体验，适合私宅、大平层、公寓和改善型住宅业主参考。">
+<meta name="description" content="家庭尺度是董揅户型方案案例，以长期居住为核心，平衡公共互动、独立休息、收纳系统和弹性功能之间的比例。通过平面方案保留户型边界和主要尺寸，帮助业主判断家庭成员使用路径、空间尺度和后续深化方向。">
 <meta name="keywords" content="董揅设计,家庭尺度,方案设计,户型优化,平面方案,室内设计方案">
 <link rel="canonical" href="https://dongyandesign.cn/cases/scheme-005">
 ```
@@ -267,7 +267,7 @@ URL：https://dongyandesign.cn/cases/scheme-006
 
 ```html
 <title>大宅推敲｜方案设计｜董揅设计案例006</title>
-<meta name="description" content="大宅推敲是董揅设计方案案例，围绕户型结构、功能布局、居住动线和空间尺度展开。针对更大尺度的居住空间，先建立清晰的主次动线，再安排会客、休闲、收纳和套房关系。方案图把复杂空间拆成可讨论的层次，让客户更容易看懂每个区域的使用方式。董揅设计关注现代室内设计、空间比例、功能动线、材质搭配与居住体验，适合私宅、大平层、公寓和改。">
+<meta name="description" content="大宅推敲是董揅户型方案案例，针对大平层和大尺度住宅先建立主次动线，再组织会客、休闲、收纳、家政和套房关系。通过方案图把复杂空间拆成可讨论的层次，帮助业主看懂每个区域的使用方式和户型优化取舍。">
 <meta name="keywords" content="董揅设计,大宅推敲,方案设计,户型优化,平面方案,室内设计方案">
 <link rel="canonical" href="https://dongyandesign.cn/cases/scheme-006">
 ```
