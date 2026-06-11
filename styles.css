@@ -159,6 +159,14 @@ a {
   outline: none;
 }
 
+.nav-notes-panel {
+  width: min(340px, calc(100vw - 40px));
+}
+
+.nav-notes-panel a {
+  white-space: normal;
+}
+
 .hero {
   position: relative;
   min-height: 100vh;
