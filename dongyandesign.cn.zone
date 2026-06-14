@@ -1,0 +1,9 @@
+$ORIGIN dongyandesign.cn.
+$TTL 600
+@ IN A 185.199.108.153
+@ IN A 185.199.109.153
+@ IN A 185.199.110.153
+@ IN A 185.199.111.153
+www IN CNAME dongzitai9-hub.github.io.
+img IN CNAME dongyan-design.oss-cn-shanghai.aliyuncs.com.
+_dnsauth.img IN TXT "4130ce810532fa1839e3af1078861433"

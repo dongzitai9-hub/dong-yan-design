@@ -1,5 +1,20 @@
 # 董揅设计 SEO Meta 与图片 Alt 清单
 
+## 室内设计师官网 SEO 维护规则
+
+董揅设计不是平台站，也不是装修公司目录站，SEO 重点应围绕“个人设计师信任感 + 常州及江浙沪住宅设计服务 + 真实案例 + 客户问题解答”展开。后续维护时按以下规则优先判断：
+
+1. 首页先讲清楚“董揅设计是谁、在哪些城市服务、适合什么住宅项目、能解决什么问题、如何联系”，不要只追求品牌感或视觉氛围。
+2. 栏目页 description 不要太短，必须包含服务对象、空间类型、具体问题和咨询价值，例如收纳、动线、采光、材料、预算、长期居住体验。
+3. 案例页标题保持“项目名 + 类型 + 董揅设计案例编号”，不改 URL；正文和描述尽量包含城市、面积、户型问题、解决方案和适合人群。
+4. 设计札记优先写客户会搜索的问题，例如厨房收纳、橱柜尺寸、客餐厅一体化、玄关柜、电视墙收纳、老房翻新、装修前准备。
+5. FAQ 是 GEO 和 SEO 的重要入口，回答要像真实设计师在解释问题，不写一句话空答案。
+6. 图片 alt 要说明图片在展示什么空间、什么项目、什么设计信息；装饰图可以短，但案例图不能空。
+7. keywords 只作为辅助，不堆词；真正重要的是 title、description、H1/H2、正文、内链和结构化数据。
+8. canonical 一律指向 `https://dongyandesign.cn/` 下的正式 URL，不能指向 GitHub Pages、OSS 或阿里云 IP。
+9. 阿里云 IP 只用于备案期间测试，必须通过服务器响应头或 IP 专属 robots 阻止收录，不能提交给百度或 Google。
+10. 每次新增页面后，同步更新 `sitemap.xml`、`urls.txt`、`baidu-api-urls.txt`；仅修改 meta 或正文时，如果 URL 不变，一般不需要新增 URL。
+
 ## 页面 Meta 标签
 
 ### 首页
@@ -47,7 +62,7 @@ URL：https://dongyandesign.cn/cases/
 
 ```html
 <title>案例索引｜董揅设计空间与方案案例</title>
-<meta name="description" content="董揅设计案例索引，整理私宅设计、大平层设计、公寓设计、改善型住宅、户型方案与动线优化案例，便于查看空间辑选和方案辑选详情。">
+<meta name="description" content="董揅设计案例索引，整理私宅、大平层、公寓、改善型住宅、客餐厅、餐厨空间、卧室套房和户型方案案例，便于按空间辑选与方案辑选查看光线、材质、收纳、动线和长期居住体验。">
 <meta name="keywords" content="董揅设计案例,室内设计案例,私宅设计案例,大平层设计,户型方案设计">
 <link rel="canonical" href="https://dongyandesign.cn/cases/">
 ```
@@ -57,7 +72,7 @@ URL：https://dongyandesign.cn/services/
 
 ```html
 <title>服务范围与设计方向｜董揅设计</title>
-<meta name="description" content="董揅设计提供私宅设计、改善型住宅设计、大平层与公寓空间设计、户型方案和动线优化服务，主要覆盖上海、苏州、常州、杭州、南京等城市。">
+<meta name="description" content="董揅设计提供常州及江浙沪住宅室内设计咨询，包含私宅、改善型住宅、大平层、公寓空间、户型方案、收纳系统和动线优化，帮助业主在装修前梳理生活习惯、预算边界、风格方向与落地节奏。">
 <meta name="keywords" content="室内设计服务,私宅设计,改善型住宅设计,大平层设计,公寓设计,户型优化">
 <link rel="canonical" href="https://dongyandesign.cn/services/">
 ```
@@ -67,7 +82,7 @@ URL：https://dongyandesign.cn/faq/
 
 ```html
 <title>常见问题｜董揅设计室内设计咨询</title>
-<meta name="description" content="董揅设计常见问题，解答室内设计咨询从哪里开始、空间辑选和方案辑选区别、适合哪些住宅项目，以及上海、苏州、常州等服务城市。">
+<meta name="description" content="董揅设计常见问题，解答室内设计咨询从哪里开始、空间辑选和方案辑选区别、适合哪些住宅项目、常州及江浙沪服务范围，以及装修前如何准备户型、预算和生活需求。">
 <meta name="keywords" content="室内设计咨询,装修设计问题,空间辑选,方案辑选,董揅设计常见问题">
 <link rel="canonical" href="https://dongyandesign.cn/faq/">
 ```
@@ -77,7 +92,7 @@ URL：https://dongyandesign.cn/notes/
 
 ```html
 <title>设计札记｜董揅设计</title>
-<meta name="description" content="董揅设计札记，用于记录室内设计学习、空间观察、材料理解、住宅生活方式和后续 GEO 内容整理，按时间沉淀设计思考。">
+<meta name="description" content="董揅设计札记，记录室内设计学习、厨房收纳、橱柜布局、材料理解、空间观察和住宅生活方式，把日常设计经验整理成客户能读懂、搜索引擎和 AI 也能理解的内容。">
 <meta name="keywords" content="设计札记,室内设计学习,空间设计思考,GEO内容,董揅设计">
 <link rel="canonical" href="https://dongyandesign.cn/notes/">
 ```
@@ -87,7 +102,7 @@ URL：https://dongyandesign.cn/about/
 
 ```html
 <title>关于董揅｜董揅设计室内空间设计顾问</title>
-<meta name="description" content="关于董揅，记录董揅设计从设计助理到室内空间设计顾问的经历，关注私宅、大平层、改善型住宅、公寓设计、户型优化、收纳系统和长期居住体验。">
+<meta name="description" content="关于董揅，记录董揅设计从设计助理到室内空间设计顾问的经历，关注常州及江浙沪私宅、大平层、改善型住宅、公寓设计、户型优化、收纳系统、材料搭配和长期居住体验。">
 <meta name="keywords" content="董揅设计,关于董揅,室内设计师,私宅设计,住宅设计顾问,常州室内设计">
 <link rel="canonical" href="https://dongyandesign.cn/about/">
 ```
@@ -272,9 +287,39 @@ URL：https://dongyandesign.cn/cases/scheme-006
 <link rel="canonical" href="https://dongyandesign.cn/cases/scheme-006">
 ```
 
+### 设计札记 kitchen-cabinet-design-1
+URL：https://dongyandesign.cn/notes/kitchen-cabinet-design-1/
+
+```html
+<title>厨房好不好用，先看橱柜怎么设计｜董揅札记</title>
+<meta name="description" content="董揅札记围绕厨房橱柜设计、U 型厨房、一金二银台面区域、操作台高度和吊柜取放尺度，梳理厨房好不好用的关键，适合装修前判断厨房布局和收纳规划。">
+<meta name="keywords" content="厨房橱柜设计,厨房布局,U型厨房,一金二银,厨房收纳,操作台高度,董揅札记">
+<link rel="canonical" href="https://dongyandesign.cn/notes/kitchen-cabinet-design-1/">
+```
+
+### 设计札记 kitchen-cabinet-design-2
+URL：https://dongyandesign.cn/notes/kitchen-cabinet-design-2/
+
+```html
+<title>厨房怎么收纳？从我自己厨房的改动说起｜董揅札记</title>
+<meta name="description" content="董揅札记基于实景图和设计整理厨房收纳札记，围绕15cm超薄柜、地柜抽屉、分隔件、消毒柜、洗碗机、柜底灯和吊柜竖放收纳，梳理厨房地柜怎么收纳才顺手。">
+<meta name="keywords" content="厨房地柜收纳,厨房抽屉设计,橱柜收纳,15cm超薄柜,消毒柜,洗碗机,柜底灯,吊柜收纳,董揅札记">
+<link rel="canonical" href="https://dongyandesign.cn/notes/kitchen-cabinet-design-2/">
+```
+
+### 设计札记 kitchen-open-layout-3
+URL：https://dongyandesign.cn/notes/kitchen-open-layout-3/
+
+```html
+<title>厨房要不要打开？先看餐厨怎么交流｜董揅札记</title>
+<meta name="description" content="董揅札记围绕开放式厨房、封闭式厨房和可分可合厨房，整理室内窗、移门、餐厨一体、柜台、水槽和餐桌坐姿这些影响餐厨交流的设计判断。">
+<meta name="keywords" content="开放式厨房,半开放厨房,可分可合厨房,餐厨一体,厨房室内窗,厨房移门,厨房吧台,董揅札记">
+<link rel="canonical" href="https://dongyandesign.cn/notes/kitchen-open-layout-3/">
+```
+
 ## 图片 Alt 与 WebP 路径
 
-完整图片清单见 `image-alt-map.csv`，共 224 张图片。下面是可直接放入页面的示例：
+本次新增餐厨交流札记实际使用 29 张厨房札记图片，均已上传至 OSS，并已在页面中写入对应 alt；未使用图片不保留在本地素材、网站目录或 OSS。下面是全站可直接放入页面的示例：
 
 ```html
 <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/logo/dong-design-wordmark-light.png" alt="董揅设计品牌标识，室内空间与方案设计" loading="lazy" decoding="async" />

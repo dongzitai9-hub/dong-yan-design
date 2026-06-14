@@ -1,2 +1,12 @@
-node_modules/
 .DS_Store
+tmp/
+output/
+drafts/
+wenanziliao/
+*.zip
+*.rar
+*.7z
+*.psd
+*.ai
+*.pptx
+*.log
