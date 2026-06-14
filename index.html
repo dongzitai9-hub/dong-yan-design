@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://dongyandesign.cn/" />
     <meta
       property="og:image"
-      content="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/hero/hero-01.webp"
+      content="/assets/optimized/hero/hero-01.webp"
     />
     <script type="application/ld+json">
 {
@@ -35,7 +35,7 @@
       "@id": "https://dongyandesign.cn/#business",
       "name": "董揅设计",
       "url": "https://dongyandesign.cn/",
-      "image": "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/hero/hero-01.webp",
+      "image": "/assets/optimized/hero/hero-01.webp",
       "telephone": "13372293939",
       "areaServed": [
         "上海",
@@ -66,51 +66,60 @@
   ]
 }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260606-about" />
+    <link rel="stylesheet" href="styles.css?v=20260614-2238-fix" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="返回顶部">
         <img
           class="brand-logo"
-          src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/logo/dong-design-wordmark-light.png?v=20260603e"
+          src="assets/logo/dong-design-wordmark-light.png?v=20260614"
           alt="董 DESIGN"
         />
       </a>
 
-      <nav class="site-nav" aria-label="主导航">
+      <nav class="site-nav editorial-nav" aria-label="主导航">
         <div class="nav-dropdown">
-          <button class="nav-trigger" type="button" aria-haspopup="true">空间</button>
+          <a class="nav-trigger editorial-nav-item" href="/cases/" aria-haspopup="true">
+            <span>空间</span>
+            <small>SPACES</small>
+          </a>
           <div class="nav-dropdown-panel" aria-label="空间案例索引">
-            <a href="/cases/space-001">自然序曲</a>
-            <a href="/cases/space-002">云境公馆</a>
-            <a href="/cases/space-003">松弛之家</a>
-            <a href="/cases/space-004">湖畔平层</a>
-            <a href="/cases/space-005">静谧套房</a>
-            <a href="/cases/space-006">城市公寓</a>
-            <a href="/cases/space-007">木色秩序</a>
-            <a href="/cases/space-008">光影客厅</a>
-            <a href="/cases/space-009">餐厨生活</a>
-            <a href="/cases/space-010">雅致私宅</a>
-            <a href="/cases/space-011">现代居所</a>
-            <a href="/cases/space-012">温润之家</a>
+            <a href="/cases/space-001/">自然序曲</a>
+            <a href="/cases/space-002/">云境公馆</a>
+            <a href="/cases/space-003/">松弛之家</a>
+            <a href="/cases/space-004/">湖畔平层</a>
+            <a href="/cases/space-005/">静谧套房</a>
+            <a href="/cases/space-006/">城市公寓</a>
+            <a href="/cases/space-007/">木色秩序</a>
+            <a href="/cases/space-008/">光影客厅</a>
+            <a href="/cases/space-009/">餐厨生活</a>
+            <a href="/cases/space-010/">雅致私宅</a>
+            <a href="/cases/space-011/">现代居所</a>
+            <a href="/cases/space-012/">温润之家</a>
             <a href="/cases/">完整案例索引</a>
           </div>
         </div>
         <div class="nav-dropdown">
-          <button class="nav-trigger" type="button" aria-haspopup="true">方案</button>
+          <a class="nav-trigger editorial-nav-item" href="/cases/" aria-haspopup="true">
+            <span>方案</span>
+            <small>PLANS</small>
+          </a>
           <div class="nav-dropdown-panel" aria-label="方案案例索引">
-            <a href="/cases/scheme-001">格局推演</a>
-            <a href="/cases/scheme-002">功能重组</a>
-            <a href="/cases/scheme-003">动线优化</a>
-            <a href="/cases/scheme-004">套房规划</a>
-            <a href="/cases/scheme-005">家庭尺度</a>
-            <a href="/cases/scheme-006">大宅推敲</a>
+            <a href="/cases/scheme-001/">格局推演</a>
+            <a href="/cases/scheme-002/">功能重组</a>
+            <a href="/cases/scheme-003/">动线优化</a>
+            <a href="/cases/scheme-004/">套房规划</a>
+            <a href="/cases/scheme-005/">家庭尺度</a>
+            <a href="/cases/scheme-006/">大宅推敲</a>
             <a href="/cases/">完整案例索引</a>
           </div>
         </div>
         <div class="nav-dropdown">
-          <button class="nav-trigger" type="button" aria-haspopup="true">设计札记</button>
+          <a class="nav-trigger editorial-nav-item" href="/notes/" aria-haspopup="true">
+            <span>设计札记</span>
+            <small>JOURNAL</small>
+          </a>
           <div class="nav-dropdown-panel nav-notes-panel" aria-label="设计札记索引">
             <a href="/notes/kitchen-open-layout-3/">厨房要不要打开？先看餐厨怎么交流</a>
             <a href="/notes/kitchen-cabinet-design-2/">厨房怎么收纳？从我自己厨房的改动说起</a>
@@ -119,7 +128,10 @@
           </div>
         </div>
         <div class="nav-dropdown">
-          <button class="nav-trigger" type="button" aria-haspopup="true">咨询</button>
+          <a class="nav-trigger editorial-nav-item" href="#contact" aria-haspopup="true">
+            <span>咨询</span>
+            <small>CONTACT</small>
+          </a>
           <div class="nav-dropdown-panel" aria-label="咨询索引">
             <a href="/about/">关于董揅</a>
             <a href="/services/">服务范围</a>
@@ -131,7 +143,7 @@
     </header>
 
     <main id="top">
-      <section class="hero" data-case-hero>
+      <section class="hero editorial-hero" data-case-hero>
         <div class="hero-slider" data-hero-slider></div>
         <div class="hero-shade"></div>
         <div class="hero-content">
@@ -143,110 +155,136 @@
         </div>
       </section>
 
-      <section class="profile" id="profile">
-        <div class="profile-side">
-          <div class="profile-photo">
-            <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/images/dong-yan-portrait-web.webp" alt="董揅设计师形象照，室内空间设计顾问" loading="lazy" decoding="async" />
-          </div>
-          <div class="resume-list compact" aria-label="个人履历">
-            <div>
-              <time>2008-2023</time>
-              <span>苏州工艺技术学院毕业，北京进修软装设计；先后在旭日装饰、红蚂蚁装饰、北京交换空间、常州金螳螂品宅设计任设计师。</span>
-            </div>
-            <div>
-              <time>2023-2024</time>
-              <span>陪父母重走他们年轻时生活过的地方，也更确信好的家应该安放人的时间、记忆和当下生活。</span>
-            </div>
-          </div>
-        </div>
-        <div class="profile-copy">
-          <p class="eyebrow dark">About</p>
-          <h2>把家的想象，整理成可落地的空间方案</h2>
-          <p class="profile-lead">
-            我从设计助理一路走到私宅设计顾问，经历过施工现场、软装进修、住宅改善和高品质私宅落地。对我来说，设计不是把房子装满，而是把生活重新整理：先用空间辑选确认气质，再用方案辑选推敲格局，后续也会以材料辑选把触感、颜色和预算落到具体选择里。
-          </p>
-          <div class="selection-notes" aria-label="辑选方向">
-            <div>
-              <strong>空间辑选</strong>
-              <span>先看生活气质、光线、比例和风格，让客户快速找到喜欢的方向。</span>
-            </div>
-            <div>
-              <strong>方案辑选</strong>
-              <span>再看户型、动线和功能取舍，把想法整理成能讨论、能深化的平面关系。</span>
-            </div>
-            <div>
-              <strong>材料辑选</strong>
-              <span>后续把材质、色彩和预算放到同一套逻辑里，让落地效果不偏离最初的想象。</span>
-            </div>
-          </div>
-          <div class="profile-actions">
-            <a class="button button-dark" href="tel:13372293939">拨打电话</a>
-            <a class="button button-line" href="#works">浏览辑选</a>
+      <section class="about-story" id="about">
+        <div class="story-layout">
+          <aside class="story-side">
+            <p class="story-kicker">FROM SKETCH TO HOME</p>
+            <p class="story-pretitle">从草图，到家的落地</p>
+            <span aria-hidden="true"></span>
+            <h2>从草图，到家的落地</h2>
+            <p>
+              家的轮廓，往往不是从风格开始，而是从一张草图里慢慢浮现。
+              光线、动线、收纳与材质，在一次次推敲中，落成可被日常温柔使用的空间。
+            </p>
+          </aside>
+          <div class="story-main">
+            <img class="story-handwriting" src="assets/images/generated/story-handwriting-clean-20260614.png" alt="It started from a sketch，从一张草图到一个可落地的家" loading="lazy" decoding="async" />
+            <img class="story-process-image" src="assets/images/generated/designer-sketch-process-20260614.png" alt="设计师手绘平面方案和材料推敲过程" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
 
-      <section class="works" id="works">
-        <div class="section-heading">
+      <section class="service-showcase" id="services">
+        <div class="service-intro">
+          <div class="service-heading">
+            <h2>SERVICES</h2>
+            <span aria-hidden="true"></span>
+          </div>
           <div>
-            <p class="eyebrow dark">Selection</p>
-            <h2>空间辑选</h2>
+            <p class="service-kicker">服务内容</p>
+            <h3 data-service-title>住宅空间设计</h3>
+            <p data-service-copy>
+              从居住气质、家庭成员、采光比例和生活节奏出发，建立整体空间方向，让风格不是表面装饰，而是日常使用后的自然结果。
+            </p>
           </div>
         </div>
-        <div class="works-grid" data-work-grid></div>
-        <div class="works-more">
-          <button class="button button-line" type="button" data-more-works>
-            更多空间辑选
-          </button>
+        <div class="service-stage">
+          <aside class="service-note">
+            <span aria-hidden="true"></span>
+            <p data-service-note>
+              好的设计，是让生活回归本真。空间不喧哗，却能容纳日常的温度；光影流动，时间在其中变得柔软。
+            </p>
+          </aside>
+          <div class="service-rail" aria-label="服务内容轮播">
+            <button class="service-card is-active" type="button" data-service-index="0">
+              <img src="assets/photos/32/B2CD5F38-C9D7-49CE-A22C-B764B6760390.webp" alt="住宅空间设计案例图" loading="lazy" decoding="async" />
+            </button>
+            <button class="service-card" type="button" data-service-index="1">
+              <img src="assets/photos/32/03778B94-D40C-4256-991A-AA0CE21DF340.webp" alt="户型优化案例图" loading="lazy" decoding="async" />
+            </button>
+            <button class="service-card" type="button" data-service-index="2">
+              <img src="assets/photos/35/177EC569-0B86-4588-900C-2FE576FCAB7C.webp" alt="收纳系统设计案例图" loading="lazy" decoding="async" />
+            </button>
+            <button class="service-card" type="button" data-service-index="3">
+              <img src="assets/photos/20/1786B725-E753-49F4-8C28-7B47AE0A05E0.webp" alt="水电与设备规划案例图" loading="lazy" decoding="async" />
+            </button>
+            <button class="service-card" type="button" data-service-index="4">
+              <img src="assets/photos/18/2ABB8A32-DFC8-4D2D-93C3-7F9628158710.webp" alt="灯光氛围设计案例图" loading="lazy" decoding="async" />
+            </button>
+            <button class="service-card" type="button" data-service-index="5">
+              <img src="assets/photos/11/0091F79A-DA5F-4991-8086-00178BDC94EF.webp" alt="软装与陈设搭配案例图" loading="lazy" decoding="async" />
+            </button>
+            <button class="service-card" type="button" data-service-index="6">
+              <img src="assets/photos/34/5366D28E-DEA2-4DAB-99B8-E0A7FD1080F0.webp" alt="施工落地配合案例图" loading="lazy" decoding="async" />
+            </button>
+          </div>
         </div>
       </section>
 
-      <section class="works scheme-selection" id="schemes">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow dark">Selection</p>
-            <h2>方案辑选</h2>
-          </div>
+      <section class="light-life-section">
+        <div class="light-life-copy">
+          <h2>LIGHT IN LIFE</h2>
+          <h3>让光线，成为家的表情</h3>
+          <p>光不只是照亮空间，<br />也在整理家的情绪、层次与温度。<br />让明暗的变化，慢慢成为家的表情。</p>
         </div>
-        <div class="works-grid" data-scheme-grid></div>
-        <div class="works-more">
-          <button class="button button-line" type="button" data-more-schemes>
-            更多方案辑选
-          </button>
+        <img src="assets/images/generated/editorial/light-life-main.png" alt="光线进入住宅空间形成柔和生活氛围" loading="lazy" decoding="async" />
+      </section>
+
+      <section class="light-wide-image">
+        <img src="assets/images/generated/editorial/light-life-wide.png" alt="自然光与室内拱形空间形成安静的生活场景" loading="lazy" decoding="async" />
+      </section>
+
+      <section class="texture-life-section">
+        <img class="texture-large" src="assets/images/generated/editorial/texture-large.png" alt="材质纹理细节与光影" loading="lazy" decoding="async" />
+        <div class="texture-content">
+          <div class="texture-copy">
+            <p class="eyebrow dark">TEXTURE IN LIFE</p>
+            <h2>让材质，<br />留下生活的温度</h2>
+            <span aria-hidden="true"></span>
+            <p>软装不是最后的摆放，<br />而是让空间有被使用过的气息。</p>
+            <p>从布艺、灯具、器物到一束植物，<br />每一个细节都在回应家的温度。</p>
+          </div>
+          <img class="texture-small" src="assets/images/generated/editorial/texture-small.png" alt="材质样板和器物陈设细节" loading="lazy" decoding="async" />
         </div>
       </section>
 
-      <section class="contact" id="contact">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2>咨询</h2>
-          <p>
-            设计像一门岁月回春术。十多年前别人问我多大，我说四十了；如今再问，我说还不到四十。家也一样，老户型、旧习惯、过时审美，都可以重新长出年轻的秩序和气质。想让房子回到更好的年纪，欢迎电话或微信聊聊。
-          </p>
-          <dl class="contact-meta">
-            <div>
-              <dt>姓名</dt>
-              <dd>董揅</dd>
-            </div>
-            <div>
-              <dt>电话</dt>
-              <dd><a href="tel:13372293939">13372293939</a></dd>
-            </div>
-            <div>
-              <dt>微信</dt>
-              <dd>揅室</dd>
-            </div>
-          </dl>
+      <section class="lifestyle-aesthetic-section">
+        <div class="lifestyle-media lifestyle-left">
+          <img src="assets/images/generated/editorial/lifestyle-left.png" alt="窗边花枝与日常器物" loading="lazy" decoding="async" />
         </div>
-        <div class="contact-actions">
-          <figure class="wechat-card">
-            <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/images/qr-contact-light.png" alt="董揅设计咨询微信二维码" loading="lazy" decoding="async" />
-          </figure>
+        <div class="lifestyle-media lifestyle-center">
+          <img src="assets/images/generated/editorial/lifestyle-center.png" alt="手冲咖啡与居家生活细节" loading="lazy" decoding="async" />
         </div>
-        <p class="copyright-note">
-          图像用于空间风格、材质搭配与设计方向沟通；如涉及权利归属或展示调整，请联系处理。
-        </p>
+        <div class="lifestyle-copy">
+          <h2>LIVING<br />AESTHETICS</h2>
+          <h3>生活方式美学</h3>
+          <p>让空间，不只是居住的容器，<br />也成为生活审美与日常气质的表达。</p>
+        </div>
+        <div class="lifestyle-media lifestyle-wide">
+          <img src="assets/images/generated/editorial/lifestyle-wide.png" alt="客厅沙发与灯光氛围形成生活美学场景" loading="lazy" decoding="async" />
+        </div>
       </section>
+
+      <section class="philosophy-panel dark-thought">
+        <div class="philosophy-copy drawing-copy">
+          <p class="drawing-line">Ideas become drawings, and drawings become life.</p>
+          <img src="assets/images/generated/editorial/drawing-small.png" alt="设计师与业主推敲图纸和材料样板" loading="lazy" decoding="async" />
+          <h2>把想法落到图纸上</h2>
+          <h3>从概念推敲，到施工可落地的图纸表达</h3>
+          <p>每一个好住的家，<br />都离不开反复推敲的图纸。<br />墙体能否调整，设备如何隐藏，<br />灯光怎样预留，预算落在哪里，<br />设计最终要回到现场，<br />也要回到人的日常生活。</p>
+          <span aria-hidden="true"></span>
+        </div>
+        <video class="philosophy-video" autoplay muted loop playsinline poster="assets/images/generated/dongyan-design-consultation-20260614.png" aria-label="董揅设计师与业主沟通住宅方案">
+          <source src="assets/videos/generated/dongyan-design-consultation-loop-20260614.mp4" type="video/mp4" />
+        </video>
+      </section>
+
+      <footer class="site-footer" id="contact">
+        <div class="footer-legal">
+          <p>© DONGYAN DESIGN. ALL RIGHTS RESERVED.</p>
+          <p>图像用于空间风格、材质搭配与设计方向沟通；如涉及权利归属或展示调整，请联系董揅设计处理。</p>
+        </div>
+      </footer>
     </main>
 
     <div class="lightbox" data-lightbox hidden>
@@ -266,6 +304,6 @@
       <div class="case-view-grid" data-case-view-grid></div>
     </section>
 
-    <script src="script.js?v=20260603-clean-hero-logo"></script>
+    <script src="script.js?v=20260614-2238-fix"></script>
   </body>
 </html>
