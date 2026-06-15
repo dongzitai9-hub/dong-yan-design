@@ -1107,10 +1107,6 @@ function openContactView(updateHistory = true) {
           <p>可以先咨询户型是否值得调整、厨房餐厨关系、收纳规划、灯光和设备预留，也可以带着已有图纸一起沟通。</p>
         </article>
       </div>
-      <div class="contact-lines">
-        <a href="tel:13372293939">13372293939</a>
-        <span>微信联系</span>
-      </div>
     </section>
   `;
   caseView.hidden = false;
