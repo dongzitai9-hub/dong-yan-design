@@ -514,6 +514,24 @@ const featuredSchemes = schemeCases.slice(0, 3).map((item, schemeIndex) => ({
   schemeIndex,
 }));
 
+const journalItems = [
+  {
+    title: "厨房要不要打开？先看餐厨怎么交流",
+    href: "/notes/kitchen-open-layout-3/",
+    summary: "从餐厨互动、油烟控制和家庭日常节奏判断开放方式。",
+  },
+  {
+    title: "厨房怎么收纳？从我自己厨房的改动说起",
+    href: "/notes/kitchen-cabinet-design-2/",
+    summary: "把抽屉、薄柜、高频区和低频区重新整理成顺手系统。",
+  },
+  {
+    title: "厨房好不好用，先看橱柜怎么设计",
+    href: "/notes/kitchen-cabinet-design-1/",
+    summary: "从台面长度、动线和柜体尺度判断厨房是否真正好用。",
+  },
+];
+
 const serviceItems = [
   {
     title: "住宅空间设计",
@@ -569,8 +587,11 @@ const serviceNote = document.querySelector("[data-service-note]");
 const serviceCards = [...document.querySelectorAll("[data-service-index]")];
 const navDropdowns = [...document.querySelectorAll(".nav-dropdown")];
 const navIndexTriggers = [...document.querySelectorAll("[data-open-case-index]")];
+const navNotesTriggers = [...document.querySelectorAll("[data-open-notes]")];
+const navContactTriggers = [...document.querySelectorAll("[data-open-contact]")];
 const caseViewIndexTriggers = [...document.querySelectorAll("[data-case-view-index]")];
 const caseViewHome = document.querySelector("[data-case-view-home]");
+const caseViewNotes = document.querySelector("[data-case-view-notes]");
 const caseViewContact = document.querySelector("[data-case-view-contact]");
 const caseView = document.querySelector("[data-case-view]");
 const caseViewGrid = document.querySelector("[data-case-view-grid]");
@@ -703,6 +724,40 @@ function bindNavDropdowns() {
       if (!dropdown.contains(event.relatedTarget)) close();
     });
   });
+
+  document.querySelectorAll(".nav-dropdown-panel a").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href") || "";
+      const spaceMatch = href.match(/\/cases\/space-(\d+)\/?/);
+      const schemeMatch = href.match(/\/cases\/scheme-(\d+)\/?/);
+      if (spaceMatch) {
+        event.preventDefault();
+        openCaseView(Number(spaceMatch[1]) - 1);
+        return;
+      }
+      if (schemeMatch) {
+        event.preventDefault();
+        openSchemeView(Number(schemeMatch[1]) - 1);
+        return;
+      }
+      if (href === "/cases/") {
+        event.preventDefault();
+        const isPlans = link.closest(".nav-dropdown-panel")?.getAttribute("aria-label")?.includes("方案");
+        if (isPlans) openSchemeList();
+        else openCaseList();
+        return;
+      }
+      if (href.startsWith("/notes/")) {
+        event.preventDefault();
+        openNotesList();
+        return;
+      }
+      if (href === "#contact" || href === "/about/" || href === "/services/" || href === "/faq/") {
+        event.preventDefault();
+        openContactView();
+      }
+    });
+  });
 }
 
 function setLightboxImage(index) {
@@ -742,7 +797,7 @@ function openCaseView(caseIndex, updateHistory = true) {
   currentView = "case";
   caseView.classList.remove("is-index-page");
   caseView.classList.remove("is-scheme-detail");
-  caseViewGrid.classList.remove("is-index", "is-index-magazine");
+  caseViewGrid.classList.remove("is-index", "is-index-magazine", "is-simple-page");
   caseViewTitle.textContent = item.name;
   caseViewGrid.innerHTML = `
     <article class="case-detail">
@@ -862,7 +917,7 @@ function openCaseList(updateHistory = true) {
   currentView = "list";
   caseView.classList.add("is-index-page");
   caseView.classList.remove("is-scheme-detail");
-  caseViewGrid.classList.remove("is-index");
+  caseViewGrid.classList.remove("is-index", "is-simple-page");
   caseViewGrid.classList.add("is-index-magazine");
   caseViewTitle.textContent = "空间辑选";
   caseViewGrid.innerHTML = renderCaseIndex("spaces");
@@ -880,7 +935,7 @@ function openSchemeView(schemeIndex, updateHistory = true) {
   currentView = "scheme";
   caseView.classList.remove("is-index-page");
   caseView.classList.add("is-scheme-detail");
-  caseViewGrid.classList.remove("is-index", "is-index-magazine");
+  caseViewGrid.classList.remove("is-index", "is-index-magazine", "is-simple-page");
   caseViewTitle.textContent = item.name;
   caseViewGrid.innerHTML = `
     <article class="case-detail scheme-detail">
@@ -936,7 +991,7 @@ function openSchemeList(updateHistory = true) {
   currentView = "scheme-list";
   caseView.classList.add("is-index-page");
   caseView.classList.remove("is-scheme-detail");
-  caseViewGrid.classList.remove("is-index");
+  caseViewGrid.classList.remove("is-index", "is-simple-page");
   caseViewGrid.classList.add("is-index-magazine");
   caseViewTitle.textContent = "方案辑选";
   caseViewGrid.innerHTML = renderCaseIndex("plans");
@@ -948,11 +1003,73 @@ function openSchemeList(updateHistory = true) {
   }
 }
 
+function openNotesList(updateHistory = true) {
+  caseViewReturnTarget = document.activeElement;
+  currentView = "notes-list";
+  caseView.classList.add("is-index-page");
+  caseView.classList.remove("is-scheme-detail");
+  caseViewGrid.classList.remove("is-index", "is-index-magazine");
+  caseViewGrid.classList.add("is-simple-page");
+  caseViewTitle.textContent = "设计札记";
+  caseViewGrid.innerHTML = `
+    <section class="simple-page journal-page">
+      <p class="simple-kicker">JOURNAL</p>
+      <h2>设计札记</h2>
+      <div class="journal-list">
+        ${journalItems
+          .map(
+            (item) => `
+              <a class="journal-entry" href="${item.href}">
+                <span>JOURNAL</span>
+                <strong>${item.title}</strong>
+                <p>${item.summary}</p>
+              </a>
+            `,
+          )
+          .join("")}
+      </div>
+    </section>
+  `;
+  caseView.hidden = false;
+  document.body.classList.add("case-view-open");
+  caseView.scrollTop = 0;
+  if (updateHistory) {
+    syncHistory({ view: "notes-list" }, "#journal");
+  }
+}
+
+function openContactView(updateHistory = true) {
+  caseViewReturnTarget = document.activeElement;
+  currentView = "contact";
+  caseView.classList.add("is-index-page");
+  caseView.classList.remove("is-scheme-detail");
+  caseViewGrid.classList.remove("is-index", "is-index-magazine");
+  caseViewGrid.classList.add("is-simple-page");
+  caseViewTitle.textContent = "咨询";
+  caseViewGrid.innerHTML = `
+    <section class="simple-page contact-page">
+      <p class="simple-kicker">CONTACT</p>
+      <h2>关于董揅</h2>
+      <p class="contact-lead">董揅设计专注住宅空间、户型方案与长期居住体验，把审美、动线、收纳、设备与施工落地放在同一张图纸里推敲。</p>
+      <div class="contact-lines">
+        <a href="tel:13372293939">13372293939</a>
+        <span>微信联系：揅室</span>
+      </div>
+    </section>
+  `;
+  caseView.hidden = false;
+  document.body.classList.add("case-view-open");
+  caseView.scrollTop = 0;
+  if (updateHistory) {
+    syncHistory({ view: "contact" }, "#contact");
+  }
+}
+
 function closeCaseView() {
   currentView = "home";
   caseView.hidden = true;
   caseView.classList.remove("is-scheme-detail", "is-index-page");
-  caseViewGrid.classList.remove("is-index", "is-index-magazine");
+  caseViewGrid.classList.remove("is-index", "is-index-magazine", "is-simple-page");
   document.body.classList.remove("case-view-open");
   if (caseViewReturnTarget) {
     caseViewReturnTarget.focus();
@@ -982,6 +1099,16 @@ function applyHistoryState(state) {
 
   if (state.view === "scheme") {
     openSchemeView(state.schemeIndex, false);
+    return;
+  }
+
+  if (state.view === "notes-list") {
+    openNotesList(false);
+    return;
+  }
+
+  if (state.view === "contact") {
+    openContactView(false);
   }
 }
 
@@ -1003,6 +1130,20 @@ navIndexTriggers.forEach((trigger) => {
   });
 });
 
+navNotesTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", (event) => {
+    event.preventDefault();
+    openNotesList();
+  });
+});
+
+navContactTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", (event) => {
+    event.preventDefault();
+    openContactView();
+  });
+});
+
 caseViewIndexTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
     event.preventDefault();
@@ -1013,6 +1154,13 @@ caseViewIndexTriggers.forEach((trigger) => {
     openCaseList();
   });
 });
+
+if (caseViewNotes) {
+  caseViewNotes.addEventListener("click", (event) => {
+    event.preventDefault();
+    openNotesList();
+  });
+}
 
 if (caseViewHome) {
   caseViewHome.addEventListener("click", (event) => {
@@ -1026,9 +1174,7 @@ if (caseViewHome) {
 if (caseViewContact) {
   caseViewContact.addEventListener("click", (event) => {
     event.preventDefault();
-    closeCaseView();
-    history.replaceState({ view: "home" }, "", `${location.pathname}${location.search}#contact`);
-    document.querySelector("#contact")?.scrollIntoView();
+    openContactView();
   });
 }
 

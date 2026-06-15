@@ -66,7 +66,7 @@
   ]
 }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260615-1140-layout" />
+    <link rel="stylesheet" href="styles.css?v=20260615-1328-layout" />
   </head>
   <body>
     <header class="site-header">
@@ -116,7 +116,7 @@
           </div>
         </div>
         <div class="nav-dropdown">
-          <a class="nav-trigger editorial-nav-item" href="/notes/" aria-haspopup="true">
+          <a class="nav-trigger editorial-nav-item" href="/notes/" aria-haspopup="true" data-open-notes>
             <span>设计札记</span>
             <small>JOURNAL</small>
           </a>
@@ -128,7 +128,7 @@
           </div>
         </div>
         <div class="nav-dropdown">
-          <a class="nav-trigger editorial-nav-item" href="#contact" aria-haspopup="true">
+          <a class="nav-trigger editorial-nav-item" href="#contact" aria-haspopup="true" data-open-contact>
             <span>咨询</span>
             <small>CONTACT</small>
           </a>
@@ -169,7 +169,7 @@
             </p>
           </aside>
           <div class="story-main">
-            <img class="story-handwriting" src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/images/generated/editorial/story-handwriting-english-20260615.webp" alt="It started from a sketch" loading="lazy" decoding="async" />
+            <img class="story-handwriting" src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/images/generated/editorial/story-handwriting-english-filled-20260615.webp" alt="It started from a sketch" loading="lazy" decoding="async" />
             <img class="story-process-image" src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/images/generated/editorial/story-process-sketch-20260615.webp" alt="设计师手绘平面方案和材料推敲过程" loading="lazy" decoding="async" />
           </div>
         </div>
@@ -283,11 +283,6 @@
       </section>
 
       <footer class="site-footer" id="contact">
-        <div class="footer-contact">
-          <p>咨询 / CONTACT</p>
-          <a href="tel:13372293939">13372293939</a>
-          <span>微信：揅室</span>
-        </div>
         <div class="footer-legal">
           <p>© DONGYAN DESIGN. ALL RIGHTS RESERVED.</p>
           <p>图像仅作风格沟通，调整请联系。</p>
@@ -320,7 +315,7 @@
             <span>方案</span>
             <small>PLANS</small>
           </a>
-          <a class="nav-trigger editorial-nav-item" href="/notes/">
+          <a class="nav-trigger editorial-nav-item" href="/notes/" data-case-view-notes>
             <span>设计札记</span>
             <small>JOURNAL</small>
           </a>
@@ -340,6 +335,6 @@
       <div class="case-view-grid" data-case-view-grid></div>
     </section>
 
-    <script src="script.js?v=20260615-1140-layout"></script>
+    <script src="script.js?v=20260615-1328-layout"></script>
   </body>
 </html>
