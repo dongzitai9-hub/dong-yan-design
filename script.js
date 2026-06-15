@@ -763,6 +763,7 @@ function bindNavDropdowns() {
 
   document.querySelectorAll(".nav-dropdown-panel a").forEach((link) => {
     link.addEventListener("click", (event) => {
+      link.closest(".nav-dropdown")?.classList.remove("is-open");
       const href = link.getAttribute("href") || "";
       const spaceMatch = href.match(/\/cases\/space-(\d+)\/?/);
       const schemeMatch = href.match(/\/cases\/scheme-(\d+)\/?/);
@@ -1083,10 +1084,32 @@ function openContactView(updateHistory = true) {
     <section class="simple-page contact-page">
       <p class="simple-kicker">CONTACT</p>
       <h2>关于董揅</h2>
-      <p class="contact-lead">董揅设计专注住宅空间、户型方案与长期居住体验，把审美、动线、收纳、设备与施工落地放在同一张图纸里推敲。</p>
+      <p class="contact-lead">董揅设计专注住宅空间、户型方案与长期居住体验。我们把居住审美、空间动线、收纳系统、灯光设备和施工落地放在同一张图纸里推敲，让设计从好看回到真正好住。</p>
+      <div class="contact-info-grid">
+        <article>
+          <span>PROFILE</span>
+          <h3>个人介绍</h3>
+          <p>长期关注住宅空间里的日常秩序：家人如何互动，物品如何收纳，光线怎样进入，设备如何隐藏，预算应该落在哪里。设计不是单独做一张效果图，而是在图纸、材料和现场之间反复校准。</p>
+        </article>
+        <article>
+          <span>SERVICE</span>
+          <h3>业务范围</h3>
+          <p>住宅空间设计、户型优化、收纳系统设计、水电与设备规划、灯光氛围设计、软装与陈设搭配、施工落地配合。</p>
+        </article>
+        <article>
+          <span>PROCESS</span>
+          <h3>沟通方式</h3>
+          <p>先了解房屋基础、家庭成员、生活习惯、预算范围和改造重点，再进入平面方案、空间方向、图纸深化与落地配合。</p>
+        </article>
+        <article>
+          <span>FAQ</span>
+          <h3>常见问题</h3>
+          <p>可以先咨询户型是否值得调整、厨房餐厨关系、收纳规划、灯光和设备预留，也可以带着已有图纸一起沟通。</p>
+        </article>
+      </div>
       <div class="contact-lines">
         <a href="tel:13372293939">13372293939</a>
-        <span>微信联系：揅室</span>
+        <span>微信联系</span>
       </div>
     </section>
   `;

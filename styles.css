@@ -1303,6 +1303,40 @@ h2 {
   line-height: 2;
 }
 
+.contact-info-grid {
+  display: grid;
+  gap: clamp(18px, 2.4vw, 28px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-info-grid article {
+  padding-top: 20px;
+  border-top: 1px solid rgba(36, 34, 31, 0.18);
+}
+
+.contact-info-grid span {
+  display: block;
+  color: #9a7258;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+}
+
+.contact-info-grid h3 {
+  margin: 10px 0 8px;
+  color: #24221f;
+  font-size: clamp(20px, 1.7vw, 28px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.contact-info-grid p {
+  margin: 0;
+  color: rgba(36, 34, 31, 0.72);
+  font-size: clamp(14px, 1vw, 17px);
+  line-height: 1.95;
+}
+
 .contact-lines {
   display: flex;
   gap: clamp(22px, 4vw, 56px);
@@ -1380,6 +1414,10 @@ h2 {
   .contact-actions {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .contact-info-grid {
+    grid-template-columns: 1fr;
   }
 
   .profile-photo img {
