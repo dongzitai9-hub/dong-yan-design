@@ -148,6 +148,13 @@ a {
   visibility: visible;
 }
 
+body.dropdown-lock .nav-dropdown-panel {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translate(-50%, -6px) !important;
+  visibility: hidden !important;
+}
+
 .nav-dropdown-panel a {
   min-height: 34px;
   padding: 7px 10px;

@@ -750,6 +750,17 @@ function bindServiceShowcase() {
 }
 
 function bindNavDropdowns() {
+  const closeAllDropdowns = () => {
+    document.body.classList.add("dropdown-lock");
+    navDropdowns.forEach((item) => item.classList.remove("is-open"));
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+    window.setTimeout(() => {
+      document.body.classList.remove("dropdown-lock");
+    }, 700);
+  };
+
   navDropdowns.forEach((dropdown) => {
     const open = () => dropdown.classList.add("is-open");
     const close = () => dropdown.classList.remove("is-open");
@@ -763,7 +774,7 @@ function bindNavDropdowns() {
 
   document.querySelectorAll(".nav-dropdown-panel a").forEach((link) => {
     link.addEventListener("click", (event) => {
-      link.closest(".nav-dropdown")?.classList.remove("is-open");
+      closeAllDropdowns();
       const href = link.getAttribute("href") || "";
       const spaceMatch = href.match(/(?:^|\/)cases\/space-(\d+)\/?/);
       const schemeMatch = href.match(/(?:^|\/)cases\/scheme-(\d+)\/?/);
