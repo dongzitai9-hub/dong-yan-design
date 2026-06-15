@@ -66,7 +66,7 @@
   ]
 }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260614-2238-fix" />
+    <link rel="stylesheet" href="styles.css?v=20260615-1018-layout" />
   </head>
   <body>
     <header class="site-header">
@@ -80,7 +80,7 @@
 
       <nav class="site-nav editorial-nav" aria-label="主导航">
         <div class="nav-dropdown">
-          <a class="nav-trigger editorial-nav-item" href="/cases/" aria-haspopup="true">
+          <a class="nav-trigger editorial-nav-item" href="/cases/" aria-haspopup="true" data-open-case-index="spaces">
             <span>空间</span>
             <small>SPACES</small>
           </a>
@@ -101,7 +101,7 @@
           </div>
         </div>
         <div class="nav-dropdown">
-          <a class="nav-trigger editorial-nav-item" href="/cases/" aria-haspopup="true">
+          <a class="nav-trigger editorial-nav-item" href="/cases/" aria-haspopup="true" data-open-case-index="plans">
             <span>方案</span>
             <small>PLANS</small>
           </a>
@@ -159,12 +159,13 @@
         <div class="story-layout">
           <aside class="story-side">
             <p class="story-kicker">FROM SKETCH TO HOME</p>
-            <p class="story-pretitle">从草图，到家的落地</p>
             <span aria-hidden="true"></span>
-            <h2>从草图，到家的落地</h2>
             <p>
-              家的轮廓，往往不是从风格开始，而是从一张草图里慢慢浮现。
-              光线、动线、收纳与材质，在一次次推敲中，落成可被日常温柔使用的空间。
+              家的轮廓，往往不是从风格开始，<br />
+              而是从一张草图里慢慢浮现。<br />
+              光线、动线、收纳与材质，<br />
+              在一次次推敲中，<br />
+              落成可被日常温柔使用的空间。
             </p>
           </aside>
           <div class="story-main">
@@ -256,9 +257,11 @@
           <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/images/generated/editorial/lifestyle-center.png" alt="手冲咖啡与居家生活细节" loading="lazy" decoding="async" />
         </div>
         <div class="lifestyle-copy">
-          <h2>LIVING<br />AESTHETICS</h2>
-          <h3>生活方式美学</h3>
-          <p>让空间，不只是居住的容器，<br />也成为生活审美与日常气质的表达。</p>
+          <p class="lifestyle-kicker">AESTHETICS IN LIFE</p>
+          <h2>让日常，<br />成为生活的美学</h2>
+          <span aria-hidden="true"></span>
+          <p>空间，不只是居住的容器，<br />也成为生活审美与日常气质的表达。</p>
+          <p>从器物、光线、布艺到一隅坐卧，<br />每一个细节都在沉淀家的温度。</p>
         </div>
         <div class="lifestyle-media lifestyle-wide">
           <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/images/generated/editorial/lifestyle-wide.png" alt="客厅沙发与灯光氛围形成生活美学场景" loading="lazy" decoding="async" />
@@ -269,7 +272,7 @@
         <div class="philosophy-copy drawing-copy">
           <p class="drawing-line">Ideas become drawings, and drawings become life.</p>
           <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/images/generated/editorial/drawing-small.png" alt="设计师与业主推敲图纸和材料样板" loading="lazy" decoding="async" />
-          <h2>把想法落到图纸上</h2>
+          <h2>把想法落在图纸上</h2>
           <h3>从概念推敲，到施工可落地的图纸表达</h3>
           <p>每一个好住的家，<br />都离不开反复推敲的图纸。<br />墙体能否调整，设备如何隐藏，<br />灯光怎样预留，预算落在哪里，<br />设计最终要回到现场，<br />也要回到人的日常生活。</p>
           <span aria-hidden="true"></span>
@@ -282,7 +285,7 @@
       <footer class="site-footer" id="contact">
         <div class="footer-legal">
           <p>© DONGYAN DESIGN. ALL RIGHTS RESERVED.</p>
-          <p>图像用于空间风格、材质搭配与设计方向沟通；如涉及权利归属或展示调整，请联系董揅设计处理。</p>
+          <p>图像仅作风格沟通，调整请联系。</p>
         </div>
       </footer>
     </main>
@@ -296,6 +299,7 @@
 
     <section class="case-view" data-case-view hidden>
       <div class="case-view-header">
+        <button class="case-view-back" type="button" data-case-view-back>返回</button>
         <div>
           <p class="eyebrow dark">Selection</p>
           <h2 data-case-view-title>空间辑选</h2>
@@ -304,6 +308,6 @@
       <div class="case-view-grid" data-case-view-grid></div>
     </section>
 
-    <script src="script.js?v=20260614-2238-fix"></script>
+    <script src="script.js?v=20260615-1018-layout"></script>
   </body>
 </html>

@@ -568,9 +568,11 @@ const serviceCopy = document.querySelector("[data-service-copy]");
 const serviceNote = document.querySelector("[data-service-note]");
 const serviceCards = [...document.querySelectorAll("[data-service-index]")];
 const navDropdowns = [...document.querySelectorAll(".nav-dropdown")];
+const navIndexTriggers = [...document.querySelectorAll("[data-open-case-index]")];
 const caseView = document.querySelector("[data-case-view]");
 const caseViewGrid = document.querySelector("[data-case-view-grid]");
 const caseViewTitle = document.querySelector("[data-case-view-title]");
+const caseViewBack = document.querySelector("[data-case-view-back]");
 let caseViewReturnTarget = null;
 let currentView = "home";
 let lightboxImages = [];
@@ -670,6 +672,10 @@ function setActiveService(index) {
 function bindServiceShowcase() {
   if (!serviceCards.length) return;
   let activeIndex = 0;
+  serviceCards.forEach((card) => {
+    const item = serviceItems[Number(card.dataset.serviceIndex)];
+    if (item) card.dataset.serviceLabel = item.title;
+  });
   const activate = (index) => {
     activeIndex = (index + serviceItems.length) % serviceItems.length;
     setActiveService(activeIndex);
@@ -731,8 +737,9 @@ function openCaseView(caseIndex, updateHistory = true) {
   const thumbImages = item.images.slice(6);
   caseViewReturnTarget = document.activeElement;
   currentView = "case";
+  caseView.classList.remove("is-index-page");
   caseView.classList.remove("is-scheme-detail");
-  caseViewGrid.classList.remove("is-index");
+  caseViewGrid.classList.remove("is-index", "is-index-magazine");
   caseViewTitle.textContent = item.name;
   caseViewGrid.innerHTML = `
     <article class="case-detail">
@@ -802,22 +809,60 @@ function openCaseView(caseIndex, updateHistory = true) {
   }
 }
 
+function renderIndexCover(kind) {
+  const isPlans = kind === "plans";
+  return `
+    <header class="case-index-cover">
+      <h3>${isPlans ? "PLANS" : "SPACES"}</h3>
+      <p>${isPlans ? "SELECTED PLAN WORKS" : "SELECTED RESIDENTIAL WORKS"}</p>
+      <strong>${isPlans ? "方 案 辑 选" : "空 间 辑 选"}</strong>
+      <small>${isPlans ? "户 型 方 案 案 例" : "住 宅 空 间 案 例"}</small>
+      <span class="case-index-rule" aria-hidden="true"></span>
+    </header>
+  `;
+}
+
+function renderCaseIndex(kind) {
+  const isPlans = kind === "plans";
+  const entries = isPlans ? schemeCases : cases;
+  return `
+    ${renderIndexCover(kind)}
+    ${entries
+      .map((item, index) => {
+        const image = isPlans ? schemeDisplayImage(item.hero || item.images[0]) : caseMediumImage(item.hero || item.images[0]);
+        const wideClass = index % 3 === 2 ? " is-wide" : "";
+        const category = isPlans ? "PLAN | 方案设计" : `RESIDENTIAL | ${item.type}`;
+        const title = isPlans ? `${item.name}` : `${item.location} · ${item.name}`;
+        const detail = isPlans
+          ? `平面推敲 / ${item.images.length} 张图 / 动线与功能优化`
+          : `${item.area} / ${item.type} / 收纳优化 / 灯光氛围`;
+        const dataAttr = isPlans ? `data-scheme-list-index="${index}"` : `data-case-list-index="${index}"`;
+        return `
+          <button class="case-index-entry${wideClass}" type="button" ${dataAttr}>
+            <figure>
+              <img src="${image}" alt="${item.name}" loading="lazy" decoding="async" />
+            </figure>
+            <span class="case-index-meta">
+              <span class="category">${category}</span>
+              <h4>${title}</h4>
+              <p>${detail}</p>
+            </span>
+          </button>
+        `;
+      })
+      .join("")}
+  `;
+}
+
 function openCaseList(updateHistory = true) {
   caseViewReturnTarget = document.activeElement;
   currentView = "list";
+  caseView.classList.add("is-index-page");
   caseView.classList.remove("is-scheme-detail");
-  caseViewGrid.classList.add("is-index");
-  caseViewTitle.textContent = "更多空间辑选";
-  caseViewGrid.innerHTML = cases
-    .map(
-      (item, index) => `
-        <button class="case-index-card" type="button" data-case-list-index="${index}">
-          <img src="${caseThumbs[index]}" alt="${item.name}" loading="lazy" decoding="async" />
-          <span>${item.name}</span>
-        </button>
-      `,
-    )
-    .join("");
+  caseViewGrid.classList.remove("is-index");
+  caseViewGrid.classList.add("is-index-magazine");
+  caseViewTitle.textContent = "空间辑选";
+  caseViewGrid.innerHTML = renderCaseIndex("spaces");
   caseView.hidden = false;
   document.body.classList.add("case-view-open");
   caseView.scrollTop = 0;
@@ -830,8 +875,9 @@ function openSchemeView(schemeIndex, updateHistory = true) {
   const item = schemeCases[schemeIndex];
   caseViewReturnTarget = document.activeElement;
   currentView = "scheme";
+  caseView.classList.remove("is-index-page");
   caseView.classList.add("is-scheme-detail");
-  caseViewGrid.classList.remove("is-index");
+  caseViewGrid.classList.remove("is-index", "is-index-magazine");
   caseViewTitle.textContent = item.name;
   caseViewGrid.innerHTML = `
     <article class="case-detail scheme-detail">
@@ -885,19 +931,12 @@ function openSchemeView(schemeIndex, updateHistory = true) {
 function openSchemeList(updateHistory = true) {
   caseViewReturnTarget = document.activeElement;
   currentView = "scheme-list";
+  caseView.classList.add("is-index-page");
   caseView.classList.remove("is-scheme-detail");
-  caseViewGrid.classList.add("is-index");
-  caseViewTitle.textContent = "更多方案辑选";
-  caseViewGrid.innerHTML = schemeCases
-    .map(
-      (item, index) => `
-        <button class="case-index-card scheme-card" type="button" data-scheme-list-index="${index}">
-          <img src="${schemeThumbs[index]}" alt="${item.name}" loading="lazy" decoding="async" />
-          <span>${item.name}</span>
-        </button>
-      `,
-    )
-    .join("");
+  caseViewGrid.classList.remove("is-index");
+  caseViewGrid.classList.add("is-index-magazine");
+  caseViewTitle.textContent = "方案辑选";
+  caseViewGrid.innerHTML = renderCaseIndex("plans");
   caseView.hidden = false;
   document.body.classList.add("case-view-open");
   caseView.scrollTop = 0;
@@ -909,8 +948,8 @@ function openSchemeList(updateHistory = true) {
 function closeCaseView() {
   currentView = "home";
   caseView.hidden = true;
-  caseView.classList.remove("is-scheme-detail");
-  caseViewGrid.classList.remove("is-index");
+  caseView.classList.remove("is-scheme-detail", "is-index-page");
+  caseViewGrid.classList.remove("is-index", "is-index-magazine");
   document.body.classList.remove("case-view-open");
   if (caseViewReturnTarget) {
     caseViewReturnTarget.focus();
@@ -950,6 +989,17 @@ bindServiceShowcase();
 bindNavDropdowns();
 history.replaceState({ view: "home" }, "", `${location.pathname}${location.search}`);
 
+navIndexTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (trigger.dataset.openCaseIndex === "plans") {
+      openSchemeList();
+      return;
+    }
+    openCaseList();
+  });
+});
+
 if (workGrid) {
   workGrid.addEventListener("click", (event) => {
     const button = event.target.closest("[data-work-case]");
@@ -972,6 +1022,13 @@ if (schemeGrid) {
 
 if (moreSchemesButton) {
   moreSchemesButton.addEventListener("click", () => openSchemeList());
+}
+
+if (caseViewBack) {
+  caseViewBack.addEventListener("click", () => {
+    if (currentView === "home") return;
+    history.back();
+  });
 }
 
 caseViewGrid.addEventListener("click", (event) => {
