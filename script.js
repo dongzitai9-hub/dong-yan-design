@@ -222,6 +222,22 @@ const caseImageSets = [
   ]
 ];
 
+const latestCaseImages = [
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/153CB9C7-81EB-4ABB-ABD2-6461087CAC04.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/28E1B682-2992-40E8-94E6-EF5CE6A2082C.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/67E42068-C4C4-448A-89FB-DE6D051ADC2B.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/718B5CC6-6A96-4A09-AC21-8179264760AB.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/75E29D06-CECA-46E2-9C9D-2AD2E8C7CEA5.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/87C6FFEC-A13C-46B5-B062-10D9E08B0FC9.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/988A5BAC-24D1-4413-A663-F68B83E518A4.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/C4433935-8C51-4132-AFB1-738335C3111D.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/CA84E458-DEC8-48B0-8A5B-B3012794FC33.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/E76C1D61-ABA6-445A-BDA5-EB08CCDE5644.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/ED574502-520A-4EA5-B689-932939C652B0.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/EEFCC69F-8C5E-4E42-8A02-84C7644E9977.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/FFF3BC4A-E928-4322-B8BD-A7CC22616C9F.webp",
+];
+
 const cases = [
   {
     "title": "自然序曲",
@@ -378,6 +394,19 @@ const cases = [
     "images": caseImageSets[11],
     "copyOne": "温润之家把亲子生活放在前面考虑。公共空间需要足够开放，方便陪伴和交流；卧室与独立区域则需要安静，让每个人都能找到自己的节奏。",
     "copyTwo": "色彩和材质选择偏柔和，避免过几年就看腻。可成长的收纳、可调整的房间功能和耐看的立面关系，是这类家庭空间真正重要的部分。"
+  },
+  {
+    "title": "澄境公寓",
+    "subtitle": "现代公寓",
+    "name": "澄境公寓",
+    "summary": "以清透材质、柔和曲线和完整收纳组织小尺度居住，让公寓也能保持开阔、安静和细腻。",
+    "location": "上海",
+    "area": "112 m²",
+    "type": "公寓设计",
+    "hero": latestCaseImages[0],
+    "images": latestCaseImages,
+    "copyOne": "澄境公寓把小尺度住宅的清爽感放在第一位。浅色墙面、弧形门洞与连续柜体让空间边界变得柔和，客厅、餐厨和卧室之间保持清楚的秩序，又不显得生硬。",
+    "copyTwo": "设计重点放在采光、收纳和日常动线的平衡上：大面留白负责放大空间，局部石材和灯光负责留下质感，隐藏式柜体则把生活杂物收进立面里。"
   }
 ];
 
@@ -394,16 +423,23 @@ const caseThumbs = [
   "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/cases/case-10.webp",
   "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/cases/case-11.webp",
   "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/cases/case-12.webp",
+  latestCaseImages[0],
 ];
 
-const featuredWorks = cases.slice(0, 3).map((item, caseIndex) => ({
+const newestCaseIndex = cases.length - 1;
+const caseDisplayOrder = [newestCaseIndex, ...cases.map((_, index) => index).filter((index) => index !== newestCaseIndex)];
+
+const featuredWorks = caseDisplayOrder.slice(0, 3).map((caseIndex) => {
+  const item = cases[caseIndex];
+  return {
   title: item.name,
   category: item.type,
-  image: caseThumbs[caseIndex],
+  image: caseThumbs[caseIndex] || item.hero,
   count: item.images.length,
   type: "case",
   caseIndex,
-}));
+  };
+});
 
 const heroSlides = [
   "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/hero/hero-01.webp",
@@ -747,11 +783,6 @@ function bindNavDropdowns() {
         else openCaseList();
         return;
       }
-      if (href.startsWith("/notes/")) {
-        event.preventDefault();
-        openNotesList();
-        return;
-      }
       if (href === "#contact" || href === "/about/" || href === "/services/" || href === "/faq/") {
         event.preventDefault();
         openContactView();
@@ -882,13 +913,15 @@ function renderIndexCover(kind) {
 
 function renderCaseIndex(kind) {
   const isPlans = kind === "plans";
-  const entries = isPlans ? schemeCases : cases;
+  const entries = isPlans
+    ? schemeCases.map((item, index) => ({ item, index }))
+    : caseDisplayOrder.map((index) => ({ item: cases[index], index }));
   return `
     ${renderIndexCover(kind)}
     ${entries
-      .map((item, index) => {
+      .map(({ item, index }, displayIndex) => {
         const image = isPlans ? schemeDisplayImage(item.hero || item.images[0]) : caseMediumImage(item.hero || item.images[0]);
-        const wideClass = index % 3 === 2 ? " is-wide" : "";
+        const wideClass = displayIndex % 3 === 2 ? " is-wide" : "";
         const category = isPlans ? "PLAN | 方案设计" : `RESIDENTIAL | ${item.type}`;
         const title = isPlans ? `${item.name}` : `${item.location} · ${item.name}`;
         const detail = isPlans
