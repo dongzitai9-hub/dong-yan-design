@@ -569,6 +569,9 @@ const serviceNote = document.querySelector("[data-service-note]");
 const serviceCards = [...document.querySelectorAll("[data-service-index]")];
 const navDropdowns = [...document.querySelectorAll(".nav-dropdown")];
 const navIndexTriggers = [...document.querySelectorAll("[data-open-case-index]")];
+const caseViewIndexTriggers = [...document.querySelectorAll("[data-case-view-index]")];
+const caseViewHome = document.querySelector("[data-case-view-home]");
+const caseViewContact = document.querySelector("[data-case-view-contact]");
 const caseView = document.querySelector("[data-case-view]");
 const caseViewGrid = document.querySelector("[data-case-view-grid]");
 const caseViewTitle = document.querySelector("[data-case-view-title]");
@@ -999,6 +1002,35 @@ navIndexTriggers.forEach((trigger) => {
     openCaseList();
   });
 });
+
+caseViewIndexTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (trigger.dataset.caseViewIndex === "plans") {
+      openSchemeList();
+      return;
+    }
+    openCaseList();
+  });
+});
+
+if (caseViewHome) {
+  caseViewHome.addEventListener("click", (event) => {
+    event.preventDefault();
+    closeCaseView();
+    history.replaceState({ view: "home" }, "", `${location.pathname}${location.search}`);
+    document.querySelector("#top")?.scrollIntoView();
+  });
+}
+
+if (caseViewContact) {
+  caseViewContact.addEventListener("click", (event) => {
+    event.preventDefault();
+    closeCaseView();
+    history.replaceState({ view: "home" }, "", `${location.pathname}${location.search}#contact`);
+    document.querySelector("#contact")?.scrollIntoView();
+  });
+}
 
 if (workGrid) {
   workGrid.addEventListener("click", (event) => {

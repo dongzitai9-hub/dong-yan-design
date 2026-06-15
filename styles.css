@@ -895,7 +895,7 @@ h2 {
   inset: 0;
   z-index: 35;
   overflow: auto;
-  padding: 34px clamp(20px, 5vw, 70px) 76px;
+  padding: 0 clamp(20px, 5vw, 70px) 76px;
   background: var(--paper);
   color: var(--ink);
 }
@@ -905,7 +905,6 @@ h2 {
 }
 
 .case-view.is-index-page {
-  padding-top: clamp(30px, 4vw, 58px);
   background:
     radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.72), transparent 46%),
     #f6f2ea;
@@ -916,7 +915,7 @@ h2 {
 }
 
 .case-view-header {
-  display: grid;
+  display: none;
   align-items: end;
   max-width: 1180px;
   margin: 0 auto 34px;
@@ -943,10 +942,37 @@ h2 {
 .case-view-grid {
   max-width: 1180px;
   margin: 0 auto;
+  padding-top: clamp(104px, 9vw, 150px);
 }
 
 .case-view.is-index-page .case-view-grid {
   max-width: 1280px;
+}
+
+.case-view-nav {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0 calc(clamp(20px, 5vw, 70px) * -1);
+  padding: 28px clamp(22px, 4.2vw, 76px) 18px;
+  background: linear-gradient(180deg, rgba(246, 242, 234, 0.92), rgba(246, 242, 234, 0));
+}
+
+.case-view-nav .brand-logo {
+  filter: invert(1);
+  opacity: 0.9;
+}
+
+.case-view-nav .editorial-nav-item {
+  color: rgba(24, 23, 20, 0.82);
+  text-shadow: none;
+}
+
+.case-view-nav .editorial-nav-item small {
+  color: rgba(24, 23, 20, 0.62);
 }
 
 .case-view-grid.is-index {
@@ -2089,24 +2115,25 @@ h2 {
 }
 
 .about-story {
-  padding: clamp(18px, 2vw, 34px) clamp(18px, 2.4vw, 40px);
-  background: #f3f3f1;
+  min-height: 100vh;
+  padding: 0;
+  background: #f7f0e6;
   scroll-margin-top: 96px;
 }
 
 .story-layout {
   display: grid;
-  max-width: 1760px;
+  max-width: none;
   margin: 0 auto;
-  min-height: clamp(720px, 82vw, 1160px);
-  padding: clamp(110px, 16vw, 260px) clamp(46px, 6vw, 120px) clamp(110px, 11vw, 188px);
-  gap: clamp(48px, 7vw, 120px);
+  min-height: 100vh;
+  padding: clamp(132px, 13vw, 210px) clamp(70px, 6.2vw, 120px) clamp(86px, 7vw, 124px);
+  gap: clamp(62px, 7vw, 122px);
   background:
     radial-gradient(circle at 50% 9%, rgba(255, 255, 255, 0.72), transparent 39%),
     #f7f0e6;
-  box-shadow: 0 18px 40px rgba(71, 63, 53, 0.13);
-  grid-template-columns: minmax(260px, 0.34fr) minmax(620px, 1fr);
-  align-items: end;
+  box-shadow: none;
+  grid-template-columns: minmax(300px, 0.31fr) minmax(720px, 1fr);
+  align-items: center;
 }
 
 .story-side {
@@ -2142,38 +2169,38 @@ h2 {
 }
 
 .story-side p:last-child {
-  max-width: 360px;
-  margin: clamp(92px, 11vw, 170px) 0 0;
+  max-width: 400px;
+  margin: clamp(70px, 7vw, 126px) 0 0;
   padding-left: clamp(26px, 3vw, 48px);
   border-left: 2px solid rgba(142, 94, 48, 0.72);
   color: rgba(42, 39, 34, 0.78);
-  font-size: clamp(16px, 1.28vw, 22px);
-  font-weight: 500;
+  font-size: clamp(14px, 1.05vw, 19px);
+  font-weight: 400;
   letter-spacing: 0.08em;
-  line-height: 2.25;
+  line-height: 2.45;
 }
 
 .story-main {
   display: grid;
   align-content: start;
-  justify-items: center;
-  gap: clamp(28px, 3.4vw, 60px);
+  justify-items: end;
+  gap: clamp(20px, 2.5vw, 42px);
 }
 
 .story-handwriting {
-  width: min(940px, 88%);
+  width: min(860px, 78%);
   margin: 0;
-  aspect-ratio: 2172 / 724;
+  aspect-ratio: 1880 / 330;
   object-fit: contain;
   background: transparent;
 }
 
 .story-process-image {
-  width: min(1140px, 100%);
+  width: min(1180px, 100%);
   margin: 0;
-  aspect-ratio: 16 / 8.2;
+  aspect-ratio: 1916 / 821;
   object-fit: cover;
-  filter: grayscale(1) contrast(0.98);
+  filter: none;
 }
 
 .light-life-section {
@@ -2429,16 +2456,17 @@ h2 {
 }
 
 .dark-thought .philosophy-copy h2 {
-  max-width: 980px;
+  max-width: 430px;
   white-space: nowrap;
-  font-size: clamp(42px, 5.4vw, 82px);
+  font-size: clamp(34px, 3.2vw, 54px);
   font-style: normal;
   line-height: 1.08;
 }
 
 .dark-thought .philosophy-copy h3 {
   margin: 0;
-  font-size: clamp(17px, 1.8vw, 28px);
+  max-width: 430px;
+  font-size: clamp(13px, 1vw, 17px);
   font-weight: 300;
   letter-spacing: 0.12em;
   line-height: 1.6;
@@ -2520,17 +2548,40 @@ h2 {
 }
 
 .dark-thought .drawing-copy h2 {
-  width: min(980px, 90%);
-  max-width: 980px;
+  width: min(430px, 70%);
+  max-width: 430px;
 }
 
 .site-footer {
   display: grid;
-  min-height: 190px;
+  min-height: 260px;
   padding: clamp(42px, 5vw, 72px) clamp(24px, 5vw, 78px);
   background: #fbfbf9;
   color: #2d2c29;
+  gap: 34px;
   place-items: center;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 42px);
+  color: rgba(45, 44, 41, 0.82);
+  flex-wrap: wrap;
+  font-size: clamp(15px, 1.1vw, 18px);
+  letter-spacing: 0.12em;
+}
+
+.footer-contact p,
+.footer-contact a,
+.footer-contact span {
+  margin: 0;
+}
+
+.footer-contact a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .footer-legal {
