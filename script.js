@@ -426,7 +426,16 @@ const caseThumbs = [
   latestCaseImages[0],
 ];
 
-const newestCaseIndex = cases.length - 1;
+function casePageHref(caseIndex) {
+  return `/cases/space-${String(caseIndex + 1).padStart(3, "0")}/`;
+}
+
+function schemePageHref(schemeIndex) {
+  return `/cases/scheme-${String(schemeIndex + 1).padStart(3, "0")}/`;
+}
+
+const latestPublishedCaseIndex = cases.findIndex((item) => item.title === "温润之家");
+const newestCaseIndex = latestPublishedCaseIndex >= 0 ? latestPublishedCaseIndex : cases.length - 1;
 const caseDisplayOrder = [newestCaseIndex, ...cases.map((_, index) => index).filter((index) => index !== newestCaseIndex)];
 
 const featuredWorks = caseDisplayOrder.slice(0, 3).map((caseIndex) => {
@@ -434,10 +443,11 @@ const featuredWorks = caseDisplayOrder.slice(0, 3).map((caseIndex) => {
   return {
   title: item.name,
   category: item.type,
-  image: caseThumbs[caseIndex] || item.hero,
+  image: item.title === "温润之家" ? item.hero : caseThumbs[caseIndex] || item.hero,
   count: item.images.length,
   type: "case",
   caseIndex,
+  href: casePageHref(caseIndex),
   };
 });
 
@@ -622,10 +632,8 @@ const serviceCopy = document.querySelector("[data-service-copy]");
 const serviceNote = document.querySelector("[data-service-note]");
 const serviceCards = [...document.querySelectorAll("[data-service-index]")];
 const navDropdowns = [...document.querySelectorAll(".nav-dropdown")];
-const navIndexTriggers = [...document.querySelectorAll("[data-open-case-index]")];
 const navNotesTriggers = [...document.querySelectorAll("[data-open-notes]")];
 const navContactTriggers = [...document.querySelectorAll("[data-open-contact]")];
-const caseViewIndexTriggers = [...document.querySelectorAll("[data-case-view-index]")];
 const caseViewHome = document.querySelector("[data-case-view-home]");
 const caseViewNotes = document.querySelector("[data-case-view-notes]");
 const caseViewContact = document.querySelector("[data-case-view-contact]");
@@ -667,12 +675,12 @@ function renderWorks() {
   workGrid.innerHTML = featuredWorks
     .map(
       (work) => `
-        <button class="work-card" type="button" data-work-case="${work.caseIndex}">
+        <a class="work-card" href="${work.href}">
           <img src="${work.image}" alt="${work.title}" loading="lazy" decoding="async" />
           <span class="work-info">
             <strong>${work.title}</strong>
           </span>
-        </button>
+        </a>
       `,
     )
     .join("");
@@ -702,12 +710,12 @@ function renderSchemes() {
   schemeGrid.innerHTML = featuredSchemes
     .map(
       (scheme) => `
-        <button class="work-card scheme-card" type="button" data-scheme-case="${scheme.schemeIndex}">
+        <a class="work-card scheme-card" href="${schemePageHref(scheme.schemeIndex)}">
           <img src="${scheme.image}" alt="${scheme.title}" loading="lazy" decoding="async" />
           <span class="work-info">
             <strong>${scheme.title}</strong>
           </span>
-        </button>
+        </a>
       `,
     )
     .join("");
@@ -776,25 +784,6 @@ function bindNavDropdowns() {
     link.addEventListener("click", (event) => {
       closeAllDropdowns();
       const href = link.getAttribute("href") || "";
-      const spaceMatch = href.match(/(?:^|\/)cases\/space-(\d+)\/?/);
-      const schemeMatch = href.match(/(?:^|\/)cases\/scheme-(\d+)\/?/);
-      if (spaceMatch) {
-        event.preventDefault();
-        openCaseView(Number(spaceMatch[1]) - 1);
-        return;
-      }
-      if (schemeMatch) {
-        event.preventDefault();
-        openSchemeView(Number(schemeMatch[1]) - 1);
-        return;
-      }
-      if (href === "/cases/" || href === "cases/") {
-        event.preventDefault();
-        const isPlans = link.closest(".nav-dropdown-panel")?.getAttribute("aria-label")?.includes("方案");
-        if (isPlans) openSchemeList();
-        else openCaseList();
-        return;
-      }
       if (href === "#contact") {
         event.preventDefault();
         openContactView();
@@ -939,9 +928,9 @@ function renderCaseIndex(kind) {
         const detail = isPlans
           ? `平面推敲 / ${item.images.length} 张图 / 动线与功能优化`
           : `${item.area} / ${item.type} / 收纳优化 / 灯光氛围`;
-        const dataAttr = isPlans ? `data-scheme-list-index="${index}"` : `data-case-list-index="${index}"`;
+        const href = isPlans ? schemePageHref(index) : casePageHref(index);
         return `
-          <button class="case-index-entry${wideClass}" type="button" ${dataAttr}>
+          <a class="case-index-entry${wideClass}" href="${href}">
             <figure>
               <img src="${image}" alt="${item.name}" loading="lazy" decoding="async" />
             </figure>
@@ -950,7 +939,7 @@ function renderCaseIndex(kind) {
               <h4>${title}</h4>
               <p>${detail}</p>
             </span>
-          </button>
+          </a>
         `;
       })
       .join("")}
@@ -1141,17 +1130,6 @@ bindServiceShowcase();
 bindNavDropdowns();
 history.replaceState({ view: "home" }, "", `${location.pathname}${location.search}`);
 
-navIndexTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (trigger.dataset.openCaseIndex === "plans") {
-      openSchemeList();
-      return;
-    }
-    openCaseList();
-  });
-});
-
 navNotesTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
     event.preventDefault();
@@ -1163,17 +1141,6 @@ navContactTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
     event.preventDefault();
     openContactView();
-  });
-});
-
-caseViewIndexTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (trigger.dataset.caseViewIndex === "plans") {
-      openSchemeList();
-      return;
-    }
-    openCaseList();
   });
 });
 
@@ -1200,28 +1167,16 @@ if (caseViewContact) {
   });
 }
 
-if (workGrid) {
-  workGrid.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-work-case]");
-    if (!button) return;
-    openCaseView(Number(button.dataset.workCase));
-  });
-}
-
 if (moreWorksButton) {
-  moreWorksButton.addEventListener("click", () => openCaseList());
-}
-
-if (schemeGrid) {
-  schemeGrid.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-scheme-case]");
-    if (!button) return;
-    openSchemeView(Number(button.dataset.schemeCase));
+  moreWorksButton.addEventListener("click", () => {
+    window.location.href = "/cases/";
   });
 }
 
 if (moreSchemesButton) {
-  moreSchemesButton.addEventListener("click", () => openSchemeList());
+  moreSchemesButton.addEventListener("click", () => {
+    window.location.href = "/cases/";
+  });
 }
 
 if (caseViewBack) {
