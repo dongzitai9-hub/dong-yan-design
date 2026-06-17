@@ -227,6 +227,26 @@ URL：https://dongyandesign.cn/cases/space-012
 <link rel="canonical" href="https://dongyandesign.cn/cases/space-012">
 ```
 
+### 空间案例 space-014
+URL：https://dongyandesign.cn/cases/space-014
+
+```html
+<title>柔序之家｜现代住宅｜董揅设计案例014</title>
+<meta name="description" content="柔序之家是董揅设计现代住宅案例。空间以开放客餐厅、柔白基底、木色地面和红色单椅作为记忆点，把收纳、采光、餐厨关系与日常休息整理在更安静的生活秩序里。">
+<meta name="keywords" content="董揅设计,柔序之家,现代住宅,空间案例,住宅设计,室内设计案例,开放客餐厅">
+<link rel="canonical" href="https://dongyandesign.cn/cases/space-014">
+```
+
+### 空间案例 space-015
+URL：https://dongyandesign.cn/cases/space-015
+
+```html
+<title>静蓝之家｜现代住宅｜董揅设计案例015</title>
+<meta name="description" content="静蓝之家是董揅设计现代住宅案例。空间以浅米色连续界面、蓝灰柜体和开放客餐厅组织日常生活，把电视墙、餐边柜、玄关过道和洗手台细节放在干净安静的秩序里。">
+<meta name="keywords" content="董揅设计,静蓝之家,现代住宅,空间案例,住宅设计,室内设计案例,蓝灰色柜体,开放客餐厅">
+<link rel="canonical" href="https://dongyandesign.cn/cases/space-015">
+```
+
 ### 方案案例 scheme-001
 URL：https://dongyandesign.cn/cases/scheme-001
 

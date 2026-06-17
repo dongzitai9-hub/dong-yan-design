@@ -238,6 +238,37 @@ const latestCaseImages = [
   "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/13/FFF3BC4A-E928-4322-B8BD-A7CC22616C9F.webp",
 ];
 
+const softOrderImages = [
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/161AF303-C530-463C-82BB-2276CF131AA0.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/2915A2AF-AEF0-467D-B295-E00554B320DB.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/4B9EC442-268D-40A8-99C6-ABE6B8F58EDD.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/537FD4C1-E699-40F6-B992-A732453D982F.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/632C0E2B-3AD3-4904-A35A-790F43BC03BB.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/95CD9AB1-C722-4D7A-8960-BB7A53FB75DE.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/B0C2DB17-8BD7-4220-8126-7705B45F1482.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/BEECDBF9-7F9F-43C8-886D-80A9601A31D9.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/ECCD6E44-863A-46BA-BF20-4AFE172CAA7C.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/F0E4E27D-C726-4834-BB3A-409CA019BC19.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/FAC1B607-97ED-4067-8568-515EC0451DD6.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/FAF08E6E-5ECC-4CBF-A327-00BEFA163D11.webp",
+];
+
+const quietBlueImages = [
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/156BC74D-54D3-4683-9D76-407B3AE3D36E.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/2E979D64-BC8E-4C86-8866-C6A1F174A49D.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/3359CC3E-B0C0-42B0-AACD-07A73AE4B292.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/37820B92-1CD3-4570-B04D-CFA11D24E23D.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/39BB78BD-2F90-4124-BCC0-EA459680CF9D.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/3C417D6D-8293-4CA1-9AA6-89E42F6580B2.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/414368A1-8381-4714-9C25-6D2C2531AE2F.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/4CC9D44D-7E0F-40DD-9269-4892CEFB7CFA.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/5504CADC-04BE-464C-8C23-94B4FD79E33F.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/5533D513-3312-4882-8E98-4C5C3A312CDA.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/6B46A918-B945-4239-B879-7B276B0167E0.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/A4CBCC68-559E-4FD4-AAEE-1FD6B89C8565.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/AE6FE0ED-E21C-4C2D-AC66-98AB8E4A46A9.webp",
+];
+
 const cases = [
   {
     "title": "自然序曲",
@@ -407,6 +438,32 @@ const cases = [
     "images": latestCaseImages,
     "copyOne": "澄境公寓把小尺度住宅的清爽感放在第一位。浅色墙面、弧形门洞与连续柜体让空间边界变得柔和，客厅、餐厨和卧室之间保持清楚的秩序，又不显得生硬。",
     "copyTwo": "设计重点放在采光、收纳和日常动线的平衡上：大面留白负责放大空间，局部石材和灯光负责留下质感，隐藏式柜体则把生活杂物收进立面里。"
+  },
+  {
+    "title": "柔序之家",
+    "subtitle": "现代住宅",
+    "name": "柔序之家",
+    "summary": "以柔白基底、木色地面和红色单椅组织开放客餐厅，让收纳、采光与休息在安静秩序里展开。",
+    "location": "住宅空间",
+    "area": "现代住宅",
+    "type": "空间设计",
+    "hero": softOrderImages[2],
+    "images": softOrderImages,
+    "copyOne": "柔序之家把开放客餐厅作为家庭的日常中心。柔白墙面、木色地面和一把红色单椅共同控制空间温度，让公共区域既明亮，也有可以停留的情绪点。",
+    "copyTwo": "收纳、餐厨和休息区被整理在同一条清楚动线上。柜体尽量退到立面里，光线和家具成为画面的主角，让家看起来轻，也真正好用。"
+  },
+  {
+    "title": "静蓝之家",
+    "subtitle": "现代住宅",
+    "name": "静蓝之家",
+    "summary": "以浅米色连续界面、蓝灰柜体和开放客餐厅整理日常动线，让细节保持干净、安静和清楚。",
+    "location": "住宅空间",
+    "area": "现代住宅",
+    "type": "空间设计",
+    "hero": quietBlueImages[0],
+    "images": quietBlueImages,
+    "copyOne": "静蓝之家用浅米色连续界面和蓝灰柜体建立安静秩序。电视墙、餐边柜和玄关过道被放进统一的比例里，公共空间更清爽，也更容易维护。",
+    "copyTwo": "细节不靠装饰堆满，而是通过柜体收口、材质转折和自然光来形成层次。开放客餐厅保留互动感，局部收纳让日常物件各有位置。"
   }
 ];
 
@@ -424,6 +481,8 @@ const caseThumbs = [
   "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/cases/case-11.webp",
   "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/cases/case-12.webp",
   latestCaseImages[0],
+  softOrderImages[2],
+  quietBlueImages[0],
 ];
 
 function casePageHref(caseIndex) {
@@ -434,16 +493,22 @@ function schemePageHref(schemeIndex) {
   return `/cases/scheme-${String(schemeIndex + 1).padStart(3, "0")}/`;
 }
 
-const latestPublishedCaseIndex = cases.findIndex((item) => item.title === "温润之家");
-const newestCaseIndex = latestPublishedCaseIndex >= 0 ? latestPublishedCaseIndex : cases.length - 1;
-const caseDisplayOrder = [newestCaseIndex, ...cases.map((_, index) => index).filter((index) => index !== newestCaseIndex)];
+const preferredCaseTitles = ["静蓝之家", "柔序之家", "温润之家", "澄境公寓"];
+const preferredCaseIndexes = preferredCaseTitles
+  .map((title) => cases.findIndex((item) => item.title === title))
+  .filter((index) => index >= 0);
+const preferredCaseIndexSet = new Set(preferredCaseIndexes);
+const caseDisplayOrder = [
+  ...preferredCaseIndexes,
+  ...cases.map((_, index) => index).filter((index) => !preferredCaseIndexSet.has(index)),
+];
 
 const featuredWorks = caseDisplayOrder.slice(0, 3).map((caseIndex) => {
   const item = cases[caseIndex];
   return {
   title: item.name,
   category: item.type,
-  image: item.title === "温润之家" ? item.hero : caseThumbs[caseIndex] || item.hero,
+  image: ["温润之家", "柔序之家", "静蓝之家"].includes(item.title) ? item.hero : caseThumbs[caseIndex] || item.hero,
   count: item.images.length,
   type: "case",
   caseIndex,
