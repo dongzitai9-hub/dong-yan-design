@@ -108,7 +108,7 @@
       min-height: 116px;
       padding: 28px clamp(22px, 4.2vw, 76px);
       color: rgba(91, 86, 78, 0.72);
-      background: linear-gradient(180deg, rgba(242, 243, 244, 0.9), rgba(242, 243, 244, 0));
+      background: transparent;
       pointer-events: auto;
     }
 
@@ -249,14 +249,17 @@
     }
 
     .nav-reveal-control {
+      position: fixed;
+      top: var(--nav-reveal-top, 30px);
+      left: var(--nav-reveal-left, auto);
       display: inline-grid;
-      grid-template-columns: repeat(2, 5px);
+      grid-template-columns: 1fr;
       justify-content: center;
       align-items: center;
-      gap: 8px;
-      width: 34px;
-      height: 24px;
-      margin-left: 40px;
+      gap: 5px;
+      width: 20px;
+      height: 17px;
+      margin: 0;
       padding: 0;
       border: 0;
       color: currentColor;
@@ -269,8 +272,8 @@
 
     .nav-reveal-control::before,
     .nav-reveal-control::after {
-      width: 5px;
-      height: 16px;
+      width: 18px;
+      height: 5px;
       border-radius: 999px;
       background: currentColor;
       content: "";
@@ -319,7 +322,7 @@
       }
 
       .nav-reveal-control {
-        margin-left: 16px;
+        width: 18px;
       }
     }
   `;
@@ -345,8 +348,30 @@
   }
 
   const revealButton = header.querySelector(".nav-reveal-control");
+  const positionRevealButton = () => {
+    if (!revealButton) return;
+    const nav = header.querySelector(".site-nav");
+    const navRect = nav?.getBoundingClientRect();
+    const buttonRect = revealButton.getBoundingClientRect();
+    const fallbackTop = 30;
+    const fallbackLeft = window.innerWidth - 42;
+    const nextTop = navRect
+      ? navRect.top + (navRect.height - buttonRect.height) / 2
+      : fallbackTop;
+    const nextLeft = navRect
+      ? Math.min(navRect.right + 40, window.innerWidth - buttonRect.width - 18)
+      : fallbackLeft;
+    revealButton.style.setProperty("--nav-reveal-top", `${Math.max(14, nextTop)}px`);
+    revealButton.style.setProperty("--nav-reveal-left", `${Math.max(12, nextLeft)}px`);
+  };
+
+  positionRevealButton();
+  window.addEventListener("resize", positionRevealButton);
+  window.addEventListener("load", positionRevealButton);
+
   const showNav = (sticky = false) => {
     document.body.classList.remove("nav-is-hidden");
+    positionRevealButton();
     if (sticky) {
       document.body.classList.add("nav-force-visible");
       window.clearTimeout(showNav.timeoutId);
