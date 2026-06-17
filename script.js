@@ -792,6 +792,29 @@ function bindNavDropdowns() {
   });
 }
 
+function normalizeFilePreviewLinks() {
+  if (window.location.protocol !== "file:") return;
+  const scriptElement = document.currentScript || document.querySelector('script[src*="script.js"]');
+  const scriptUrl = scriptElement ? new URL(scriptElement.src) : null;
+  const siteRootPath = scriptUrl
+    ? scriptUrl.pathname.replace(/\/script\.js$/, "")
+    : window.location.pathname.replace(/\/(?:index\.html)?$/, "");
+
+  document.querySelectorAll('a[href^="/"]').forEach((link) => {
+    const originalHref = link.getAttribute("href");
+    if (!originalHref || originalHref.startsWith("//")) return;
+
+    const suffix = originalHref.match(/[?#].*$/)?.[0] || "";
+    const pathPart = suffix ? originalHref.slice(0, -suffix.length) : originalHref;
+    let localPath = `${siteRootPath}${pathPart}`;
+    if (localPath.endsWith("/")) {
+      localPath += "index.html";
+    }
+
+    link.setAttribute("href", new URL(`file://${localPath}`).href + suffix);
+  });
+}
+
 function setLightboxImage(index) {
   if (!lightboxImages.length) return;
   lightboxIndex = (index + lightboxImages.length) % lightboxImages.length;
@@ -1126,6 +1149,7 @@ function applyHistoryState(state) {
 renderWorks();
 renderHeroSlider();
 renderSchemes();
+normalizeFilePreviewLinks();
 bindServiceShowcase();
 bindNavDropdowns();
 history.replaceState({ view: "home" }, "", `${location.pathname}${location.search}`);
