@@ -2819,13 +2819,40 @@ h2 {
     height: auto;
   }
 
-  .editorial-nav {
+  .site-header .site-nav,
+  .case-view-nav .site-nav {
+    display: flex !important;
     gap: 7px;
+    margin-right: 48px;
   }
 
-  .editorial-nav-item {
+  .site-header .nav-dropdown,
+  .case-view-nav .nav-dropdown {
+    padding: 10px 0;
+    margin: -10px 0;
+  }
+
+  .site-header .nav-trigger,
+  .site-header .editorial-nav-item,
+  .case-view-nav .nav-trigger,
+  .case-view-nav .editorial-nav-item {
+    min-width: 0;
     font-size: 8px;
     letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .site-header .editorial-nav-item small,
+  .case-view-nav .editorial-nav-item small {
+    display: none;
+  }
+
+  .site-header .nav-dropdown-panel,
+  .case-view-nav .nav-dropdown-panel {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
   }
 
   .service-card {
