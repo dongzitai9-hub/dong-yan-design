@@ -1303,9 +1303,16 @@
         user-select: none;
       }
 
-      html,
+      html {
+        overflow-x: clip;
+      }
+
       body {
-        overflow-x: hidden;
+        overflow-x: visible;
+      }
+
+      .site-shell {
+        overflow-x: clip;
       }
 
       .slider-main-viewport.is-dragging,
