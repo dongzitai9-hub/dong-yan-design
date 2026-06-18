@@ -1297,6 +1297,53 @@
           padding: calc(var(--content-offset) + 18px) 0 76px;
         }
       }
+      .slider-main-viewport,
+      .editorial-slider,
+      .carousel-track {
+        cursor: grab;
+        overscroll-behavior-x: contain;
+        touch-action: pan-y;
+        user-select: none;
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      .slider-main-viewport.is-dragging,
+      .editorial-slider.is-dragging,
+      .carousel-track.is-dragging {
+        cursor: grabbing;
+      }
+
+      .film-strip-track {
+        position: absolute;
+        inset: 0;
+        z-index: 4;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        will-change: transform;
+      }
+
+      .film-strip-track > img {
+        position: static !important;
+        inset: auto !important;
+        z-index: auto !important;
+        display: block !important;
+        flex: 0 0 100%;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        pointer-events: none;
+        backface-visibility: hidden;
+      }
+
+
     </style>
   </head>
   <body>
@@ -1516,84 +1563,172 @@
       </main>
     </div>
     <script>
-      document.querySelectorAll("[data-carousel]").forEach((carousel) => {
-        const images = [...carousel.querySelectorAll(".carousel-track img")];
-        const previous = carousel.querySelector("[data-carousel-prev]");
-        const next = carousel.querySelector("[data-carousel-next]");
-        const counter = carousel.querySelector("[data-carousel-count]");
+      const bindSwipeNavigation = (surface, onPrevious, onNext) => {
+        if (!surface) return;
+
+        let startX = 0;
+        let startY = 0;
+        let isTracking = false;
+
+        const finish = (event) => {
+          if (!isTracking) return;
+          isTracking = false;
+          surface.classList.remove("is-dragging");
+
+          const point = event.changedTouches?.[0] || event;
+          const deltaX = point.clientX - startX;
+          const deltaY = point.clientY - startY;
+          if (Math.abs(deltaX) < 46 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) return;
+
+          if (deltaX < 0) {
+            onNext();
+          } else {
+            onPrevious();
+          }
+        };
+
+        surface.addEventListener("pointerdown", (event) => {
+          if (event.pointerType === "mouse" && event.button !== 0) return;
+          startX = event.clientX;
+          startY = event.clientY;
+          isTracking = true;
+          surface.classList.add("is-dragging");
+        });
+
+        surface.addEventListener("pointerup", finish);
+        surface.addEventListener("pointercancel", () => {
+          isTracking = false;
+          surface.classList.remove("is-dragging");
+        });
+        surface.addEventListener("touchstart", (event) => {
+          const point = event.touches[0];
+          startX = point.clientX;
+          startY = point.clientY;
+          isTracking = true;
+          surface.classList.add("is-dragging");
+        }, { passive: true });
+        surface.addEventListener("touchend", finish);
+      };
+
+      const createCircularFilm = (viewport, images, counter) => {
+        if (!viewport || images.length < 1) return null;
+
+        const originals = [...images];
+        const track = document.createElement("div");
+        const duration = 660;
         let activeIndex = 0;
+        let position = 1;
         let isAnimating = false;
+
+        const prepareImage = (image) => {
+          image.classList.remove("is-active", "is-leaving");
+          image.removeAttribute("style");
+          image.removeAttribute("data-film-clone");
+          return image;
+        };
+
+        const cloneSlide = (image) => {
+          const clone = image.cloneNode(false);
+          clone.className = "";
+          clone.removeAttribute("style");
+          clone.setAttribute("aria-hidden", "true");
+          clone.setAttribute("data-film-clone", "true");
+          clone.loading = "eager";
+          return clone;
+        };
 
         const updateCounter = () => {
           if (!counter) return;
-          counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(images.length).padStart(2, "0")}`;
+          counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(originals.length).padStart(2, "0")}`;
         };
 
+        const updateActiveClass = () => {
+          originals.forEach((image, index) => {
+            image.classList.toggle("is-active", index === activeIndex);
+          });
+        };
+
+        const setPosition = (animate) => {
+          track.style.transition = animate ? `transform ${duration}ms cubic-bezier(0.22, 1, 0.36, 1)` : "none";
+          track.style.transform = `translate3d(${-position * 100}%, 0, 0)`;
+        };
+
+        track.className = "film-strip-track";
+        track.append(cloneSlide(originals[originals.length - 1]));
+        originals.forEach((image) => track.append(prepareImage(image)));
+        track.append(cloneSlide(originals[0]));
+        viewport.append(track);
+
+        updateActiveClass();
         updateCounter();
+        setPosition(false);
 
-        const showImage = (nextIndex, direction) => {
-          if (isAnimating || images.length < 2) return;
+        const move = (direction) => {
+          if (isAnimating || originals.length < 2) return;
           isAnimating = true;
-          const currentImage = images[activeIndex];
-          const targetIndex = (nextIndex + images.length) % images.length;
-          const targetImage = images[targetIndex];
-          carousel.style.setProperty("--carousel-enter", direction > 0 ? "-100%" : "100%");
-          carousel.style.setProperty("--carousel-exit", direction > 0 ? "100%" : "-100%");
-          targetImage.classList.add("is-active");
-          currentImage.classList.add("is-leaving");
-          currentImage.classList.remove("is-active");
-          activeIndex = targetIndex;
+
+          if (direction === "left") {
+            position += 1;
+            activeIndex = (activeIndex + 1) % originals.length;
+          } else {
+            position -= 1;
+            activeIndex = (activeIndex - 1 + originals.length) % originals.length;
+          }
+
           updateCounter();
+          setPosition(true);
+
           window.setTimeout(() => {
-            currentImage.classList.remove("is-leaving");
+            if (position === 0) {
+              position = originals.length;
+              setPosition(false);
+            } else if (position === originals.length + 1) {
+              position = 1;
+              setPosition(false);
+            }
+            updateActiveClass();
             isAnimating = false;
-          }, 780);
+          }, duration + 40);
         };
 
-        previous?.addEventListener("click", () => showImage(activeIndex - 1, -1));
-        next?.addEventListener("click", () => showImage(activeIndex + 1, 1));
+        return {
+          moveLeft: () => move("left"),
+          moveRight: () => move("right")
+        };
+      };
+
+      document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+        const images = [...carousel.querySelectorAll(".carousel-track img")];
+        const track = carousel.querySelector(".carousel-track");
+        const previous = carousel.querySelector("[data-carousel-prev]");
+        const next = carousel.querySelector("[data-carousel-next]");
+        const counter = carousel.querySelector("[data-carousel-count]");
+        const film = createCircularFilm(track, images, counter);
+
+        previous?.addEventListener("click", () => film?.moveLeft());
+        next?.addEventListener("click", () => film?.moveRight());
+        bindSwipeNavigation(
+          track,
+          () => film?.moveRight(),
+          () => film?.moveLeft()
+        );
       });
 
       document.querySelectorAll(".editorial-slider").forEach((slider) => {
         const mainImages = [...slider.querySelectorAll(".slider-main-image")];
+        const mainViewport = slider.querySelector(".slider-main-viewport");
         const previous = slider.querySelector("[data-editorial-prev]");
         const next = slider.querySelector("[data-editorial-next]");
         const counter = slider.querySelector("[data-editorial-count]");
-        let activeIndex = 0;
-        let isAnimating = false;
+        const film = createCircularFilm(mainViewport, mainImages, counter);
 
-        const updateCounter = () => {
-          if (!counter) return;
-          counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(mainImages.length).padStart(2, "0")}`;
-        };
-
-        updateCounter();
-
-        const showSlide = (nextIndex, direction) => {
-          const total = mainImages.length;
-          if (total < 2) return;
-          if (isAnimating) return;
-          const targetIndex = (nextIndex + total) % total;
-          if (targetIndex === activeIndex) return;
-          isAnimating = true;
-          slider.style.setProperty("--slider-enter", direction > 0 ? "-100%" : "100%");
-          slider.style.setProperty("--slider-exit", direction > 0 ? "100%" : "-100%");
-          const currentImage = mainImages[activeIndex];
-          const targetImage = mainImages[targetIndex];
-          targetImage.classList.remove("is-leaving");
-          targetImage.classList.add("is-active");
-          currentImage.classList.add("is-leaving");
-          currentImage.classList.remove("is-active");
-          activeIndex = targetIndex;
-          updateCounter();
-          window.setTimeout(() => {
-            currentImage.classList.remove("is-leaving");
-            isAnimating = false;
-          }, 780);
-        };
-
-        previous?.addEventListener("click", () => showSlide(activeIndex - 1, -1));
-        next?.addEventListener("click", () => showSlide(activeIndex + 1, 1));
+        previous?.addEventListener("click", () => film?.moveLeft());
+        next?.addEventListener("click", () => film?.moveRight());
+        bindSwipeNavigation(
+          slider,
+          () => film?.moveRight(),
+          () => film?.moveLeft()
+        );
       });
 
       document.querySelectorAll("[data-sticky-story]").forEach((story) => {
