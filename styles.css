@@ -61,7 +61,7 @@ a {
   width: 100%;
   padding: 22px clamp(20px, 5vw, 68px);
   color: var(--white);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0));
+  background: transparent;
 }
 
 .brand {
@@ -125,17 +125,19 @@ a {
   left: 50%;
   z-index: 30;
   display: grid;
+  max-height: min(74vh, 620px);
   min-width: 148px;
   padding: 10px;
-  border: 1px solid rgba(226, 222, 211, 0.16);
-  background: rgba(22, 22, 20, 0.74);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+  border: 0;
+  background: transparent;
+  box-shadow: none;
   opacity: 0;
+  overflow-y: auto;
   pointer-events: none;
   transform: translate(-50%, -6px);
   transition: opacity 0.28s ease 0.18s, transform 0.28s ease 0.18s, visibility 0s linear 0.46s;
   visibility: hidden;
-  backdrop-filter: blur(18px);
+  backdrop-filter: none;
 }
 
 .nav-dropdown:hover .nav-dropdown-panel,
@@ -162,14 +164,14 @@ body.dropdown-lock .nav-dropdown-panel {
   font-size: 13px;
   letter-spacing: 0.08em;
   line-height: 1.4;
-  text-shadow: none;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.42);
   white-space: nowrap;
 }
 
 .nav-dropdown-panel a:hover,
 .nav-dropdown-panel a:focus-visible {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
+  background: transparent;
   outline: none;
 }
 
@@ -186,7 +188,7 @@ body.dropdown-lock .nav-dropdown-panel {
   height: 100vh;
   height: 100svh;
   min-height: 0;
-  background-image: url("https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/hero/hero-01.webp");
+  background-image: url("https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/156BC74D-54D3-4683-9D76-407B3AE3D36E.webp");
   background-position: center;
   background-size: cover;
   overflow: hidden;
@@ -200,7 +202,7 @@ body.dropdown-lock .nav-dropdown-panel {
 
 .hero-slider {
   z-index: 0;
-  background: var(--charcoal) url("https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/hero/hero-01.webp") center / cover no-repeat;
+  background: var(--charcoal) url("https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/156BC74D-54D3-4683-9D76-407B3AE3D36E.webp") center / cover no-repeat;
 }
 
 .hero-slide {
@@ -220,9 +222,8 @@ body.dropdown-lock .nav-dropdown-panel {
 .hero-shade {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.08)),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+  background: transparent;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -965,7 +966,7 @@ h2 {
   justify-content: space-between;
   margin: 0 calc(clamp(20px, 5vw, 70px) * -1);
   padding: 28px clamp(22px, 4.2vw, 76px) 18px;
-  background: linear-gradient(180deg, rgba(246, 242, 234, 0.92), rgba(246, 242, 234, 0));
+  background: transparent;
 }
 
 .case-view-nav .brand-logo {
@@ -980,6 +981,16 @@ h2 {
 
 .case-view-nav .editorial-nav-item small {
   color: rgba(24, 23, 20, 0.62);
+}
+
+.case-view-nav .nav-dropdown-panel a {
+  color: rgba(24, 23, 20, 0.82);
+  text-shadow: none;
+}
+
+.case-view-nav .nav-dropdown-panel a:hover,
+.case-view-nav .nav-dropdown-panel a:focus-visible {
+  color: var(--ink);
 }
 
 .case-view-grid.is-index {
@@ -1941,9 +1952,7 @@ h2 {
 }
 
 .editorial-hero .hero-shade {
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.16) 42%, rgba(0, 0, 0, 0.34)),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.06));
+  background: transparent;
 }
 
 .hero-copyright {

@@ -9,18 +9,27 @@
     ["/cases/space-015/", "静蓝之家"],
     ["/cases/space-014/", "柔序之家"],
     ["/cases/space-012/", "温润之家"],
-    ["/cases/space-013/", "澄境公寓"],
-    ["/cases/space-001/", "自然序曲"],
-    ["/cases/space-002/", "云境公馆"],
-    ["/cases/space-003/", "松弛之家"],
-    ["/cases/space-004/", "湖畔平层"],
-    ["/cases/space-005/", "静谧套房"],
-    ["/cases/space-006/", "城市公寓"],
-    ["/cases/space-007/", "木色秩序"],
-    ["/cases/space-008/", "光影客厅"],
-    ["/cases/space-009/", "餐厨生活"],
-    ["/cases/space-010/", "雅致私宅"],
-    ["/cases/space-011/", "现代居所"],
+    ["/cases/anli-09/", "深序客厅"],
+    ["/cases/anli-10/", "弧光艺宅"],
+    ["/cases/anli-11/", "白屿之家"],
+    ["/cases/anli-12/", "云岸之家"],
+    ["/cases/anli-14/", "城市书厅"],
+    ["/cases/anli-15/", "墨石雅居"],
+    ["/cases/anli-16/", "温润之家"],
+    ["/cases/anli-22/", "暖木小筑"],
+    ["/cases/anli-23/", "红椅之境"],
+    ["/cases/anli-24/", "挑空府邸"],
+    ["/cases/anli-28/", "绯椅公馆"],
+    ["/cases/anli-30/", "艺术平层"],
+    ["/cases/anli-31/", "柔木晴居"],
+    ["/cases/anli-32/", "弧序雅宅"],
+    ["/cases/anli-33/", "清和之家"],
+    ["/cases/anli-37/", "穹光会所"],
+    ["/cases/anli-39/", "庭院栖居"],
+    ["/cases/anli-41/", "书墙之家"],
+    ["/cases/anli-42/", "白阶之家"],
+    ["/cases/anli-43/", "云顶私宅"],
+    ["/cases/anli-44/", "海湾墅居"],
   ];
 
   const plans = [
@@ -181,17 +190,19 @@
       left: 50%;
       z-index: 30;
       display: grid;
+      max-height: min(74vh, 620px);
       min-width: 148px;
       padding: 10px;
-      border: 1px solid rgba(31, 33, 31, 0.12);
-      background: rgba(245, 242, 236, 0.94);
-      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+      border: 0;
+      background: transparent;
+      box-shadow: none;
       opacity: 0;
+      overflow-y: auto;
       pointer-events: none;
       transform: translate(-50%, -6px);
       transition: opacity 0.28s ease, transform 0.28s ease, visibility 0s linear 0.28s;
       visibility: hidden;
-      backdrop-filter: blur(18px);
+      backdrop-filter: none;
     }
 
     .global-site-header .nav-dropdown:hover .nav-dropdown-panel,
@@ -209,21 +220,21 @@
       min-width: 0;
       min-height: 34px;
       padding: 8px 12px;
-      color: rgba(64, 60, 55, 0.88);
+      color: rgba(64, 60, 55, 0.92);
       font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
       font-size: 13px;
       letter-spacing: 0.08em;
       line-height: 1.4;
       text-align: left;
       text-decoration: none;
-      text-shadow: none;
+      text-shadow: 0 1px 14px rgba(255, 255, 255, 0.38);
       white-space: nowrap;
     }
 
     .global-site-header .nav-dropdown-panel a:hover,
     .global-site-header .nav-dropdown-panel a:focus-visible {
       color: #1f211f;
-      background: rgba(31, 33, 31, 0.06);
+      background: transparent;
       outline: none;
     }
 
