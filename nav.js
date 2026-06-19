@@ -420,6 +420,7 @@
       .global-site-header .nav-dropdown {
         padding: 10px 0;
         margin: -10px 0;
+        pointer-events: none;
       }
 
       .site-header .nav-trigger,
@@ -434,6 +435,7 @@
         letter-spacing: 0.06em;
         text-shadow: 0 1px 12px rgba(0, 0, 0, 0.36);
         white-space: nowrap;
+        pointer-events: auto;
       }
 
       .site-header .editorial-nav-item small,
