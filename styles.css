@@ -125,14 +125,14 @@ a {
   left: 50%;
   z-index: 30;
   display: grid;
-  max-height: min(74vh, 620px);
+  max-height: none;
   min-width: 148px;
   padding: 10px;
   border: 0;
   background: transparent;
   box-shadow: none;
   opacity: 0;
-  overflow-y: auto;
+  overflow: visible;
   pointer-events: none;
   transform: translate(-50%, -6px);
   transition: opacity 0.28s ease 0.18s, transform 0.28s ease 0.18s, visibility 0s linear 0.46s;
@@ -173,6 +173,45 @@ body.dropdown-lock .nav-dropdown-panel {
   color: #ffffff;
   background: transparent;
   outline: none;
+}
+
+.nav-more-button {
+  min-height: 34px;
+  padding: 8px 12px;
+  border: 0;
+  color: rgba(238, 234, 224, 0.86);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--ui-font);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+  text-align: center;
+  text-shadow: none;
+  white-space: nowrap;
+}
+
+.nav-more-button:hover,
+.nav-more-button:focus-visible {
+  color: #ffffff;
+  outline: none;
+}
+
+.nav-dropdown-panel[aria-label="空间案例索引"] a,
+.nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button {
+  border-radius: 2px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown-panel[aria-label="空间案例索引"] a[hidden] {
+  display: none !important;
+}
+
+.nav-dropdown-panel[aria-label="空间案例索引"] a:hover,
+.nav-dropdown-panel[aria-label="空间案例索引"] a:focus-visible,
+.nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button:hover,
+.nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .nav-notes-panel {
@@ -2058,25 +2097,43 @@ h2 {
 }
 
 .service-rail {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(28px, 3vw, 48px) 0 0;
+}
+
+.service-track {
   display: flex;
+  width: max-content;
   gap: clamp(14px, 1.45vw, 24px);
   align-items: flex-end;
-  overflow: hidden;
-  padding: 0;
+  will-change: transform;
 }
 
 .service-card {
+  --service-card-width: clamp(150px, 12.2vw, 218px);
+  --service-card-height: clamp(225px, 18.3vw, 327px);
+  --service-card-active-height: clamp(258px, 21vw, 376px);
   position: relative;
-  flex: 0 0 clamp(150px, 12.2vw, 218px);
+  flex: 0 0 var(--service-card-width);
+  width: var(--service-card-width);
+  height: var(--service-card-height);
   overflow: hidden;
-  aspect-ratio: 2 / 3;
   padding: 0;
   border: 0;
   background: #191917;
   color: #fff;
   cursor: pointer;
   scroll-snap-align: start;
-  transition: opacity 0.24s ease, filter 0.24s ease, aspect-ratio 0.24s ease;
+  transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.24s ease, filter 0.24s ease;
+}
+
+.service-card:focus {
+  outline: none;
+}
+
+.service-card:focus-visible {
+  outline: none;
 }
 
 .service-card::before {
@@ -2119,8 +2176,7 @@ h2 {
 }
 
 .service-card.is-active {
-  flex-basis: clamp(150px, 12.2vw, 218px);
-  aspect-ratio: 40 / 69;
+  height: var(--service-card-active-height);
 }
 
 .service-card.is-active img {
@@ -2242,7 +2298,7 @@ h2 {
 .about-story {
   min-height: 100vh;
   padding: 0;
-  background: #f7f0e6;
+  background: #f2f3f4;
   scroll-margin-top: 96px;
 }
 
@@ -2253,9 +2309,7 @@ h2 {
   min-height: 100vh;
   padding: clamp(132px, 13vw, 210px) clamp(70px, 6.2vw, 120px) clamp(86px, 7vw, 124px);
   gap: clamp(62px, 7vw, 122px);
-  background:
-    radial-gradient(circle at 50% 9%, rgba(255, 255, 255, 0.72), transparent 39%),
-    #f7f0e6;
+  background: #f2f3f4;
   box-shadow: none;
   grid-template-columns: minmax(300px, 0.31fr) minmax(720px, 1fr);
   align-items: center;
@@ -2371,12 +2425,23 @@ h2 {
   letter-spacing: 0.08em;
 }
 
-.light-life-section > img {
+.light-life-media {
+  overflow: hidden;
+}
+
+.light-life-media img {
   width: 100%;
   height: 100%;
   min-height: 100vh;
   object-fit: cover;
   filter: saturate(0.88);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.55s ease;
+  transform-origin: center;
+}
+
+.light-life-media:hover img {
+  filter: saturate(0.94);
+  transform: scale(1.045);
 }
 
 .light-wide-image {
@@ -2384,12 +2449,23 @@ h2 {
   background: #fbfbf9;
 }
 
-.light-wide-image img {
+.light-wide-media {
   width: min(1180px, 100%);
   margin: 0 auto;
+  overflow: hidden;
+}
+
+.light-wide-media img {
   aspect-ratio: 1448 / 1086;
   object-fit: cover;
   filter: saturate(0.86);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.55s ease;
+  transform-origin: center;
+}
+
+.light-wide-media:hover img {
+  filter: saturate(0.92);
+  transform: scale(1.045);
 }
 
 .texture-life-section {
@@ -2459,11 +2535,13 @@ h2 {
   min-height: 100vh;
   padding: clamp(54px, 6vw, 96px) clamp(24px, 4vw, 54px);
   gap: clamp(16px, 1.8vw, 30px);
-  background:
-    radial-gradient(circle at 52% 0%, rgba(255, 255, 255, 0.78), transparent 46%),
-    #f7f0e6;
+  background: #f2f3f4;
   grid-template-columns: 0.95fr 1.1fr 1fr;
   grid-template-rows: 1fr 0.72fr;
+}
+
+.lifestyle-media {
+  overflow: hidden;
 }
 
 .lifestyle-media img {
@@ -2471,6 +2549,13 @@ h2 {
   height: 100%;
   object-fit: cover;
   filter: saturate(0.9);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.55s ease;
+  transform-origin: center;
+}
+
+.lifestyle-media:hover img {
+  filter: saturate(0.96);
+  transform: scale(1.045);
 }
 
 .lifestyle-left {
@@ -2680,7 +2765,7 @@ h2 {
 
 .site-footer {
   display: grid;
-  min-height: 190px;
+  min-height: 150px;
   padding: clamp(42px, 5vw, 72px) clamp(24px, 5vw, 78px);
   background: #fbfbf9;
   color: #2d2c29;
@@ -2748,7 +2833,8 @@ h2 {
     grid-row: auto;
   }
 
-  .light-life-section > img,
+  .light-life-media,
+  .light-life-media img,
   .texture-large,
   .philosophy-video {
     min-height: 50vh;
@@ -2779,8 +2865,7 @@ h2 {
   }
 
   .service-rail {
-    overflow-x: auto;
-    padding-bottom: 8px;
+    padding-top: 24px;
   }
 
   .footer-legal p:last-child {
@@ -2856,13 +2941,9 @@ h2 {
   }
 
   .service-card {
-    flex-basis: 42vw;
-    aspect-ratio: 2 / 3;
-  }
-
-  .service-card.is-active {
-    flex-basis: 42vw;
-    aspect-ratio: 40 / 69;
+    --service-card-width: 42vw;
+    --service-card-height: 63vw;
+    --service-card-active-height: 72.5vw;
   }
 
   .service-showcase {
@@ -2900,6 +2981,6 @@ h2 {
   }
 
   .site-footer {
-    min-height: auto;
+    min-height: 150px;
   }
 }

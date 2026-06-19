@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1900" viewBox="0 0 1500 1900" role="img" aria-labelledby="title">
+  <title id="title">操作台和吊柜高度H1 H2 H3示意图</title>
+  <defs>
+    <linearGradient id="wood" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#c7a978"/>
+      <stop offset=".55" stop-color="#a97c4f"/>
+      <stop offset="1" stop-color="#7a5737"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f1f2ef"/>
+      <stop offset=".45" stop-color="#9fa4a2"/>
+      <stop offset="1" stop-color="#666c6a"/>
+    </linearGradient>
+    <linearGradient id="paperWarm" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffdf8"/>
+      <stop offset="1" stop-color="#f2ece0"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff3c3"/>
+      <stop offset=".5" stop-color="#d3a64b"/>
+      <stop offset="1" stop-color="#8d6a28"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f4f5f2"/>
+      <stop offset=".55" stop-color="#c7cbc9"/>
+      <stop offset="1" stop-color="#7d8582"/>
+    </linearGradient>
+    <pattern id="tile" width="150" height="150" patternUnits="userSpaceOnUse">
+      <rect width="150" height="150" fill="#d8d6cf"/>
+      <path d="M150 0H0V150" fill="none" stroke="#bdbbb4" stroke-width="2"/>
+    </pattern>
+    <pattern id="stone" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="#f1eee7"/>
+      <circle cx="22" cy="34" r="2.4" fill="#cbc1b0" opacity=".55"/>
+      <circle cx="76" cy="18" r="1.8" fill="#b7ae9f" opacity=".45"/>
+      <circle cx="104" cy="78" r="2.2" fill="#d2c6b5" opacity=".55"/>
+      <circle cx="42" cy="96" r="1.8" fill="#b8b1a7" opacity=".4"/>
+    </pattern>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#2d2a24" flood-opacity=".16"/>
+    </filter>
+    
+  </defs>
+  <rect width="1500" height="1900" fill="#fbfaf6"/>
+  <rect x="145" y="180" width="1210" height="1520" fill="url(#paperWarm)" rx="28"></rect><rect x="470" y="260" width="520" height="300" fill="#f8f8f6" stroke="#9f9d98" stroke-width="5"></rect><line x1="730" y1="260" x2="730" y2="560" stroke="#9f9d98" stroke-width="4"></line><rect x="395" y="1080" width="680" height="80" fill="#f4f1ea" stroke="#beb6aa" stroke-width="5"></rect><rect x="420" y="1160" width="630" height="360" fill="url(#wood)" stroke="#7b5835" stroke-width="3"></rect><line x1="630" y1="1160" x2="630" y2="1520" stroke="#5f4630" stroke-width="3" opacity="0.8"></line><line x1="840" y1="1160" x2="840" y2="1520" stroke="#5f4630" stroke-width="3" opacity="0.8"></line><rect x="491.4" y="1195" width="67.2" height="12" fill="url(#steel)" rx="6"></rect><rect x="701.4" y="1195" width="67.2" height="12" fill="url(#steel)" rx="6"></rect><rect x="911.4" y="1195" width="67.2" height="12" fill="url(#steel)" rx="6"></rect><path d="M430 1465C475 1435,570 1500,618 1474" fill="none" stroke="#d5bb8e" stroke-width="2" opacity="0.24"></path><path d="M640 1465C685 1435,780 1500,828 1474" fill="none" stroke="#d5bb8e" stroke-width="2" opacity="0.24"></path><path d="M850 1465C895 1435,990 1500,1038 1474" fill="none" stroke="#d5bb8e" stroke-width="2" opacity="0.24"></path><rect x="610" y="910" width="260" height="170" fill="#151513" rx="8"></rect><circle cx="675" cy="995" r="42" fill="none" stroke="#858982" stroke-width="10"></circle><circle cx="805" cy="995" r="42" fill="none" stroke="#858982" stroke-width="10"></circle><path d="M1020 1050C1065 970 1160 980 1180 1060" fill="none" stroke="#5c6f78" stroke-width="12" stroke-linecap="round"></path><circle cx="1130" cy="855" r="58" fill="#f4e5d7" stroke="#c8a88f" stroke-width="5"></circle><path d="M1095 930C1030 1030 1035 1270 1110 1390" fill="none" stroke="#dfd5c8" stroke-width="62" stroke-linecap="round"></path><path d="M1158 930C1220 1030 1215 1260 1155 1390" fill="none" stroke="#dfd5c8" stroke-width="62" stroke-linecap="round"></path><line x1="260" y1="1520" x2="1265" y2="1520" stroke="#7f7a70" stroke-width="5"></line><line x1="250" y1="1520" x2="250" y2="1080" stroke="#c39b42" stroke-width="5"></line><line x1="228" y1="1520" x2="272" y2="1520" stroke="#c39b42" stroke-width="5"></line><line x1="228" y1="1080" x2="272" y2="1080" stroke="#c39b42" stroke-width="5"></line><text x="168" y="1300" font-family="&quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, sans-serif" font-size="35" font-weight="650" fill="#c39b42" text-anchor="middle" dominant-baseline="middle" letter-spacing="0" transform="rotate(-90 168 1300)">H1 台面高度</text><line x1="1250" y1="1520" x2="1250" y2="560" stroke="#536d57" stroke-width="5"></line><line x1="1228" y1="1520" x2="1272" y2="1520" stroke="#536d57" stroke-width="5"></line><line x1="1228" y1="560" x2="1272" y2="560" stroke="#536d57" stroke-width="5"></line><text x="1334" y="1040" font-family="&quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, sans-serif" font-size="35" font-weight="650" fill="#536d57" text-anchor="middle" dominant-baseline="middle" letter-spacing="0" transform="rotate(-90 1334 1040)">H2 吊柜底高度</text><line x1="1335" y1="1520" x2="1335" y2="260" stroke="#5c6f78" stroke-width="5"></line><line x1="1313" y1="1520" x2="1357" y2="1520" stroke="#5c6f78" stroke-width="5"></line><line x1="1313" y1="260" x2="1357" y2="260" stroke="#5c6f78" stroke-width="5"></line><text x="1421" y="890" font-family="&quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, sans-serif" font-size="35" font-weight="650" fill="#5c6f78" text-anchor="middle" dominant-baseline="middle" letter-spacing="0" transform="rotate(-90 1421 890)">H3 吊柜顶高度</text><text x="750" y="95" font-family="&quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, sans-serif" font-size="62" font-weight="700" fill="#536d57" text-anchor="middle" dominant-baseline="middle" letter-spacing="0">三个基础高度</text><text x="750" y="1635" font-family="&quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, sans-serif" font-size="36" font-weight="500" fill="#2d2a24" text-anchor="middle" dominant-baseline="hanging" letter-spacing="0">H1 关系到洗菜、切菜是否舒服</text><text x="750" y="1686.12" font-family="&quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, sans-serif" font-size="36" font-weight="500" fill="#2d2a24" text-anchor="middle" dominant-baseline="hanging" letter-spacing="0">H2 过低容易碰头，过高不便取放</text><text x="750" y="1737.24" font-family="&quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Noto Sans CJK SC&quot;, sans-serif" font-size="36" font-weight="500" fill="#2d2a24" text-anchor="middle" dominant-baseline="hanging" letter-spacing="0">H3 超过伸手范围，上层会变成低频收纳</text>
+</svg>

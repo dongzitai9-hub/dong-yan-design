@@ -943,7 +943,9 @@ const moreSchemesButton = document.querySelector("[data-more-schemes]");
 const serviceTitle = document.querySelector("[data-service-title]");
 const serviceCopy = document.querySelector("[data-service-copy]");
 const serviceNote = document.querySelector("[data-service-note]");
-const serviceCards = [...document.querySelectorAll("[data-service-index]")];
+const serviceRail = document.querySelector("[data-service-rail]");
+const serviceTrack = document.querySelector("[data-service-track]");
+const serviceCards = serviceTrack ? [...serviceTrack.querySelectorAll("[data-service-index]")] : [];
 const navDropdowns = [...document.querySelectorAll(".nav-dropdown")];
 const navCaseIndexTriggers = [...document.querySelectorAll("[data-open-case-index]")];
 const navNotesTriggers = [...document.querySelectorAll("[data-open-notes]")];
@@ -1029,6 +1031,23 @@ function renderSchemes() {
     .join("");
 }
 
+let serviceTrackCards = [];
+let serviceTrackPosition = 1;
+let serviceTrackActiveIndex = 0;
+let serviceTrackPendingIndex = null;
+let serviceTrackAnimating = false;
+const serviceTrackDuration = 620;
+
+function syncServiceTrack(animate = true) {
+  if (!serviceTrack || !serviceTrackCards.length) return;
+  const activeCard = serviceTrackCards[serviceTrackPosition];
+  if (!activeCard) return;
+  serviceTrack.style.transition = animate
+    ? `transform ${serviceTrackDuration}ms cubic-bezier(0.22, 1, 0.36, 1)`
+    : "none";
+  serviceTrack.style.transform = `translate3d(${-activeCard.offsetLeft}px, 0, 0)`;
+}
+
 function setActiveService(index) {
   if (!serviceTitle || !serviceCopy || !serviceCards.length) return;
   const nextIndex = (index + serviceItems.length) % serviceItems.length;
@@ -1036,33 +1055,79 @@ function setActiveService(index) {
   serviceTitle.textContent = item.title;
   serviceCopy.textContent = item.copy;
   if (serviceNote) serviceNote.textContent = item.note;
-  serviceCards.forEach((card) => {
+  serviceTrackCards.forEach((card) => {
     const cardIndex = Number(card.dataset.serviceIndex);
     const isActive = cardIndex === nextIndex;
-    const visualOrder = (cardIndex - nextIndex + serviceItems.length) % serviceItems.length;
     card.classList.toggle("is-active", isActive);
-    card.style.order = visualOrder;
   });
 }
 
 function bindServiceShowcase() {
-  if (!serviceCards.length) return;
-  let activeIndex = 0;
+  if (!serviceTrack || !serviceCards.length) return;
   serviceCards.forEach((card) => {
     const item = serviceItems[Number(card.dataset.serviceIndex)];
     if (item) card.dataset.serviceLabel = item.title;
   });
-  const activate = (index) => {
-    activeIndex = (index + serviceItems.length) % serviceItems.length;
-    setActiveService(activeIndex);
+
+  const cloneServiceCard = (card, cloneType) => {
+    const clone = card.cloneNode(true);
+    clone.dataset.serviceClone = cloneType;
+    clone.setAttribute("aria-hidden", "true");
+    clone.tabIndex = -1;
+    return clone;
   };
-  serviceCards.forEach((card) => {
+
+  if (!serviceTrack.dataset.cloned) {
+    serviceTrack.prepend(cloneServiceCard(serviceCards[serviceCards.length - 1], "before"));
+    serviceTrack.append(cloneServiceCard(serviceCards[0], "after"));
+    serviceTrack.dataset.cloned = "true";
+  }
+
+  serviceTrackCards = [...serviceTrack.querySelectorAll("[data-service-index]")];
+  serviceTrackCards.forEach((card, position) => {
+    card.dataset.servicePosition = String(position);
+  });
+
+  const activate = (index, position = index + 1) => {
+    if (serviceTrackAnimating) return;
+    const nextIndex = (index + serviceItems.length) % serviceItems.length;
+    if (position === serviceTrackPosition && nextIndex === serviceTrackActiveIndex) return;
+    serviceTrackPendingIndex = nextIndex;
+    serviceTrackAnimating = true;
+    serviceTrackPosition = position;
+    syncServiceTrack(true);
+  };
+
+  serviceTrackCards.forEach((card) => {
     card.addEventListener("click", () => {
       const clickedIndex = Number(card.dataset.serviceIndex);
-      activate(clickedIndex);
+      const clickedPosition = Number(card.dataset.servicePosition);
+      activate(clickedIndex, clickedPosition);
     });
   });
-  setActiveService(activeIndex);
+
+  serviceTrack.addEventListener("transitionend", (event) => {
+    if (event.propertyName !== "transform") return;
+    const nextIndex = serviceTrackPendingIndex ?? serviceTrackActiveIndex;
+    if (serviceTrackPosition === 0) {
+      serviceTrackPosition = serviceItems.length;
+      syncServiceTrack(false);
+    } else if (serviceTrackPosition === serviceItems.length + 1) {
+      serviceTrackPosition = 1;
+      syncServiceTrack(false);
+    }
+    serviceTrackActiveIndex = nextIndex;
+    serviceTrackPendingIndex = null;
+    serviceTrackAnimating = false;
+    setActiveService(serviceTrackActiveIndex);
+  });
+
+  window.addEventListener("resize", () => {
+    window.requestAnimationFrame(() => syncServiceTrack(false));
+  });
+
+  setActiveService(serviceTrackActiveIndex);
+  window.requestAnimationFrame(() => syncServiceTrack(false));
 }
 
 function bindNavDropdowns() {

@@ -190,14 +190,14 @@
       left: 50%;
       z-index: 30;
       display: grid;
-      max-height: min(74vh, 620px);
+      max-height: none;
       min-width: 148px;
       padding: 10px;
       border: 0;
       background: transparent;
       box-shadow: none;
       opacity: 0;
-      overflow-y: auto;
+      overflow: visible;
       pointer-events: none;
       transform: translate(-50%, -6px);
       transition: opacity 0.28s ease, transform 0.28s ease, visibility 0s linear 0.28s;
@@ -235,6 +235,55 @@
     .global-site-header .nav-dropdown-panel a:focus-visible {
       color: #1f211f;
       background: transparent;
+      outline: none;
+    }
+
+    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] {
+      max-height: none !important;
+      overflow: visible !important;
+      scrollbar-width: none;
+    }
+
+    .site-header .nav-dropdown-panel[aria-label="空间案例索引"]::-webkit-scrollbar {
+      display: none;
+    }
+
+    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] a,
+    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button {
+      border-radius: 2px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] a[hidden] {
+      display: none !important;
+    }
+
+    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] a:hover,
+    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] a:focus-visible,
+    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button:hover,
+    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button:focus-visible {
+      background: rgba(255, 255, 255, 0.14) !important;
+    }
+
+    .site-header .nav-dropdown-panel .nav-more-button {
+      display: block;
+      width: 100%;
+      min-height: 34px;
+      padding: 8px 12px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      line-height: 1.4;
+      text-align: center;
+      text-shadow: inherit;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-dropdown-panel .nav-more-button:focus-visible {
       outline: none;
     }
 
@@ -385,6 +434,43 @@
   }
 
   if (!header) return;
+
+  const limitSpaceMenus = () => {
+    document.querySelectorAll('.nav-dropdown-panel[aria-label="空间案例索引"]').forEach((panel) => {
+      if (panel.dataset.spaceMenuReady === "true") return;
+
+      const links = [...panel.querySelectorAll("a")];
+      if (links.length <= 10) return;
+
+      const extraLinks = links.slice(10);
+      const moreButton = document.createElement("button");
+      moreButton.className = "nav-more-button";
+      moreButton.type = "button";
+      moreButton.textContent = "完整案例索引";
+      moreButton.setAttribute("aria-expanded", "false");
+
+      const setExpanded = (expanded) => {
+        panel.classList.toggle("is-expanded", expanded);
+        extraLinks.forEach((link) => {
+          link.hidden = !expanded;
+        });
+        moreButton.textContent = expanded ? "收起" : "完整案例索引";
+        moreButton.setAttribute("aria-expanded", String(expanded));
+      };
+
+      moreButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        setExpanded(!panel.classList.contains("is-expanded"));
+      });
+
+      panel.appendChild(moreButton);
+      panel.dataset.spaceMenuReady = "true";
+      setExpanded(false);
+    });
+  };
+
+  limitSpaceMenus();
 
   document.body.classList.add("has-reveal-nav");
 
