@@ -1821,13 +1821,21 @@ h2 {
 }
 
 .portfolio-page {
-  background: #f7f7f5;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.018) 0 1px, transparent 1px 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.014) 0 1px, transparent 1px 100%),
+    #f7f7f5;
+  background-size: 92px 92px, 116px 116px, auto;
 }
 
 .portfolio-main {
   width: min(100%, 1680px);
   margin: 0 auto;
   padding: 110px clamp(24px, 8vw, 138px) 120px;
+}
+
+.nav-upgraded .portfolio-main {
+  padding-top: max(128px, 9vw);
 }
 
 .portfolio-heading {
@@ -1839,6 +1847,8 @@ h2 {
 
 .portfolio-heading h1 {
   margin: 0;
+  width: 100%;
+  max-width: none;
   color: #20201e;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(62px, 8vw, 148px);
@@ -1859,41 +1869,90 @@ h2 {
 
 .portfolio-grid {
   display: grid;
-  gap: clamp(44px, 5vw, 80px) clamp(18px, 2.4vw, 42px);
+  gap: clamp(58px, 6.2vw, 104px) clamp(20px, 2.5vw, 42px);
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .portfolio-card {
+  display: grid;
+  gap: 0;
   text-decoration: none;
+  overflow: visible;
+  text-align: center;
+}
+
+.portfolio-card.is-wide {
+  width: min(100%, 1180px);
+  grid-column: 1 / -1;
+  justify-self: center;
 }
 
 .portfolio-card img {
-  aspect-ratio: 16 / 10;
+  width: 100%;
+  aspect-ratio: 16 / 10.2;
   background: #eeeae2;
+  filter: saturate(0.92);
+  object-fit: cover;
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.portfolio-card:hover img,
+.portfolio-card:focus-visible img {
+  filter: saturate(1);
+  transform: scale(1.018);
+}
+
+.portfolio-card.is-wide img {
+  aspect-ratio: 16 / 7.15;
+}
+
+.portfolio-card.scheme-card img {
+  padding: clamp(18px, 3vw, 44px);
+  background: #f1eee8;
+  object-fit: contain;
+}
+
+.portfolio-card.scheme-card.is-wide img {
+  aspect-ratio: 16 / 7.4;
+  padding: clamp(16px, 2.2vw, 34px);
 }
 
 .portfolio-card .work-info {
-  padding-top: 18px;
+  display: grid;
+  justify-items: center;
+  padding: 18px 8px 0;
 }
 
 .portfolio-card .work-info strong {
   color: #272623;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(18px, 1.5vw, 28px);
+  font-size: clamp(16px, 1.35vw, 25px);
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  line-height: 1.18;
+  text-transform: uppercase;
   text-decoration: underline;
   text-underline-offset: 0.12em;
 }
 
 .portfolio-card .work-info small {
-  margin-top: 10px;
+  margin-top: 9px;
   color: #302f2b;
   font-family: Georgia, "Times New Roman", "Songti SC", serif;
-  font-size: clamp(18px, 1.45vw, 27px);
+  font-size: clamp(18px, 1.35vw, 26px);
   font-weight: 500;
   letter-spacing: 0.03em;
   line-height: 1.2;
+}
+
+.portfolio-card .work-info em {
+  max-width: 520px;
+  margin-top: 8px;
+  color: rgba(32, 31, 28, 0.68);
+  font-size: clamp(13px, 0.95vw, 16px);
+  font-style: normal;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
 }
 
 .portfolio-more {
@@ -1924,6 +1983,54 @@ h2 {
   font-size: 15px;
   letter-spacing: 0.16em;
   text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .portfolio-main {
+    padding: 96px 24px 82px;
+  }
+
+  .nav-upgraded .portfolio-main {
+    padding-top: 112px;
+  }
+
+  .portfolio-heading {
+    margin-bottom: 48px;
+  }
+
+  .portfolio-heading h1 {
+    font-size: clamp(42px, 13.4vw, 58px);
+  }
+
+  .portfolio-heading p {
+    font-size: clamp(18px, 6vw, 30px);
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+
+  .portfolio-card.is-wide {
+    width: 100%;
+    grid-column: auto;
+  }
+
+  .portfolio-card img,
+  .portfolio-card.is-wide img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .portfolio-card.scheme-card img,
+  .portfolio-card.scheme-card.is-wide img {
+    aspect-ratio: 4 / 3;
+    padding: 18px;
+  }
+
+  .portfolio-card .work-info em {
+    max-width: 100%;
+    font-size: 13px;
+  }
 }
 
 .directory-content {
