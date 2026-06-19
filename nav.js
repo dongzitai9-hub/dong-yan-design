@@ -52,6 +52,7 @@
     ["/about/", "关于董揅"],
     ["/services/", "服务范围"],
     ["/faq/", "常见问题"],
+    ["/cases/all/", "完整案例索引"],
     ["/contact/", "联系咨询"],
   ];
 
@@ -70,16 +71,16 @@
             <small>SPACES</small>
           </a>
           <div class="nav-dropdown-panel" aria-label="空间案例索引">
-            ${links(spaces, '<a href="/cases/">完整案例索引</a>')}
+            ${links(spaces, '<a href="/cases/">更多辑选</a>')}
           </div>
         </div>
         <div class="nav-dropdown">
-          <a class="nav-trigger editorial-nav-item" href="/cases/" aria-haspopup="true">
+          <a class="nav-trigger editorial-nav-item" href="/plans/" aria-haspopup="true">
             <span>方案</span>
             <small>PLANS</small>
           </a>
           <div class="nav-dropdown-panel" aria-label="方案案例索引">
-            ${links(plans, '<a href="/cases/">完整案例索引</a>')}
+            ${links(plans, '<a href="/plans/">更多辑选</a>')}
           </div>
         </div>
         <div class="nav-dropdown">
@@ -143,7 +144,7 @@
       width: 100%;
       min-height: 116px;
       padding: 28px clamp(22px, 4.2vw, 76px);
-      color: rgba(91, 86, 78, 0.72);
+      color: rgba(0, 0, 0, 0.6);
       background: transparent;
       pointer-events: auto;
     }
@@ -190,7 +191,7 @@
       min-width: clamp(54px, 5vw, 82px);
       padding: 0;
       border: 0;
-      color: currentColor;
+      color: rgba(0, 0, 0, 0.6);
       background: transparent;
       font-family: Georgia, "Times New Roman", "Songti SC", serif;
       font-size: clamp(8px, 0.55vw, 10px);
@@ -204,7 +205,7 @@
     }
 
     .global-site-header .editorial-nav-item small {
-      color: rgba(91, 86, 78, 0.58);
+      color: rgba(0, 0, 0, 0.6);
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(5px, 0.36vw, 7px);
       letter-spacing: 0.25em;
@@ -255,7 +256,7 @@
       min-width: 0;
       min-height: 34px;
       padding: 8px 12px;
-      color: rgba(64, 60, 55, 0.92);
+      color: rgba(0, 0, 0, 0.6);
       font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
       font-size: 13px;
       letter-spacing: 0.08em;
@@ -268,7 +269,7 @@
 
     .global-site-header .nav-dropdown-panel a:hover,
     .global-site-header .nav-dropdown-panel a:focus-visible {
-      color: #1f211f;
+      color: rgba(0, 0, 0, 0.72);
       background: transparent;
       outline: none;
     }
@@ -307,7 +308,7 @@
       padding: 8px 12px;
       border: 0;
       background: transparent;
-      color: rgba(64, 60, 55, 0.92);
+      color: rgba(0, 0, 0, 0.6);
       cursor: pointer;
       font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
       font-size: 13px;
@@ -331,13 +332,11 @@
       white-space: normal;
     }
 
-    .has-reveal-nav .site-header .brand,
     .has-reveal-nav .site-header .site-nav {
       transition: opacity 0.32s ease, transform 0.32s ease;
       will-change: opacity, transform;
     }
 
-    .has-reveal-nav.nav-is-hidden:not(.nav-force-visible) .site-header:not(:hover):not(:focus-within) .brand,
     .has-reveal-nav.nav-is-hidden:not(.nav-force-visible) .site-header:not(:hover):not(:focus-within) .site-nav {
       opacity: 0;
       pointer-events: none;
@@ -358,7 +357,7 @@
       margin: 0;
       padding: 0;
       border: 0;
-      color: currentColor;
+      color: rgba(0, 0, 0, 0.6);
       background: transparent;
       cursor: pointer;
       opacity: 0.72;
@@ -430,10 +429,10 @@
       .global-site-header .nav-trigger,
       .global-site-header .editorial-nav-item {
         min-width: 0;
-        color: rgba(245, 241, 232, 0.92);
+        color: rgba(0, 0, 0, 0.6);
         font-size: 11px;
         letter-spacing: 0.06em;
-        text-shadow: 0 1px 12px rgba(0, 0, 0, 0.36);
+        text-shadow: none;
         white-space: nowrap;
         pointer-events: auto;
       }
@@ -457,8 +456,8 @@
         top: 26px !important;
         right: 18px !important;
         left: auto !important;
-        color: rgba(245, 241, 232, 0.92);
-        text-shadow: 0 1px 12px rgba(0, 0, 0, 0.36);
+        color: rgba(0, 0, 0, 0.6);
+        text-shadow: none;
       }
 
       .has-reveal-nav:not(.nav-is-hidden) .nav-reveal-control {
@@ -490,33 +489,15 @@
       if (panel.dataset.spaceMenuReady === "true") return;
 
       const links = [...panel.querySelectorAll("a")];
-      if (links.length <= 10) return;
+      const moreLink = links.find((link) => link.textContent.trim() === "更多辑选");
+      const caseLinks = links.filter((link) => link !== moreLink);
+      if (caseLinks.length <= 10) return;
 
-      const extraLinks = links.slice(10);
-      const moreButton = document.createElement("button");
-      moreButton.className = "nav-more-button";
-      moreButton.type = "button";
-      moreButton.textContent = "完整案例索引";
-      moreButton.setAttribute("aria-expanded", "false");
-
-      const setExpanded = (expanded) => {
-        panel.classList.toggle("is-expanded", expanded);
-        extraLinks.forEach((link) => {
-          link.hidden = !expanded;
-        });
-        moreButton.textContent = expanded ? "收起" : "完整案例索引";
-        moreButton.setAttribute("aria-expanded", String(expanded));
-      };
-
-      moreButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        setExpanded(!panel.classList.contains("is-expanded"));
+      caseLinks.slice(10).forEach((link) => {
+        link.hidden = true;
       });
-
-      panel.appendChild(moreButton);
+      if (moreLink) panel.appendChild(moreLink);
       panel.dataset.spaceMenuReady = "true";
-      setExpanded(false);
     });
   };
 

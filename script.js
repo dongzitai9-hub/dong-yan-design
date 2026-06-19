@@ -1594,14 +1594,7 @@ history.replaceState({ view: "home" }, "", `${location.pathname}${location.searc
 
 navCaseIndexTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
-    if (isCompactNavigation()) return;
-    event.preventDefault();
-    const target = trigger.dataset.openCaseIndex;
-    if (target === "plans") {
-      openSchemeList();
-    } else {
-      openCaseList();
-    }
+    return;
   });
 });
 
