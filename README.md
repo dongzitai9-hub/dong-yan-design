@@ -19,8 +19,16 @@
 - `index.html`：首页。
 - `styles.css`：全站主要样式。
 - `script.js`：全站主要交互和案例图片数据。
+- `nav.js`：统一导航生成、下拉、滚动显示隐藏等导航交互。
+- `assets/js/site-data.js`：全站导航和入口共享数据。
+- `assets/css/navigation.css`：统一导航样式。
+- `assets/css/portfolio.css`：空间/方案索引页的局部样式入口。
+- `tools/prepublish-check.mjs`：正式发布前固定检查脚本。
+- `package.json`、`package-lock.json`：本地检查和 Playwright 验证依赖。
+- `AGENTS.md`：给后续维护者和 Codex 的仓库协作规则。
 - `about/`：关于页面。
 - `cases/`：案例列表与案例详情页。
+- `plans/`：方案辑选与方案案例入口。
 - `services/`：服务页面。
 - `faq/`：常见问题页面。
 - `notes/`：设计笔记文章。
@@ -122,6 +130,25 @@ SEO/GEO 相关修改：
 - 有待处理事项时，更新 `网站待办清单.md`。
 - 有长期品牌、设计、内容、SEO 决策时，更新 `设计与内容决策.md`。
 
+## 结构维护规则
+
+- 导航内容优先改 `assets/js/site-data.js`，不要再逐页手改导航下拉。
+- 导航样式优先改 `assets/css/navigation.css`，不要先动 `styles.css` 里的全站样式。
+- 空间/方案索引页的局部样式优先改 `assets/css/portfolio.css`。
+- `styles.css` 仍是历史全站样式文件，后续只在确认影响范围后再继续拆分。
+- 改 `nav.js`、`assets/js/site-data.js`、`styles.css`、案例详情页 sticky 模块前，必须先跑发布检查。
+
+## 发布前固定检查
+
+正式发布前至少执行：
+
+```bash
+npm run check:prepublish
+npm run check:prepublish:render
+```
+
+检查范围固定包含：首页、`/cases/`、`/plans/`、一个空间详情页、一个方案详情页，以及 390px 手机端横向溢出检查。
+
 ## 阿里云服务器部署
 
 - 阿里云轻量应用服务器公网 IP：`47.103.223.113`。
@@ -167,3 +194,24 @@ ssh aliyun-dongyan 'nginx -t && systemctl is-active nginx'
 ## Git 规则
 
 这个网站目录没有带入旧项目的 `.git` 大历史，已经重新初始化为干净的 Git 仓库。
+
+正式域名当前通过 GitHub Pages 仓库发布：
+
+```text
+https://github.com/dongzitai9-hub/dong-yan-design
+```
+
+正式发布固定流程：
+
+1. 完整克隆正式仓库，不使用浅克隆。
+2. 只带入本次明确修改的文件，不从本地脏目录直接推送。
+3. 用 `git diff --stat` 和关键 diff 确认没有无关改动。
+4. 执行 `npm run check:prepublish` 和 `npm run check:prepublish:render`。
+5. 提交并推送 `main`。
+6. 线上用 `https://dongyandesign.cn/` 实际复查。
+
+每次正式发布后必须更新：
+
+1. `README.md`
+2. `设计与内容决策.md`
+3. `网站修改记录.md`

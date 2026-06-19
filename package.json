@@ -1,0 +1,12 @@
+{
+  "name": "dongyan-design-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:prepublish": "node tools/prepublish-check.mjs",
+    "check:prepublish:render": "node tools/prepublish-check.mjs --render"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.0"
+  }
+}
