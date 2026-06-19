@@ -1882,7 +1882,7 @@ h2 {
 }
 
 .portfolio-card.is-wide {
-  width: min(100%, 1180px);
+  width: 100%;
   grid-column: 1 / -1;
   justify-self: center;
 }
@@ -1978,11 +1978,59 @@ h2 {
   letter-spacing: 0.08em;
 }
 
-.portfolio-more a {
+.portfolio-more a,
+.portfolio-more-button {
   color: rgba(0, 0, 0, 0.6);
   font-size: 15px;
   letter-spacing: 0.16em;
   text-decoration: none;
+}
+
+.portfolio-more-button {
+  display: inline-grid;
+  gap: 12px;
+  justify-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.portfolio-more-button span {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.portfolio-more-button strong {
+  color: #242321;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: clamp(54px, 5.8vw, 96px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.portfolio-more-button:hover strong,
+.portfolio-more-button:focus-visible strong {
+  color: rgba(36, 35, 33, 0.76);
+}
+
+.portfolio-more-button:focus-visible {
+  outline: 1px solid rgba(36, 35, 33, 0.45);
+  outline-offset: 14px;
+}
+
+.portfolio-extra-grid {
+  margin-top: clamp(60px, 8vw, 118px);
+  padding-top: clamp(42px, 5vw, 72px);
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.portfolio-extra-grid[hidden] {
+  display: none !important;
 }
 
 @media (max-width: 760px) {
