@@ -1329,16 +1329,17 @@
         user-select: none;
       }
 
-      html {
-        overflow-x: clip;
-      }
-
+      html,
       body {
-        overflow-x: visible;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
       }
 
       .site-shell {
-        overflow-x: clip;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
       }
 
       .slider-main-viewport.is-dragging,
@@ -1821,6 +1822,6 @@
         requestUpdate();
       });
     </script>
-    <script src="/nav.js?v=20260619-nav-align"></script>
+    <script src="/nav.js?v=20260619-nav-mobile"></script>
   </body>
 </html>
