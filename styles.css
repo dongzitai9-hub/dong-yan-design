@@ -2935,17 +2935,6 @@ h2 {
 }
 
 @media (max-width: 620px) {
-  body.has-reveal-nav.nav-is-hidden:not(.nav-force-visible) .site-header:not(:hover):not(:focus-within) .brand,
-  body.has-reveal-nav.nav-is-hidden:not(.nav-force-visible) .site-header:not(:hover):not(:focus-within) .site-nav {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    transform: none !important;
-  }
-
-  .nav-reveal-control {
-    display: none !important;
-  }
-
   .site-header {
     align-items: center;
     padding: 18px 18px;
@@ -2995,6 +2984,19 @@ h2 {
     opacity: 0 !important;
     pointer-events: none !important;
     visibility: hidden !important;
+  }
+
+  .nav-reveal-control {
+    top: 26px !important;
+    right: 18px !important;
+    left: auto !important;
+    color: rgba(245, 241, 232, 0.92);
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.36);
+  }
+
+  body.has-reveal-nav:not(.nav-is-hidden) .nav-reveal-control {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .service-card {

@@ -964,6 +964,9 @@ let lightboxIndex = 0;
 let lightboxTouchStartX = 0;
 let lightboxTouchStartY = 0;
 
+const isCompactNavigation = () =>
+  window.matchMedia("(max-width: 720px), (hover: none) and (pointer: coarse)").matches;
+
 function setText(selector, text) {
   document.querySelector(selector).textContent = text;
 }
@@ -1202,7 +1205,10 @@ function bindNavDropdowns() {
   };
 
   navDropdowns.forEach((dropdown) => {
-    const open = () => dropdown.classList.add("is-open");
+    const open = () => {
+      if (isCompactNavigation()) return;
+      dropdown.classList.add("is-open");
+    };
     const close = () => dropdown.classList.remove("is-open");
     dropdown.addEventListener("mouseenter", open);
     dropdown.addEventListener("mouseleave", close);
@@ -1588,6 +1594,7 @@ history.replaceState({ view: "home" }, "", `${location.pathname}${location.searc
 
 navCaseIndexTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
+    if (isCompactNavigation()) return;
     event.preventDefault();
     const target = trigger.dataset.openCaseIndex;
     if (target === "plans") {
@@ -1600,6 +1607,7 @@ navCaseIndexTriggers.forEach((trigger) => {
 
 navNotesTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
+    if (isCompactNavigation()) return;
     event.preventDefault();
     openNotesList();
   });
@@ -1607,6 +1615,7 @@ navNotesTriggers.forEach((trigger) => {
 
 navContactTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
+    if (isCompactNavigation()) return;
     event.preventDefault();
     openContactView();
   });

@@ -393,13 +393,6 @@
     }
 
     @media (max-width: 720px) {
-      .has-reveal-nav.nav-is-hidden:not(.nav-force-visible) .site-header:not(:hover):not(:focus-within) .brand,
-      .has-reveal-nav.nav-is-hidden:not(.nav-force-visible) .site-header:not(:hover):not(:focus-within) .site-nav {
-        opacity: 1 !important;
-        pointer-events: auto !important;
-        transform: none !important;
-      }
-
       .global-site-header {
         align-items: center;
         min-height: 76px;
@@ -459,7 +452,16 @@
       }
 
       .nav-reveal-control {
-        display: none !important;
+        top: 26px !important;
+        right: 18px !important;
+        left: auto !important;
+        color: rgba(245, 241, 232, 0.92);
+        text-shadow: 0 1px 12px rgba(0, 0, 0, 0.36);
+      }
+
+      .has-reveal-nav:not(.nav-is-hidden) .nav-reveal-control {
+        opacity: 0;
+        pointer-events: none;
       }
 
       .nav-reveal-control::before,
@@ -478,6 +480,8 @@
   }
 
   if (!header) return;
+
+  const isCompactNav = () => window.matchMedia("(max-width: 720px), (hover: none) and (pointer: coarse)").matches;
 
   const limitSpaceMenus = () => {
     document.querySelectorAll('.nav-dropdown-panel[aria-label="空间案例索引"]').forEach((panel) => {
@@ -528,6 +532,7 @@
 
     dropdowns.forEach((dropdown) => {
       const open = () => {
+        if (isCompactNav()) return;
         closeAll(dropdown);
         dropdown.classList.add("is-open");
       };
@@ -563,7 +568,6 @@
   }
 
   const revealButton = header.querySelector(".nav-reveal-control");
-  const isCompactNav = () => window.matchMedia("(max-width: 720px)").matches;
   const positionRevealButton = () => {
     if (!revealButton) return;
     if (isCompactNav()) {
@@ -603,10 +607,6 @@
   };
 
   const hideNav = () => {
-    if (isCompactNav()) {
-      showNav();
-      return;
-    }
     if (window.scrollY < 56) return;
     document.body.classList.remove("nav-force-visible");
     document.body.classList.add("nav-is-hidden");
