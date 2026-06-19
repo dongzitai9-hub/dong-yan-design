@@ -1032,11 +1032,17 @@ function renderSchemes() {
 }
 
 let serviceTrackCards = [];
-let serviceTrackPosition = 1;
+let serviceTrackPosition = 0;
 let serviceTrackActiveIndex = 0;
 let serviceTrackPendingIndex = null;
 let serviceTrackAnimating = false;
-const serviceTrackDuration = 620;
+const serviceTrackOriginalCount = serviceCards.length;
+const serviceTrackDuration = 680;
+
+function getServiceMiddlePosition(index) {
+  if (!serviceTrackOriginalCount) return 0;
+  return serviceTrackOriginalCount + ((index + serviceTrackOriginalCount) % serviceTrackOriginalCount);
+}
 
 function syncServiceTrack(animate = true) {
   if (!serviceTrack || !serviceTrackCards.length) return;
@@ -1046,9 +1052,10 @@ function syncServiceTrack(animate = true) {
     ? `transform ${serviceTrackDuration}ms cubic-bezier(0.22, 1, 0.36, 1)`
     : "none";
   serviceTrack.style.transform = `translate3d(${-activeCard.offsetLeft}px, 0, 0)`;
+  if (!animate) serviceTrack.getBoundingClientRect();
 }
 
-function setActiveService(index) {
+function setActiveService(index, position = serviceTrackPosition) {
   if (!serviceTitle || !serviceCopy || !serviceCards.length) return;
   const nextIndex = (index + serviceItems.length) % serviceItems.length;
   const item = serviceItems[nextIndex];
@@ -1056,9 +1063,10 @@ function setActiveService(index) {
   serviceCopy.textContent = item.copy;
   if (serviceNote) serviceNote.textContent = item.note;
   serviceTrackCards.forEach((card) => {
-    const cardIndex = Number(card.dataset.serviceIndex);
-    const isActive = cardIndex === nextIndex;
+    const cardPosition = Number(card.dataset.servicePosition);
+    const isActive = cardPosition === position;
     card.classList.toggle("is-active", isActive);
+    card.setAttribute("aria-current", isActive ? "true" : "false");
   });
 }
 
@@ -1071,6 +1079,7 @@ function bindServiceShowcase() {
 
   const cloneServiceCard = (card, cloneType) => {
     const clone = card.cloneNode(true);
+    clone.classList.remove("is-active");
     clone.dataset.serviceClone = cloneType;
     clone.setAttribute("aria-hidden", "true");
     clone.tabIndex = -1;
@@ -1078,17 +1087,21 @@ function bindServiceShowcase() {
   };
 
   if (!serviceTrack.dataset.cloned) {
-    serviceTrack.prepend(cloneServiceCard(serviceCards[serviceCards.length - 1], "before"));
-    serviceTrack.append(cloneServiceCard(serviceCards[0], "after"));
+    const beforeClones = serviceCards.map((card) => cloneServiceCard(card, "before"));
+    const afterClones = serviceCards.map((card) => cloneServiceCard(card, "after"));
+    serviceTrack.prepend(...beforeClones);
+    serviceTrack.append(...afterClones);
     serviceTrack.dataset.cloned = "true";
   }
 
   serviceTrackCards = [...serviceTrack.querySelectorAll("[data-service-index]")];
   serviceTrackCards.forEach((card, position) => {
     card.dataset.servicePosition = String(position);
+    const item = serviceItems[Number(card.dataset.serviceIndex)];
+    if (item) card.dataset.serviceLabel = item.title;
   });
 
-  const activate = (index, position = index + 1) => {
+  const activate = (index, position) => {
     if (serviceTrackAnimating) return;
     const nextIndex = (index + serviceItems.length) % serviceItems.length;
     if (position === serviceTrackPosition && nextIndex === serviceTrackActiveIndex) return;
@@ -1109,24 +1122,27 @@ function bindServiceShowcase() {
   serviceTrack.addEventListener("transitionend", (event) => {
     if (event.propertyName !== "transform") return;
     const nextIndex = serviceTrackPendingIndex ?? serviceTrackActiveIndex;
-    if (serviceTrackPosition === 0) {
-      serviceTrackPosition = serviceItems.length;
+    const normalizedPosition = getServiceMiddlePosition(nextIndex);
+    if (serviceTrackPosition !== normalizedPosition) {
+      serviceTrackPosition = normalizedPosition;
       syncServiceTrack(false);
-    } else if (serviceTrackPosition === serviceItems.length + 1) {
-      serviceTrackPosition = 1;
-      syncServiceTrack(false);
+    } else {
+      serviceTrack.style.transition = "none";
     }
     serviceTrackActiveIndex = nextIndex;
     serviceTrackPendingIndex = null;
     serviceTrackAnimating = false;
-    setActiveService(serviceTrackActiveIndex);
+    window.requestAnimationFrame(() => {
+      setActiveService(serviceTrackActiveIndex, serviceTrackPosition);
+    });
   });
 
   window.addEventListener("resize", () => {
     window.requestAnimationFrame(() => syncServiceTrack(false));
   });
 
-  setActiveService(serviceTrackActiveIndex);
+  serviceTrackPosition = getServiceMiddlePosition(serviceTrackActiveIndex);
+  setActiveService(serviceTrackActiveIndex, serviceTrackPosition);
   window.requestAnimationFrame(() => syncServiceTrack(false));
 }
 

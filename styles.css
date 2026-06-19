@@ -106,22 +106,22 @@ a {
   position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 18px 0;
-  margin: -18px 0;
+  padding: 22px 18px 42px;
+  margin: -22px -18px -42px;
 }
 
 .nav-dropdown::after {
   position: absolute;
-  top: 100%;
-  left: -28px;
-  right: -28px;
-  height: 18px;
+  top: calc(100% - 42px);
+  left: 0;
+  right: 0;
+  height: 42px;
   content: "";
 }
 
 .nav-dropdown-panel {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% - 18px);
   left: 50%;
   z-index: 30;
   display: grid;
@@ -134,10 +134,19 @@ a {
   opacity: 0;
   overflow: visible;
   pointer-events: none;
-  transform: translate(-50%, -6px);
-  transition: opacity 0.28s ease 0.18s, transform 0.28s ease 0.18s, visibility 0s linear 0.46s;
+  transform: translate(-50%, 0);
+  transition: none;
   visibility: hidden;
   backdrop-filter: none;
+}
+
+.nav-dropdown-panel::before {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  content: "";
 }
 
 .nav-dropdown:hover .nav-dropdown-panel,
@@ -146,14 +155,13 @@ a {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, 0);
-  transition-delay: 0s;
   visibility: visible;
 }
 
 body.dropdown-lock .nav-dropdown-panel {
   opacity: 0 !important;
   pointer-events: none !important;
-  transform: translate(-50%, -6px) !important;
+  transform: translate(-50%, 0) !important;
   visibility: hidden !important;
 }
 
@@ -184,7 +192,8 @@ body.dropdown-lock .nav-dropdown-panel {
   cursor: pointer;
   font-family: var(--ui-font);
   font-size: 13px;
-  letter-spacing: 0.18em;
+  font-weight: 300;
+  letter-spacing: 0.08em;
   line-height: 1.4;
   text-align: center;
   text-shadow: none;
@@ -1027,8 +1036,15 @@ h2 {
   text-shadow: none;
 }
 
+.case-view-nav .nav-more-button {
+  color: rgba(238, 234, 224, 0.86);
+  text-shadow: none;
+}
+
 .case-view-nav .nav-dropdown-panel a:hover,
-.case-view-nav .nav-dropdown-panel a:focus-visible {
+.case-view-nav .nav-dropdown-panel a:focus-visible,
+.case-view-nav .nav-more-button:hover,
+.case-view-nav .nav-more-button:focus-visible {
   color: var(--ink);
 }
 
@@ -2765,8 +2781,8 @@ h2 {
 
 .site-footer {
   display: grid;
-  min-height: 150px;
-  padding: clamp(42px, 5vw, 72px) clamp(24px, 5vw, 78px);
+  min-height: 80px;
+  padding: 14px clamp(24px, 5vw, 78px);
   background: #fbfbf9;
   color: #2d2c29;
   place-items: center;
@@ -2774,12 +2790,12 @@ h2 {
 
 .footer-legal {
   color: rgba(45, 44, 41, 0.72);
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.05em;
-  line-height: 1.75;
+  line-height: 1.45;
   display: grid;
   justify-items: center;
-  gap: 16px;
+  gap: 8px;
   text-align: center;
 }
 
@@ -2981,6 +2997,6 @@ h2 {
   }
 
   .site-footer {
-    min-height: 150px;
+    min-height: 80px;
   }
 }

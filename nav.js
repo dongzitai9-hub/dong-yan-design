@@ -143,16 +143,16 @@
       position: relative;
       display: inline-flex;
       align-items: center;
-      padding: 18px 0;
-      margin: -18px 0;
+      padding: 22px 18px 42px;
+      margin: -22px -18px -42px;
     }
 
     .global-site-header .nav-dropdown::after {
       position: absolute;
-      top: 100%;
-      left: -28px;
-      right: -28px;
-      height: 18px;
+      top: calc(100% - 42px);
+      left: 0;
+      right: 0;
+      height: 42px;
       content: "";
     }
 
@@ -186,7 +186,7 @@
 
     .global-site-header .nav-dropdown-panel {
       position: absolute;
-      top: calc(100% + 6px);
+      top: calc(100% - 18px);
       left: 50%;
       z-index: 30;
       display: grid;
@@ -199,10 +199,19 @@
       opacity: 0;
       overflow: visible;
       pointer-events: none;
-      transform: translate(-50%, -6px);
-      transition: opacity 0.28s ease, transform 0.28s ease, visibility 0s linear 0.28s;
+      transform: translate(-50%, 0);
+      transition: none;
       visibility: hidden;
       backdrop-filter: none;
+    }
+
+    .global-site-header .nav-dropdown-panel::before {
+      position: absolute;
+      top: -24px;
+      left: 0;
+      right: 0;
+      height: 24px;
+      content: "";
     }
 
     .global-site-header .nav-dropdown:hover .nav-dropdown-panel,
@@ -211,7 +220,6 @@
       opacity: 1;
       pointer-events: auto;
       transform: translate(-50%, 0);
-      transition-delay: 0s;
       visibility: visible;
     }
 
@@ -238,52 +246,53 @@
       outline: none;
     }
 
-    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] {
+    .global-site-header .nav-dropdown-panel[aria-label="空间案例索引"] {
       max-height: none !important;
       overflow: visible !important;
       scrollbar-width: none;
     }
 
-    .site-header .nav-dropdown-panel[aria-label="空间案例索引"]::-webkit-scrollbar {
+    .global-site-header .nav-dropdown-panel[aria-label="空间案例索引"]::-webkit-scrollbar {
       display: none;
     }
 
-    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] a,
-    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button {
+    .global-site-header .nav-dropdown-panel[aria-label="空间案例索引"] a,
+    .global-site-header .nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button {
       border-radius: 2px;
       transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] a[hidden] {
+    .global-site-header .nav-dropdown-panel[aria-label="空间案例索引"] a[hidden] {
       display: none !important;
     }
 
-    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] a:hover,
-    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] a:focus-visible,
-    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button:hover,
-    .site-header .nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button:focus-visible {
+    .global-site-header .nav-dropdown-panel[aria-label="空间案例索引"] a:hover,
+    .global-site-header .nav-dropdown-panel[aria-label="空间案例索引"] a:focus-visible,
+    .global-site-header .nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button:hover,
+    .global-site-header .nav-dropdown-panel[aria-label="空间案例索引"] .nav-more-button:focus-visible {
       background: rgba(255, 255, 255, 0.14) !important;
     }
 
-    .site-header .nav-dropdown-panel .nav-more-button {
+    .global-site-header .nav-dropdown-panel .nav-more-button {
       display: block;
       width: 100%;
       min-height: 34px;
       padding: 8px 12px;
       border: 0;
       background: transparent;
-      color: inherit;
+      color: rgba(64, 60, 55, 0.92);
       cursor: pointer;
       font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
       font-size: 13px;
-      letter-spacing: 0.18em;
+      font-weight: 400;
+      letter-spacing: 0.08em;
       line-height: 1.4;
       text-align: center;
       text-shadow: inherit;
       white-space: nowrap;
     }
 
-    .site-header .nav-dropdown-panel .nav-more-button:focus-visible {
+    .global-site-header .nav-dropdown-panel .nav-more-button:focus-visible {
       outline: none;
     }
 
@@ -471,6 +480,42 @@
   };
 
   limitSpaceMenus();
+
+  const bindDropdownState = () => {
+    const dropdowns = [
+      ...document.querySelectorAll(".site-header .nav-dropdown, .case-view-nav .nav-dropdown"),
+    ];
+    const closeAll = (except) => {
+      dropdowns.forEach((dropdown) => {
+        if (dropdown !== except) dropdown.classList.remove("is-open");
+      });
+    };
+
+    dropdowns.forEach((dropdown) => {
+      const open = () => {
+        closeAll(dropdown);
+        dropdown.classList.add("is-open");
+      };
+      const close = () => {
+        dropdown.classList.remove("is-open");
+      };
+
+      dropdown.addEventListener("pointerenter", open);
+      dropdown.addEventListener("pointerleave", close);
+      dropdown.addEventListener("focusin", open);
+      dropdown.addEventListener("focusout", () => {
+        window.requestAnimationFrame(() => {
+          if (!dropdown.contains(document.activeElement)) close();
+        });
+      });
+    });
+
+    document.addEventListener("pointerdown", (event) => {
+      if (!header.contains(event.target)) closeAll();
+    });
+  };
+
+  bindDropdownState();
 
   document.body.classList.add("has-reveal-nav");
 
