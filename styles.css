@@ -1822,9 +1822,9 @@ h2 {
 
 .portfolio-page {
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.018) 0 1px, transparent 1px 100%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.014) 0 1px, transparent 1px 100%),
-    #f7f7f5;
+    linear-gradient(90deg, rgba(28, 29, 28, 0.026) 0 1px, transparent 1px 100%),
+    linear-gradient(180deg, rgba(28, 29, 28, 0.02) 0 1px, transparent 1px 100%),
+    #f2f3f4;
   background-size: 92px 92px, 116px 116px, auto;
 }
 
