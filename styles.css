@@ -2134,6 +2134,7 @@ h2 {
   --service-card-width: clamp(150px, 12.2vw, 218px);
   --service-card-height: clamp(225px, 18.3vw, 327px);
   --service-card-active-height: clamp(258px, 21vw, 376px);
+  --service-card-morph-duration: 620ms;
   position: relative;
   flex: 0 0 var(--service-card-width);
   width: var(--service-card-width);
@@ -2196,7 +2197,7 @@ h2 {
   object-fit: cover;
   filter: saturate(0.88) contrast(0.98);
   opacity: 0.9;
-  transition: opacity 0.24s ease, filter 0.24s ease;
+  transition: height var(--service-card-morph-duration) cubic-bezier(0.22, 1, 0.36, 1), opacity 0.24s ease, filter 0.24s ease;
 }
 
 .service-card.is-active img {

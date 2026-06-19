@@ -1035,9 +1035,11 @@ let serviceTrackCards = [];
 let serviceTrackPosition = 0;
 let serviceTrackActiveIndex = 0;
 let serviceTrackPendingIndex = null;
+let serviceTrackActivationTimer = null;
 let serviceTrackAnimating = false;
 const serviceTrackOriginalCount = serviceCards.length;
 const serviceTrackPixelsPerMs = 0.38;
+const serviceTrackMorphDuration = 620;
 
 function getServiceMiddlePosition(index) {
   if (!serviceTrackOriginalCount) return 0;
@@ -1062,6 +1064,16 @@ function syncServiceTrack(animate = true, duration = 0) {
     : "none";
   serviceTrack.style.transform = `translate3d(${-offset}px, 0, 0)`;
   if (!animate) serviceTrack.getBoundingClientRect();
+}
+
+function clearServiceActivationTimer() {
+  if (!serviceTrackActivationTimer) return;
+  window.clearTimeout(serviceTrackActivationTimer);
+  serviceTrackActivationTimer = null;
+}
+
+function getServiceActivationDelay(duration) {
+  return Math.max(0, duration - serviceTrackMorphDuration);
 }
 
 function setActiveService(index, position = serviceTrackPosition) {
@@ -1123,6 +1135,14 @@ function bindServiceShowcase() {
     serviceTrackPendingIndex = nextIndex;
     serviceTrackAnimating = true;
     serviceTrackPosition = position;
+    setActiveService(nextIndex, -1);
+    clearServiceActivationTimer();
+    serviceTrackActivationTimer = window.setTimeout(() => {
+      serviceTrackActivationTimer = null;
+      if (serviceTrackPendingIndex === nextIndex && serviceTrackPosition === position) {
+        setActiveService(nextIndex, position);
+      }
+    }, getServiceActivationDelay(duration));
     syncServiceTrack(true, duration);
   };
 
@@ -1138,6 +1158,7 @@ function bindServiceShowcase() {
     if (event.target !== serviceTrack || event.propertyName !== "transform") return;
     const nextIndex = serviceTrackPendingIndex ?? serviceTrackActiveIndex;
     const normalizedPosition = getServiceMiddlePosition(nextIndex);
+    clearServiceActivationTimer();
     if (serviceRail) serviceRail.scrollLeft = 0;
     if (serviceTrackPosition !== normalizedPosition) {
       serviceTrackPosition = normalizedPosition;
