@@ -1037,21 +1037,30 @@ let serviceTrackActiveIndex = 0;
 let serviceTrackPendingIndex = null;
 let serviceTrackAnimating = false;
 const serviceTrackOriginalCount = serviceCards.length;
-const serviceTrackDuration = 680;
+const serviceTrackPixelsPerMs = 0.38;
 
 function getServiceMiddlePosition(index) {
   if (!serviceTrackOriginalCount) return 0;
   return serviceTrackOriginalCount + ((index + serviceTrackOriginalCount) % serviceTrackOriginalCount);
 }
 
-function syncServiceTrack(animate = true) {
+function getServiceTrackOffset(position) {
   if (!serviceTrack || !serviceTrackCards.length) return;
-  const activeCard = serviceTrackCards[serviceTrackPosition];
+  if (serviceRail) serviceRail.scrollLeft = 0;
+  const activeCard = serviceTrackCards[position];
   if (!activeCard) return;
+  return activeCard.offsetLeft;
+}
+
+function syncServiceTrack(animate = true, duration = 0) {
+  if (!serviceTrack || !serviceTrackCards.length) return;
+  if (serviceRail) serviceRail.scrollLeft = 0;
+  const offset = getServiceTrackOffset(serviceTrackPosition);
+  if (typeof offset !== "number") return;
   serviceTrack.style.transition = animate
-    ? `transform ${serviceTrackDuration}ms cubic-bezier(0.22, 1, 0.36, 1)`
+    ? `transform ${Math.round(duration)}ms cubic-bezier(0.25, 0.1, 0.25, 1)`
     : "none";
-  serviceTrack.style.transform = `translate3d(${-activeCard.offsetLeft}px, 0, 0)`;
+  serviceTrack.style.transform = `translate3d(${-offset}px, 0, 0)`;
   if (!animate) serviceTrack.getBoundingClientRect();
 }
 
@@ -1103,12 +1112,18 @@ function bindServiceShowcase() {
 
   const activate = (index, position) => {
     if (serviceTrackAnimating) return;
+    if (serviceRail) serviceRail.scrollLeft = 0;
     const nextIndex = (index + serviceItems.length) % serviceItems.length;
     if (position === serviceTrackPosition && nextIndex === serviceTrackActiveIndex) return;
+    const currentOffset = getServiceTrackOffset(serviceTrackPosition);
+    const nextOffset = getServiceTrackOffset(position);
+    if (typeof currentOffset !== "number" || typeof nextOffset !== "number") return;
+    const distance = Math.abs(nextOffset - currentOffset);
+    const duration = Math.max(420, distance / serviceTrackPixelsPerMs);
     serviceTrackPendingIndex = nextIndex;
     serviceTrackAnimating = true;
     serviceTrackPosition = position;
-    syncServiceTrack(true);
+    syncServiceTrack(true, duration);
   };
 
   serviceTrackCards.forEach((card) => {
@@ -1120,9 +1135,10 @@ function bindServiceShowcase() {
   });
 
   serviceTrack.addEventListener("transitionend", (event) => {
-    if (event.propertyName !== "transform") return;
+    if (event.target !== serviceTrack || event.propertyName !== "transform") return;
     const nextIndex = serviceTrackPendingIndex ?? serviceTrackActiveIndex;
     const normalizedPosition = getServiceMiddlePosition(nextIndex);
+    if (serviceRail) serviceRail.scrollLeft = 0;
     if (serviceTrackPosition !== normalizedPosition) {
       serviceTrackPosition = normalizedPosition;
       syncServiceTrack(false);
@@ -1132,14 +1148,20 @@ function bindServiceShowcase() {
     serviceTrackActiveIndex = nextIndex;
     serviceTrackPendingIndex = null;
     serviceTrackAnimating = false;
-    window.requestAnimationFrame(() => {
-      setActiveService(serviceTrackActiveIndex, serviceTrackPosition);
-    });
+    setActiveService(serviceTrackActiveIndex, serviceTrackPosition);
   });
 
   window.addEventListener("resize", () => {
     window.requestAnimationFrame(() => syncServiceTrack(false));
   });
+
+  serviceRail?.addEventListener(
+    "scroll",
+    () => {
+      if (serviceRail.scrollLeft !== 0) serviceRail.scrollLeft = 0;
+    },
+    { passive: true },
+  );
 
   serviceTrackPosition = getServiceMiddlePosition(serviceTrackActiveIndex);
   setActiveService(serviceTrackActiveIndex, serviceTrackPosition);

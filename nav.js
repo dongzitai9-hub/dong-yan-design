@@ -287,7 +287,7 @@
       font-weight: 400;
       letter-spacing: 0.08em;
       line-height: 1.4;
-      text-align: center;
+      text-align: left;
       text-shadow: inherit;
       white-space: nowrap;
     }
