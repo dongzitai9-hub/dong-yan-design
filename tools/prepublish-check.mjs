@@ -9,6 +9,8 @@ const requiredRoutes = [
   { route: "/", file: "index.html" },
   { route: "/cases/", file: "cases/index.html" },
   { route: "/plans/", file: "plans/index.html" },
+  { route: "/notes/", file: "notes/index.html" },
+  { route: "/contact/", file: "contact/index.html" },
   { route: "/cases/space-014/", file: "cases/space-014/index.html" },
   { route: "/cases/scheme-001/", file: "cases/scheme-001/index.html" },
 ];
