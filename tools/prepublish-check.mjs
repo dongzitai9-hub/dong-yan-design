@@ -32,6 +32,7 @@ const requiredFiles = [
   "README.md",
   "设计与内容决策.md",
   "网站修改记录.md",
+  "网站待办清单.md",
 ];
 
 const results = [];
@@ -40,6 +41,23 @@ const pass = (name) => results.push({ ok: true, name });
 const fail = (name, detail) => results.push({ ok: false, name, detail });
 
 const readText = (file) => readFile(path.join(root, file), "utf8");
+
+function routeExists(urlString) {
+  let pathname;
+  try {
+    const url = new URL(urlString);
+    if (url.hostname !== "dongyandesign.cn") return true;
+    pathname = url.pathname;
+  } catch {
+    pathname = urlString;
+  }
+  if (!pathname.startsWith("/")) return true;
+  const rel = pathname.replace(/^\/+/, "");
+  const candidates = pathname.endsWith("/")
+    ? [path.join(root, rel, "index.html")]
+    : [path.join(root, rel), path.join(root, `${rel}.html`), path.join(root, rel, "index.html")];
+  return candidates.some((candidate) => existsSync(candidate));
+}
 
 async function walk(dir) {
   const entries = await readdir(path.join(root, dir), { withFileTypes: true });
@@ -66,6 +84,34 @@ async function checkStaticStructure() {
       ? pass(`核心页面存在 ${item.route}`)
       : fail(`核心页面缺失 ${item.route}`, item.file);
   }
+
+  const sitemap = await readText("sitemap.xml");
+  const sitemapBlocks = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => match[1]);
+  const malformedSitemapBlocks = sitemapBlocks
+    .map((block, index) => ({
+      index: index + 1,
+      loc: block.match(/<loc>([^<]+)<\/loc>/)?.[1],
+      lastmod: block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1],
+      priority: block.match(/<priority>([^<]+)<\/priority>/)?.[1],
+    }))
+    .filter((item) => !item.loc || !/^\d{4}-\d{2}-\d{2}$/.test(item.lastmod || "") || !item.priority);
+  malformedSitemapBlocks.length === 0
+    ? pass("sitemap URL 块结构完整")
+    : fail(
+        "sitemap URL 块结构异常",
+        malformedSitemapBlocks.map((item) => `#${item.index}`).join(", "),
+      );
+  const sitemapLocs = sitemapBlocks
+    .map((block) => block.match(/<loc>([^<]+)<\/loc>/)?.[1])
+    .filter(Boolean);
+  const duplicateSitemapLocs = sitemapLocs.filter((loc, index) => sitemapLocs.indexOf(loc) !== index);
+  duplicateSitemapLocs.length === 0
+    ? pass("sitemap URL 无重复")
+    : fail("sitemap URL 存在重复", [...new Set(duplicateSitemapLocs)].join(", "));
+  const missingSitemapRoutes = sitemapLocs.filter((loc) => !routeExists(loc));
+  missingSitemapRoutes.length === 0
+    ? pass("sitemap URL 均有本地页面")
+    : fail("sitemap URL 本地页面缺失", missingSitemapRoutes.join(", "));
 
   const data = await readText("assets/js/site-data.js");
   ["/cases/space-015/", "/cases/space-014/", "/cases/space-012/", "/plans/", "/cases/all/"].forEach((needle) => {
@@ -94,9 +140,13 @@ async function checkStaticStructure() {
     : fail("导航渲染主页入口位置异常");
 
   const htmlFiles = (await walk(".")).filter((file) => file.endsWith(".html"));
+  const publishedDraftRefs = [];
   const navPages = [];
   for (const file of htmlFiles) {
     const text = await readText(file);
+    if (text.includes("dongyandesign.cn/drafts/") || text.includes('href="/drafts/')) {
+      publishedDraftRefs.push(file);
+    }
     if (!text.includes("/nav.js")) continue;
     navPages.push(file);
     const dataIndex = text.indexOf("/assets/js/site-data.js");
@@ -106,6 +156,9 @@ async function checkStaticStructure() {
       : fail(`${file} 导航脚本顺序不正确`);
   }
   navPages.length > 0 ? pass(`已检查 ${navPages.length} 个导航页面`) : fail("没有找到导航页面");
+  publishedDraftRefs.length === 0
+    ? pass("正式 HTML 页面无草稿路径引用")
+    : fail("正式 HTML 页面仍引用草稿路径", publishedDraftRefs.join(", "));
 
   const stickyPages = [];
   for (const file of htmlFiles.filter((file) => file.startsWith("cases/"))) {
