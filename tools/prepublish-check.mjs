@@ -30,6 +30,7 @@ const requiredFiles = [
   "nav.js",
   "styles.css",
   "README.md",
+  "网站资源体积梳理.md",
   "设计与内容决策.md",
   "网站修改记录.md",
   "网站待办清单.md",
