@@ -273,9 +273,9 @@
   .case-view-nav .site-nav,
   .global-site-header .site-nav {
     display: flex !important;
-    gap: 10px;
+    gap: 8px;
     justify-content: flex-end;
-    max-width: calc(100vw - 160px);
+    max-width: calc(100vw - 140px);
     margin-right: 0;
     overflow: hidden;
   }

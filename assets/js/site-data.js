@@ -56,6 +56,7 @@
   window.DONGYAN_SITE_DATA = Object.freeze({
     logoUrl,
     primary: Object.freeze([
+      { href: "/", title: "主页" },
       { href: "/cases/", title: "空间" },
       { href: "/plans/", title: "方案" },
       { href: "/notes/", title: "设计札记" },

@@ -133,6 +133,7 @@ SEO/GEO 相关修改：
 ## 结构维护规则
 
 - 导航内容优先改 `assets/js/site-data.js`，不要再逐页手改导航下拉。
+- 顶部主导航固定顺序为：主页、空间、方案、设计札记、咨询；主页入口由 `nav.js` 统一渲染，点击返回 `/`。
 - 导航样式优先改 `assets/css/navigation.css`，不要先动 `styles.css` 里的全站样式。
 - 空间/方案索引页的局部样式优先改 `assets/css/portfolio.css`。
 - `styles.css` 仍是历史全站样式文件，后续只在确认影响范围后再继续拆分。

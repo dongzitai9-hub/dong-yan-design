@@ -64,6 +64,10 @@
     </div>`;
 
   const navGroups = () => `
+    <a class="nav-trigger editorial-nav-item" href="/" aria-label="返回主页">
+      <span>主页</span>
+      <small>HOME</small>
+    </a>
     ${group({
       href: "/cases/",
       cn: "空间",
