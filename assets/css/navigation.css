@@ -270,7 +270,6 @@
   }
 
   .site-header .site-nav,
-  .case-view-nav .site-nav,
   .global-site-header .site-nav {
     display: flex !important;
     gap: 8px;
@@ -281,7 +280,6 @@
   }
 
   .site-header .nav-dropdown,
-  .case-view-nav .nav-dropdown,
   .global-site-header .nav-dropdown {
     padding: 10px 0;
     margin: -10px 0;
@@ -290,8 +288,6 @@
 
   .site-header .nav-trigger,
   .site-header .editorial-nav-item,
-  .case-view-nav .nav-trigger,
-  .case-view-nav .editorial-nav-item,
   .global-site-header .nav-trigger,
   .global-site-header .editorial-nav-item {
     min-width: 0;
@@ -304,13 +300,11 @@
   }
 
   .site-header .editorial-nav-item small,
-  .case-view-nav .editorial-nav-item small,
   .global-site-header .editorial-nav-item small {
     display: none;
   }
 
   .site-header .nav-dropdown-panel,
-  .case-view-nav .nav-dropdown-panel,
   .global-site-header .nav-dropdown-panel {
     display: none !important;
     opacity: 0 !important;

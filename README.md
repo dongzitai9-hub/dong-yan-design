@@ -23,6 +23,8 @@
 - `assets/js/site-data.js`：全站导航和入口共享数据。
 - `assets/css/navigation.css`：统一导航样式。
 - `assets/css/portfolio.css`：空间/方案索引页的局部样式入口。
+- `assets/optimized/editorial/`：首页关键视觉图的本地高质量 WebP 优化版。
+- `assets/optimized/portfolio-covers/`：空间索引和首页服务入口可复用的本地封面 WebP 优化版。
 - `tools/prepublish-check.mjs`：正式发布前固定检查脚本。
 - `package.json`、`package-lock.json`：本地检查和 Playwright 验证依赖。
 - `AGENTS.md`：给后续维护者和 Codex 的仓库协作规则。
@@ -140,6 +142,9 @@ SEO/GEO 相关修改：
 - 空间/方案索引页的局部样式优先改 `assets/css/portfolio.css`。
 - 方案详情页 `/cases/scheme-001/` 至 `/cases/scheme-006/` 已统一为四段式模板：首屏、第二屏标语、粘性三图推演、结尾四图轮播。
 - 方案页的网页展示图统一优先使用 `/assets/optimized/schemes-detail/*/cinema/` 下的 2400×1350 WebP 扩底色版本；原始方案图保留，不直接覆盖。
+- 首页关键图、空间索引封面和会影响入口速度的静态图，可以使用 `/assets/optimized/` 下的本地高质量 WebP；大尺寸详情页原图和新增普通媒体仍优先走 OSS。
+- 首页底部视频默认延后加载，不参与首屏抢加载；除非重做首页交互，不要恢复成首屏预加载。
+- 所有接入 `nav.js` 的页面需要在 head 中直接加载 `assets/css/navigation.css`，并保留 OSS `preconnect`，减少导航样式和外部图片的等待时间。
 - `styles.css` 仍是历史全站样式文件，后续只在确认影响范围后再继续拆分。
 - 改 `nav.js`、`assets/js/site-data.js`、`styles.css`、案例详情页 sticky 模块前，必须先跑发布检查。
 

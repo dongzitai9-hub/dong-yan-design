@@ -129,18 +129,6 @@
 
   if (!header) return;
 
-  document.querySelectorAll(".case-view-nav").forEach((caseNav) => {
-    caseNav.innerHTML = `
-      ${brandMarkup('data-case-view-home=""')}
-      <nav class="site-nav editorial-nav" aria-label="案例导航">
-        <a class="nav-trigger editorial-nav-item" href="#top" data-case-view-home>
-          <span>主页</span>
-          <small>HOME</small>
-        </a>
-        ${navGroups()}
-      </nav>`;
-  });
-
   const isCompactNav = () =>
     window.matchMedia("(max-width: 720px), (hover: none) and (pointer: coarse)").matches;
 
@@ -159,9 +147,7 @@
   };
 
   const bindDropdownState = () => {
-    const dropdowns = [
-      ...document.querySelectorAll(".site-header .nav-dropdown, .case-view-nav .nav-dropdown"),
-    ];
+    const dropdowns = [...document.querySelectorAll(".site-header .nav-dropdown")];
     const closeAll = (except) => {
       dropdowns.forEach((dropdown) => {
         if (dropdown !== except) dropdown.classList.remove("is-open");
