@@ -13,6 +13,14 @@ const requiredRoutes = [
   { route: "/cases/scheme-001/", file: "cases/scheme-001/index.html" },
 ];
 
+const expectedPrimaryNav = [
+  { text: "主页", href: "/" },
+  { text: "空间", href: "/cases/" },
+  { text: "方案", href: "/plans/" },
+  { text: "设计札记", href: "/notes/" },
+  { text: "咨询", href: "/contact/" },
+];
+
 const requiredFiles = [
   "assets/js/site-data.js",
   "assets/css/navigation.css",
@@ -63,6 +71,12 @@ async function checkStaticStructure() {
       ? pass(`共享数据包含 ${needle}`)
       : fail(`共享数据缺少 ${needle}`);
   });
+  const primaryNeedles = expectedPrimaryNav.map((item) => `href: "${item.href}", title: "${item.text}"`);
+  const primaryIndexes = primaryNeedles.map((needle) => data.indexOf(needle));
+  primaryIndexes.every((index) => index > -1) &&
+  primaryIndexes.every((index, itemIndex) => itemIndex === 0 || index > primaryIndexes[itemIndex - 1])
+    ? pass("共享主导航顺序正确")
+    : fail("共享主导航顺序异常", expectedPrimaryNav.map((item) => item.text).join(" > "));
 
   const nav = await readText("nav.js");
   nav.includes("DONGYAN_SITE_DATA")
@@ -71,6 +85,11 @@ async function checkStaticStructure() {
   nav.includes("/assets/css/navigation.css")
     ? pass("导航样式已拆到独立 CSS")
     : fail("导航样式未使用独立 CSS");
+  const homeIndex = nav.indexOf('<span>主页</span>');
+  const spacesIndex = nav.indexOf('cn: "空间"');
+  homeIndex > -1 && spacesIndex > -1 && homeIndex < spacesIndex
+    ? pass("导航渲染主页入口在空间左侧")
+    : fail("导航渲染主页入口位置异常");
 
   const htmlFiles = (await walk(".")).filter((file) => file.endsWith(".html"));
   const navPages = [];
@@ -160,7 +179,23 @@ async function checkRendered() {
           clientWidth: document.documentElement.clientWidth,
           bodyText: document.body.innerText.slice(0, 120),
           navLinks: document.querySelectorAll(".global-site-header .site-nav a").length,
+          primaryNav: (() => {
+            const navRoot = document.querySelector(".global-site-header .site-nav");
+            if (!navRoot) return [];
+            return [...navRoot.children].slice(0, 5).map((child) => {
+              const link = child.matches("a") ? child : child.querySelector(":scope > a");
+              return {
+                text: link?.querySelector("span")?.textContent?.trim() || "",
+                href: link?.getAttribute("href") || "",
+              };
+            });
+          })(),
         }));
+        const navMatches = expectedPrimaryNav.every(
+          (expected, index) =>
+            metrics.primaryNav[index]?.text === expected.text &&
+            metrics.primaryNav[index]?.href === expected.href,
+        );
         title && metrics.bodyText
           ? pass(`${viewport.label} ${item.route} 页面可渲染`)
           : fail(`${viewport.label} ${item.route} 页面空白`);
@@ -170,7 +205,21 @@ async function checkRendered() {
         metrics.navLinks >= 4
           ? pass(`${viewport.label} ${item.route} 全局导航存在`)
           : fail(`${viewport.label} ${item.route} 全局导航异常`, `navLinks=${metrics.navLinks}`);
+        navMatches
+          ? pass(`${viewport.label} ${item.route} 主导航顺序正确`)
+          : fail(
+              `${viewport.label} ${item.route} 主导航顺序异常`,
+              metrics.primaryNav.map((item) => `${item.text}:${item.href}`).join(" | "),
+            );
       }
+      await page.goto(`${base}/contact/`, { waitUntil: "networkidle" });
+      await Promise.all([
+        page.waitForURL(`${base}/`, { waitUntil: "networkidle" }),
+        page.locator('.global-site-header .site-nav > a[href="/"]').click(),
+      ]);
+      page.url() === `${base}/`
+        ? pass(`${viewport.label} 主页入口点击返回首页`)
+        : fail(`${viewport.label} 主页入口点击异常`, page.url());
       await page.close();
 
       errors.length === 0
