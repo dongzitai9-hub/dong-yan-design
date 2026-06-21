@@ -41,6 +41,15 @@
   pointer-events: auto;
 }
 
+.site-header.global-site-header {
+  min-height: 116px !important;
+  padding: 28px clamp(22px, 4.2vw, 76px) !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  pointer-events: auto !important;
+}
+
 .global-site-header .brand,
 .global-site-header .site-nav {
   display: flex;
@@ -123,6 +132,14 @@
   transition: none;
   visibility: hidden;
   backdrop-filter: none;
+}
+
+.site-header.global-site-header .nav-dropdown-panel {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: translate(-50%, 0);
+  backdrop-filter: none !important;
 }
 
 .global-site-header .nav-dropdown-panel::before {

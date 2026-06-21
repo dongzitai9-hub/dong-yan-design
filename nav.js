@@ -31,7 +31,7 @@
 
   const data = window.DONGYAN_SITE_DATA || fallbackData;
   const nav = data.nav || fallbackData.nav;
-  const cssHref = "/assets/css/navigation.css?v=20260619-structure";
+  const cssHref = "/assets/css/navigation.css?v=20260621-nav-unified";
 
   const ensureStylesheet = (href) => {
     if ([...document.styleSheets].some((sheet) => sheet.href?.includes(href.split("?")[0]))) return;

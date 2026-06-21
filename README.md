@@ -140,6 +140,7 @@ SEO/GEO 相关修改：
 - 导航内容优先改 `assets/js/site-data.js`，不要再逐页手改导航下拉。
 - 顶部主导航固定顺序为：主页、空间、方案、设计札记、咨询；主页入口由 `nav.js` 统一渲染，点击返回 `/`。
 - 导航样式优先改 `assets/css/navigation.css`，不要先动 `styles.css` 里的全站样式。
+- 页面 HTML 里不要复制旧导航结构，只保留 `<header class="site-header" aria-label="站点导航"></header>`，由 `nav.js` 统一生成导航。
 - 空间/方案索引页的局部样式优先改 `assets/css/portfolio.css`。
 - 方案详情页 `/cases/scheme-001/` 至 `/cases/scheme-006/` 已统一为四段式模板：首屏、第二屏标语、粘性三图推演、结尾四图轮播。
 - 方案详情页共用样式放在 `assets/css/scheme-detail.css`，共用交互放在 `assets/js/scheme-detail.js`；不要再把同一套方案详情 CSS/JS 内嵌到每个方案页。
