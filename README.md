@@ -238,10 +238,10 @@ https://github.com/dongzitai9-hub/dong-yan-design
 ## 首页 Hero 性能规则
 
 - 首页首屏第一张 Hero 图必须直接写在 `index.html`，并保留 `preload` 和 `fetchpriority="high"`。
-- 首页 Hero 第二张图由 `script.js` 在第一张完成后再补入，保留约 1.8 秒切换，但不能和第一张在手机首屏同时抢带宽。
+- 首页 Hero 前两张图必须直接写在 `index.html`：第一张高优先级，第二张低优先级提前准备，保留约 1.8 秒切换。
 - 首页 Hero 首屏前两张优先使用轻量 WebP，不直接强拉接近 1MB 的原始大图。
 - 首页 Hero 轮播计时不能挂在 `window.load` 或 `requestIdleCallback` 后面；手机端网络慢时会被后段图片和媒体拖慢。
-- 首页刚打开时只高优先级准备第一张 Hero 图；第 2 张在第一张完成后补入，第 3 张以后延后补入，避免手机浏览器顶部加载进度条被后续轮播图拖长。
+- 首页刚打开时只准备前两张 Hero 图；第 3 张以后延后补入，避免手机浏览器顶部加载进度条被后续轮播图拖长。
 - 空间索引封面按“电脑高清、手机轻量”处理：电脑端使用 `/assets/optimized/portfolio-covers/`，手机端使用 `/assets/optimized/portfolio-covers-mobile/`。
 - 空间和普通案例详情页图片按“电脑高清、手机轻量”处理：电脑端使用 OSS 原高清图，手机端使用 OSS `assets/optimized/detail-mobile/` 轻量图；详情页前段 5 张可提前加载，后段轮播和结尾图继续懒加载。
 - 空间和普通案例详情页不能在打开时一次性写入整页真实图片地址；`assets/js/case-detail.js` 只立即加载首图，其他图片接近视口或轮播需要时再按电脑/手机选择对应图片。
