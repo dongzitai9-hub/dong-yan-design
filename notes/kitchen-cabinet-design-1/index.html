@@ -5,26 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://dongyan-design.oss-cn-shanghai.aliyuncs.com" />
     <link rel="dns-prefetch" href="//dongyan-design.oss-cn-shanghai.aliyuncs.com" />
-    <link
-      rel="preload"
-      as="image"
-      href="/assets/notes/cabinet-design-real/mobile/system-kitchen.webp?v=20260621-notes-kitchen-article"
-      media="(max-width: 860px)"
-      fetchpriority="high"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="/assets/notes/cabinet-design-real/optimized/system-kitchen.webp?v=20260621-notes-kitchen-article"
-      media="(min-width: 861px)"
-      fetchpriority="high"
-    />
     <link rel="stylesheet" href="/assets/css/navigation.css?v=20260621-nav-unified" />
     <meta name="robots" content="index,follow" />
     <title>厨房好不好用，先看橱柜怎么设计｜董揅札记</title>
     <meta
       name="description"
-      content="董揅札记以分区式详情页整理厨房橱柜设计：系统厨房、U 型布局、一金二银台面区域、关键尺寸和 H1-H4 高度。"
+      content="董揅札记重新整理厨房橱柜设计：先看操作动线，再看系统厨房、U型和L型布局、台面黄金区与厨房关键高度。"
     />
     <meta
       name="keywords"
@@ -35,20 +21,17 @@
     <meta property="og:title" content="厨房好不好用，先看橱柜怎么设计｜董揅札记" />
     <meta
       property="og:description"
-      content="从系统厨房、U 型布局、一金二银台面区域到 H1-H4 高度，用案例页式视觉区块重新整理厨房橱柜设计。"
+      content="用札记文章结构梳理厨房橱柜设计：首屏观点、重点图、图文解释、对比尺寸和小结。"
     />
     <meta property="og:url" content="https://dongyandesign.cn/notes/kitchen-cabinet-design-1/" />
-    <meta
-      property="og:image"
-      content="https://dongyandesign.cn/assets/notes/cabinet-design-real/optimized/system-kitchen.webp"
-    />
+    <meta property="og:image" content="https://dongyandesign.cn/assets/notes/cabinet-design-real/optimized/system-kitchen.webp" />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "@id": "https://dongyandesign.cn/notes/kitchen-cabinet-design-1/#article",
   "headline": "厨房好不好用，先看橱柜怎么设计",
-  "description": "基于厨房设计资料整理，围绕系统厨房、U 型布局、一金二银台面区域和操作台高度，梳理厨房橱柜设计的关键。",
+  "description": "基于厨房设计资料整理，围绕系统厨房、U型布局、一金二银台面区域和操作台高度，梳理厨房橱柜设计的关键。",
   "datePublished": "2026-06-11",
   "dateModified": "2026-06-21",
   "inLanguage": "zh-CN",
@@ -72,20 +55,17 @@
     <style>
       :root {
         color-scheme: light;
-        --paper: #f2f3f4;
-        --warm: #f2f3f4;
-        --ink: #1f211f;
-        --muted: #67625c;
-        --line: rgba(31, 33, 31, 0.18);
-        --line-strong: rgba(31, 33, 31, 0.78);
-        --white: #fff;
-        --accent: #c8a03d;
-        --accent-soft: rgba(210, 176, 86, 0.2);
-        --silver: #d9ddda;
+        --paper: #f4f4f2;
+        --surface: #ffffff;
+        --ink: #20211e;
+        --muted: #66615a;
+        --soft: #e6e1d8;
+        --line: rgba(32, 33, 30, 0.14);
         --green: #506357;
+        --gold: #b99138;
+        --silver: #7e8580;
         --ui-font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
         --serif: Georgia, "Times New Roman", "Songti SC", serif;
-        --content-offset: 66px;
       }
 
       * {
@@ -103,858 +83,579 @@
         font-family: var(--ui-font);
       }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        display: block;
-        width: 100%;
-      }
-
+      img,
       picture {
         display: block;
         width: 100%;
       }
 
-      .site-shell {
-        min-height: 100vh;
+      .note-page {
+        overflow-x: clip;
       }
 
-      .project-hero {
-        min-height: 100vh;
-        padding-top: var(--content-offset);
+      .note-section {
+        width: min(100%, 1180px);
+        margin: 0 auto;
+        padding-inline: clamp(20px, 5vw, 72px);
+      }
+
+      .note-hero {
         display: grid;
-        grid-template-columns: minmax(320px, 33vw) minmax(0, 1fr);
-        align-items: stretch;
-        background: var(--paper);
-      }
-
-      .project-intro {
-        display: flex;
-        min-height: calc(100vh - var(--content-offset));
-        flex-direction: column;
-        justify-content: center;
-        padding: clamp(40px, 7vh, 88px) clamp(38px, 6vw, 108px);
-      }
-
-      .project-title {
-        margin: 0 0 38px;
-        font-family: var(--serif);
-        font-size: clamp(31px, 3vw, 48px);
-        font-style: italic;
-        font-weight: 400;
-        line-height: 1.04;
-        text-transform: uppercase;
-      }
-
-      .project-title small {
-        display: block;
-        margin-top: 16px;
-        font-family: var(--ui-font);
-        font-size: clamp(24px, 2.4vw, 38px);
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.18;
-      }
-
-      .intro-line {
-        max-width: 390px;
-        margin: 0 0 26px;
-        font-family: var(--serif);
-        font-size: clamp(15px, 1.08vw, 18px);
-        font-style: italic;
-        font-weight: 700;
-        line-height: 1.46;
-      }
-
-      .intro-copy {
-        max-width: 440px;
-        margin: 0;
-        color: #3f3b35;
-        font-size: clamp(14px, 0.96vw, 16px);
-        line-height: 2.05;
-      }
-
-      .source-note {
-        max-width: 440px;
-        margin: 28px 0 0;
-        color: rgba(63, 59, 53, 0.62);
-        font-size: 13px;
-        line-height: 1.8;
-      }
-
-      .discover-link {
-        display: inline-flex;
+        min-height: 92vh;
         align-items: center;
-        justify-content: center;
-        align-self: flex-start;
-        gap: 16px;
-        min-width: 174px;
-        min-height: 46px;
-        margin-top: 42px;
-        padding: 0 24px;
-        background: var(--ink);
-        color: var(--white);
-        font-size: 11px;
+        padding-top: clamp(122px, 14vh, 168px);
+        padding-bottom: clamp(58px, 9vh, 112px);
+      }
+
+      .note-hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 0.94fr) minmax(280px, 0.56fr);
+        gap: clamp(44px, 8vw, 118px);
+        align-items: end;
+      }
+
+      .note-title {
+        max-width: 760px;
+        margin: 0;
+        font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
+        font-size: clamp(42px, 7vw, 106px);
+        font-weight: 400;
         letter-spacing: 0;
-        text-transform: uppercase;
+        line-height: 1.08;
       }
 
-      .discover-link::before {
-        content: "↓";
-        font-size: 21px;
-        line-height: 1;
-      }
-
-      .hero-media {
-        position: relative;
-        height: calc(100vh - var(--content-offset));
-        min-height: 0;
-        margin: 0;
-        overflow: hidden;
-        background: var(--paper);
-      }
-
-      .hero-media img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      .visual-section {
-        position: relative;
-        min-height: 100vh;
-        background: var(--paper);
-      }
-
-      .full-screen-image {
-        min-height: 100vh;
-        padding: calc(var(--content-offset) + 32px) clamp(18px, 4vw, 70px) clamp(42px, 6vw, 82px);
-        background: var(--paper);
-      }
-
-      .full-screen-image img {
-        width: 100%;
-        height: calc(100vh - var(--content-offset) - 74px);
-        object-fit: contain;
-      }
-
-      .caption-scene {
+      .note-intro {
         display: grid;
-        grid-template-rows: minmax(0, 1fr) auto;
-        min-height: 100vh;
-        padding-top: var(--content-offset);
-        background: var(--paper);
-      }
-
-      .caption-scene .scene-media {
-        position: relative;
-        min-height: 0;
-        overflow: hidden;
-      }
-
-      .caption-scene img {
-        width: 100%;
-        height: 100%;
-        min-height: calc(100vh - var(--content-offset) - 90px);
-        object-fit: contain;
-      }
-
-      .caption-line {
-        display: grid;
-        min-height: 90px;
-        place-items: center;
-        padding: 0 24px 20px;
-        color: #3b3833;
-        font-family: var(--serif);
-        font-size: clamp(18px, 1.8vw, 30px);
-        font-style: italic;
-        line-height: 1.25;
-        text-align: center;
-      }
-
-      .caption-line p {
-        max-width: 1120px;
-        margin: 0;
-      }
-
-      .split-detail {
-        display: grid;
-        grid-template-columns: minmax(0, 1.34fr) minmax(360px, 0.66fr);
-        gap: clamp(24px, 4vw, 76px);
-        align-items: center;
-        min-height: 100vh;
-        padding: calc(var(--content-offset) + 44px) clamp(22px, 5vw, 78px) clamp(60px, 8vw, 112px);
-        background: var(--paper);
-      }
-
-      .image-stage {
-        position: relative;
-        overflow: hidden;
-        background: var(--paper);
-      }
-
-      .image-stage img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      .layout-stage {
-        aspect-ratio: 1.9 / 1;
-      }
-
-      .counter-stage {
-        aspect-ratio: 1.78 / 1;
-      }
-
-      .height-stage {
-        aspect-ratio: 0.78 / 1;
-      }
-
-      .section-text {
-        max-width: 470px;
-      }
-
-      .section-kicker {
-        margin: 0 0 24px;
-        font-family: var(--serif);
-        font-size: clamp(14px, 1vw, 18px);
-        font-style: italic;
-        font-weight: 700;
-        letter-spacing: 0.055em;
-        line-height: 1.32;
-        text-transform: uppercase;
-      }
-
-      .section-text h2 {
-        margin: 0 0 26px;
-        font-family: var(--serif);
-        font-size: clamp(38px, 5vw, 76px);
-        font-weight: 400;
-        line-height: 1.03;
-      }
-
-      .section-text h2 small {
-        display: block;
-        margin-top: 14px;
-        font-family: var(--ui-font);
-        font-size: clamp(20px, 1.8vw, 30px);
-        font-weight: 300;
-        line-height: 1.35;
-      }
-
-      .section-text p {
-        margin: 0;
+        gap: 22px;
+        max-width: 420px;
         color: var(--muted);
-        font-size: clamp(14px, 1vw, 16px);
-        line-height: 2.05;
+        font-size: clamp(15px, 1.1vw, 17px);
+        line-height: 2;
       }
 
-      .section-text p + p {
-        margin-top: 18px;
+      .note-intro p {
+        margin: 0;
       }
 
-      .metric-list {
-        display: grid;
-        gap: 12px;
-        margin: 28px 0 0;
-        padding: 0;
-        list-style: none;
+      .note-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        margin-top: 8px;
+        color: rgba(32, 33, 30, 0.52);
+        font-family: var(--serif);
+        font-size: 12px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
       }
 
-      .metric-list li {
-        display: grid;
-        grid-template-columns: 90px 1fr;
-        gap: 16px;
-        align-items: baseline;
-        padding-top: 13px;
+      .viewpoint {
+        padding-top: clamp(50px, 8vw, 100px);
+        padding-bottom: clamp(54px, 8vw, 110px);
         border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
       }
 
-      .metric-list strong {
-        font-family: var(--serif);
-        font-size: 24px;
-        font-style: italic;
-        font-weight: 700;
+      .viewpoint p {
+        max-width: 980px;
+        margin: 0;
+        font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
+        font-size: clamp(30px, 5.2vw, 76px);
+        line-height: 1.24;
       }
 
-      .metric-list span {
+      .focus-figure {
+        padding-top: clamp(54px, 8vw, 108px);
+        padding-bottom: clamp(52px, 8vw, 98px);
+      }
+
+      .image-frame {
+        position: relative;
+        overflow: hidden;
+        background: var(--surface);
+      }
+
+      .image-frame img {
+        height: auto;
+      }
+
+      .focus-caption {
+        display: grid;
+        grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+        gap: clamp(24px, 5vw, 76px);
+        padding-top: 28px;
         color: var(--muted);
-        font-size: 14px;
-        line-height: 1.7;
+        font-size: clamp(15px, 1.1vw, 18px);
+        line-height: 1.9;
       }
 
-      .overlay-label {
+      .focus-caption strong {
+        display: block;
+        color: var(--ink);
+        font-family: var(--serif);
+        font-size: clamp(22px, 2.5vw, 36px);
+        font-style: italic;
+        font-weight: 400;
+        line-height: 1.2;
+      }
+
+      .focus-caption p {
+        margin: 0;
+      }
+
+      .label {
         position: absolute;
-        z-index: 4;
-        display: inline-grid;
+        display: grid;
+        min-width: 86px;
         gap: 3px;
-        min-width: 90px;
-        padding: 8px 12px;
-        border: 1px solid rgba(255, 255, 255, 0.72);
-        background: rgba(25, 25, 23, 0.72);
+        padding: 8px 11px;
+        background: rgba(32, 33, 30, 0.72);
         color: #fff;
-        font-size: clamp(12px, 0.9vw, 15px);
+        font-size: clamp(11px, 0.95vw, 14px);
         line-height: 1.25;
         text-align: center;
         backdrop-filter: blur(12px);
       }
 
-      .overlay-label.gold {
-        background: rgba(183, 139, 41, 0.88);
+      .label small {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 10px;
       }
 
-      .overlay-label.silver {
-        background: rgba(88, 93, 91, 0.78);
-      }
-
-      .overlay-label small {
-        color: rgba(255, 255, 255, 0.76);
-        font-size: 11px;
-      }
-
-      .measure {
-        position: absolute;
-        z-index: 5;
+      .article-block {
         display: grid;
-        place-items: center;
-        color: var(--ink);
+        grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
+        gap: clamp(28px, 6vw, 86px);
+        align-items: center;
+        padding-top: clamp(54px, 8vw, 108px);
+        padding-bottom: clamp(54px, 8vw, 108px);
+        border-top: 1px solid var(--line);
+      }
+
+      .article-block.reverse .article-copy {
+        order: 2;
+      }
+
+      .article-block.reverse .article-media {
+        order: 1;
+      }
+
+      .article-copy {
+        display: grid;
+        gap: 20px;
+        max-width: 500px;
+      }
+
+      .section-number {
+        color: var(--green);
         font-family: var(--serif);
-        font-size: clamp(18px, 1.4vw, 28px);
-        font-weight: 700;
-        line-height: 1;
-        text-shadow: 0 1px 8px rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+        font-style: italic;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
       }
 
-      .measure::before {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        height: 2px;
-        background: var(--line-strong);
-        content: "";
+      .article-copy h2 {
+        margin: 0;
+        font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
+        font-size: clamp(30px, 4vw, 58px);
+        font-weight: 400;
+        line-height: 1.2;
       }
 
-      .measure::after {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: calc(50% - 8px);
-        height: 18px;
-        border-left: 2px solid var(--line-strong);
-        border-right: 2px solid var(--line-strong);
-        content: "";
+      .article-copy p {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(15px, 1.05vw, 17px);
+        line-height: 2;
       }
 
-      .measure span {
+      .article-media {
         position: relative;
-        z-index: 2;
-        padding: 0 12px;
-        background: rgba(246, 242, 234, 0.92);
-      }
-
-      .zone-band {
-        position: absolute;
-        z-index: 2;
-        top: 9%;
-        bottom: 22%;
-        border-left: 1px dashed rgba(31, 33, 31, 0.68);
-        border-right: 1px dashed rgba(31, 33, 31, 0.68);
-        background: rgba(255, 255, 255, 0.08);
-      }
-
-      .zone-band.gold {
-        background: rgba(211, 174, 67, 0.2);
-        box-shadow: inset 0 0 0 2px rgba(211, 174, 67, 0.42);
-      }
-
-      .zone-band.silver {
-        background: rgba(218, 222, 220, 0.18);
       }
 
       .plan-chip {
         position: absolute;
-        z-index: 5;
+        top: 18px;
         display: grid;
-        gap: 8px;
-        min-width: 190px;
-        padding: 14px 18px;
+        gap: 5px;
+        min-width: 128px;
+        padding: 12px 14px;
         background: rgba(255, 255, 255, 0.86);
-        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.13);
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.12);
         backdrop-filter: blur(12px);
       }
 
       .plan-chip strong {
         font-family: var(--serif);
-        font-size: clamp(24px, 2vw, 36px);
+        font-size: 26px;
         font-style: italic;
-        font-weight: 700;
         line-height: 1;
       }
 
       .plan-chip span {
         color: var(--muted);
-        font-size: 13px;
+        font-size: 12px;
         line-height: 1.55;
       }
 
-      .statement {
+      .zone {
+        position: absolute;
+        top: 10%;
+        bottom: 19%;
+        border-left: 1px dashed rgba(32, 33, 30, 0.58);
+        border-right: 1px dashed rgba(32, 33, 30, 0.58);
+      }
+
+      .zone.gold {
+        background: rgba(185, 145, 56, 0.2);
+        box-shadow: inset 0 0 0 2px rgba(185, 145, 56, 0.36);
+      }
+
+      .zone.silver {
+        background: rgba(126, 133, 128, 0.16);
+      }
+
+      .module-grid {
         display: grid;
-        min-height: 58vh;
-        place-items: center;
-        padding: calc(var(--content-offset) + 34px) clamp(22px, 7vw, 112px) clamp(54px, 7vw, 92px);
-        background: var(--paper);
-        text-align: center;
+        grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+        gap: clamp(28px, 6vw, 86px);
+        padding-top: clamp(54px, 8vw, 108px);
+        padding-bottom: clamp(54px, 8vw, 108px);
+        border-top: 1px solid var(--line);
       }
 
-      .statement p {
-        max-width: 1160px;
-        margin: 0;
-        font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
-        font-size: clamp(32px, 5vw, 76px);
-        line-height: 1.18;
-      }
-
-      .height-grid {
+      .measure-list {
         display: grid;
-        grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
-        gap: clamp(22px, 4vw, 70px);
-        align-items: center;
-        min-height: 100vh;
-        padding: calc(var(--content-offset) + 44px) clamp(22px, 5vw, 78px) clamp(60px, 8vw, 112px);
-        background: var(--paper);
+        gap: 0;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
       }
 
-      .height-copy {
-        max-width: 460px;
+      .measure-list li {
+        display: grid;
+        grid-template-columns: 78px 1fr;
+        gap: 18px;
+        padding: 18px 0;
+        border-top: 1px solid var(--line);
       }
 
-      .height-copy h2 {
-        margin: 0 0 26px;
+      .measure-list strong {
+        color: var(--ink);
         font-family: var(--serif);
-        font-size: clamp(38px, 5vw, 76px);
-        font-weight: 400;
-        line-height: 1.03;
+        font-size: 28px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1;
       }
 
-      .height-copy p {
-        margin: 0;
+      .measure-list span {
         color: var(--muted);
-        font-size: 16px;
-        line-height: 2.05;
+        font-size: 14px;
+        line-height: 1.75;
       }
 
-      .height-panels {
+      .height-cards {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(18px, 2vw, 30px);
+        gap: clamp(16px, 2.4vw, 28px);
       }
 
       .height-card {
         position: relative;
         overflow: hidden;
-        min-height: 560px;
-        background: var(--paper);
+        background: var(--surface);
       }
 
       .height-card img {
-        width: 100%;
-        height: 100%;
-        min-height: 560px;
-        object-fit: contain;
+        height: clamp(520px, 62vw, 760px);
+        object-fit: cover;
+        object-position: center;
       }
 
-      .height-card .overlay-label {
-        left: 24px;
-        top: 24px;
-        text-align: left;
-      }
-
-      .height-note {
-        position: absolute;
-        left: 24px;
-        right: 24px;
-        bottom: 24px;
-        z-index: 5;
-        padding: 18px 20px;
-        background: rgba(255, 255, 255, 0.88);
-        color: #2d2a25;
+      .height-card figcaption {
+        margin: 0;
+        padding: 16px 18px 18px;
+        color: var(--muted);
         font-size: 14px;
         line-height: 1.75;
-        backdrop-filter: blur(12px);
       }
 
-      .closing-gallery {
-        position: relative;
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        padding-top: var(--content-offset);
-        background: var(--paper);
+      .summary {
+        padding-top: clamp(58px, 9vw, 120px);
+        padding-bottom: clamp(78px, 11vw, 150px);
+        border-top: 1px solid var(--line);
       }
 
-      .carousel-track {
-        position: relative;
-        width: 100vw;
-        height: calc(100vh - var(--content-offset));
-        overflow: hidden;
+      .summary p {
+        max-width: 980px;
+        margin: 0;
+        font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
+        font-size: clamp(32px, 5vw, 72px);
+        line-height: 1.25;
       }
 
-      .carousel-track img {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        background: var(--paper);
-        opacity: 0;
-        pointer-events: none;
-        transform: translateX(var(--carousel-enter, 100%));
-        transition: transform 0.74s cubic-bezier(0.22, 1, 0.36, 1);
-        will-change: transform;
+      .source {
+        max-width: 640px;
+        margin-top: 28px;
+        color: rgba(32, 33, 30, 0.52);
+        font-size: 13px;
+        line-height: 1.8;
       }
 
-      .carousel-track img.is-active {
-        z-index: 3;
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .carousel-track img.is-leaving {
-        z-index: 2;
-        opacity: 1;
-        transform: translateX(var(--carousel-exit, -100%));
-      }
-
-      .carousel-arrow {
-        position: absolute;
-        top: 50%;
-        z-index: 8;
-        display: grid;
-        place-items: center;
-        width: 48px;
-        height: 34px;
-        border: 0;
-        background: transparent;
-        color: rgba(31, 33, 31, 0.82);
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 36px;
-        font-weight: 300;
-        line-height: 1;
-        text-shadow: 0 1px 18px rgba(255, 255, 255, 0.75);
-        transform: translateY(-50%);
-        cursor: pointer;
-      }
-
-      .carousel-arrow.prev {
-        left: clamp(18px, 4vw, 72px);
-      }
-
-      .carousel-arrow.next {
-        right: clamp(18px, 4vw, 72px);
-      }
-
-      .carousel-count {
-        position: absolute;
-        left: 50%;
-        bottom: 34px;
-        z-index: 9;
-        color: rgba(31, 33, 31, 0.72);
-        font-family: var(--serif);
-        font-size: 12px;
-        letter-spacing: 0.16em;
-        transform: translateX(-50%);
-      }
-
-      @media (max-width: 920px) {
-        :root {
-          --content-offset: 58px;
+      @media (max-width: 860px) {
+        .note-section {
+          padding-inline: 18px;
         }
 
-        .project-hero,
-        .split-detail,
-        .height-grid {
+        .note-hero {
+          min-height: auto;
+          padding-top: 116px;
+          padding-bottom: 56px;
+        }
+
+        .note-hero-inner,
+        .focus-caption,
+        .article-block,
+        .module-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .note-title {
+          font-size: clamp(38px, 12vw, 58px);
+        }
+
+        .note-intro {
+          max-width: none;
+          font-size: 15px;
+          line-height: 1.9;
+        }
+
+        .viewpoint,
+        .focus-figure,
+        .article-block,
+        .module-grid,
+        .summary {
+          padding-top: 48px;
+          padding-bottom: 52px;
+        }
+
+        .viewpoint p,
+        .summary p {
+          font-size: clamp(28px, 9vw, 42px);
+        }
+
+        .focus-caption {
+          padding-top: 20px;
+        }
+
+        .article-block.reverse .article-copy,
+        .article-block.reverse .article-media {
+          order: initial;
+        }
+
+        .height-cards {
           grid-template-columns: 1fr;
         }
 
-        .project-intro {
-          min-height: auto;
-          padding: 44px 42px 38px;
+        .height-card img {
+          height: 430px;
         }
 
-        .hero-media {
-          height: auto;
-          padding: 0 18px 38px;
-          background: transparent;
+        .measure-list li {
+          grid-template-columns: 58px 1fr;
+          gap: 14px;
         }
 
-        .hero-media img {
-          height: auto;
-          object-fit: contain;
-        }
-
-        .caption-scene {
-          min-height: auto;
-          padding: var(--content-offset) 18px 44px;
-        }
-
-        .caption-scene img {
-          min-height: 0;
-          height: auto;
-          object-fit: contain;
-        }
-
-        .split-detail,
-        .height-grid {
-          min-height: auto;
-          padding: calc(var(--content-offset) + 28px) 18px 56px;
-        }
-
-        .layout-stage,
-        .counter-stage {
-          aspect-ratio: auto;
-          min-height: 420px;
-        }
-
-        .layout-stage img,
-        .counter-stage img {
-          min-height: 420px;
-        }
-
-        .height-panels {
-          grid-template-columns: 1fr;
-        }
-
-        .metric-list li {
-          grid-template-columns: 1fr;
-          gap: 4px;
-        }
-
-        .overlay-label {
+        .label {
           min-width: auto;
-          padding: 7px 9px;
-          font-size: 11px;
+          padding: 6px 8px;
+          font-size: 10px;
+        }
+
+        .label small,
+        .plan-chip span {
+          display: none;
         }
 
         .plan-chip {
-          min-width: 148px;
-          padding: 10px 12px;
+          min-width: 76px;
+          padding: 8px 10px;
         }
 
-        .plan-chip span {
-          font-size: 12px;
-        }
-
-        .measure {
-          font-size: 16px;
-        }
-
-        .closing-gallery {
-          min-height: auto;
-        }
-
-        .carousel-track {
-          height: 72vh;
+        .plan-chip strong {
+          font-size: 20px;
         }
       }
     </style>
   </head>
   <body>
-    <div class="site-shell">
+    <div class="note-page">
       <header class="site-header" aria-label="站点导航"></header>
 
       <main>
-        <section class="project-hero note-hero-readable">
-          <div class="project-intro">
-            <p class="section-kicker">KITCHEN NOTE / CABINET SYSTEM</p>
-            <h1 class="project-title">
-              KITCHEN SYSTEM
-              <small>厨房好不好用，先看橱柜怎么设计</small>
-            </h1>
-            <p class="intro-line">厨房不是一排柜子，而是一套由布局、台面、收纳和高度共同组成的工作系统。</p>
-            <p class="intro-copy">
-              这一篇把橱柜设计拆成几个客户真正能判断的点：先看厨房是不是成系统，再看台面动作是否顺手，最后把高度、收纳和尺度落到具体使用上。
-            </p>
-            <p class="source-note">
-              参考《小家，越住越大 1》厨房章节整理，页面文字为董揅设计二次归纳。
-            </p>
-            <a class="discover-link" href="#viewpoint">DISCOVER MORE</a>
+        <section class="note-section note-hero" aria-labelledby="note-title">
+          <div class="note-hero-inner">
+            <h1 class="note-title" id="note-title">厨房好不好用，先看橱柜怎么设计</h1>
+            <div class="note-intro">
+              <p>
+                橱柜不是把墙面填满，也不是简单多做几组柜子。真正影响厨房体验的，是洗、切、炒、放这些动作有没有被安排在顺手的位置。
+              </p>
+              <p>
+                这篇先不讲风格，只把橱柜拆成几个能判断的点：系统、布局、台面和高度。
+              </p>
+              <div class="note-meta">
+                <span>Dongyan Notes</span>
+                <span>Kitchen Cabinet</span>
+              </div>
+            </div>
           </div>
-          <figure class="hero-media">
-            <picture>
-              <source media="(max-width: 860px)" srcset="/assets/notes/cabinet-design-real/mobile/system-kitchen.webp?v=20260621-notes-kitchen-article" />
-              <img
-                src="/assets/notes/cabinet-design-real/optimized/system-kitchen.webp?v=20260621-notes-kitchen-article"
-                alt="现代系统厨房正面图，展示吊柜、烟机、灶台、水槽、台面和地柜的整体关系"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </picture>
+        </section>
+
+        <section class="note-section viewpoint" aria-label="观点说明">
+          <p>厨房的核心不是柜子够不够多，而是每一次拿、洗、切、炒、放，能不能少走一步。</p>
+        </section>
+
+        <section class="note-section focus-figure" aria-label="单张重点图">
+          <figure>
+            <div class="image-frame">
+              <picture>
+                <source media="(max-width: 860px)" srcset="/assets/notes/cabinet-design-real/mobile/system-kitchen.webp?v=20260621-note-flow" />
+                <img
+                  src="/assets/notes/cabinet-design-real/optimized/system-kitchen.webp?v=20260621-note-flow"
+                  alt="现代系统厨房正面图，展示吊柜、烟机、灶台、水槽、台面和地柜的整体关系"
+                  width="1536"
+                  height="1024"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
+              <span class="label" style="left: 13%; top: 18%;">吊柜<small>上部收纳</small></span>
+              <span class="label" style="left: 39%; top: 35%;">灶台<small>烹饪中心</small></span>
+              <span class="label" style="right: 13%; top: 43%;">水槽<small>清洗中心</small></span>
+              <span class="label" style="left: 56%; bottom: 13%;">地柜<small>基础收纳</small></span>
+            </div>
+            <figcaption class="focus-caption">
+              <strong>先把厨房看成一套系统。</strong>
+              <p>
+                吊柜、地柜、灶台、水槽和台面不是孤立部件。它们共同决定烹饪动作是否连续，决定物品能不能在需要的位置出现。
+              </p>
+            </figcaption>
           </figure>
         </section>
 
-        <section class="statement note-viewpoint" id="viewpoint" aria-label="厨房橱柜设计观点">
-          <p>橱柜设计先看动作顺不顺，再看柜子够不够多。</p>
-        </section>
-
-        <section class="caption-scene note-focus-image" aria-label="系统厨房重点图">
-          <div class="scene-media">
-            <picture>
-              <source media="(max-width: 860px)" srcset="/assets/notes/cabinet-design-real/mobile/system-kitchen.webp?v=20260621-notes-kitchen-article" />
-              <img
-                src="/assets/notes/cabinet-design-real/optimized/system-kitchen.webp?v=20260621-notes-kitchen-article"
-                alt="系统厨房把吊柜、烟机、灶台、水槽、台面和地柜整合到同一条工作线上"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-            <span class="overlay-label" style="left: 14%; top: 18%;">吊柜<small>上部收纳</small></span>
-            <span class="overlay-label" style="left: 40%; top: 34%;">灶台<small>烹饪中心</small></span>
-            <span class="overlay-label" style="left: 56%; top: 69%;">地柜<small>基础收纳</small></span>
-            <span class="overlay-label" style="right: 13%; top: 42%;">水槽<small>清洗中心</small></span>
+        <section class="note-section article-block" aria-label="图文解释：先看布局">
+          <div class="article-copy">
+            <span class="section-number">01 / Layout</span>
+            <h2>先看人怎么移动，再看柜子怎么排。</h2>
+            <p>
+              很多厨房看起来柜子不少，但做饭时总要来回走。问题不一定是面积小，而是水槽、备餐区、灶台之间的动作线被拉长了。
+            </p>
+            <p>
+              U 型和 L 型没有绝对好坏。小厨房里，U 型常常能把动作收回来；大一点的空间里，L 型也可以更舒展。关键是先判断人的动作，而不是先填满柜体。
+            </p>
           </div>
-          <div class="caption-line">
-            <p>厨房是否好用，取决于这些部件有没有服务同一条操作线。</p>
-          </div>
-        </section>
-
-        <section class="split-detail" aria-label="系统厨房图文解释">
-          <div class="image-stage layout-stage">
-            <picture>
-              <source media="(max-width: 860px)" srcset="/assets/notes/cabinet-design-real/mobile/u-vs-l-topview-real.webp?v=20260621-notes-kitchen-article" />
-              <img
-                src="/assets/notes/cabinet-design-real/optimized/u-vs-l-topview-real.webp?v=20260621-notes-kitchen-article"
-                alt="U型和L型厨房顶视对比，展示不同布局下的台面利用"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-            <div class="plan-chip" style="left: 4%; top: 7%;">
-              <strong>U 型</strong>
-              <span>面积更集中<br />动作更短</span>
-            </div>
-            <div class="plan-chip" style="right: 5%; top: 7%;">
-              <strong>L 型</strong>
-              <span>空间更展开<br />台面不一定更多</span>
+          <div class="article-media">
+            <div class="image-frame">
+              <picture>
+                <source media="(max-width: 860px)" srcset="/assets/notes/cabinet-design-real/mobile/u-vs-l-topview-real.webp?v=20260621-note-flow" />
+                <img
+                  src="/assets/notes/cabinet-design-real/optimized/u-vs-l-topview-real.webp?v=20260621-note-flow"
+                  alt="U型和L型厨房顶视对比，展示不同布局下的台面利用"
+                  width="1629"
+                  height="965"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <span class="plan-chip" style="left: 18px;"><strong>U 型</strong><span>动作更集中</span></span>
+              <span class="plan-chip" style="right: 18px;"><strong>L 型</strong><span>空间更展开</span></span>
             </div>
           </div>
-          <div class="section-text">
-            <p class="section-kicker">01 / LAYOUT</p>
-            <h2>
-              先判断布局
-              <small>再讨论柜子数量</small>
-            </h2>
+        </section>
+
+        <section class="note-section article-block reverse" aria-label="图文解释：台面分区">
+          <div class="article-copy">
+            <span class="section-number">02 / Countertop</span>
+            <h2>台面不是越长越好，而是要有能用的三段。</h2>
             <p>
-              中小厨房里，U 型布局常常比 L 型更省动作。它不是为了看起来更满，而是让洗、切、炒围绕身体展开，减少来回走动。
+              水槽旁要能放下洗完的东西，灶台旁要能装盘，水槽和灶台之间要留下真正的备餐区。
             </p>
             <p>
-              如果一开始只问“能做多少柜子”，很容易把厨房塞满；如果先问“做饭时人怎么移动”，橱柜的长度、转角和高低才会更清楚。
+              这也是“一金二银”的意思：黄金区给备餐，两个银区分别服务清洗和烹饪。少了其中一段，厨房就容易变成不断临时挪东西。
             </p>
+          </div>
+          <div class="article-media">
+            <div class="image-frame">
+              <picture>
+                <source media="(max-width: 860px)" srcset="/assets/notes/cabinet-design-real/mobile/long-countertop.webp?v=20260621-note-flow" />
+                <img
+                  src="/assets/notes/cabinet-design-real/optimized/long-countertop.webp?v=20260621-note-flow"
+                  alt="厨房台面洗切炒区域图，展示备餐区、灶台旁和水槽旁的分区关系"
+                  width="1510"
+                  height="1042"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <span class="zone silver" style="left: 2%; width: 21%;"></span>
+              <span class="zone gold" style="left: 30%; width: 34%;"></span>
+              <span class="zone silver" style="right: 2%; width: 22%;"></span>
+              <span class="label" style="left: 5%; top: 12%; background: rgba(126, 133, 128, 0.82);">银二区<small>水槽旁</small></span>
+              <span class="label" style="left: 42%; top: 12%; background: rgba(185, 145, 56, 0.88);">黄金区<small>备餐切菜</small></span>
+              <span class="label" style="right: 5%; top: 12%; background: rgba(126, 133, 128, 0.82);">银一区<small>灶台旁</small></span>
+            </div>
           </div>
         </section>
 
-        <section class="split-detail" aria-label="台面分区和尺寸判断">
-          <div class="image-stage counter-stage">
-            <picture>
-              <source media="(max-width: 860px)" srcset="/assets/notes/cabinet-design-real/mobile/long-countertop.webp?v=20260621-notes-kitchen-article" />
-              <img
-                src="/assets/notes/cabinet-design-real/optimized/long-countertop.webp?v=20260621-notes-kitchen-article"
-                alt="厨房台面洗切炒区域图，展示备餐区、灶台旁和水槽旁的分区关系"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-            <span class="zone-band silver" style="left: 2%; width: 20%;"></span>
-            <span class="zone-band gold" style="left: 30%; width: 34%;"></span>
-            <span class="zone-band silver" style="right: 2%; width: 22%;"></span>
-            <span class="overlay-label silver" style="left: 6%; top: 12%;">银二区<small>水槽旁沥水</small></span>
-            <span class="overlay-label gold" style="left: 43%; top: 12%;">黄金区<small>备餐切菜</small></span>
-            <span class="overlay-label silver" style="right: 6%; top: 12%;">银一区<small>灶台旁装盘</small></span>
-          </div>
-          <div class="section-text">
-            <p class="section-kicker">02 / COUNTERTOP</p>
-            <h2>
-              把台面分成三段动作
-              <small>比单纯加长更重要</small>
-            </h2>
-            <ul class="metric-list">
-              <li>
-                <strong>金</strong>
-                <span>备餐区优先保证，至少 600mm，条件允许做到 800mm 左右。</span>
-              </li>
-              <li>
-                <strong>银一</strong>
-                <span>灶台旁约 300mm，用来放盘子，炒完菜可以顺手装盘。</span>
-              </li>
-              <li>
-                <strong>银二</strong>
-                <span>水槽旁约 300mm，才能真正放下沥水架和清洗后的物品。</span>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section class="height-grid" aria-label="厨房操作高度和尺寸">
-          <div class="height-copy">
-            <p class="section-kicker">03 / HEIGHT</p>
-            <h2>几个高度，决定身体累不累</h2>
+        <section class="note-section module-grid" aria-label="对比和尺寸模块">
+          <div class="article-copy">
+            <span class="section-number">03 / Size</span>
+            <h2>尺寸不只是数字，是身体会不会累。</h2>
             <p>
-              橱柜不是固定尺寸套用，而是要适配做饭的人。台面、吊柜和灶台高度都和身体动作有关。
+              橱柜高度最容易被忽略。台面低了会弯腰，台面高了会抬肩；吊柜太低容易碰头，太高又会变成摆设。
             </p>
-            <ul class="metric-list">
-              <li>
-                <strong>H1</strong>
-                <span>操作台高度，常用估算：身高 ÷ 2 + 50mm。</span>
-              </li>
-              <li>
-                <strong>H2</strong>
-                <span>吊柜底高度，常见取 1550-1600mm，过低容易碰头。</span>
-              </li>
-              <li>
-                <strong>H3</strong>
-                <span>吊柜顶高度，常见约 2250mm，再高就需要借助凳子。</span>
-              </li>
-              <li>
-                <strong>H4</strong>
-                <span>中式炒锅可考虑让灶台比操作台低约 80mm。</span>
-              </li>
+            <ul class="measure-list">
+              <li><strong>金</strong><span>备餐区优先保证，建议至少 600mm，条件允许做到 800mm 左右。</span></li>
+              <li><strong>银</strong><span>水槽旁和灶台旁各留约 300mm，分别解决沥水和装盘。</span></li>
+              <li><strong>H1</strong><span>操作台高度可按身高除以 2 加 50mm 估算，再结合实际习惯调整。</span></li>
+              <li><strong>H2</strong><span>吊柜底常见在 1550-1600mm，过低会压迫视线和动作。</span></li>
+              <li><strong>H4</strong><span>常用中式炒锅时，灶台可考虑比操作台低约 80mm。</span></li>
             </ul>
           </div>
-          <div class="height-panels">
+          <div class="height-cards">
             <figure class="height-card">
               <img
-                src="/assets/notes/kitchen-cabinet-design-generated/10-height-h123-tall.webp"
+                src="/assets/notes/kitchen-cabinet-design-generated/10-height-h123-tall.webp?v=20260621-note-flow"
                 alt="厨房 H1 H2 H3 高度示意"
+                width="1500"
+                height="1900"
                 loading="lazy"
                 decoding="async"
               />
-              <span class="overlay-label">H1 / H2 / H3<small>台面与吊柜高度</small></span>
-              <figcaption class="height-note">
-                H1 先看使用者身高；H2 和 H3 再决定吊柜是否顺手、是否容易碰头。
-              </figcaption>
+              <figcaption>H1、H2、H3 决定台面和吊柜是否顺手。</figcaption>
             </figure>
             <figure class="height-card">
               <img
-                src="/assets/notes/kitchen-cabinet-design-generated/11-height-h4-tall.webp"
+                src="/assets/notes/kitchen-cabinet-design-generated/11-height-h4-tall.webp?v=20260621-note-flow"
                 alt="厨房 H4 灶台高度示意"
+                width="1500"
+                height="1900"
                 loading="lazy"
                 decoding="async"
               />
-              <span class="overlay-label">H4<small>灶台可局部降低</small></span>
-              <figcaption class="height-note">
-                如果常用中式炒锅，灶台局部降低可以让翻炒更省力，但施工和费用要单独评估。
-              </figcaption>
+              <figcaption>H4 是灶台高度，常炒菜的家庭可以单独考虑。</figcaption>
             </figure>
           </div>
         </section>
 
-        <section class="statement note-summary" aria-label="厨房橱柜设计小结">
-          <p>好用的厨房，不是柜子越多越好，而是每一次拿、洗、切、炒、放，都有顺手的位置。</p>
+        <section class="note-section summary" aria-label="小结">
+          <p>好用的厨房，是每个动作都有位置。先把动线、台面和高度想清楚，柜子才真正有意义。</p>
+          <div class="source">
+            参考《小家，越住越大 1》厨房章节整理，本文为董揅设计根据设计经验进行的二次归纳。
+          </div>
         </section>
       </main>
     </div>
