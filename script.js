@@ -1,6 +1,6 @@
 const heroSlides = [
-  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/08/156BC74D-54D3-4683-9D76-407B3AE3D36E.webp",
-  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/06/4B9EC442-268D-40A8-99C6-ABE6B8F58EDD.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/hero-mobile/hero-01-mobile.webp",
+  "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/hero-mobile/hero-02-mobile.webp",
   "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/photos/16/1636DC5C-0296-464B-96E1-C6780D9DB4FE.webp",
   "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/anli-cases/09/001.webp",
   "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/anli-cases/10/001.webp",
