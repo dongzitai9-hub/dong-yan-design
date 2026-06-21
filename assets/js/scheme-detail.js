@@ -2,14 +2,25 @@
   const deferredImages = new WeakSet();
   let imageObserver = null;
 
+  const isCompactMedia = () =>
+    window.matchMedia("(max-width: 860px), (hover: none) and (pointer: coarse)").matches;
+
+  const getSchemeImageSrc = (image) =>
+    isCompactMedia()
+      ? image?.dataset.schemeMobileSrc || image?.dataset.schemeSrc
+      : image?.dataset.schemeDesktopSrc || image?.dataset.schemeSrc;
+
   const loadDeferredImage = (image) => {
-    if (!image?.dataset.schemeSrc) return;
-    image.src = image.dataset.schemeSrc;
+    const nextSrc = getSchemeImageSrc(image);
+    if (!image || !nextSrc) return;
+    image.src = nextSrc;
     image.removeAttribute("data-scheme-src");
+    image.removeAttribute("data-scheme-mobile-src");
+    image.removeAttribute("data-scheme-desktop-src");
   };
 
   const observeDeferredImage = (image) => {
-    if (!image?.dataset.schemeSrc || deferredImages.has(image)) return;
+    if (!getSchemeImageSrc(image) || deferredImages.has(image)) return;
     deferredImages.add(image);
 
     if (!("IntersectionObserver" in window)) {
@@ -28,6 +39,19 @@
       { rootMargin: "180px 0px" }
     );
     imageObserver.observe(image);
+  };
+
+  const preloadCompactSchemeImages = () => {
+    if (!isCompactMedia()) return;
+    const images = [...document.querySelectorAll("img[data-scheme-mobile-src]")];
+    const run = () => images.forEach(loadDeferredImage);
+    window.setTimeout(() => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(run, { timeout: 1200 });
+        return;
+      }
+      run();
+    }, 450);
   };
 
   const bindSwipeNavigation = (surface, onPrevious, onNext) => {
@@ -173,7 +197,10 @@
     };
   };
 
-  document.querySelectorAll("img[data-scheme-src]").forEach(observeDeferredImage);
+  document
+    .querySelectorAll("img[data-scheme-src], img[data-scheme-mobile-src][data-scheme-desktop-src]")
+    .forEach(observeDeferredImage);
+  preloadCompactSchemeImages();
 
   document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     const images = [...carousel.querySelectorAll(".carousel-track img")];
