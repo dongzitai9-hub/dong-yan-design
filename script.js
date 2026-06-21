@@ -84,7 +84,7 @@ function renderHeroSlider() {
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add("is-active");
     };
-    window.setTimeout(showNextSlide, 1800);
+    window.setTimeout(showNextSlide, 1400);
     setInterval(showNextSlide, 5200);
   };
 
@@ -95,7 +95,7 @@ function renderHeroSlider() {
         return;
       }
       startSlideshow();
-    }, 1200);
+    }, 400);
   };
 
   if (document.readyState === "complete") {
