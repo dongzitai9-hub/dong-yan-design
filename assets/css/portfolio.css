@@ -14,3 +14,7 @@
 .portfolio-extra-grid[hidden] {
   display: none !important;
 }
+
+.portfolio-card img {
+  background: #f2f3f4;
+}
