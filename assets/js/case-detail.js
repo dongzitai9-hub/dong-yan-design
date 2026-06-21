@@ -1,4 +1,13 @@
 (() => {
+  const desktopQuery = window.matchMedia("(min-width: 861px)");
+  const applyResponsiveDetailSources = () => {
+    const useDesktop = desktopQuery.matches;
+    document.querySelectorAll("img[data-mobile-src][data-desktop-src]").forEach((image) => {
+      const nextSrc = useDesktop ? image.dataset.desktopSrc : image.dataset.mobileSrc;
+      if (nextSrc && image.getAttribute("src") !== nextSrc) image.src = nextSrc;
+    });
+  };
+
   const bindSwipeNavigation = (surface, onPrevious, onNext) => {
     if (!surface) return;
 
@@ -132,6 +141,8 @@
       moveRight: () => move("right")
     };
   };
+
+  applyResponsiveDetailSources();
 
   document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     const images = [...carousel.querySelectorAll(".carousel-track img")];
