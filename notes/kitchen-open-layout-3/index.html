@@ -3,14 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://dongyan-design.oss-cn-shanghai.aliyuncs.com" />
-    <link rel="dns-prefetch" href="//dongyan-design.oss-cn-shanghai.aliyuncs.com" />
     <link rel="stylesheet" href="/assets/css/navigation.css?v=20260621-nav-unified" />
     <meta name="robots" content="index,follow" />
     <title>厨房要不要打开？先看餐厨怎么交流｜董揅札记</title>
     <meta
       name="description"
-      content="董揅札记围绕开放式厨房、封闭式厨房和可分可合厨房，整理室内窗、移门、餐厨一体、柜台、水槽和餐桌坐姿这些影响餐厨交流的设计判断。"
+      content="董揅札记围绕开放式厨房、封闭式厨房和可分可合厨房，整理室内窗、移门、水槽岛台、餐厨合一和稳定坐姿这些影响餐厨交流的设计判断。"
     />
     <meta
       name="keywords"
@@ -19,15 +17,9 @@
     <link rel="canonical" href="https://dongyandesign.cn/notes/kitchen-open-layout-3/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="厨房要不要打开？先看餐厨怎么交流｜董揅札记" />
-    <meta
-      property="og:description"
-      content="从封闭、开放到可分可合，重新整理中国式厨房的餐厨交流逻辑。"
-    />
+    <meta property="og:description" content="厨房不是封闭和开放二选一，真正要判断的是边界、视线、油烟和人能不能自然交流。" />
     <meta property="og:url" content="https://dongyandesign.cn/notes/kitchen-open-layout-3/" />
-    <meta
-      property="og:image"
-      content="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-01.webp"
-    />
+    <meta property="og:image" content="https://dongyandesign.cn/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp" />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,21 +28,15 @@
   "headline": "厨房要不要打开？先看餐厨怎么交流",
   "description": "基于资料提炼和设计整理，围绕开放式厨房、封闭式厨房和可分可合厨房，梳理餐厨之间的交流关系。",
   "datePublished": "2026-06-14",
-  "dateModified": "2026-06-14",
+  "dateModified": "2026-06-21",
   "inLanguage": "zh-CN",
-  "author": {
-    "@type": "Organization",
-    "name": "董揅设计"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "董揅设计"
-  },
+  "author": { "@type": "Organization", "name": "董揅设计" },
+  "publisher": { "@type": "Organization", "name": "董揅设计" },
   "mainEntityOfPage": "https://dongyandesign.cn/notes/kitchen-open-layout-3/",
   "image": [
-    "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-01.webp",
-    "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp",
-    "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-33.webp"
+    "https://dongyandesign.cn/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-04.webp",
+    "https://dongyandesign.cn/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp",
+    "https://dongyandesign.cn/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-33.webp"
   ],
   "articleSection": "厨房布局",
   "keywords": ["开放式厨房", "半开放厨房", "可分可合厨房", "餐厨一体", "厨房室内窗", "厨房移门", "厨房吧台"]
@@ -58,655 +44,607 @@
     </script>
     <style>
       :root {
-        color: #28251f;
-        background: #f6f2ea;
-        font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
-        line-height: 1.92;
+        color-scheme: light;
+        --paper: #f2f3f4;
+        --surface: #f8f9f9;
+        --ink: #20211e;
+        --muted: #65625b;
+        --faint: rgba(32, 33, 30, 0.52);
+        --line: rgba(32, 33, 30, 0.13);
+        --ui-font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+        --serif: Georgia, "Times New Roman", "Songti SC", serif;
       }
 
       * {
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
-        background:
-          radial-gradient(circle at top left, rgba(194, 183, 159, 0.16), transparent 34vw),
-          linear-gradient(180deg, #f6f2ea 0%, #fbfaf6 100%);
+        color: var(--ink);
+        background: var(--paper);
+        font-family: var(--ui-font);
       }
 
-      main {
-        width: min(100%, 1160px);
-        margin: 0 auto;
-        padding: clamp(38px, 7vw, 80px) clamp(20px, 5vw, 52px) 96px;
+      img {
+        display: block;
+        width: 100%;
       }
 
-      .article-head {
-        width: min(100%, 780px);
-        margin: 0 auto 38px;
-        text-align: center;
+      .note-page {
+        overflow-x: clip;
+        background: var(--paper);
       }
 
-      .eyebrow,
-      .section-label {
-        color: #506357;
-        font-size: 12px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
+      .note-hero,
+      .screen {
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100svh;
       }
 
-      h1 {
-        margin: 12px 0 18px;
-        font-size: clamp(34px, 6vw, 62px);
-        line-height: 1.16;
-        font-weight: 500;
-        letter-spacing: 0;
-      }
-
-      h2 {
-        margin: 10px 0 18px;
-        font-size: clamp(25px, 3.6vw, 38px);
-        line-height: 1.35;
-        font-weight: 500;
-      }
-
-      h3 {
-        margin: 0 0 12px;
-        font-size: clamp(19px, 2.4vw, 25px);
-        line-height: 1.45;
-        font-weight: 500;
-      }
-
-      p {
-        margin: 0 0 18px;
-      }
-
-      .subtitle {
-        margin: 0 auto 18px;
-        max-width: 680px;
-        color: #5f5a50;
-        font-size: clamp(17px, 2.4vw, 22px);
-      }
-
-      .meta,
-      .study-note {
-        color: #786f62;
-        font-size: 13px;
-      }
-
-      .meta {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .study-note {
-        margin-top: 14px;
-      }
-
-      .article-body {
-        width: min(100%, 760px);
-        margin: 0 auto 34px;
-        color: #3b352e;
-        font-size: clamp(16px, 2vw, 18px);
-      }
-
-      .lead {
-        font-size: clamp(18px, 2.6vw, 24px);
-        line-height: 1.75;
-        color: #2f2b25;
-      }
-
-      .panel {
+      .note-hero {
         display: grid;
-        grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-        gap: clamp(22px, 4vw, 44px);
-        align-items: stretch;
-        width: min(100%, 760px);
-        margin: 38px auto;
-        border-top: 1px solid rgba(43, 39, 32, 0.16);
-        border-bottom: 1px solid rgba(43, 39, 32, 0.16);
+        grid-template-columns: minmax(520px, 0.46fr) minmax(0, 0.54fr);
+        padding-top: 74px;
+        background: var(--paper);
       }
 
-      .panel.reverse {
-        grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
-      }
-
-      .opening-panel {
-        margin-top: 50px;
-        margin-bottom: 42px;
-        border-top: 0;
-      }
-
-      .panel-text {
+      .project-intro {
         display: flex;
+        min-height: calc(100svh - 74px);
         flex-direction: column;
         justify-content: center;
-        padding: clamp(24px, 4vw, 44px) 0;
+        padding: clamp(42px, 6vw, 92px) clamp(28px, 4.2vw, 60px);
       }
 
-      .panel-visual {
-        display: grid;
+      .project-title {
+        margin: 0;
+        font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
+        font-size: clamp(48px, 5vw, 88px);
+        font-weight: 400;
+        letter-spacing: 0;
+        line-height: 1.1;
+      }
+
+      .project-title small {
+        display: block;
+        margin-top: 22px;
+        font-family: var(--ui-font);
+        font-size: clamp(22px, 2vw, 32px);
+        font-weight: 600;
+      }
+
+      .intro-line {
+        max-width: 560px;
+        margin: clamp(34px, 5vh, 62px) 0 0;
+        font-family: var(--serif);
+        font-size: clamp(22px, 1.9vw, 31px);
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1.34;
+      }
+
+      .intro-copy,
+      .body-copy,
+      .source {
+        color: var(--muted);
+        font-size: clamp(15px, 1.1vw, 17px);
+        line-height: 2;
+      }
+
+      .intro-copy {
+        max-width: 560px;
+        margin: 34px 0 0;
+      }
+
+      .discover-link {
+        display: inline-flex;
+        width: fit-content;
+        min-height: 52px;
         align-items: center;
-        min-width: 0;
-        padding: clamp(18px, 3vw, 30px) 0;
+        gap: 18px;
+        margin-top: 42px;
+        padding: 0 28px;
+        background: var(--ink);
+        color: #fff;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+      }
+
+      .discover-link::before {
+        content: "↓";
+        font-size: 27px;
+        line-height: 1;
       }
 
       figure {
         margin: 0;
       }
 
-      img {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
+      .hero-media {
+        display: grid;
+        min-height: calc(100svh - 74px);
+        align-items: center;
+        background: var(--surface);
       }
 
-      figcaption {
-        margin-top: 10px;
-        color: #6d655b;
+      .hero-media img {
+        height: min(82vh, 860px);
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .screen {
+        display: grid;
+        align-items: center;
+        padding: clamp(96px, 11vh, 148px) clamp(28px, 5.6vw, 108px) clamp(60px, 8vh, 104px);
+        border-top: 1px solid var(--line);
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.56fr) minmax(360px, 0.44fr);
+        gap: clamp(42px, 6vw, 104px);
+        align-items: center;
+      }
+
+      .split.reverse {
+        grid-template-columns: minmax(360px, 0.44fr) minmax(0, 0.56fr);
+      }
+
+      .copy-block {
+        max-width: 780px;
+      }
+
+      .section-label {
+        display: block;
+        margin-bottom: 20px;
+        color: var(--faint);
+        font-family: var(--serif);
         font-size: 13px;
-        line-height: 1.65;
+        font-style: italic;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        margin: 0;
+        color: #6a6861;
+        font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
+        font-size: clamp(44px, 5vw, 88px);
+        font-weight: 400;
+        letter-spacing: 0;
+        line-height: 1.18;
+      }
+
+      .body-copy {
+        display: grid;
+        gap: 22px;
+        margin-top: 28px;
+      }
+
+      .body-copy p,
+      .source {
+        margin: 0;
       }
 
       .image-frame {
         overflow: hidden;
-        background: #ede7dc;
+        background: var(--surface);
       }
 
       .image-frame img {
-        aspect-ratio: 1086 / 1448;
-        object-fit: cover;
+        height: min(72vh, 780px);
+        object-fit: contain;
+        object-position: center;
       }
 
-      .poster-grid {
+      figcaption {
+        margin-top: 14px;
+        color: rgba(32, 33, 30, 0.6);
+        font-size: 13px;
+        line-height: 1.75;
+      }
+
+      .caption-scene {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 0.43fr) minmax(0, 0.57fr);
+        gap: clamp(36px, 5vw, 84px);
+        min-height: 100vh;
+        min-height: 100svh;
+        align-items: center;
+        padding: clamp(96px, 11vh, 148px) clamp(28px, 5.6vw, 108px) clamp(70px, 8vh, 108px);
+        background: var(--surface);
+      }
+
+      .caption-scene h2 {
+        color: var(--ink);
+        font-size: clamp(48px, 5.5vw, 96px);
+      }
+
+      .note-grid,
+      .closing-list {
+        display: grid;
         gap: 0;
-        width: min(100%, 760px);
-        margin: 30px auto 46px;
-        overflow: hidden;
-      }
-
-      .poster-grid.two {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        width: min(100%, 760px);
-      }
-
-      .poster-card {
-        min-width: 0;
-        padding: clamp(12px, 2vw, 18px);
-      }
-
-      .note-figure {
-        width: min(100%, 760px);
-        margin: 30px auto 44px;
-      }
-
-      .insight,
-      .quote-box {
-        margin: 24px 0 0;
-        padding: 22px;
-        border-left: 3px solid #506357;
-        background: rgba(255, 255, 255, 0.42);
-        color: #3f3a31;
-      }
-
-      .insight strong,
-      .quote-box strong {
-        display: block;
-        margin-bottom: 8px;
-        color: #31463b;
-        font-weight: 500;
-      }
-
-      .rule-list {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
+        margin: 28px 0 0;
         padding: 0;
-        margin: 22px 0 0;
         list-style: none;
       }
 
-      .rule-list li {
-        padding: 18px;
-        border: 1px solid rgba(80, 99, 87, 0.22);
-        background: rgba(255, 255, 255, 0.34);
+      .note-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
       }
 
-      .rule-list strong {
+      .note-card {
+        min-height: 150px;
+        padding: 20px 20px 22px;
+        border-top: 1px solid var(--line);
+        background: rgba(248, 249, 249, 0.72);
+      }
+
+      .note-card strong,
+      .closing-list strong {
+        color: var(--ink);
+        font-family: var(--serif);
+        font-size: 24px;
+        font-style: italic;
+        line-height: 1.15;
+      }
+
+      .note-card strong {
         display: block;
-        margin-bottom: 6px;
-        color: #31463b;
-        font-weight: 500;
+        margin-bottom: 8px;
       }
 
-      .closing {
-        margin-top: 30px;
-        padding-top: 26px;
-        border-top: 1px solid rgba(43, 39, 32, 0.14);
-        font-size: clamp(18px, 2.6vw, 23px);
+      .note-card span,
+      .closing-list span {
+        color: var(--muted);
+        font-size: 14px;
         line-height: 1.8;
       }
 
-      @media (max-width: 760px) {
-        main {
-          padding-inline: 18px;
-          padding-bottom: 72px;
-        }
-
-        .article-head,
-        .article-body,
-        .note-figure,
-        .poster-grid,
-        .poster-grid.two {
-          width: 100%;
-        }
-
-        .panel,
-        .panel.reverse {
-          grid-template-columns: 1fr;
-          gap: 0;
-        }
-
-        .panel.reverse .panel-text {
-          order: 1;
-        }
-
-        .panel.reverse .panel-visual {
-          order: 2;
-        }
-
-        .poster-grid,
-        .poster-grid.two,
-        .rule-list {
-          grid-template-columns: 1fr;
-        }
-
-        .panel-text,
-        .panel-visual {
-          padding-block: 22px;
-        }
+      .detail-flow {
+        display: grid;
+        gap: clamp(30px, 4vw, 56px);
       }
 
+      .detail-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(16px, 2vw, 26px);
+      }
+
+      .detail-row img {
+        height: min(52vh, 600px);
+      }
+
+      .closing-list li {
+        display: grid;
+        grid-template-columns: 82px 1fr;
+        gap: 18px;
+        padding: 16px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .source {
+        margin-top: 26px;
+        color: rgba(32, 33, 30, 0.52);
+        font-size: 13px;
+      }
+
+      @media (max-width: 900px) {
+        .note-hero,
+        .split,
+        .split.reverse,
+        .caption-scene {
+          grid-template-columns: 1fr;
+        }
+
+        .note-hero {
+          padding-top: 82px;
+        }
+
+        .project-intro {
+          min-height: auto;
+          padding: 44px 18px 34px;
+        }
+
+        .project-title {
+          font-size: clamp(38px, 12vw, 58px);
+        }
+
+        .hero-media,
+        .hero-media img {
+          min-height: auto;
+        }
+
+        .hero-media img,
+        .image-frame img,
+        .detail-row img {
+          height: auto;
+        }
+
+        .screen,
+        .caption-scene {
+          min-height: auto;
+          padding: 74px 18px;
+        }
+
+        h2 {
+          font-size: clamp(32px, 9vw, 46px);
+        }
+
+        .note-grid,
+        .detail-row {
+          grid-template-columns: 1fr;
+        }
+
+        .note-card {
+          min-height: auto;
+          padding-inline: 0;
+          background: transparent;
+        }
+
+        .closing-list li {
+          grid-template-columns: 1fr;
+          gap: 5px;
+        }
+      }
     </style>
   </head>
   <body>
-    <header class="site-header" aria-label="站点导航"></header>
+    <div class="note-page">
+      <header class="site-header" aria-label="站点导航"></header>
 
-    <main>
-      <article>
-        <header class="article-head">
-          <p class="eyebrow">Kitchen Layout Note</p>
-          <h1>厨房要不要打开？先看餐厨怎么交流</h1>
-          <p class="subtitle">
-            开放式厨房和封闭式厨房之间，并不只有二选一。对中国家庭来说，更重要的是让做饭的人、吃饭的人和路过的人能自然发生交流。
-          </p>
-          <div class="meta">
-            <span>董揅札记</span>
-            <span>·</span>
-            <span>厨房布局</span>
-          </div>
-          <p class="study-note">基于资料提炼和设计整理的餐厨关系札记，案例人物均做匿名化处理。</p>
-        </header>
-
-        <div class="panel opening-panel">
-          <div class="panel-visual">
-            <figure>
-              <div class="image-frame">
-                <img
-                  src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-04.webp"
-                  alt="厨房布局不是封闭和开放二选一，可选择中间状态的说明图"
-                  width="1086"
-                  height="1448"
-                  fetchpriority="high"
-                  decoding="async"
-                />
-              </div>
-              <figcaption>真正要判断的是家庭烹饪方式，而不是追流行。</figcaption>
+      <main>
+        <article>
+          <section class="note-hero">
+            <div class="project-intro">
+              <h1 class="project-title">
+                厨房要不要打开？
+                <small>先看餐厨怎么交流</small>
+              </h1>
+              <p class="intro-line">An open kitchen is not a style choice. It is a question of boundary, view, smell, and daily conversation.</p>
+              <p class="intro-copy">
+                开放式厨房和封闭式厨房之间，并不只有二选一。对中国家庭来说，更重要的是让做饭的人、吃饭的人和路过的人能自然发生交流。
+              </p>
+              <a class="discover-link" href="#middle-choice">DISCOVER MORE</a>
+            </div>
+            <figure class="hero-media">
+              <img
+                src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp?v=20260621-open-screenflow"
+                alt="水槽岛台形成洄游微动线的厨房示意"
+                width="1086"
+                height="1448"
+                fetchpriority="high"
+                decoding="async"
+              />
             </figure>
-          </div>
-          <div class="panel-text">
-            <span class="section-label">Opening Thought</span>
-            <h2>厨房不是非封即开，中间还有可分可合</h2>
-            <p>
-              讨论厨房时，最容易陷入“封闭”和“开放”的二选一。但真正影响生活的，是家里怎么做饭、谁在做饭、做饭时是否需要和家人说话，以及重油烟时能不能及时隔开。
-            </p>
-            <p>
-              所以这篇先把问题放回生活场景：让厨房有边界，也有交流；能合上，也能打开。
-            </p>
-          </div>
-        </div>
+          </section>
 
-        <div class="article-body">
-          <span class="section-label">Middle Choice</span>
-          <h2>第一步：别急着拆墙，先找“可分可合”的位置</h2>
-          <p>
-            甲客户的厨房面积不大，采光也一般。餐厅和厨房之间的墙体不是承重墙，理论上可以完全拆掉。但家里日常做中餐，老人也会下厨，如果一下子做成全开放，油烟和台面凌乱都会变成长期压力。
-          </p>
-          <p>
-            这个时候，比较稳的做法不是直接拆光，而是在餐厨之间打开一个“沟通界面”。它可以是室内窗，也可以是移门。平时打开，让做饭的人能看到餐厅、听到家人说话；爆炒时关上，把油烟和声音留在厨房里。
-          </p>
-          <div class="insight">
-            <strong>设计师判断</strong>
-            可分可合厨房的价值，不是为了做一个漂亮的玻璃框，而是让空间能随场景变化：早餐、备菜、聊天时打开；重油烟烹饪、收拾残局时合上。
-          </div>
-        </div>
-
-        <div class="poster-grid two" aria-label="厨房开放和封闭的基础判断图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img
-                src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-01.webp"
-                alt="厨房封闭和打开前后格局对比，说明餐厨之间墙体改变后的空间关系"
-                width="1086"
-                height="1448"
-                loading="lazy"
-                decoding="async"
-              />
+          <section class="caption-scene" id="middle-choice">
+            <div class="copy-block">
+              <span class="section-label">Opening</span>
+              <h2>厨房布局，并不是非封即开。</h2>
+              <div class="body-copy">
+                <p>讨论厨房时，最容易陷入“封闭”和“开放”的二选一。但真正影响生活的，是家里怎么做饭、谁在做饭、做饭时是否需要说话，以及重油烟时能不能及时隔开。</p>
+                <p>所以这篇先把问题放回生活场景：让厨房有边界，也有交流；能合上，也能打开。</p>
+              </div>
             </div>
-            <figcaption>先看原始格局，再判断墙体、采光、油烟和餐厨关系。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img
-                src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-02.webp"
-                alt="封闭厨房、半开放厨房和开放厨房的四种分合方式示意"
-                width="1086"
-                height="1448"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <figcaption>厨房不是非黑即白，封闭、可分可合、开放之间还有很多做法。</figcaption>
-          </figure>
-        </div>
-
-        <div class="poster-grid" aria-label="厨房室内窗和可分可合关系图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-03.webp" alt="餐厨之间打开沟通界面后，厨房和餐厅可以互相看见的示意" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>打开沟通界面，做饭的人不再被单独隔在厨房里。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-05.webp" alt="厨房室内窗高窗和低窗的高度对比，说明采光、视线和吊柜取舍" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>窗的高度会影响视线、吊柜和台面遮挡。</figcaption>
-          </figure>
-        </div>
-
-        <div class="panel">
-          <div class="panel-text">
-            <span class="section-label">Interior Window</span>
-            <h2>室内窗不是装饰，它要同时处理视线和遮乱</h2>
-            <p>
-              餐厨之间开窗，最容易被忽略的是窗台高度。窗开得太低，餐厅一眼看到水槽、抹布和电饭煲，厨房会显得凌乱；窗开得太高，交流又不够顺畅。比较舒服的做法，是让窗台比厨房台面略高一些，既能保留看见彼此的视线，又能挡住台面上的零碎。
-            </p>
-            <p>
-              如果厨房本身采光弱，高窗会让空间更明亮，但可能牺牲一部分吊柜。这个取舍要回到收纳总量里算，不能只看单面墙。
-            </p>
-          </div>
-          <div class="panel-visual">
             <figure>
               <div class="image-frame">
-                <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-06.webp" alt="厨房室内窗台面高度关系，窗台略高于台面可遮住台面杂物" width="1086" height="1448" loading="lazy" decoding="async" />
+                <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-04.webp?v=20260621-open-screenflow" alt="厨房布局不是封闭和开放二选一，可选择可分可合" width="1086" height="1448" loading="eager" decoding="async" />
+              </div>
+              <figcaption>这类竖向信息图完整展示，不切开、不硬扩横屏。</figcaption>
+            </figure>
+          </section>
+
+          <section class="screen split">
+            <figure>
+              <div class="image-frame">
+                <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-02.webp?v=20260621-open-screenflow" alt="封闭、半开放和开放厨房的几种分合方式" width="1086" height="1448" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>厨房不是非黑即白，封闭、可分可合、开放之间还有很多做法。</figcaption>
+            </figure>
+            <div class="copy-block">
+              <span class="section-label">01 / Middle Choice</span>
+              <h2>别急着拆墙，先找可分可合的位置。</h2>
+              <div class="body-copy">
+                <p>厨房面积不大、采光一般、又有中餐爆炒习惯时，全开放未必是最稳的答案。更好的做法，往往是在餐厨之间打开一个“沟通界面”。</p>
+                <p>它可以是室内窗，也可以是移门。平时打开，让做饭的人看到餐厅、听到家人说话；爆炒时关上，把油烟和声音留在厨房里。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen split reverse">
+            <div class="copy-block">
+              <span class="section-label">02 / Interior Window</span>
+              <h2>室内窗不是装饰，要同时处理视线和遮乱。</h2>
+              <div class="body-copy">
+                <p>餐厨之间开窗，最容易被忽略的是窗台高度。窗开得太低，餐厅一眼看到水槽、抹布和电饭煲；窗开得太高，交流又不够顺畅。</p>
+                <p>比较舒服的做法，是让窗台比厨房台面略高一些。这样既能保留看见彼此的视线，又能挡住台面上的零碎。</p>
+              </div>
+            </div>
+            <figure>
+              <div class="image-frame">
+                <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-06.webp?v=20260621-open-screenflow" alt="厨房室内窗台面高度关系，窗台略高于台面遮住杂物" width="1086" height="1448" loading="lazy" decoding="async" />
               </div>
               <figcaption>窗台略高于台面，可以把洗涤用品和小电器从餐厅视线里藏起来。</figcaption>
             </figure>
-          </div>
-        </div>
+          </section>
 
-        <div class="poster-grid two" aria-label="厨房室内窗立面和窗台设计图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-07.webp" alt="厨房室内窗立面图，展示窗台高度和水槽台面之间的遮挡关系" width="1086" height="1448" loading="lazy" decoding="async" />
+          <section class="screen">
+            <div class="detail-flow">
+              <div class="detail-row">
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-05.webp?v=20260621-open-screenflow" alt="厨房室内窗高窗和低窗高度对比" width="1086" height="1448" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>窗的高度影响视线、吊柜和台面遮挡。</figcaption>
+                </figure>
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-07.webp?v=20260621-open-screenflow" alt="厨房室内窗立面，展示窗台和水槽台面关系" width="1086" height="1448" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>立面里要同时看窗、台面、水槽和餐厅视线。</figcaption>
+                </figure>
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-08.webp?v=20260621-open-screenflow" alt="厨房室内窗样式立面，展示多扇窗和传菜关系" width="1086" height="1448" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>窗的样式也影响开合、传菜和日常维护。</figcaption>
+                </figure>
+              </div>
             </div>
-            <figcaption>立面里要同时看窗、台面、水槽和餐厅视线。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-08.webp" alt="厨房室内窗样式立面图，展示多扇窗、窗台和传菜关系" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>窗的样式不只影响颜值，也影响开合、传菜和日常维护。</figcaption>
-          </figure>
-        </div>
+          </section>
 
-        <div class="article-body">
-          <span class="section-label">Sliding Door</span>
-          <h2>第二步：用移门替代实墙，让小厨房借到大空间</h2>
-          <p>
-            乙客户家的厨房原本采光弱，封闭后显得小。改造时用多轨移门替代实墙，平时全打开，厨房像起居空间的一部分；炒菜时拉上，仍然保留封闭厨房的实用性。
-          </p>
-          <p>
-            这里有一个很重要的心理尺度：同样是 70cm 的走道，如果两侧都是实墙，人会觉得压迫；如果一侧是通透玻璃，身体感受会轻松很多。小厨房想做 U 型布局时，这种“借空间感”的办法很有价值，但前提是移门轨道、柜门开启和人员通行都要一起核算。
-          </p>
-        </div>
-
-        <div class="poster-grid" aria-label="移门式厨房和小厨房空间感图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-10.webp" alt="可打开厨房的三维示意，餐厨客厅之间形成连续空间" width="1086" height="1448" loading="lazy" decoding="async" />
+          <section class="screen split">
+            <div class="copy-block">
+              <span class="section-label">03 / Sliding Door</span>
+              <h2>用移门替代实墙，小厨房能借到空间感。</h2>
+              <div class="body-copy">
+                <p>有些厨房采光弱，封闭后显得小。多轨移门替代实墙后，平时全打开，厨房像公共空间的一部分；炒菜时拉上，仍然保留边界。</p>
+                <p>同样是 70cm 走道，两侧都是实墙会压迫；一侧是通透玻璃，身体感受会轻松很多。但移门轨道、柜门开启和人员通行必须一起核算。</p>
+              </div>
             </div>
-            <figcaption>打开时，厨房可以成为公共区的一部分。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-11.webp" alt="厨房玻璃移门闭合后的三维示意，说明油烟隔离和空间通透的平衡" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>合上时，油烟仍然有边界。</figcaption>
-          </figure>
-        </div>
-
-        <div class="poster-grid two" aria-label="移门式厨房户型改造图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-12.webp" alt="江浙沪常见三房户型餐厨改造平面，厨房与起居室关系重新组织" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>移门式厨房适合很多普通住宅，不只属于大户型。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-13.webp" alt="窄厨房也能做U型布局的尺度图，展示190cm净宽和70cm走道" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>玻璃边界能缓解窄走道的压迫感，但尺寸仍要复核。</figcaption>
-          </figure>
-        </div>
-
-        <div class="panel reverse">
-          <div class="panel-visual">
             <figure>
               <div class="image-frame">
-                <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp" alt="水槽岛台形成洄游微动线的厨房示意，玄关客厅和餐厨之间可双向进入" width="1086" height="1448" loading="lazy" decoding="async" />
+                <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-11.webp?v=20260621-open-screenflow" alt="厨房玻璃移门闭合后保持油烟隔离和空间通透" width="1086" height="1448" loading="lazy" decoding="async" />
+              </div>
+              <figcaption>合上时油烟有边界，打开时空间仍然通透。</figcaption>
+            </figure>
+          </section>
+
+          <section class="screen split reverse">
+            <figure>
+              <div class="image-frame">
+                <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp?v=20260621-open-screenflow" alt="水槽岛台形成洄游微动线，玄关客厅和餐厨双向进入" width="1086" height="1448" loading="lazy" decoding="async" />
               </div>
               <figcaption>水槽岛台让厨房从单一尽端，变成可以绕行的交流节点。</figcaption>
             </figure>
-          </div>
-          <div class="panel-text">
-            <span class="section-label">Micro Circulation</span>
-            <h2>水槽附近，最容易形成交流中心</h2>
-            <p>
-              在洗、切、炒三件事里，炒菜最需要专注，也最容易产生油烟；洗菜、备菜反而更适合聊天。把水槽放在餐厨之间的界面附近，做饭的人抬头就能看到家人，家人也能自然靠近帮忙。
-            </p>
-            <p>
-              如果水槽柜还能承担一点“迷你岛台”的作用，两侧都能进出，动线就会从单向变成微洄游。小户型不一定要追求大岛台，但可以争取一个小而有用的操作节点。
-            </p>
-          </div>
-        </div>
-
-        <div class="poster-grid two" aria-label="餐厨洄游和可变台面图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-14.webp" alt="客餐厨形成船长室视角的布局示意，水槽位置可观察公共区" width="1086" height="1448" loading="lazy" decoding="async" />
+            <div class="copy-block">
+              <span class="section-label">04 / Micro Circulation</span>
+              <h2>水槽附近，最容易形成交流中心。</h2>
+              <div class="body-copy">
+                <p>炒菜需要专注，也最容易产生油烟；洗菜、备菜反而更适合聊天。把水槽放在餐厨界面附近，做饭的人抬头就能看到家人。</p>
+                <p>小户型不一定要追求大岛台，但可以争取一个小而有用的操作节点，让厨房从单向进入变成微洄游。</p>
+              </div>
             </div>
-            <figcaption>水槽点位决定做饭的人能不能看见家人。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-16.webp" alt="空间可分可合且台面可长可短的厨房示意，折叠台面补充操作区" width="1086" height="1448" loading="lazy" decoding="async" />
+          </section>
+
+          <section class="screen">
+            <div class="detail-flow">
+              <div class="detail-row">
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-14.webp?v=20260621-open-screenflow" alt="水槽位置可观察公共区的布局示意" width="1086" height="1448" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>水槽点位决定做饭的人能不能看见家人。</figcaption>
+                </figure>
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-16.webp?v=20260621-open-screenflow" alt="空间可分可合且台面可长可短的厨房示意" width="1086" height="1448" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>可延展台面适合临时多人备菜，不必天天占空间。</figcaption>
+                </figure>
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-13.webp?v=20260621-open-screenflow" alt="窄厨房做U型布局的尺度图，展示190cm净宽和70cm走道" width="1086" height="1448" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>小厨房借空间感可以，但尺寸仍要复核。</figcaption>
+                </figure>
+              </div>
             </div>
-            <figcaption>可延展台面适合临时多人备菜，不必天天占空间。</figcaption>
-          </figure>
-        </div>
+          </section>
 
-        <div class="article-body">
-          <span class="section-label">Dining Kitchen</span>
-          <h2>第三步：餐厨合一不是大就好，而是要有人愿意坐下来</h2>
-          <p>
-            丙客户更喜欢做饭，也常邀请朋友一起吃喝。他家的重点不是把厨房藏起来，而是把厨房和餐桌合成一个生活场。柜体长度增加后，收纳、电器和操作面都更完整；中部增加水槽后，多人备菜、洗菜、包饺子、做披萨都能围绕餐桌发生。
-          </p>
-          <p>
-            但餐厨合一也有一个常见误区：只做一个高吧台，看起来很有氛围，真正能坐下来的时间却很短。高脚椅没有稳定支撑，脚不容易落地，适合短暂停留，不适合作为家里的主要餐桌。想让家人和朋友真正坐得住，桌面高度、椅背、腿部空间和视线关系都要一起考虑。
-          </p>
-        </div>
-
-        <div class="panel">
-          <div class="panel-visual">
+          <section class="screen split">
+            <div class="copy-block">
+              <span class="section-label">05 / Dining Kitchen</span>
+              <h2>餐厨合一不是大就好，而是有人愿意坐下来。</h2>
+              <div class="body-copy">
+                <p>餐厨合一不是只拆墙，也是在重组柜体、电器和台面。中部增加水槽后，多人备菜、洗菜、包饺子、做披萨都能围绕餐桌发生。</p>
+                <p>但高吧台不等于交流中心。高脚椅没有稳定支撑，脚不容易落地，适合短暂停留，不适合作为家里的主要餐桌。</p>
+              </div>
+            </div>
             <figure>
               <div class="image-frame">
-                <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-17.webp" alt="第三个厨房案例户型图，展示两房家庭和餐厨改造基础信息" width="1086" height="1448" loading="lazy" decoding="async" />
+                <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-20.webp?v=20260621-open-screenflow" alt="第二个水槽也能变操作台，水槽盖板和餐桌形成多人备餐场景" width="1086" height="1448" loading="lazy" decoding="async" />
               </div>
-              <figcaption>不同家庭人数、做饭频率和会客习惯，会推导出不同餐厨关系。</figcaption>
+              <figcaption>第二水槽可以服务多人备菜，也能通过盖板临时变成操作面。</figcaption>
             </figure>
-          </div>
-          <div class="panel-text">
-            <span class="section-label">Before Layout</span>
-            <h3>先看生活画像，再判断餐厨关系</h3>
-            <p>
-              餐厨合一不是按面积大小简单决定，而是先看居住人数、做饭频率和会客习惯。一个人住、爱下厨、朋友常来，餐桌就可能成为家的中心；如果家里多人轮流做饭，厨房边界和收纳秩序就要更谨慎。
-            </p>
-          </div>
-        </div>
+          </section>
 
-        <div class="poster-grid" aria-label="餐厨合一和交流中心图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-19.webp" alt="餐厨合一厨房橱柜长度从470cm增加到810cm的改造示意" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>餐厨合一不是只拆墙，也是在重组柜体、电器和台面。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-20.webp" alt="第二个水槽也能变操作台的示意，水槽盖板和餐桌形成多人备餐场景" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>第二水槽可以服务多人备菜，也能通过盖板临时变成操作面。</figcaption>
-          </figure>
-        </div>
-
-        <div class="poster-grid two" aria-label="餐厨生活和反面案例图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-21.webp" alt="餐桌旁投影幕布形成朋友看球和聚会场景的餐厨生活图" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>当餐桌成为核心，厨房就不只是做饭后台。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-22.webp" alt="厨房是心的疗愈所，说明做饭和陪伴对日常生活的意义" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>真正高频发生的生活，才值得成为设计中心。</figcaption>
-          </figure>
-        </div>
-
-        <div class="article-body">
-          <span class="section-label">Three Keywords</span>
-          <h2>最后看三个关键词：柜台、水槽、稳坐</h2>
-          <p>
-            可分可合只是手段，交流才是目的。不是所有玻璃移门、吧台和西厨都能带来交流，关键要看人在空间里的动作是否真的会相遇。
-          </p>
-          <ul class="rule-list" aria-label="餐厨交流中心三个关键词">
-            <li><strong>柜台</strong>内侧有人操作，外侧有人停留，视线自然相遇。</li>
-            <li><strong>水槽</strong>洗菜、洗手、备餐这些动作更容易边做边聊。</li>
-            <li><strong>稳坐</strong>椅子舒服、脚能落地，人们才愿意真的留下来。</li>
-          </ul>
-        </div>
-
-        <div class="poster-grid two" aria-label="厨房交流中心三个关键词图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-23.webp" alt="中厨外设西厨吧台的反面案例分析，说明西厨交流频率可能不足" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>如果真实生活不烘焙、不喝酒，西厨吧台可能只是低频摆设。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-24.webp" alt="厨房交流频率低的示意，说明中厨高频操作和西厨低频停留的差异" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>交流中心要落在高频动作旁边，而不是只落在好看的位置。</figcaption>
-          </figure>
-        </div>
-
-        <div class="poster-grid" aria-label="柜台和水槽判断图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-27.webp" alt="有柜台就有对视的餐厨交流示意，说明柜台内外两侧的关系" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>柜台让内外两侧的人可以不进入同一区域，也能对话。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-28.webp" alt="厨房柜台交流效果对比，说明有柜台的方案更容易形成对视和交流" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>同样是开口，有没有柜台，交流效果完全不同。</figcaption>
-          </figure>
-        </div>
-
-        <div class="poster-grid" aria-label="水槽和稳坐立面图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-30.webp" alt="水槽朝里和水槽朝外的对比图，说明水槽朝向对交流效果的影响" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>水槽朝外时，人可能背对家人；水槽朝里时，更容易边洗边聊。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-31.webp" alt="稳坐关键词对比图，说明餐台和座椅舒适度影响交流停留时间" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>坐不稳的地方，很难成为真正的交流中心。</figcaption>
-          </figure>
-        </div>
-
-        <div class="poster-grid two" aria-label="台面高度和文章总结图">
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-32.webp" alt="吧台85cm和餐桌75cm高度对比，说明稳定坐姿和靠背椅的重要性" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>高吧台适合短暂停留，餐桌高度更适合长时间交流。</figcaption>
-          </figure>
-          <figure class="poster-card">
-            <div class="image-frame">
-              <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-33.webp" alt="可分可合厨房小结图，交流中心由柜台、水槽和稳定坐姿共同组成" width="1086" height="1448" loading="lazy" decoding="async" />
-            </div>
-            <figcaption>柜台、水槽、坐得住，三件事一起成立，厨房才更容易聚人。</figcaption>
-          </figure>
-        </div>
-
-        <div class="panel reverse">
-          <div class="panel-visual">
+          <section class="screen split reverse">
             <figure>
               <div class="image-frame">
-                <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-26.webp" alt="厨房分合只是手段，交流才是目的的说明图" width="1086" height="1448" loading="lazy" decoding="async" />
+                <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-32.webp?v=20260621-open-screenflow" alt="吧台85cm和餐桌75cm高度对比，说明稳定坐姿和靠背椅的重要性" width="1086" height="1448" loading="lazy" decoding="async" />
               </div>
-              <figcaption>不要只看厨房打开多大，要看打开后人在哪里停留。</figcaption>
+              <figcaption>坐得稳，人们才愿意真的留下来。</figcaption>
             </figure>
-          </div>
-          <div class="panel-text">
-            <span class="section-label">Design Conclusion</span>
-            <h2>分合只是手段，交流才是目的</h2>
-            <p>
-              所以，厨房要不要打开，不能只看图片好不好看。董揅设计更建议先问四件事：家里谁做饭，做什么菜，做饭时想不想和家人交流，以及餐桌是不是真的有人愿意坐下来。
-            </p>
-            <p>
-              答案清楚以后，封闭、开窗、移门、餐厨合一，才会从风格选择变成生活选择。
-            </p>
-          </div>
-        </div>
-      </article>
-    </main>
+            <div class="copy-block">
+              <span class="section-label">06 / Three Keywords</span>
+              <h2>最后看三个关键词：柜台、水槽、稳坐。</h2>
+              <div class="body-copy">
+                <p>可分可合只是手段，交流才是目的。不是所有玻璃移门、吧台和西厨都能带来交流，关键要看人在空间里的动作是否真的会相遇。</p>
+              </div>
+              <div class="note-grid">
+                <div class="note-card"><strong>柜台</strong><span>内侧有人操作，外侧有人停留，视线自然相遇。</span></div>
+                <div class="note-card"><strong>水槽</strong><span>洗菜、洗手、备餐这些动作更容易边做边聊。</span></div>
+                <div class="note-card"><strong>稳坐</strong><span>椅子舒服、脚能落地，人们才愿意真的留下来。</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen">
+            <div class="detail-flow">
+              <div class="detail-row">
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-27.webp?v=20260621-open-screenflow" alt="有柜台就有对视的餐厨交流示意" width="1086" height="1448" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>柜台让内外两侧的人不进入同一区域，也能对话。</figcaption>
+                </figure>
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-30.webp?v=20260621-open-screenflow" alt="水槽朝里和朝外对交流效果的影响" width="1086" height="1448" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>水槽朝向会影响做饭的人是否背对家人。</figcaption>
+                </figure>
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-33.webp?v=20260621-open-screenflow" alt="厨房交流中心总结图，柜台、水槽、稳坐三件事" width="1086" height="1448" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>交流中心要落在高频动作旁边，而不是只落在好看的位置。</figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen">
+            <div class="copy-block">
+              <span class="section-label">Closing</span>
+              <h2>所以，厨房打开与否，最后要回到生活动作。</h2>
+              <div class="body-copy">
+                <p>如果家里重油烟多，边界就要保留；如果做饭时需要陪伴，视线和声音就要打开。好的餐厨关系，不是把厨房做成某一种流行样子，而是让它能按场景变化。</p>
+              </div>
+              <ul class="closing-list">
+                <li><strong>01</strong><span>先看边界：油烟、声音和台面凌乱是否能在需要时隔开。</span></li>
+                <li><strong>02</strong><span>再看视线：做饭的人是否能看见餐桌和家人。</span></li>
+                <li><strong>03</strong><span>最后看停留：柜台、水槽和座椅是否让人愿意靠近并留下。</span></li>
+              </ul>
+              <div class="source">本文根据餐厨关系资料和设计经验整理，图片信息图保留原图内容，版式按当前札记屏幕流重排。</div>
+            </div>
+          </section>
+        </article>
+      </main>
+    </div>
     <script src="/assets/js/site-data.js?v=20260621-nav-unified"></script>
     <script src="/nav.js?v=20260621-nav-unified"></script>
   </body>
