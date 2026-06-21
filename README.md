@@ -143,6 +143,7 @@ SEO/GEO 相关修改：
 - 空间/方案索引页的局部样式优先改 `assets/css/portfolio.css`。
 - 方案详情页 `/cases/scheme-001/` 至 `/cases/scheme-006/` 已统一为四段式模板：首屏、第二屏标语、粘性三图推演、结尾四图轮播。
 - 方案页的网页展示图统一优先使用 `/assets/optimized/schemes-detail/*/cinema/` 下的 2400×1350 WebP 扩底色版本；原始方案图保留，不直接覆盖。
+- 普通案例/空间详情页的共用交互脚本放在 `assets/js/case-detail.js`，共用样式放在 `assets/css/case-detail*.css`；不要再把大段详情页 CSS/JS 重新内嵌到每个页面。
 - 首页关键图、空间索引封面和会影响入口速度的静态图，可以使用 `/assets/optimized/` 下的本地高质量 WebP；大尺寸详情页原图和新增普通媒体仍优先走 OSS。
 - 首页底部视频默认延后加载，不参与首屏抢加载；除非重做首页交互，不要恢复成首屏预加载。
 - 所有接入 `nav.js` 的页面需要在 head 中直接加载 `assets/css/navigation.css`，并保留 OSS `preconnect`，减少导航样式和外部图片的等待时间。
@@ -240,6 +241,6 @@ https://github.com/dongzitai9-hub/dong-yan-design
 - 首页 Hero 首屏前两张优先使用轻量 WebP，不直接强拉接近 1MB 的原始大图。
 - 首页 Hero 轮播计时不能挂在 `window.load` 或 `requestIdleCallback` 后面；手机端网络慢时会被后段图片和媒体拖慢。
 - 首页刚打开时只准备前两张 Hero 图；第 3 张以后延后补入，避免手机浏览器顶部加载进度条被后续轮播图拖长。
-- 空间详情页图片优先使用 `assets/optimized/detail-mobile/` 的轻量图；详情页前段 5 张可提前加载，后段轮播和结尾图继续懒加载。
+- 空间和普通案例详情页图片优先使用 OSS 上 `assets/optimized/detail-mobile/` 的轻量图；详情页前段 5 张可提前加载，后段轮播和结尾图继续懒加载。
 - 首页可在空闲时预取 `/cases/`，空间索引页可在空闲时预取前三个空间详情页和首段图，降低点击进入时的等待感。
 - 修改首页 Hero 后必须同步更新 `script.js` 的缓存版本号。

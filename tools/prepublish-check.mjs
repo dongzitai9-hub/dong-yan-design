@@ -43,6 +43,22 @@ const fail = (name, detail) => results.push({ ok: false, name, detail });
 
 const readText = (file) => readFile(path.join(root, file), "utf8");
 
+async function readHtmlWithLocalStyles(file, html) {
+  const styles = [];
+  for (const match of html.matchAll(/<link\b[^>]*rel=["']stylesheet["'][^>]*href=["']([^"']+)["'][^>]*>/g)) {
+    const href = match[1];
+    if (!href.startsWith("/")) continue;
+    const cssPath = href.split("?")[0].replace(/^\/+/, "");
+    try {
+      styles.push(await readText(cssPath));
+    } catch {
+      // Missing stylesheets are covered by rendered checks; this guard only
+      // needs to understand rules that have moved out of inline page CSS.
+    }
+  }
+  return [html, ...styles].join("\n");
+}
+
 function routeExists(urlString) {
   let pathname;
   try {
@@ -166,7 +182,8 @@ async function checkStaticStructure() {
     const text = await readText(file);
     if (!text.includes("data-sticky-story")) continue;
     stickyPages.push(file);
-    text.includes("overflow-x: visible")
+    const textWithStyles = await readHtmlWithLocalStyles(file, text);
+    textWithStyles.includes("overflow-x: visible")
       ? pass(`${file} 保留 sticky 需要的 body overflow 可见规则`)
       : fail(`${file} 可能破坏 sticky overflow`, "缺少 overflow-x: visible");
   }
