@@ -240,4 +240,5 @@ https://github.com/dongzitai9-hub/dong-yan-design
 - 首页 Hero 首屏前两张优先使用轻量 WebP，不直接强拉接近 1MB 的原始大图。
 - 首页 Hero 轮播计时不能挂在 `window.load` 或 `requestIdleCallback` 后面；手机端网络慢时会被后段图片和媒体拖慢。
 - 首页刚打开时只准备前两张 Hero 图；第 3 张以后延后补入，避免手机浏览器顶部加载进度条被后续轮播图拖长。
+- 空间详情页图片优先使用 `assets/optimized/detail-mobile/` 的轻量图；详情页前段 5 张可提前加载，后段轮播和结尾图继续懒加载。
 - 修改首页 Hero 后必须同步更新 `script.js` 的缓存版本号。
