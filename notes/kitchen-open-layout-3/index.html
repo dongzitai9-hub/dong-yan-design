@@ -19,7 +19,7 @@
     <meta property="og:title" content="厨房要不要打开？先看餐厨怎么交流｜董揅札记" />
     <meta property="og:description" content="厨房不是封闭和开放二选一，真正要判断的是边界、视线、油烟和人能不能自然交流。" />
     <meta property="og:url" content="https://dongyandesign.cn/notes/kitchen-open-layout-3/" />
-    <meta property="og:image" content="https://dongyandesign.cn/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp" />
+    <meta property="og:image" content="https://dongyandesign.cn/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15-expanded.webp" />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,8 +34,8 @@
   "publisher": { "@type": "Organization", "name": "董揅设计" },
   "mainEntityOfPage": "https://dongyandesign.cn/notes/kitchen-open-layout-3/",
   "image": [
-    "https://dongyandesign.cn/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-04.webp",
-    "https://dongyandesign.cn/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp",
+    "https://dongyandesign.cn/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-04-expanded.webp",
+    "https://dongyandesign.cn/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15-expanded.webp",
     "https://dongyandesign.cn/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-33.webp"
   ],
   "articleSection": "厨房布局",
@@ -175,8 +175,9 @@
       }
 
       .hero-media img {
-        height: min(82vh, 860px);
-        object-fit: contain;
+        height: 100%;
+        min-height: calc(100svh - 74px);
+        object-fit: cover;
         object-position: center;
       }
 
@@ -243,6 +244,14 @@
         height: min(72vh, 780px);
         object-fit: contain;
         object-position: center;
+      }
+
+      picture {
+        display: block;
+      }
+
+      picture.canvas-expanded img {
+        object-fit: cover;
       }
 
       figcaption {
@@ -418,14 +427,17 @@
               <a class="discover-link" href="#middle-choice">DISCOVER MORE</a>
             </div>
             <figure class="hero-media">
-              <img
-                src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp?v=20260621-open-screenflow"
-                alt="水槽岛台形成洄游微动线的厨房示意"
-                width="1086"
-                height="1448"
-                fetchpriority="high"
-                decoding="async"
-              />
+              <picture class="canvas-expanded">
+                <source media="(min-width: 901px)" srcset="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15-expanded.webp?v=20260621-open-screenflow" width="2100" height="941" />
+                <img
+                  src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp?v=20260621-open-screenflow"
+                  alt="水槽岛台形成洄游微动线的厨房示意"
+                  width="1086"
+                  height="1448"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
             </figure>
           </section>
 
@@ -440,7 +452,10 @@
             </div>
             <figure>
               <div class="image-frame">
-                <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-04.webp?v=20260621-open-screenflow" alt="厨房布局不是封闭和开放二选一，可选择可分可合" width="1086" height="1448" loading="eager" decoding="async" />
+                <picture class="canvas-expanded">
+                  <source media="(min-width: 901px)" srcset="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-04-expanded.webp?v=20260621-open-screenflow" width="2100" height="941" />
+                  <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-04.webp?v=20260621-open-screenflow" alt="厨房布局不是封闭和开放二选一，可选择可分可合" width="1086" height="1448" loading="eager" decoding="async" />
+                </picture>
               </div>
               <figcaption>这类竖向信息图完整展示，不切开、不硬扩横屏。</figcaption>
             </figure>
@@ -525,7 +540,10 @@
           <section class="screen split reverse">
             <figure>
               <div class="image-frame">
-                <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp?v=20260621-open-screenflow" alt="水槽岛台形成洄游微动线，玄关客厅和餐厨双向进入" width="1086" height="1448" loading="lazy" decoding="async" />
+                <picture class="canvas-expanded">
+                  <source media="(min-width: 901px)" srcset="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15-expanded.webp?v=20260621-open-screenflow" width="2100" height="941" />
+                  <img src="/assets/notes/kitchen-open-layout-3/kitchen-open-layout-3-15.webp?v=20260621-open-screenflow" alt="水槽岛台形成洄游微动线，玄关客厅和餐厨双向进入" width="1086" height="1448" loading="lazy" decoding="async" />
+                </picture>
               </div>
               <figcaption>水槽岛台让厨房从单一尽端，变成可以绕行的交流节点。</figcaption>
             </figure>
