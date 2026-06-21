@@ -93,7 +93,7 @@ function renderHeroSlider() {
         return;
       }
       startSlideshow();
-    }, 4200);
+    }, 1200);
   };
 
   if (document.readyState === "complete") {
