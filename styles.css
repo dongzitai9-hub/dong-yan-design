@@ -55,6 +55,11 @@ textarea {
 img {
   display: block;
   width: 100%;
+  max-width: 100%;
+}
+
+img[data-defer-src] {
+  background: rgba(20, 20, 18, 0.08);
 }
 
 button,

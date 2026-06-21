@@ -83,11 +83,13 @@ function renderHeroSlider() {
   };
 
   const scheduleSlideshow = () => {
-    if ("requestIdleCallback" in window) {
-      window.requestIdleCallback(startSlideshow, { timeout: 1800 });
-      return;
-    }
-    window.setTimeout(startSlideshow, 900);
+    window.setTimeout(() => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(startSlideshow, { timeout: 2200 });
+        return;
+      }
+      startSlideshow();
+    }, 4200);
   };
 
   if (document.readyState === "complete") {
@@ -99,6 +101,10 @@ function renderHeroSlider() {
 
 function loadLazyVideo(video) {
   if (!video || video.dataset.videoLoaded === "true") return;
+  if (video.dataset.poster) {
+    video.poster = video.dataset.poster;
+    video.removeAttribute("data-poster");
+  }
   video.querySelectorAll("source[data-src]").forEach((source) => {
     source.src = source.dataset.src;
     source.removeAttribute("data-src");
@@ -128,6 +134,35 @@ function bindLazyVideos() {
     { rootMargin: "700px 0px" },
   );
   lazyVideos.forEach((video) => observer.observe(video));
+}
+
+function loadDeferredImage(image) {
+  if (!image || !image.dataset.deferSrc) return;
+  image.src = image.dataset.deferSrc;
+  image.removeAttribute("data-defer-src");
+}
+
+function bindDeferredImages() {
+  const images = [...document.querySelectorAll("img[data-defer-src]")];
+  if (!images.length) return;
+  if (!("IntersectionObserver" in window)) {
+    window.addEventListener("load", () => {
+      images.forEach(loadDeferredImage);
+    }, { once: true });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        loadDeferredImage(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "280px 0px" },
+  );
+  images.forEach((image) => observer.observe(image));
 }
 
 function getServiceMiddlePosition(index) {
@@ -314,4 +349,5 @@ const serviceTrackMorphDuration = 620;
 renderHeroSlider();
 normalizeFilePreviewLinks();
 bindServiceShowcase();
+bindDeferredImages();
 bindLazyVideos();
