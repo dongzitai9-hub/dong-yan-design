@@ -1,10 +1,48 @@
 (() => {
   const desktopQuery = window.matchMedia("(min-width: 861px)");
-  const applyResponsiveDetailSources = () => {
-    const useDesktop = desktopQuery.matches;
-    document.querySelectorAll("img[data-mobile-src][data-desktop-src]").forEach((image) => {
-      const nextSrc = useDesktop ? image.dataset.desktopSrc : image.dataset.mobileSrc;
-      if (nextSrc && image.getAttribute("src") !== nextSrc) image.src = nextSrc;
+  const responsiveImages = [...document.querySelectorAll("img[data-mobile-src][data-desktop-src]")];
+  const loadedResponsiveImages = new WeakSet();
+  let responsiveImageObserver = null;
+
+  const getResponsiveDetailSrc = (image) =>
+    desktopQuery.matches ? image.dataset.desktopSrc : image.dataset.mobileSrc;
+
+  const loadResponsiveDetailImage = (image) => {
+    if (!image) return;
+    const nextSrc = getResponsiveDetailSrc(image);
+    if (!nextSrc) return;
+    loadedResponsiveImages.add(image);
+    if (image.getAttribute("src") !== nextSrc) image.src = nextSrc;
+  };
+
+  const observeResponsiveDetailImage = (image) => {
+    if (!image || loadedResponsiveImages.has(image)) return;
+    if (image.getAttribute("fetchpriority") === "high") {
+      loadResponsiveDetailImage(image);
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      loadResponsiveDetailImage(image);
+      return;
+    }
+
+    responsiveImageObserver ||= new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          responsiveImageObserver.unobserve(entry.target);
+          loadResponsiveDetailImage(entry.target);
+        });
+      },
+      { rootMargin: "520px 0px" }
+    );
+    responsiveImageObserver.observe(image);
+  };
+
+  const syncLoadedResponsiveSources = () => {
+    responsiveImages.forEach((image) => {
+      if (loadedResponsiveImages.has(image)) loadResponsiveDetailImage(image);
     });
   };
 
@@ -78,7 +116,9 @@
       clone.removeAttribute("style");
       clone.setAttribute("aria-hidden", "true");
       clone.setAttribute("data-film-clone", "true");
-      clone.loading = "eager";
+      clone.loading = "lazy";
+      clone.fetchPriority = "low";
+      observeResponsiveDetailImage(clone);
       return clone;
     };
 
@@ -100,7 +140,10 @@
 
     track.className = "film-strip-track";
     track.append(cloneSlide(originals[originals.length - 1]));
-    originals.forEach((image) => track.append(prepareImage(image)));
+    originals.forEach((image) => {
+      track.append(prepareImage(image));
+      observeResponsiveDetailImage(image);
+    });
     track.append(cloneSlide(originals[0]));
     viewport.append(track);
 
@@ -120,6 +163,7 @@
         activeIndex = (activeIndex - 1 + originals.length) % originals.length;
       }
 
+      loadResponsiveDetailImage(originals[activeIndex]);
       updateCounter();
       setPosition(true);
 
@@ -142,7 +186,12 @@
     };
   };
 
-  applyResponsiveDetailSources();
+  responsiveImages.forEach(observeResponsiveDetailImage);
+  if (desktopQuery.addEventListener) {
+    desktopQuery.addEventListener("change", syncLoadedResponsiveSources);
+  } else {
+    desktopQuery.addListener(syncLoadedResponsiveSources);
+  }
 
   document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     const images = [...carousel.querySelectorAll(".carousel-track img")];

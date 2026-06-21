@@ -284,6 +284,7 @@ function prefetchResource(href, as) {
 }
 
 function scheduleHomepageRoutePrefetch() {
+  if (isCompactMedia()) return;
   const run = () => {
     prefetchResource("/cases/", "document");
     prefetchResource("/assets/css/portfolio.css?v=20260621-mobile-first-visible", "style");

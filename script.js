@@ -114,7 +114,7 @@ function normalizeFilePreviewLinks() {
 function loadHomepageDeferred() {
   if (document.querySelector('script[src*="/assets/js/home-deferred.js"]')) return;
   const script = document.createElement("script");
-  script.src = "/assets/js/home-deferred.js?v=20260621-mobile-first-visible";
+  script.src = "/assets/js/home-deferred.js?v=20260621-responsive-final";
   script.defer = true;
   document.body.appendChild(script);
 }
