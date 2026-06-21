@@ -238,6 +238,7 @@ https://github.com/dongzitai9-hub/dong-yan-design
 
 ## 首页 Hero 性能规则
 
+- 全站后续新增或重做页面，页面主背景优先使用浅灰白 `#F2F3F4`，不要使用纯白大底；图片或局部卡片可用更浅的灰白作轻微区分。
 - 首页首屏第一张 Hero 图必须直接写在 `index.html`，并保留 `preload` 和 `fetchpriority="high"`。
 - 首页 Hero 前两张图必须直接写在 `index.html`：第一张高优先级，第二张低优先级提前准备，保留约 1.8 秒切换。
 - 首页 Hero 首屏前两张优先使用轻量 WebP，不直接强拉接近 1MB 的原始大图。
