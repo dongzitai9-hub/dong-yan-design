@@ -369,6 +369,31 @@ function normalizeFilePreviewLinks() {
   });
 }
 
+function prefetchResource(href, as) {
+  if (!href || document.querySelector(`link[rel="prefetch"][href="${href}"]`)) return;
+  const link = document.createElement("link");
+  link.rel = "prefetch";
+  link.href = href;
+  if (as) link.as = as;
+  link.fetchPriority = "low";
+  document.head.appendChild(link);
+}
+
+function scheduleHomepageRoutePrefetch() {
+  const run = () => {
+    prefetchResource("/cases/", "document");
+    prefetchResource("/assets/css/portfolio.css?v=20260621-cases-image-placeholder", "style");
+    prefetchResource("/assets/optimized/portfolio-covers/space-015.webp", "image");
+  };
+  window.setTimeout(() => {
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(run, { timeout: 2600 });
+      return;
+    }
+    run();
+  }, 1800);
+}
+
 let serviceTrackCards = [];
 let serviceTrackPosition = 0;
 let serviceTrackActiveIndex = 0;
@@ -384,3 +409,4 @@ normalizeFilePreviewLinks();
 bindServiceShowcase();
 bindDeferredImages();
 bindLazyVideos();
+scheduleHomepageRoutePrefetch();

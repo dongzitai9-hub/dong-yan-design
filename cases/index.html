@@ -142,6 +142,73 @@
     <script src="/assets/js/site-data.js?v=20260619-structure"></script>
     <script src="/nav.js?v=20260619-structure"></script>
     <script>
+      const casePrefetchItems = [
+        {
+          href: "/cases/space-015/",
+          images: [
+            "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/detail-mobile/08/156BC74D-54D3-4683-9D76-407B3AE3D36E.webp",
+            "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/detail-mobile/08/2E979D64-BC8E-4C86-8866-C6A1F174A49D.webp",
+            "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/detail-mobile/08/3359CC3E-B0C0-42B0-AACD-07A73AE4B292.webp",
+          ],
+        },
+        {
+          href: "/cases/space-014/",
+          images: [
+            "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/detail-mobile/06/4B9EC442-268D-40A8-99C6-ABE6B8F58EDD.webp",
+            "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/detail-mobile/06/FAC1B607-97ED-4067-8568-515EC0451DD6.webp",
+          ],
+        },
+        {
+          href: "/cases/space-012/",
+          images: [
+            "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/detail-mobile/16/1636DC5C-0296-464B-96E1-C6780D9DB4FE.webp",
+            "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/detail-mobile/16/9543DBC1-3A40-4CF7-AA2D-26FE30C4F036.webp",
+          ],
+        },
+      ];
+
+      function prefetchResource(href, as) {
+        if (!href || document.querySelector(`link[rel="prefetch"][href="${href}"]`)) return;
+        const link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = href;
+        if (as) link.as = as;
+        link.fetchPriority = "low";
+        document.head.appendChild(link);
+      }
+
+      function prefetchCase(item) {
+        if (!item) return;
+        prefetchResource(item.href, "document");
+        item.images.forEach((image) => prefetchResource(image, "image"));
+      }
+
+      function scheduleCasePrefetch() {
+        const run = () => {
+          prefetchCase(casePrefetchItems[0]);
+          window.setTimeout(() => prefetchCase(casePrefetchItems[1]), 1800);
+          window.setTimeout(() => prefetchCase(casePrefetchItems[2]), 3200);
+        };
+        window.setTimeout(() => {
+          if ("requestIdleCallback" in window) {
+            window.requestIdleCallback(run, { timeout: 2200 });
+            return;
+          }
+          run();
+        }, 900);
+      }
+
+      casePrefetchItems.forEach((item) => {
+        document.querySelector(`a[href="${item.href}"]`)?.addEventListener(
+          "touchstart",
+          () => prefetchCase(item),
+          { passive: true },
+        );
+        document.querySelector(`a[href="${item.href}"]`)?.addEventListener("mouseenter", () => prefetchCase(item));
+      });
+
+      scheduleCasePrefetch();
+
       document.querySelectorAll("[data-portfolio-more]").forEach((button) => {
         button.addEventListener("click", () => {
           const target = document.getElementById(button.getAttribute("aria-controls"));
