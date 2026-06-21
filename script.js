@@ -79,11 +79,13 @@ function renderHeroSlider() {
     if (slides.length < 2) return;
     heroSlider.dataset.slideshowReady = "true";
     let currentSlide = 0;
-    setInterval(() => {
+    const showNextSlide = () => {
       slides[currentSlide].classList.remove("is-active");
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add("is-active");
-    }, 5200);
+    };
+    window.setTimeout(showNextSlide, 1800);
+    setInterval(showNextSlide, 5200);
   };
 
   const scheduleSlideshow = () => {
