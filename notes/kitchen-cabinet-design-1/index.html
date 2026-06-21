@@ -94,31 +94,31 @@
       }
 
       .note-section {
-        width: min(100%, 1180px);
-        margin: 0 auto;
-        padding-inline: clamp(20px, 5vw, 72px);
+        width: 100%;
+        padding-inline: clamp(28px, 6vw, 96px);
       }
 
       .note-hero {
         display: grid;
-        min-height: 92vh;
+        min-height: 100vh;
+        min-height: 100svh;
         align-items: center;
         padding-top: clamp(122px, 14vh, 168px);
-        padding-bottom: clamp(58px, 9vh, 112px);
+        padding-bottom: clamp(48px, 7vh, 86px);
       }
 
       .note-hero-inner {
         display: grid;
-        grid-template-columns: minmax(0, 0.94fr) minmax(280px, 0.56fr);
-        gap: clamp(44px, 8vw, 118px);
-        align-items: end;
+        grid-template-columns: minmax(0, 0.62fr) minmax(320px, 0.38fr);
+        gap: clamp(44px, 8vw, 128px);
+        align-items: center;
       }
 
       .note-title {
-        max-width: 760px;
+        max-width: 860px;
         margin: 0;
         font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
-        font-size: clamp(42px, 7vw, 106px);
+        font-size: clamp(52px, 7.6vw, 128px);
         font-weight: 400;
         letter-spacing: 0;
         line-height: 1.08;
@@ -127,7 +127,7 @@
       .note-intro {
         display: grid;
         gap: 22px;
-        max-width: 420px;
+        max-width: 480px;
         color: var(--muted);
         font-size: clamp(15px, 1.1vw, 17px);
         line-height: 2;
@@ -150,23 +150,31 @@
       }
 
       .viewpoint {
-        padding-top: clamp(50px, 8vw, 100px);
-        padding-bottom: clamp(54px, 8vw, 110px);
+        display: grid;
+        min-height: 100vh;
+        min-height: 100svh;
+        align-items: center;
+        padding-top: clamp(116px, 14vh, 170px);
+        padding-bottom: clamp(70px, 10vh, 130px);
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
       }
 
       .viewpoint p {
-        max-width: 980px;
+        max-width: 1180px;
         margin: 0;
         font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
-        font-size: clamp(30px, 5.2vw, 76px);
+        font-size: clamp(42px, 6.4vw, 112px);
         line-height: 1.24;
       }
 
       .focus-figure {
-        padding-top: clamp(54px, 8vw, 108px);
-        padding-bottom: clamp(52px, 8vw, 98px);
+        display: grid;
+        min-height: 100vh;
+        min-height: 100svh;
+        align-items: center;
+        padding-top: clamp(106px, 12vh, 150px);
+        padding-bottom: clamp(48px, 7vh, 86px);
       }
 
       .image-frame {
@@ -179,11 +187,17 @@
         height: auto;
       }
 
+      .focus-figure .image-frame img {
+        height: min(68vh, 760px);
+        object-fit: cover;
+        object-position: center;
+      }
+
       .focus-caption {
         display: grid;
-        grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+        grid-template-columns: minmax(260px, 0.34fr) minmax(0, 0.66fr);
         gap: clamp(24px, 5vw, 76px);
-        padding-top: 28px;
+        padding-top: 22px;
         color: var(--muted);
         font-size: clamp(15px, 1.1vw, 18px);
         line-height: 1.9;
@@ -224,11 +238,13 @@
 
       .article-block {
         display: grid;
-        grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
+        grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr);
         gap: clamp(28px, 6vw, 86px);
         align-items: center;
-        padding-top: clamp(54px, 8vw, 108px);
-        padding-bottom: clamp(54px, 8vw, 108px);
+        min-height: 100vh;
+        min-height: 100svh;
+        padding-top: clamp(106px, 12vh, 152px);
+        padding-bottom: clamp(56px, 7vh, 92px);
         border-top: 1px solid var(--line);
       }
 
@@ -243,7 +259,7 @@
       .article-copy {
         display: grid;
         gap: 20px;
-        max-width: 500px;
+        max-width: 560px;
       }
 
       .section-number {
@@ -258,7 +274,7 @@
       .article-copy h2 {
         margin: 0;
         font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
-        font-size: clamp(30px, 4vw, 58px);
+        font-size: clamp(38px, 4.8vw, 82px);
         font-weight: 400;
         line-height: 1.2;
       }
@@ -272,6 +288,12 @@
 
       .article-media {
         position: relative;
+      }
+
+      .article-media .image-frame img {
+        height: min(62vh, 680px);
+        object-fit: cover;
+        object-position: center;
       }
 
       .plan-chip {
@@ -318,10 +340,13 @@
 
       .module-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+        grid-template-columns: minmax(360px, 0.4fr) minmax(0, 0.6fr);
         gap: clamp(28px, 6vw, 86px);
-        padding-top: clamp(54px, 8vw, 108px);
-        padding-bottom: clamp(54px, 8vw, 108px);
+        align-items: center;
+        min-height: 100vh;
+        min-height: 100svh;
+        padding-top: clamp(106px, 12vh, 152px);
+        padding-bottom: clamp(56px, 7vh, 92px);
         border-top: 1px solid var(--line);
       }
 
@@ -369,7 +394,7 @@
       }
 
       .height-card img {
-        height: clamp(520px, 62vw, 760px);
+        height: clamp(560px, 58vh, 740px);
         object-fit: cover;
         object-position: center;
       }
@@ -383,16 +408,20 @@
       }
 
       .summary {
-        padding-top: clamp(58px, 9vw, 120px);
-        padding-bottom: clamp(78px, 11vw, 150px);
+        display: grid;
+        min-height: 100vh;
+        min-height: 100svh;
+        align-content: center;
+        padding-top: clamp(112px, 13vh, 160px);
+        padding-bottom: clamp(72px, 9vh, 120px);
         border-top: 1px solid var(--line);
       }
 
       .summary p {
-        max-width: 980px;
+        max-width: 1180px;
         margin: 0;
         font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
-        font-size: clamp(32px, 5vw, 72px);
+        font-size: clamp(44px, 6vw, 104px);
         line-height: 1.25;
       }
 
@@ -410,7 +439,7 @@
         }
 
         .note-hero {
-          min-height: auto;
+          min-height: 100svh;
           padding-top: 116px;
           padding-bottom: 56px;
         }
@@ -438,8 +467,9 @@
         .article-block,
         .module-grid,
         .summary {
-          padding-top: 48px;
-          padding-bottom: 52px;
+          min-height: auto;
+          padding-top: 74px;
+          padding-bottom: 74px;
         }
 
         .viewpoint p,
@@ -449,6 +479,12 @@
 
         .focus-caption {
           padding-top: 20px;
+        }
+
+        .focus-figure .image-frame img,
+        .article-media .image-frame img {
+          height: auto;
+          object-fit: contain;
         }
 
         .article-block.reverse .article-copy,
