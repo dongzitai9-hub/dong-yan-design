@@ -58,6 +58,64 @@
         <a href="/cases/all/">完整案例索引</a>
       </section>
     </main>
+    <script>
+      (() => {
+        const schemePrefetchItems = [
+          {
+            href: "/cases/scheme-001/",
+            image: "/assets/optimized/schemes-detail/layout-study/cinema/layout-study-03-cinema.webp"
+          },
+          {
+            href: "/cases/scheme-002/",
+            image: "/assets/optimized/schemes-detail/function-rework/cinema/function-rework-01-cinema.webp"
+          },
+          {
+            href: "/cases/scheme-003/",
+            image: "/assets/optimized/schemes-detail/circulation-plan/cinema/circulation-plan-01-cinema.webp"
+          }
+        ];
+
+        function prefetchResource(href, as) {
+          if (!href || document.querySelector(`link[rel="prefetch"][href="${href}"]`)) return;
+          const link = document.createElement("link");
+          link.rel = "prefetch";
+          link.href = href;
+          if (as) link.as = as;
+          link.fetchPriority = "low";
+          document.head.appendChild(link);
+        }
+
+        function prefetchScheme(item) {
+          if (!item) return;
+          prefetchResource(item.href, "document");
+          prefetchResource(item.image, "image");
+          prefetchResource("/assets/css/scheme-detail.css?v=20260621-scheme-detail-split", "style");
+          prefetchResource("/assets/js/scheme-detail.js?v=20260621-scheme-detail-split", "script");
+        }
+
+        function schedulePrefetch() {
+          const run = () => {
+            prefetchScheme(schemePrefetchItems[0]);
+            window.setTimeout(() => prefetchScheme(schemePrefetchItems[1]), 1600);
+            window.setTimeout(() => prefetchScheme(schemePrefetchItems[2]), 3000);
+          };
+          window.setTimeout(() => {
+            if ("requestIdleCallback" in window) {
+              window.requestIdleCallback(run, { timeout: 2200 });
+              return;
+            }
+            run();
+          }, 1200);
+        }
+
+        schemePrefetchItems.forEach((item) => {
+          const card = document.querySelector(`a[href="${item.href}"]`);
+          card?.addEventListener("touchstart", () => prefetchScheme(item), { passive: true });
+          card?.addEventListener("mouseenter", () => prefetchScheme(item));
+        });
+        schedulePrefetch();
+      })();
+    </script>
     <script src="/assets/js/site-data.js?v=20260619-structure"></script>
     <script src="/nav.js?v=20260619-structure"></script>
   </body>

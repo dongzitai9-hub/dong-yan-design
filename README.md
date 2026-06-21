@@ -142,6 +142,7 @@ SEO/GEO 相关修改：
 - 导航样式优先改 `assets/css/navigation.css`，不要先动 `styles.css` 里的全站样式。
 - 空间/方案索引页的局部样式优先改 `assets/css/portfolio.css`。
 - 方案详情页 `/cases/scheme-001/` 至 `/cases/scheme-006/` 已统一为四段式模板：首屏、第二屏标语、粘性三图推演、结尾四图轮播。
+- 方案详情页共用样式放在 `assets/css/scheme-detail.css`，共用交互放在 `assets/js/scheme-detail.js`；不要再把同一套方案详情 CSS/JS 内嵌到每个方案页。
 - 方案页的网页展示图统一优先使用 `/assets/optimized/schemes-detail/*/cinema/` 下的 2400×1350 WebP 扩底色版本；原始方案图保留，不直接覆盖。
 - 普通案例/空间详情页的共用交互脚本放在 `assets/js/case-detail.js`，共用样式放在 `assets/css/case-detail*.css`；不要再把大段详情页 CSS/JS 重新内嵌到每个页面。
 - 首页关键图、空间索引封面和会影响入口速度的静态图，可以使用 `/assets/optimized/` 下的本地高质量 WebP；大尺寸详情页原图和新增普通媒体仍优先走 OSS。
@@ -244,4 +245,5 @@ https://github.com/dongzitai9-hub/dong-yan-design
 - 空间和普通案例详情页图片按“电脑高清、手机轻量”处理：电脑端使用 OSS 原高清图，手机端使用 OSS `assets/optimized/detail-mobile/` 轻量图；详情页前段 5 张可提前加载，后段轮播和结尾图继续懒加载。
 - 后续新增案例时，用户只需说明“新案例按电脑高清、手机轻量两套图处理；电脑端看高清原图，手机端用压缩轻量图，不能互相混用”。
 - 首页可在空闲时预取 `/cases/`，空间索引页可在空闲时预取前三个空间详情页和首段图，降低点击进入时的等待感。
+- 方案索引页可在空闲时预取前三个方案详情页、方案详情 CSS/JS 和首张方案图，降低从“方案”进入详情时的等待感。
 - 修改首页 Hero 后必须同步更新 `script.js` 的缓存版本号。
