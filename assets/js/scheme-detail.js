@@ -43,15 +43,15 @@
 
   const preloadCompactSchemeImages = () => {
     if (!isCompactMedia()) return;
-    const images = [...document.querySelectorAll("img[data-scheme-mobile-src]")];
-    const run = () => images.forEach(loadDeferredImage);
-    window.setTimeout(() => {
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(run, { timeout: 1200 });
-        return;
-      }
-      run();
-    }, 450);
+    const urls = new Set();
+    document.querySelectorAll("img[data-scheme-mobile-src]").forEach((image) => {
+      const url = image.dataset.schemeMobileSrc;
+      if (!url || urls.has(url)) return;
+      urls.add(url);
+      const preload = new Image();
+      preload.decoding = "async";
+      preload.src = url;
+    });
   };
 
   const bindSwipeNavigation = (surface, onPrevious, onNext) => {
