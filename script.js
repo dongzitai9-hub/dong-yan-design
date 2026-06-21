@@ -62,12 +62,27 @@ function renderHeroSlider() {
       slides[currentSlide].classList.add("is-active");
       if (currentSlide === 1) scheduleRestSlides();
     };
-    window.setTimeout(showNextSlide, 1500);
+    window.setTimeout(showNextSlide, 1800);
     setInterval(showNextSlide, 5200);
   };
 
   const scheduleSlideshow = () => {
-    window.setTimeout(startSlideshow, 300);
+    const firstSlide = heroSlider.querySelector(".hero-slide");
+    let hasStarted = false;
+    const start = () => {
+      if (hasStarted) return;
+      hasStarted = true;
+      window.setTimeout(startSlideshow, isCompactMedia() ? 500 : 300);
+    };
+
+    if (!firstSlide || firstSlide.complete) {
+      start();
+      return;
+    }
+
+    firstSlide.addEventListener("load", start, { once: true });
+    firstSlide.addEventListener("error", start, { once: true });
+    window.setTimeout(start, 1800);
   };
 
   scheduleSlideshow();
@@ -99,7 +114,7 @@ function normalizeFilePreviewLinks() {
 function loadHomepageDeferred() {
   if (document.querySelector('script[src*="/assets/js/home-deferred.js"]')) return;
   const script = document.createElement("script");
-  script.src = "/assets/js/home-deferred.js?v=20260621-home-split";
+  script.src = "/assets/js/home-deferred.js?v=20260621-mobile-first-visible";
   script.defer = true;
   document.body.appendChild(script);
 }

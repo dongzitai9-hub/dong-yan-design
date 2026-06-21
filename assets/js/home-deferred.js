@@ -286,7 +286,7 @@ function prefetchResource(href, as) {
 function scheduleHomepageRoutePrefetch() {
   const run = () => {
     prefetchResource("/cases/", "document");
-    prefetchResource("/assets/css/portfolio.css?v=20260621-cases-image-placeholder", "style");
+    prefetchResource("/assets/css/portfolio.css?v=20260621-mobile-first-visible", "style");
     prefetchResource("/assets/optimized/portfolio-covers/space-015.webp", "image");
   };
   window.setTimeout(() => {

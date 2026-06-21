@@ -11,7 +11,7 @@
     <meta name="description" content="董揅设计方案辑选展示格局推演、功能重组、动线优化、套房规划、家庭尺度和大宅推敲等平面方案。" />
     <link rel="canonical" href="https://dongyandesign.cn/plans/" />
     <link rel="stylesheet" href="/styles.css?v=20260619-portfolio-more" />
-    <link rel="stylesheet" href="/assets/css/portfolio.css?v=20260621-cases-image-placeholder" />
+    <link rel="stylesheet" href="/assets/css/portfolio.css?v=20260621-mobile-first-visible" />
   </head>
   <body class="case-directory-page portfolio-page">
     <header class="case-directory-header">
@@ -27,11 +27,11 @@
 
       <section class="portfolio-grid portfolio-plan-grid" aria-label="方案辑选作品">
         <a class="work-card portfolio-card scheme-card" href="/cases/scheme-001/">
-          <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/schemes/scheme-01.webp" alt="格局推演" loading="eager" decoding="async" />
+          <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/schemes/scheme-01.webp" alt="格局推演" loading="eager" fetchpriority="high" decoding="async" />
           <span class="work-info"><strong>PLAN STRATEGY</strong><small>格局推演</small><em>从原始结构出发，先确定采光、主轴和家庭动线。</em></span>
         </a>
         <a class="work-card portfolio-card scheme-card" href="/cases/scheme-002/">
-          <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/schemes/scheme-02.webp" alt="功能重组" loading="eager" decoding="async" />
+          <img src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/optimized/schemes/scheme-02.webp" alt="功能重组" loading="lazy" decoding="async" fetchpriority="low" />
           <span class="work-info"><strong>LAYOUT RENEWAL</strong><small>功能重组</small><em>重新安排收纳、起居和餐厨关系，让面积真正好用。</em></span>
         </a>
         <a class="work-card portfolio-card scheme-card is-wide" href="/cases/scheme-003/">
@@ -89,11 +89,15 @@
           if (!item) return;
           prefetchResource(item.href, "document");
           prefetchResource(item.image, "image");
-          prefetchResource("/assets/css/scheme-detail.css?v=20260621-scheme-detail-split", "style");
-          prefetchResource("/assets/js/scheme-detail.js?v=20260621-scheme-detail-split", "script");
+          prefetchResource("/assets/css/scheme-detail.css?v=20260621-mobile-first-visible", "style");
+          prefetchResource("/assets/js/scheme-detail.js?v=20260621-mobile-first-visible", "script");
         }
 
+        const canBackgroundPrefetch = () =>
+          window.matchMedia("(min-width: 861px) and (hover: hover) and (pointer: fine)").matches;
+
         function schedulePrefetch() {
+          if (!canBackgroundPrefetch()) return;
           const run = () => {
             prefetchScheme(schemePrefetchItems[0]);
             window.setTimeout(() => prefetchScheme(schemePrefetchItems[1]), 1600);
@@ -110,8 +114,9 @@
 
         schemePrefetchItems.forEach((item) => {
           const card = document.querySelector(`a[href="${item.href}"]`);
-          card?.addEventListener("touchstart", () => prefetchScheme(item), { passive: true });
-          card?.addEventListener("mouseenter", () => prefetchScheme(item));
+          card?.addEventListener("mouseenter", () => {
+            if (canBackgroundPrefetch()) prefetchScheme(item);
+          });
         });
         schedulePrefetch();
       })();

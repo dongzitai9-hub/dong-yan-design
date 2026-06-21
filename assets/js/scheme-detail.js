@@ -1,4 +1,35 @@
 (() => {
+  const deferredImages = new WeakSet();
+  let imageObserver = null;
+
+  const loadDeferredImage = (image) => {
+    if (!image?.dataset.schemeSrc) return;
+    image.src = image.dataset.schemeSrc;
+    image.removeAttribute("data-scheme-src");
+  };
+
+  const observeDeferredImage = (image) => {
+    if (!image?.dataset.schemeSrc || deferredImages.has(image)) return;
+    deferredImages.add(image);
+
+    if (!("IntersectionObserver" in window)) {
+      loadDeferredImage(image);
+      return;
+    }
+
+    imageObserver ||= new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          imageObserver.unobserve(entry.target);
+          loadDeferredImage(entry.target);
+        });
+      },
+      { rootMargin: "180px 0px" }
+    );
+    imageObserver.observe(image);
+  };
+
   const bindSwipeNavigation = (surface, onPrevious, onNext) => {
     if (!surface) return;
 
@@ -73,7 +104,9 @@
       clone.removeAttribute("style");
       clone.setAttribute("aria-hidden", "true");
       clone.setAttribute("data-film-clone", "true");
-      clone.loading = "eager";
+      clone.loading = "lazy";
+      clone.fetchPriority = "low";
+      observeDeferredImage(clone);
       return clone;
     };
 
@@ -95,7 +128,10 @@
 
     track.className = "film-strip-track";
     track.append(cloneSlide(originals[originals.length - 1]));
-    originals.forEach((image) => track.append(prepareImage(image)));
+    originals.forEach((image) => {
+      track.append(prepareImage(image));
+      observeDeferredImage(image);
+    });
     track.append(cloneSlide(originals[0]));
     viewport.append(track);
 
@@ -136,6 +172,8 @@
       moveRight: () => move("right")
     };
   };
+
+  document.querySelectorAll("img[data-scheme-src]").forEach(observeDeferredImage);
 
   document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     const images = [...carousel.querySelectorAll(".carousel-track img")];

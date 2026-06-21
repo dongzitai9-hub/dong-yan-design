@@ -569,6 +569,12 @@ img {
   overflow: hidden;
 }
 
+.hero-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .hero-media img {
   width: 100%;
   height: 100%;
