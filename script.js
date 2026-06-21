@@ -68,10 +68,11 @@ function renderHeroSlider() {
 
   const startSlideshow = () => {
     if (heroSlider.dataset.slideshowReady === "true") return;
-    heroSlides.slice(1).forEach((image, index) => {
+    const existingSlides = heroSlider.querySelectorAll(".hero-slide").length;
+    heroSlides.slice(existingSlides).forEach((image, index) => {
       heroSlider.insertAdjacentHTML(
         "beforeend",
-        `<img class="hero-slide" src="${image}" alt="空间轮播图 ${index + 2}" loading="lazy" decoding="async" />`,
+        `<img class="hero-slide" src="${image}" alt="空间轮播图 ${index + existingSlides + 1}" loading="lazy" decoding="async" />`,
       );
     });
 
@@ -84,25 +85,15 @@ function renderHeroSlider() {
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add("is-active");
     };
-    window.setTimeout(showNextSlide, 1400);
+    window.setTimeout(showNextSlide, 1500);
     setInterval(showNextSlide, 5200);
   };
 
   const scheduleSlideshow = () => {
-    window.setTimeout(() => {
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(startSlideshow, { timeout: 2200 });
-        return;
-      }
-      startSlideshow();
-    }, 400);
+    window.setTimeout(startSlideshow, 300);
   };
 
-  if (document.readyState === "complete") {
-    scheduleSlideshow();
-  } else {
-    window.addEventListener("load", scheduleSlideshow, { once: true });
-  }
+  scheduleSlideshow();
 }
 
 function loadLazyVideo(video) {
