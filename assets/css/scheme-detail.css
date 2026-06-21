@@ -461,15 +461,6 @@ img {
   overflow-x: visible;
 }
 
-.scheme-detail-page .site-header {
-  background: transparent !important;
-}
-
-.scheme-detail-page .brand-logo {
-  filter: brightness(0);
-  opacity: 0.6;
-}
-
 .project-hero {
   display: grid;
   grid-template-columns: minmax(320px, 32vw) minmax(0, 1fr);

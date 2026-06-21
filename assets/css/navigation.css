@@ -264,11 +264,6 @@
   outline: none;
 }
 
-.nav-upgraded .case-directory-header,
-.nav-upgraded .top {
-  display: none !important;
-}
-
 .nav-upgraded .case-directory-main,
 .nav-upgraded .page {
   padding-top: max(118px, 8vw);
