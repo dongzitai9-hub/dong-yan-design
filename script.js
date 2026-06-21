@@ -55,12 +55,16 @@ const serviceRail = document.querySelector('[data-service-rail]');
 const serviceTrack = document.querySelector('[data-service-track]');
 const serviceCards = serviceTrack ? [...serviceTrack.querySelectorAll('[data-service-index]')] : [];
 const lazyVideos = [...document.querySelectorAll('[data-lazy-video]')];
+const isCompactMedia = () =>
+  window.matchMedia("(max-width: 720px), (hover: none) and (pointer: coarse)").matches;
 
 function renderHeroSlider() {
   if (!heroSlider) return;
-  heroSlider.innerHTML = `
-    <img class="hero-slide is-active" src="${heroSlides[0]}" alt="空间轮播图 1" fetchpriority="high" decoding="async" />
-  `;
+  if (!heroSlider.querySelector(".hero-slide")) {
+    heroSlider.innerHTML = `
+      <img class="hero-slide is-active" src="${heroSlides[0]}" alt="空间轮播图 1" fetchpriority="high" decoding="async" />
+    `;
+  }
 
   const startSlideshow = () => {
     if (heroSlider.dataset.slideshowReady === "true") return;
@@ -105,6 +109,12 @@ function loadLazyVideo(video) {
     video.poster = video.dataset.poster;
     video.removeAttribute("data-poster");
   }
+  if (isCompactMedia()) {
+    video.removeAttribute("autoplay");
+    video.removeAttribute("loop");
+    video.dataset.videoLoaded = "static";
+    return;
+  }
   video.querySelectorAll("source[data-src]").forEach((source) => {
     source.src = source.dataset.src;
     source.removeAttribute("data-src");
@@ -116,6 +126,12 @@ function loadLazyVideo(video) {
 
 function bindLazyVideos() {
   if (!lazyVideos.length) return;
+  if (isCompactMedia()) {
+    lazyVideos.forEach((video) => {
+      video.removeAttribute("autoplay");
+      video.removeAttribute("loop");
+    });
+  }
   if (!("IntersectionObserver" in window)) {
     window.addEventListener("load", () => {
       lazyVideos.forEach(loadLazyVideo);
