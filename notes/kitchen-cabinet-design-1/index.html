@@ -8,28 +8,28 @@
     <title>厨房好不好用，先看橱柜怎么设计（一）｜董揅札记</title>
     <meta
       name="description"
-      content="董揅札记厨房系列第一篇，从旧厨房、系统厨房、U型布局、一金二银台面区域和操作台高度，梳理厨房好不好用的关键。"
+      content="董揅札记厨房系列第一篇，从旧厨房、现代系统厨房、U型布局、一金二银台面区域到H1/H4高度，梳理厨房橱柜为什么影响日常好不好用。"
     />
     <meta
       name="keywords"
-      content="厨房橱柜设计,厨房布局,U型厨房,一金二银,厨房收纳,操作台高度,董揅札记"
+      content="厨房橱柜设计,厨房布局,U型厨房,一金二银,厨房收纳,操作台高度,H1,H4,董揅札记"
     />
     <link rel="canonical" href="https://dongyandesign.cn/notes/kitchen-cabinet-design-1/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="厨房好不好用，先看橱柜怎么设计（一）｜董揅札记" />
     <meta
       property="og:description"
-      content="从系统厨房、U型布局、一金二银台面区域到几个关键高度，梳理厨房橱柜设计如何影响日常使用。"
+      content="从旧厨房到现代系统厨房，再到布局、台面和高度，把厨房橱柜好不好用拆成能检查的具体问题。"
     />
     <meta property="og:url" content="https://dongyandesign.cn/notes/kitchen-cabinet-design-1/" />
-    <meta property="og:image" content="https://dongyandesign.cn/assets/notes/kitchen-cabinet-design/system-kitchen.webp" />
+    <meta property="og:image" content="https://dongyandesign.cn/assets/notes/kitchen-system-layout-4/optimized/02-modern-system-kitchen.webp" />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "@id": "https://dongyandesign.cn/notes/kitchen-cabinet-design-1/#article",
   "headline": "厨房好不好用，先看橱柜怎么设计（一）",
-  "description": "基于资料学习札记，围绕系统厨房、U型布局、一金二银台面区域和操作台高度，梳理厨房橱柜设计的关键。",
+  "description": "基于资料学习札记，围绕旧厨房、现代系统厨房、U型布局、一金二银台面区域和H1/H4高度，梳理厨房橱柜设计的关键。",
   "datePublished": "2026-06-11",
   "dateModified": "2026-06-21",
   "inLanguage": "zh-CN",
@@ -43,11 +43,11 @@
   },
   "mainEntityOfPage": "https://dongyandesign.cn/notes/kitchen-cabinet-design-1/",
   "image": [
-    "https://dongyandesign.cn/assets/notes/kitchen-cabinet-design/system-kitchen.webp",
-    "https://dongyandesign.cn/assets/notes/kitchen-cabinet-design/u-vs-l-layout.webp"
+    "https://dongyandesign.cn/assets/notes/kitchen-system-layout-4/optimized/02-modern-system-kitchen.webp",
+    "https://dongyandesign.cn/assets/notes/kitchen-system-layout-4/optimized/07-one-gold-two-silver.webp"
   ],
   "articleSection": "厨房设计",
-  "keywords": ["厨房橱柜设计", "厨房布局", "U型厨房", "一金二银", "厨房收纳", "操作台高度"]
+  "keywords": ["厨房橱柜设计", "厨房布局", "U型厨房", "一金二银", "H1", "H4", "厨房收纳", "操作台高度"]
 }
     </script>
     <style>
@@ -56,9 +56,10 @@
         --paper: #f2f3f4;
         --surface: #f8f9f9;
         --ink: #20211e;
-        --muted: #625f58;
-        --line: rgba(32, 33, 30, 0.14);
-        --green: #506357;
+        --muted: #65625b;
+        --faint: rgba(32, 33, 30, 0.52);
+        --line: rgba(32, 33, 30, 0.13);
+        --green: #66795f;
         --ui-font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
         --serif: Georgia, "Times New Roman", "Songti SC", serif;
       }
@@ -89,111 +90,202 @@
         background: var(--paper);
       }
 
+      .note-hero,
+      .caption-scene,
       .screen {
-        display: grid;
         width: 100%;
         min-height: 100vh;
         min-height: 100svh;
-        align-items: center;
-        padding: clamp(112px, 13vh, 158px) clamp(28px, 6vw, 96px) clamp(64px, 8vh, 104px);
-        border-top: 1px solid var(--line);
       }
 
-      .screen:first-of-type {
-        border-top: 0;
-      }
-
-      .hero-grid,
-      .split-grid,
-      .image-grid,
-      .measure-grid {
+      .note-hero {
         display: grid;
-        gap: clamp(34px, 6vw, 90px);
-        align-items: center;
+        grid-template-columns: minmax(520px, 0.46fr) minmax(0, 0.54fr);
+        gap: 0;
+        padding-top: 74px;
+        background: var(--paper);
       }
 
-      .hero-grid {
-        grid-template-columns: minmax(0, 0.62fr) minmax(320px, 0.38fr);
+      .project-intro {
+        display: flex;
+        min-height: calc(100svh - 74px);
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(42px, 6vw, 92px) clamp(28px, 4.2vw, 60px);
       }
 
-      .split-grid {
-        grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
-      }
-
-      .image-grid {
-        grid-template-columns: minmax(0, 0.58fr) minmax(340px, 0.42fr);
-      }
-
-      .measure-grid {
-        grid-template-columns: minmax(340px, 0.36fr) minmax(0, 0.64fr);
-      }
-
-      .title {
-        max-width: 900px;
+      .project-title {
         margin: 0;
         font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
-        font-size: clamp(52px, 7.4vw, 124px);
+        font-size: clamp(48px, 5vw, 92px);
         font-weight: 400;
         letter-spacing: 0;
-        line-height: 1.08;
+        line-height: 1.1;
       }
 
-      .lede,
-      .body-copy {
-        display: grid;
-        gap: 18px;
+      .project-title small {
+        display: block;
+        margin-top: 22px;
+        font-family: var(--ui-font);
+        font-size: clamp(23px, 2.1vw, 34px);
+        font-weight: 600;
+      }
+
+      .intro-line {
+        max-width: 520px;
+        margin: clamp(34px, 5vh, 62px) 0 0;
+        font-family: var(--serif);
+        font-size: clamp(22px, 1.9vw, 32px);
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1.34;
+      }
+
+      .intro-copy,
+      .body-copy,
+      .qa-answer,
+      .source {
         color: var(--muted);
-        font-size: clamp(15px, 1.08vw, 17px);
+        font-size: clamp(15px, 1.1vw, 17px);
         line-height: 2;
       }
 
-      .lede {
-        max-width: 520px;
+      .intro-copy {
+        max-width: 540px;
+        margin: 34px 0 0;
       }
 
-      .body-copy {
-        max-width: 620px;
+      .discover-link {
+        display: inline-flex;
+        width: fit-content;
+        min-height: 52px;
+        align-items: center;
+        gap: 18px;
+        margin-top: 42px;
+        padding: 0 28px;
+        background: var(--ink);
+        color: #fff;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        text-decoration: none;
       }
 
-      .lede p,
-      .body-copy p,
-      .closing p {
+      .discover-link::before {
+        content: "↓";
+        font-size: 27px;
+        line-height: 1;
+      }
+
+      .hero-media,
+      figure {
         margin: 0;
       }
 
-      .meta,
-      .section-label {
-        color: rgba(32, 33, 30, 0.54);
+      .hero-media {
+        min-height: calc(100svh - 74px);
+        background: var(--surface);
+      }
+
+      .hero-media img {
+        height: 100%;
+        min-height: calc(100svh - 74px);
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .caption-scene {
+        position: relative;
+        display: grid;
+        align-items: stretch;
+        padding: 74px clamp(18px, 3vw, 64px) clamp(24px, 4vh, 52px);
+        background: var(--paper);
+      }
+
+      .caption-scene img {
+        height: calc(100svh - 126px);
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .caption-line {
+        position: absolute;
+        right: clamp(34px, 5vw, 90px);
+        bottom: clamp(42px, 8vh, 110px);
+        max-width: 620px;
+        padding: 18px 22px;
+        background: rgba(242, 243, 244, 0.76);
+        backdrop-filter: blur(8px);
+      }
+
+      .caption-line p {
+        margin: 0;
+        color: var(--ink);
         font-family: var(--serif);
-        font-size: 12px;
+        font-size: clamp(18px, 1.7vw, 30px);
         font-style: italic;
-        letter-spacing: 0.14em;
+        font-weight: 700;
+        line-height: 1.35;
         text-transform: uppercase;
+      }
+
+      .screen {
+        display: grid;
+        align-items: center;
+        padding: clamp(96px, 11vh, 148px) clamp(28px, 5.6vw, 108px) clamp(60px, 8vh, 104px);
+        border-top: 1px solid var(--line);
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.58fr) minmax(360px, 0.42fr);
+        gap: clamp(42px, 6vw, 104px);
+        align-items: center;
+      }
+
+      .split.reverse {
+        grid-template-columns: minmax(360px, 0.42fr) minmax(0, 0.58fr);
+      }
+
+      .split.wide-copy {
+        grid-template-columns: minmax(0, 0.52fr) minmax(0, 0.48fr);
+      }
+
+      .copy-block {
+        max-width: 720px;
       }
 
       .section-label {
         display: block;
-        margin-bottom: 18px;
+        margin-bottom: 20px;
+        color: var(--faint);
+        font-family: var(--serif);
+        font-size: 13px;
+        font-style: italic;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
       }
 
       h2 {
         margin: 0;
+        color: #6a6861;
         font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
-        font-size: clamp(36px, 4.8vw, 78px);
+        font-size: clamp(44px, 5vw, 92px);
         font-weight: 400;
+        letter-spacing: 0;
         line-height: 1.18;
       }
 
-      .statement p {
-        max-width: 1220px;
+      .copy-block p,
+      .body-copy p,
+      .qa-answer p,
+      .source {
         margin: 0;
-        font-family: "Songti SC", "STSong", Georgia, "Times New Roman", serif;
-        font-size: clamp(40px, 6.1vw, 108px);
-        line-height: 1.22;
       }
 
-      figure {
-        margin: 0;
+      .body-copy {
+        display: grid;
+        gap: 22px;
+        margin-top: 28px;
       }
 
       .image-frame {
@@ -202,7 +294,7 @@
       }
 
       .image-frame img {
-        height: min(68vh, 760px);
+        height: min(70vh, 760px);
         object-fit: cover;
         object-position: center;
       }
@@ -213,39 +305,67 @@
 
       figcaption {
         margin-top: 14px;
-        color: rgba(32, 33, 30, 0.62);
+        color: rgba(32, 33, 30, 0.6);
         font-size: 13px;
         line-height: 1.75;
       }
 
-      .points {
+      .qa-card {
+        display: grid;
+        gap: 18px;
+        margin-top: 30px;
+        padding: 26px 0 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .qa-question {
+        margin: 0;
+        color: var(--ink);
+        font-family: var(--serif);
+        font-size: clamp(22px, 2vw, 32px);
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .qa-answer {
+        display: grid;
+        gap: 14px;
+      }
+
+      .note-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 14px;
-        margin-top: 26px;
+        margin-top: 28px;
       }
 
-      .point {
-        min-height: 156px;
+      .note-card {
+        min-height: 150px;
         padding: 20px 20px 22px;
         border-top: 1px solid var(--line);
         background: rgba(248, 249, 249, 0.72);
       }
 
-      .point strong {
+      .note-card strong {
         display: block;
         margin-bottom: 8px;
         color: var(--ink);
         font-family: var(--serif);
-        font-size: 21px;
+        font-size: 22px;
         font-style: italic;
-        font-weight: 400;
+        font-weight: 700;
       }
 
-      .point span {
+      .note-card span {
         color: var(--muted);
         font-size: 14px;
         line-height: 1.8;
+      }
+
+      .detail-flow {
+        display: grid;
+        gap: clamp(30px, 4vw, 56px);
       }
 
       .detail-row {
@@ -254,29 +374,41 @@
         gap: clamp(16px, 2vw, 26px);
       }
 
-      .detail-card img {
-        height: min(60vh, 680px);
+      .detail-row img {
+        height: min(52vh, 600px);
         object-fit: cover;
-        object-position: center;
       }
 
-      .height-row {
+      .detail-copy {
+        display: grid;
+        grid-template-columns: minmax(0, 0.38fr) minmax(0, 0.62fr);
+        gap: clamp(30px, 5vw, 82px);
+        align-items: start;
+      }
+
+      .height-layout {
+        display: grid;
+        grid-template-columns: minmax(340px, 0.37fr) minmax(0, 0.63fr);
+        gap: clamp(34px, 5vw, 82px);
+        align-items: center;
+      }
+
+      .height-images {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(16px, 2.4vw, 30px);
+        gap: 24px;
       }
 
-      .height-row img {
-        height: min(62vh, 720px);
-        object-fit: cover;
-        object-position: center;
+      .height-images img {
+        height: min(66vh, 740px);
+        object-fit: contain;
       }
 
       .data-note,
       .closing-list {
         display: grid;
         gap: 0;
-        margin: 26px 0 0;
+        margin: 28px 0 0;
         padding: 0;
         list-style: none;
       }
@@ -297,69 +429,117 @@
       .closing-list strong {
         color: var(--ink);
         font-family: var(--serif);
-        font-size: 24px;
+        font-size: 25px;
         font-style: italic;
         line-height: 1.1;
       }
 
-      .closing {
-        max-width: 1080px;
-      }
-
-      .closing h2 {
-        max-width: 1000px;
+      .closing-split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.54fr) minmax(360px, 0.46fr);
+        gap: clamp(40px, 6vw, 96px);
+        align-items: center;
       }
 
       .source {
-        max-width: 620px;
-        margin-top: 28px;
+        margin-top: 26px;
         color: rgba(32, 33, 30, 0.52);
         font-size: 13px;
-        line-height: 1.8;
       }
 
-      @media (max-width: 860px) {
+      @media (max-width: 900px) {
+        .note-hero,
+        .split,
+        .split.reverse,
+        .split.wide-copy,
+        .detail-copy,
+        .height-layout,
+        .closing-split {
+          grid-template-columns: 1fr;
+        }
+
+        .note-hero {
+          padding-top: 82px;
+        }
+
+        .project-intro {
+          min-height: auto;
+          padding: 44px 18px 34px;
+        }
+
+        .project-title {
+          font-size: clamp(38px, 12vw, 58px);
+        }
+
+        .intro-line {
+          font-size: 21px;
+        }
+
+        .discover-link {
+          min-height: 48px;
+        }
+
+        .hero-media,
+        .hero-media img {
+          min-height: auto;
+        }
+
+        .hero-media img {
+          height: auto;
+        }
+
+        .caption-scene {
+          min-height: auto;
+          padding: 76px 18px;
+        }
+
+        .caption-scene img {
+          height: auto;
+        }
+
+        .caption-line {
+          position: static;
+          margin-top: 18px;
+          padding: 0;
+          background: transparent;
+          backdrop-filter: none;
+        }
+
         .screen {
           min-height: auto;
           padding: 74px 18px;
         }
 
         .screen:first-of-type {
-          min-height: 100svh;
-          padding-top: 116px;
+          border-top: 0;
         }
 
-        .hero-grid,
-        .split-grid,
-        .image-grid,
-        .measure-grid,
-        .detail-row,
-        .height-row,
-        .points {
-          grid-template-columns: 1fr;
-          gap: 24px;
+        .split.reverse figure {
+          order: 1;
         }
 
-        .title {
-          font-size: clamp(38px, 12vw, 58px);
+        .split.reverse .copy-block {
+          order: 2;
         }
 
         h2 {
-          font-size: clamp(29px, 8.6vw, 43px);
-        }
-
-        .statement p {
-          font-size: clamp(30px, 9vw, 44px);
+          font-size: clamp(32px, 9vw, 46px);
         }
 
         .image-frame img,
-        .detail-card img,
-        .height-row img {
+        .detail-row img,
+        .height-images img {
           height: auto;
           object-fit: contain;
         }
 
-        .point {
+        .note-grid,
+        .detail-row,
+        .height-images {
+          grid-template-columns: 1fr;
+        }
+
+        .note-card {
           min-height: auto;
           padding-inline: 0;
           background: transparent;
@@ -379,83 +559,114 @@
 
       <main>
         <article>
-          <section class="screen">
-            <div class="hero-grid">
-              <h1 class="title">厨房好不好用，先看橱柜怎么设计（一）</h1>
-              <div class="lede">
-                <p>从一只木碗橱，到一套系统厨房；真正改变厨房体验的，不只是柜子变多了，而是台面、动线、收纳和高度开始一起服务于做饭的人。</p>
-                <p>这篇是厨房系列第一篇，先把橱柜设计里最基础、也最容易被忽略的几个问题讲清楚。</p>
-                <div class="meta">Dongyan Notes · Kitchen Series 01</div>
-              </div>
+          <section class="note-hero">
+            <div class="project-intro">
+              <h1 class="project-title">
+                厨房好不好用，先看橱柜怎么设计
+                <small>厨房系列（一）</small>
+              </h1>
+              <p class="intro-line">A kitchen is not just more cabinets. It is a working system for cooking, storage, and daily movement.</p>
+              <p class="intro-copy">
+                从一只木碗橱，到一套系统厨房；真正改变厨房体验的，不只是柜子变多了，而是台面、动线、收纳和高度开始一起服务于做饭的人。
+              </p>
+              <a class="discover-link" href="#old-kitchen">DISCOVER MORE</a>
+            </div>
+            <figure class="hero-media">
+              <img
+                src="/assets/notes/cabinet-design-real/optimized/system-kitchen.webp?v=20260621-kitchen-screenflow"
+                alt="现代系统厨房橱柜实景，包含吊柜、烟机、灶台、水槽、台面和地柜"
+                width="1536"
+                height="1024"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </figure>
+          </section>
+
+          <section class="caption-scene" aria-label="系统厨房工作线">
+            <img
+              src="/assets/notes/kitchen-system-layout-4/optimized/03-system-workline.webp?v=20260621-kitchen-screenflow"
+              alt="系统厨房把吊柜、烟机、灶台、水槽、台面和地柜组织成一条工作线"
+              width="1672"
+              height="941"
+              loading="eager"
+              decoding="async"
+            />
+            <div class="caption-line">
+              <p>把设备与收纳放进同一条工作线，厨房才从家具组合变成使用系统。</p>
             </div>
           </section>
 
-          <section class="screen image-grid">
+          <section class="screen split" id="old-kitchen">
             <figure>
-              <div class="image-frame">
+              <div class="image-frame contain-frame">
                 <img
-                  src="/assets/notes/kitchen-cabinet-design/old-kitchen.webp?v=20260621-note-article"
+                  src="/assets/notes/kitchen-system-layout-4/optimized/01-old-kitchen-1980s.webp?v=20260621-kitchen-screenflow"
                   alt="旧时厨房里的煤炉、水壶、木制碗橱和生活器具"
-                  width="1536"
-                  height="1024"
-                  loading="eager"
-                  fetchpriority="high"
+                  width="1003"
+                  height="1568"
+                  loading="lazy"
                   decoding="async"
                 />
               </div>
               <figcaption>过去的厨房，靠一只煤炉、一把火钳、一只木碗橱维持日常。</figcaption>
             </figure>
-            <div class="body-copy">
+            <div class="copy-block">
               <span class="section-label">Opening</span>
               <h2>过去的厨房，更像一处劳作空间。</h2>
-              <p>20 世纪 80 年代，对于住在大院里的各家各户来说，厨房常常就是门口屋檐下的一只煤球炉。每到饭点，院子里充满油烟、菜香和煤球的味道。</p>
-              <p>那个年代的厨房里，除了一个木制碗橱，几乎没有真正意义上的收纳家具。碗筷、锅具和杂物靠经验归置，厨房更多是一处劳作空间，而不是被系统设计过的生活空间。</p>
-            </div>
-          </section>
-
-          <section class="screen statement">
-            <p>现代厨房，首先不是多做几组柜子，而是把烹饪、收纳和清洁组织成一套系统。</p>
-          </section>
-
-          <section class="screen image-grid">
-            <figure>
-              <div class="image-frame">
-                <picture>
-                  <source media="(max-width: 860px)" srcset="/assets/notes/cabinet-design-real/mobile/system-kitchen.webp?v=20260621-note-article" />
-                  <img
-                    src="/assets/notes/cabinet-design-real/optimized/system-kitchen.webp?v=20260621-note-article"
-                    alt="现代系统厨房橱柜正面实景，包含吊柜、烟机、灶台、水槽、台面和地柜"
-                    width="1536"
-                    height="1024"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+              <div class="body-copy">
+                <p>20 世纪 80 年代，对于住在大院里的各家各户来说，厨房常常就是门口屋檐下的一只煤球炉。每到饭点，院子里充满油烟、菜香和煤球的味道。</p>
+                <p>那个年代的厨房里，除了一个木制碗橱，几乎没有真正意义上的收纳家具。碗筷、锅具和杂物靠经验归置，厨房更多是一处劳作空间，而不是被系统设计过的生活空间。</p>
               </div>
-              <figcaption>系统厨房把吊柜、烟机、灶台、水槽、台面和地柜整合到同一条工作线上。</figcaption>
-            </figure>
-            <div class="body-copy">
-              <span class="section-label">System Kitchen</span>
-              <h2>系统厨房的重点，是让动作连续。</h2>
-              <p>第一个现代意义的厨房，强调高效的操作流水线，也强调便利实用的储物空间。今天，这种思路已经进入许多城市住宅。</p>
-              <p>现代橱柜不是简单地把墙面做满，而是把水槽、灶台、台面、电器、吊柜和地柜放进同一套逻辑里。它要回答的问题是：做饭时，人和物品怎么移动。</p>
             </div>
           </section>
 
-          <section class="screen split-grid">
-            <div class="body-copy">
-              <span class="section-label">01 / Layout</span>
-              <h2>高效厨房的第一个重点：布局。</h2>
-              <p>厨房高效布局有两个要点：一是采用适合空间的布局方式，二是看懂台面里的“一金二银”区域。布局决定人怎么移动，台面决定动作能不能展开。</p>
-              <p>理论上，中小厨房常见的布局可以分成 I 型、L 型、II 型和 U 型。对于普通小厨房来说，U 型常常更值得优先考虑，因为它能让洗、切、炒这几步更集中，转身就能完成许多动作。</p>
+          <section class="screen split reverse">
+            <div class="copy-block">
+              <span class="section-label">System Kitchen</span>
+              <h2>现代厨房，是一套效率系统。</h2>
+              <div class="body-copy">
+                <p>现代厨房，首先不是多做几组柜子，而是把烹饪、收纳和清洁组织成一套系统。水槽、灶台、台面、电器、吊柜和地柜都应该服务同一件事：做饭时，人和物品怎么移动。</p>
+              </div>
+              <div class="qa-card">
+                <p class="qa-question">第一个现代意义厨房，是什么时候出现的？</p>
+                <div class="qa-answer">
+                  <p>它诞生于 20 世纪的德国，由女性建筑师玛格丽特·里奥茨基设计。</p>
+                  <p>这套厨房强调高效的操作流水线，也强调便利实用的储物空间。换句话说，厨房从“摆放炊具的房间”，变成了围绕家务效率组织出来的工作系统。</p>
+                </div>
+              </div>
             </div>
             <figure>
               <div class="image-frame contain-frame">
                 <img
-                  src="/assets/notes/kitchen-cabinet-design/layout-types.webp?v=20260621-note-article"
-                  alt="I型、L型、II型、U型厨房布局顶视图，对比台面和走道关系"
-                  width="1086"
-                  height="1449"
+                  src="/assets/notes/kitchen-system-layout-4/optimized/02-modern-system-kitchen.webp?v=20260621-kitchen-screenflow"
+                  alt="现代系统厨房形成示意图"
+                  width="1672"
+                  height="941"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption>现在的系统厨房，把操作流水线、连续台面、集中收纳和电器整合到一起。</figcaption>
+            </figure>
+          </section>
+
+          <section class="screen split wide-copy">
+            <div class="copy-block">
+              <span class="section-label">01 / Layout</span>
+              <h2>高效厨房的第一个重点：布局。</h2>
+              <div class="body-copy">
+                <p>厨房高效布局有两个要点：一是采用适合空间的布局方式，二是看懂台面里的“一金二银”区域。布局决定人怎么移动，台面决定动作能不能展开。</p>
+                <p>理论上，中小厨房常见的布局可以分成 I 型、L 型、II 型和 U 型。对于普通小厨房来说，U 型常常更值得优先考虑，因为它能让洗、切、炒这几步更集中，转身就能完成许多动作。</p>
+              </div>
+            </div>
+            <figure>
+              <div class="image-frame contain-frame">
+                <img
+                  src="/assets/notes/kitchen-system-layout-4/optimized/04-four-counter-layouts.webp?v=20260621-kitchen-screenflow"
+                  alt="I型、L型、II型、U型厨房布局对比"
+                  width="1536"
+                  height="1024"
                   loading="lazy"
                   decoding="async"
                 />
@@ -464,143 +675,182 @@
             </figure>
           </section>
 
-          <section class="screen image-grid">
+          <section class="screen split">
             <figure>
               <div class="image-frame contain-frame">
-                <picture>
-                  <source media="(max-width: 860px)" srcset="/assets/notes/cabinet-design-real/mobile/u-vs-l-topview-real.webp?v=20260621-note-article" />
-                  <img
-                    src="/assets/notes/cabinet-design-real/optimized/u-vs-l-topview-real.webp?v=20260621-note-article"
-                    alt="U型和L型厨房面积与台面长度对比"
-                    width="1629"
-                    height="965"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  src="/assets/notes/kitchen-system-layout-4/optimized/u-conditions-wall-only-alt.webp?v=20260621-kitchen-screenflow"
+                  alt="U型布局核心优势示意图"
+                  width="1672"
+                  height="941"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <figcaption>同样约 2.9 平米台面，U 型通常能用更小面积换来更集中的操作线。</figcaption>
             </figure>
-            <div class="body-copy">
+            <div class="copy-block">
               <span class="section-label">Why U Shape</span>
               <h2>U 型的价值，不只是流程顺。</h2>
-              <p>为什么中小厨房要尽量采用 U 型布局？如果问十个设计师，大多数都会回答：流程顺畅。洗菜、切菜、炒菜围绕身体展开，少走一步，就是小厨房里非常真实的效率。</p>
-              <p>但 U 型布局还有一个更容易被忽略的优势：高效节地。它不一定让厨房看起来更大，却可能在更小面积里换来同样长的台面。</p>
+              <div class="body-copy">
+                <p>为什么中小厨房要尽量采用 U 型布局？如果问十个设计师，大多数都会回答：流程顺畅。洗菜、切菜、炒菜围绕身体展开，少走一步，就是小厨房里非常真实的效率。</p>
+                <p>但 U 型布局还有一个更容易被忽略的优势：高效节地。它不一定让厨房看起来更大，却可能在更小面积里换来同样长的台面。</p>
+              </div>
             </div>
           </section>
 
-          <section class="screen">
-            <div class="body-copy" style="max-width: 980px;">
+          <section class="screen split reverse">
+            <div class="copy-block">
+              <span class="section-label">Before Layout</span>
+              <h2>先定条件，再推最优布局。</h2>
+              <div class="body-copy">
+                <p>厨房布局不是只看“哪一种最好”，而是先看空间条件：墙的长度、厨房宽度、门的位置、窗的位置、烟道位置、冰箱大小。</p>
+                <p>这些条件确定之后，再判断 I 型、L 型、II 型或 U 型哪一种更适合。尤其是 U 型厨房，只有当转角、门洞和走道宽度都成立时，才会真正高效。</p>
+              </div>
+            </div>
+            <figure>
+              <div class="image-frame contain-frame">
+                <img
+                  src="/assets/notes/kitchen-system-layout-4/optimized/08-layout-six-factors.webp?v=20260621-kitchen-screenflow"
+                  alt="厨房布局的六个前置条件示意图"
+                  width="1672"
+                  height="941"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption>先定条件，再推最优布局；不要只拿台面长度做判断。</figcaption>
+            </figure>
+          </section>
+
+          <section class="screen split">
+            <div class="copy-block">
               <span class="section-label">02 / Countertop</span>
               <h2>第二个重点：看懂“一金二银”。</h2>
-              <p>让厨房五步骤操作变高效的关键因素，不只与冰箱、水槽、灶台这“三件套”有关，更与它们两侧的台面区域直接相关：备餐区、装盘区、沥水区。</p>
-              <p>为了强调它的重要性，可以把这三段台面称为“一金二银”。黄金区是备餐区，银一区是灶台旁的装盘区，银二区是水槽旁的沥水区。</p>
-              <div class="points">
-                <div class="point">
+              <div class="body-copy">
+                <p>让厨房五步骤操作变高效的关键因素，不只与冰箱、水槽、灶台这“三件套”有关，更与它们两侧的台面区域直接相关：备餐区、装盘区、沥水区。</p>
+                <p>为了强调它的重要性，可以把这三段台面称为“一金二银”。黄金区是备餐区，银一区是灶台旁的装盘区，银二区是水槽旁的沥水区。</p>
+              </div>
+              <div class="note-grid">
+                <div class="note-card">
                   <strong>黄金区</strong>
                   <span>放砧板、菜刀、食材和调料，是切菜、备餐、临时摆放最多的一段。</span>
                 </div>
-                <div class="point">
+                <div class="note-card">
                   <strong>银一区</strong>
                   <span>靠近灶台，炒完菜可以顺手装盘，减少热锅热菜来回移动。</span>
                 </div>
-                <div class="point">
+                <div class="note-card">
                   <strong>银二区</strong>
                   <span>靠近水槽，洗好的碗盘、蔬菜和杯具，需要一个可以沥水的停留区。</span>
                 </div>
               </div>
             </div>
-          </section>
-
-          <section class="screen image-grid">
             <figure>
               <div class="image-frame contain-frame">
-                <picture>
-                  <source media="(max-width: 860px)" srcset="/assets/notes/cabinet-design-real/mobile/long-countertop.webp?v=20260621-note-article" />
-                  <img
-                    src="/assets/notes/cabinet-design-real/optimized/long-countertop.webp?v=20260621-note-article"
-                    alt="厨房一金二银台面区域示意图，包含备餐区、装盘区和沥水区"
-                    width="1510"
-                    height="1042"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  src="/assets/notes/kitchen-system-layout-4/optimized/one-gold-two-silver-alt.webp?v=20260621-kitchen-screenflow"
+                  alt="一金二银台面三段留空示意图"
+                  width="1672"
+                  height="941"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <figcaption>一金二银：黄金区负责备餐，两个银区分别承担装盘和沥水。</figcaption>
+              <figcaption>黄金区越完整，厨房越顺手；银区不是越大越好，但不能完全没有。</figcaption>
             </figure>
-            <div class="body-copy">
-              <span class="section-label">Scale</span>
-              <h2>几个尺寸，决定台面从容不从容。</h2>
-              <p>面积很小的厨房，有时很难同时兼顾三段台面。这个时候，应该先确保黄金区的长度。黄金区至少要有 600mm，条件允许最好做到 800mm。</p>
-              <p>两个银区也不要完全没有。灶台旁到墙边的位置，提前留出约 300mm，炒完菜可以装盘；水槽旁到墙边的空间，留出约 300mm，就能放沥水架。</p>
-            </div>
           </section>
 
           <section class="screen">
-            <div class="detail-row">
-              <figure class="detail-card">
-                <div class="image-frame">
-                  <img src="/assets/notes/kitchen-cabinet-design/golden-zone.webp?v=20260621-note-article" alt="厨房黄金区台面尺寸示意图，备餐区建议不少于600毫米" width="1122" height="1402" loading="lazy" decoding="async" />
+            <div class="detail-flow">
+              <div class="detail-row">
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-cabinet-design/golden-zone.webp?v=20260621-kitchen-screenflow" alt="厨房黄金区台面尺寸示意图，备餐区建议不少于600毫米" width="1122" height="1402" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>黄金区最好不低于 600mm，能做到 800mm 左右会更舒展。</figcaption>
+                </figure>
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-cabinet-design/silver-zone-stove.webp?v=20260621-kitchen-screenflow" alt="灶台旁银一区装盘区尺寸示意图，建议预留约300毫米" width="1122" height="1402" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>银一区约 300mm，给出锅装盘留一点余地。</figcaption>
+                </figure>
+                <figure>
+                  <div class="image-frame">
+                    <img src="/assets/notes/kitchen-cabinet-design/silver-zone-sink.webp?v=20260621-kitchen-screenflow" alt="水槽旁银二区沥水区尺寸示意图，建议预留约300毫米" width="1122" height="1402" loading="lazy" decoding="async" />
+                  </div>
+                  <figcaption>银二区约 300mm，水槽边才有位置放沥水架。</figcaption>
+                </figure>
+              </div>
+              <div class="detail-copy">
+                <div class="copy-block">
+                  <span class="section-label">Scale</span>
+                  <h2>几个尺寸，决定台面从容不从容。</h2>
                 </div>
-                <figcaption>黄金区最好不低于 600mm，能做到 800mm 左右会更舒展。</figcaption>
-              </figure>
-              <figure class="detail-card">
-                <div class="image-frame">
-                  <img src="/assets/notes/kitchen-cabinet-design/silver-zone-stove.webp?v=20260621-note-article" alt="灶台旁银一区装盘区尺寸示意图，建议预留约300毫米" width="1122" height="1402" loading="lazy" decoding="async" />
+                <div class="body-copy">
+                  <p>面积很小的厨房，有时很难同时兼顾三段台面。这个时候，应该先确保黄金区的长度。黄金区至少要有 600mm，条件允许最好做到 800mm。</p>
+                  <p>两个银区也不要完全没有。灶台旁到墙边的位置，提前留出约 300mm，炒完菜可以装盘；水槽旁到墙边的空间，留出约 300mm，就能放沥水架。</p>
                 </div>
-                <figcaption>银一区约 300mm，给出锅装盘留一点余地。</figcaption>
-              </figure>
-              <figure class="detail-card">
-                <div class="image-frame">
-                  <img src="/assets/notes/kitchen-cabinet-design/silver-zone-sink.webp?v=20260621-note-article" alt="水槽旁银二区沥水区尺寸示意图，建议预留约300毫米" width="1122" height="1402" loading="lazy" decoding="async" />
-                </div>
-                <figcaption>银二区约 300mm，水槽边才有位置放沥水架。</figcaption>
-              </figure>
+              </div>
             </div>
           </section>
 
-          <section class="screen measure-grid">
-            <div class="body-copy">
+          <section class="screen height-layout">
+            <div class="copy-block">
               <span class="section-label">03 / Height</span>
               <h2>最后，还要看几个高度 H。</h2>
-              <p>橱柜本身是舶来品，但真正好不好用，取决于它有没有适配做饭人的身体。最基础的是三个高度：操作台高度 H1、吊柜底高度 H2、吊柜顶高度 H3。</p>
+              <div class="body-copy">
+                <p>橱柜本来是舶来品，很多细节考虑源自西方烹饪习惯。真正好不好用，还是要回到使用者的身高、锅具和每天做饭的动作。</p>
+                <p>H1 是重要的操作台高度，常用估算方式是：H1 = 身高 ÷ 2 + 50，单位是毫米。它直接影响洗菜、切菜时肩膀和腰背是否轻松。</p>
+                <p>还有一个容易被忽略的特殊高度 H4。多数橱柜会让灶台 H4 与操作台 H1 在同一水平面，这对以平底煎锅为主要锅具的西餐问题不大；但中式炒锅的把手位置通常比煎锅高出约 50mm，近几年高档炒锅又越来越厚、越来越重，对个子不高的女性尤其考验腕力。</p>
+                <p>有条件的情况下，可以让 H4 比 H1 低约 80mm，做成局部不等高台面，炒菜会省力很多。这个问题很少被设计关注，更别说普通客户提前意识到。</p>
+              </div>
               <ul class="data-note">
                 <li><strong>H1</strong><span>操作台高度，关系到洗菜、切菜是否舒服。常用估算方式是：身高 ÷ 2 + 50mm。</span></li>
                 <li><strong>H2</strong><span>吊柜底高度，一般建议在 1550mm 到 1600mm 左右，过低容易碰头。</span></li>
                 <li><strong>H3</strong><span>吊柜顶高度，常见可取 2250mm 左右，超过这个高度，上层往往要借助凳子。</span></li>
+                <li><strong>H4</strong><span>灶台高度，若以中式炒锅为主，可单独推敲，条件允许时比 H1 低约 80mm。</span></li>
               </ul>
             </div>
-            <div class="height-row">
+            <div class="height-images">
               <figure>
                 <div class="image-frame">
-                  <img src="/assets/notes/kitchen-cabinet-design/height-h123.webp?v=20260621-note-article" alt="厨房操作台和吊柜高度H1、H2、H3示意图" width="1086" height="1448" loading="lazy" decoding="async" />
+                  <img src="/assets/notes/kitchen-system-layout-4/optimized/09-height-h123.webp?v=20260621-kitchen-screenflow" alt="厨房操作台和吊柜高度H1、H2、H3示意图" width="979" height="1606" loading="lazy" decoding="async" />
                 </div>
-                <figcaption>三个基础高度，决定台面是否舒适，也决定上下部储物是否容易取放。</figcaption>
+                <figcaption>H1、H2、H3 决定台面是否舒适，也决定上下部储物是否容易取放。</figcaption>
               </figure>
               <figure>
                 <div class="image-frame">
-                  <img src="/assets/notes/kitchen-cabinet-design/height-h4.webp?v=20260621-note-article" alt="厨房灶台高度H4示意图，中式炒锅可考虑局部降低灶台高度" width="1182" height="1331" loading="lazy" decoding="async" />
+                  <img src="/assets/notes/kitchen-system-layout-4/optimized/10-height-h4.webp?v=20260621-kitchen-screenflow" alt="厨房灶台高度H4和局部不等高台面示意图" width="1023" height="1537" loading="lazy" decoding="async" />
                 </div>
-                <figcaption>灶台高度 H4 可以根据锅具和使用者习惯单独推敲。</figcaption>
+                <figcaption>H4 可以根据锅具和使用者习惯单独降低，不必默认跟 H1 一样高。</figcaption>
               </figure>
             </div>
           </section>
 
           <section class="screen">
-            <div class="closing">
-              <span class="section-label">Closing</span>
-              <h2>所以，厨房真正的设计感，最后都会落在这些细节里。</h2>
-              <div class="body-copy" style="max-width: 860px; margin-top: 26px;">
-                <p>一套好用的厨房橱柜，不只是门板好不好看、柜子多不多。它要从布局开始，让动线顺；从台面开始，让洗、切、炒有地方发生；再从高度开始，让身体不费劲。</p>
-                <p>装修前，可以按三个问题重新检查：人怎么移动，台面够不够展开，尺寸是否适合真正做饭的人。</p>
+            <div class="closing-split">
+              <div class="copy-block">
+                <span class="section-label">Closing</span>
+                <h2>所以，厨房真正的设计感，最后都会落在这些细节里。</h2>
+                <div class="body-copy">
+                  <p>一套好用的厨房橱柜，不只是门板好不好看、柜子多不多。它要从布局开始，让动线顺；从台面开始，让洗、切、炒有地方发生；再从高度开始，让身体不费劲。</p>
+                  <p>装修前，可以按三个问题重新检查：人怎么移动，台面够不够展开，尺寸是否适合真正做饭的人。</p>
+                </div>
+                <ul class="closing-list">
+                  <li><strong>01</strong><span>先看布局：洗、切、炒是否围绕身体展开，而不是来回绕路。</span></li>
+                  <li><strong>02</strong><span>再看台面：黄金区和两个银区是否都有位置，不只看总长度。</span></li>
+                  <li><strong>03</strong><span>最后看高度：H1、H2、H3、H4 是否适配使用者和锅具习惯。</span></li>
+                </ul>
+                <div class="source">参考《小家，越住越大 1》厨房章节整理，本文为董揅设计根据设计经验进行的二次归纳。</div>
               </div>
-              <ul class="closing-list">
-                <li><strong>01</strong><span>先看布局：洗、切、炒是否围绕身体展开，而不是来回绕路。</span></li>
-                <li><strong>02</strong><span>再看台面：黄金区和两个银区是否都有位置，不只看总长度。</span></li>
-                <li><strong>03</strong><span>最后看高度：H1、H2、H3、H4 是否适配使用者和锅具习惯。</span></li>
-              </ul>
-              <div class="source">参考《小家，越住越大 1》厨房章节整理，本文为董揅设计根据设计经验进行的二次归纳。</div>
+              <figure>
+                <div class="image-frame contain-frame">
+                  <img src="/assets/notes/kitchen-system-layout-4/optimized/11-kitchen-summary.webp?v=20260621-kitchen-screenflow" alt="厨房好不好用最后看布局台面高度三件事总结图" width="1672" height="941" loading="lazy" decoding="async" />
+                </div>
+                <figcaption>总结成三件事：布局让人少走路，台面让动作能展开，高度让身体不费劲。</figcaption>
+              </figure>
             </div>
           </section>
         </article>
