@@ -68,22 +68,46 @@ function renderHeroSlider() {
 
   const startSlideshow = () => {
     if (heroSlider.dataset.slideshowReady === "true") return;
-    const existingSlides = heroSlider.querySelectorAll(".hero-slide").length;
-    heroSlides.slice(existingSlides).forEach((image, index) => {
+    if (heroSlider.querySelectorAll(".hero-slide").length < 2) {
       heroSlider.insertAdjacentHTML(
         "beforeend",
-        `<img class="hero-slide" src="${image}" alt="空间轮播图 ${index + existingSlides + 1}" loading="lazy" decoding="async" />`,
+        `<img class="hero-slide" src="${heroSlides[1]}" alt="空间轮播图 2" loading="eager" fetchpriority="low" decoding="async" />`,
       );
-    });
+    }
 
-    const slides = [...heroSlider.querySelectorAll(".hero-slide")];
-    if (slides.length < 2) return;
+    if (heroSlider.querySelectorAll(".hero-slide").length < 2) return;
     heroSlider.dataset.slideshowReady = "true";
     let currentSlide = 0;
+    const appendRestSlides = () => {
+      if (heroSlider.dataset.restSlidesReady === "true") return;
+      const existingSlides = heroSlider.querySelectorAll(".hero-slide").length;
+      heroSlides.slice(existingSlides).forEach((image, index) => {
+        heroSlider.insertAdjacentHTML(
+          "beforeend",
+          `<img class="hero-slide" src="${image}" alt="空间轮播图 ${index + existingSlides + 1}" loading="lazy" decoding="async" />`,
+        );
+      });
+      heroSlider.dataset.restSlidesReady = "true";
+    };
+    const scheduleRestSlides = () => {
+      if (heroSlider.dataset.restSlidesScheduled === "true") return;
+      heroSlider.dataset.restSlidesScheduled = "true";
+      const delay = isCompactMedia() ? 8000 : 2200;
+      window.setTimeout(() => {
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(appendRestSlides, { timeout: 2500 });
+          return;
+        }
+        appendRestSlides();
+      }, delay);
+    };
     const showNextSlide = () => {
+      const slides = [...heroSlider.querySelectorAll(".hero-slide")];
+      if (slides.length < 2) return;
       slides[currentSlide].classList.remove("is-active");
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add("is-active");
+      if (currentSlide === 1) scheduleRestSlides();
     };
     window.setTimeout(showNextSlide, 1500);
     setInterval(showNextSlide, 5200);

@@ -238,4 +238,5 @@ https://github.com/dongzitai9-hub/dong-yan-design
 - 首页首屏第一张 Hero 图必须直接写在 `index.html`，并保留 `preload` 和 `fetchpriority="high"`。
 - 首页 Hero 第二张图也要提前写入 `index.html` 或预加载，不能等整页 `load` 之后才让浏览器发现。
 - 首页 Hero 轮播计时不能挂在 `window.load` 或 `requestIdleCallback` 后面；手机端网络慢时会被后段图片和媒体拖慢。
+- 首页刚打开时只准备前两张 Hero 图；第 3 张以后延后补入，避免手机浏览器顶部加载进度条被后续轮播图拖长。
 - 修改首页 Hero 后必须同步更新 `script.js` 的缓存版本号。
