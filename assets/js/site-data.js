@@ -46,10 +46,7 @@
   ];
 
   const contacts = [
-    { href: "/about/", title: "关于董揅" },
-    { href: "/services/", title: "服务范围" },
     { href: "/faq/", title: "常见问题" },
-    { href: "/cases/all/", title: "完整案例索引" },
     { href: "/contact/", title: "联系咨询" },
   ];
 

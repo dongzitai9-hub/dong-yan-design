@@ -126,7 +126,7 @@ async function checkStaticStructure() {
     : fail("sitemap URL 本地页面缺失", missingSitemapRoutes.join(", "));
 
   const data = await readText("assets/js/site-data.js");
-  ["/cases/space-015/", "/cases/space-014/", "/cases/space-012/", "/plans/", "/cases/all/"].forEach((needle) => {
+  ["/cases/space-015/", "/cases/space-014/", "/cases/space-012/", "/plans/"].forEach((needle) => {
     data.includes(needle)
       ? pass(`共享数据包含 ${needle}`)
       : fail(`共享数据缺少 ${needle}`);
