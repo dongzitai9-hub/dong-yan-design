@@ -1352,8 +1352,7 @@ h2 {
 }
 
 .service-heading span,
-.service-note span,
-.story-side span {
+.service-note span {
   display: block;
   width: 42px;
   height: 1px;
@@ -1639,46 +1638,64 @@ h2 {
 
 .story-side {
   display: grid;
-  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  align-self: center;
+  align-content: stretch;
+  height: clamp(470px, 35.7vw, 700px);
   min-height: auto;
   padding-top: 0;
 }
 
 .story-kicker {
-  margin: 0;
+  margin: clamp(30px, 2.25vw, 42px) 0 0;
   color: #262521;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(13px, 1vw, 16px);
   letter-spacing: 0.22em;
 }
 
-.story-pretitle {
-  max-width: 330px;
-  margin: clamp(22px, 2.4vw, 38px) 0 0;
-  color: #302f2b;
-  font-size: clamp(15px, 1.05vw, 18px);
-  letter-spacing: 0.08em;
-  line-height: 1.8;
+.story-side > span {
+  display: block;
+  width: 42px;
+  height: 1px;
+  margin-top: clamp(48px, 3.45vw, 72px);
+  background: rgba(76, 63, 50, 0.78);
 }
 
-.story-side h2 {
-  margin: clamp(44px, 5.4vw, 86px) 0 0;
-  color: #2a2925;
-  font-size: clamp(26px, 2.1vw, 38px);
-  font-weight: 300;
-  letter-spacing: 0.08em;
-}
-
-.story-side p:last-child {
-  max-width: 400px;
-  margin: clamp(70px, 7vw, 126px) 0 0;
-  padding-left: clamp(26px, 3vw, 48px);
+.story-positioning {
+  display: flex;
+  box-sizing: border-box;
+  height: clamp(296px, 25.16vw, 506px);
+  max-width: 420px;
+  align-self: end;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding-left: clamp(22px, 2.4vw, 38px);
   border-left: 2px solid rgba(142, 94, 48, 0.72);
+}
+
+.story-positioning p {
+  margin: 0;
   color: rgba(42, 39, 34, 0.78);
-  font-size: clamp(14px, 1.05vw, 19px);
+  font-size: clamp(13px, 0.95vw, 16px);
   font-weight: 400;
-  letter-spacing: 0.08em;
-  line-height: 2.45;
+  letter-spacing: 0.025em;
+  line-height: 1.9;
+}
+
+.story-positioning-zh p + p {
+  margin-top: clamp(16px, 1.45vw, 24px);
+}
+
+.story-positioning-en {
+  max-width: 360px;
+  color: rgba(42, 39, 34, 0.58);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(12px, 0.82vw, 14px);
+  font-style: italic;
+  letter-spacing: 0;
+  line-height: 1.65;
 }
 
 .story-main {
@@ -2151,13 +2168,29 @@ h2 {
   }
 
   .story-side {
+    display: block;
+    height: auto;
     min-height: auto;
-    gap: 36px;
   }
 
-  .story-side p:last-child {
+  .story-side > span {
+    margin-top: 34px;
+  }
+
+  .story-kicker {
+    margin-top: 0;
+  }
+
+  .story-positioning {
+    display: block;
+    height: auto;
     max-width: 620px;
     margin-top: 34px;
+  }
+
+  .story-positioning-zh p + p,
+  .story-positioning-en {
+    margin-top: 24px;
   }
 
   .service-note {
@@ -2237,7 +2270,7 @@ h2 {
 
   .story-layout {
     min-height: auto;
-    padding: 110px 24px 72px;
+    padding: 150px 24px 72px;
   }
 
   .story-handwriting {
