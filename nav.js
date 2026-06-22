@@ -71,7 +71,7 @@
       en: "SPACES",
       label: "空间案例索引",
       items: nav.spaces || [],
-      lastLink: '<a href="/cases/">更多辑选</a>',
+      lastLink: '<a href="/cases/">更多辑选</a><a href="/cases/all/">完整案例索引</a>',
     })}
     ${group({
       href: "/plans/",
@@ -79,7 +79,7 @@
       en: "PLANS",
       label: "方案案例索引",
       items: nav.plans || [],
-      lastLink: '<a href="/plans/">更多辑选</a>',
+      lastLink: '<a href="/plans/">更多辑选</a><a href="/cases/all/">完整案例索引</a>',
     })}
     ${group({
       href: "/notes/",
