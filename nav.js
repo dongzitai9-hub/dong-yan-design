@@ -133,12 +133,13 @@
     document.querySelectorAll('.nav-dropdown-panel[aria-label="空间案例索引"]').forEach((panel) => {
       if (panel.dataset.spaceMenuReady === "true") return;
       const allLinks = [...panel.querySelectorAll("a")];
-      const moreLink = allLinks.find((link) => link.textContent.trim() === "更多辑选");
-      const caseLinks = allLinks.filter((link) => link !== moreLink);
+      const footerLabels = new Set(["更多辑选", "完整案例索引"]);
+      const footerLinks = allLinks.filter((link) => footerLabels.has(link.textContent.trim()));
+      const caseLinks = allLinks.filter((link) => !footerLabels.has(link.textContent.trim()));
       caseLinks.slice(10).forEach((link) => {
         link.hidden = true;
       });
-      if (moreLink) panel.appendChild(moreLink);
+      footerLinks.forEach((link) => panel.appendChild(link));
       panel.dataset.spaceMenuReady = "true";
     });
   };
