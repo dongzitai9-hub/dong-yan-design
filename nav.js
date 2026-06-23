@@ -108,7 +108,31 @@
       ${navGroups()}
     </nav>`;
 
+  const legalFooterMarkup = () => `
+    <div class="footer-legal global-footer-legal">
+      <p>© DONGYAN DESIGN. ALL RIGHTS RESERVED.</p>
+      <p>图像仅作风格沟通，调整请联系。</p>
+      <p><a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">苏ICP备2026037309号-2</a></p>
+    </div>`;
+
+  const ensureLegalFooter = () => {
+    let footer = document.querySelector(".global-site-footer") || document.querySelector(".site-footer");
+    if (!footer) {
+      footer = document.createElement("footer");
+      const main = document.querySelector("main");
+      if (main) {
+        main.insertAdjacentElement("afterend", footer);
+      } else {
+        document.body.appendChild(footer);
+      }
+    }
+    footer.classList.add("site-footer", "global-site-footer");
+    footer.setAttribute("aria-label", "站点备案与版权信息");
+    footer.innerHTML = legalFooterMarkup();
+  };
+
   ensureStylesheet(cssHref);
+  ensureLegalFooter();
 
   let header = document.querySelector(".site-header");
   if (!header) {

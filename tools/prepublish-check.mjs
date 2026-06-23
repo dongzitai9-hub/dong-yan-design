@@ -145,11 +145,19 @@ async function checkStaticStructure() {
   nav.includes("/assets/css/navigation.css")
     ? pass("导航样式已拆到独立 CSS")
     : fail("导航样式未使用独立 CSS");
+  nav.includes("苏ICP备2026037309号-2") && nav.includes("https://beian.miit.gov.cn")
+    ? pass("共享脚本包含 ICP 备案号")
+    : fail("共享脚本缺少 ICP 备案号");
   const homeIndex = nav.indexOf('<span>主页</span>');
   const spacesIndex = nav.indexOf('cn: "空间"');
   homeIndex > -1 && spacesIndex > -1 && homeIndex < spacesIndex
     ? pass("导航渲染主页入口在空间左侧")
     : fail("导航渲染主页入口位置异常");
+
+  const navigationCss = await readText("assets/css/navigation.css");
+  navigationCss.includes(".global-site-footer")
+    ? pass("共享样式包含统一底部")
+    : fail("共享样式缺少统一底部");
 
   const htmlFiles = (await walk(".")).filter((file) => file.endsWith(".html"));
   const publishedDraftRefs = [];
@@ -247,6 +255,10 @@ async function checkRendered() {
           clientWidth: document.documentElement.clientWidth,
           bodyText: document.body.innerText.slice(0, 120),
           navLinks: document.querySelectorAll(".global-site-header .site-nav a").length,
+          legalText: document.querySelector(".global-site-footer")?.innerText || "",
+          legalHref: document
+            .querySelector('.global-site-footer a[href="https://beian.miit.gov.cn"]')
+            ?.getAttribute("href") || "",
           primaryNav: (() => {
             const navRoot = document.querySelector(".global-site-header .site-nav");
             if (!navRoot) return [];
@@ -279,6 +291,10 @@ async function checkRendered() {
               `${viewport.label} ${item.route} 主导航顺序异常`,
               metrics.primaryNav.map((item) => `${item.text}:${item.href}`).join(" | "),
             );
+        metrics.legalText.includes("苏ICP备2026037309号-2") &&
+        metrics.legalHref === "https://beian.miit.gov.cn"
+          ? pass(`${viewport.label} ${item.route} ICP 备案号存在`)
+          : fail(`${viewport.label} ${item.route} ICP 备案号缺失`);
       }
       await page.goto(`${base}/contact/`, { waitUntil: "networkidle" });
       await Promise.all([
