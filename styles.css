@@ -2126,6 +2126,17 @@ h2 {
   margin: 0;
 }
 
+.footer-legal a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  color: rgba(45, 44, 41, 0.92);
+  text-decoration: underline;
+}
+
 .footer-legal p:last-child {
   max-width: 760px;
   white-space: normal;
