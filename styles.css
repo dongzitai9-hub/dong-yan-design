@@ -2104,26 +2104,34 @@ h2 {
 
 .site-footer {
   display: grid;
-  min-height: 80px;
-  padding: 14px clamp(24px, 5vw, 78px);
-  background: #fbfbf9;
+  min-height: 68px;
+  padding: 16px clamp(24px, 5vw, 78px);
+  background: #f2f3f4;
   color: #2d2c29;
   place-items: center;
 }
 
 .footer-legal {
-  color: rgba(45, 44, 41, 0.72);
-  font-size: 13px;
-  letter-spacing: 0.05em;
+  color: rgba(45, 44, 41, 0.52);
+  font-size: 12px;
+  letter-spacing: 0.08em;
   line-height: 1.45;
   display: grid;
   justify-items: center;
-  gap: 8px;
   text-align: center;
 }
 
 .footer-legal p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55em;
   margin: 0;
+}
+
+.footer-legal .legal-separator {
+  color: rgba(45, 44, 41, 0.32);
 }
 
 .footer-legal a {

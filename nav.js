@@ -28,7 +28,7 @@
 
   const data = window.DONGYAN_SITE_DATA || fallbackData;
   const nav = data.nav || fallbackData.nav;
-  const cssHref = "/assets/css/navigation.css?v=20260623-footer-unified";
+  const cssHref = "/assets/css/navigation.css?v=20260623-footer-polish";
 
   const ensureStylesheet = (href) => {
     if ([...document.styleSheets].some((sheet) => sheet.href?.includes(href.split("?")[0]))) return;
@@ -110,9 +110,11 @@
 
   const legalFooterMarkup = () => `
     <div class="footer-legal global-footer-legal">
-      <p>© DONGYAN DESIGN. ALL RIGHTS RESERVED.</p>
-      <p>图像仅作风格沟通，调整请联系。</p>
-      <p><a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">苏ICP备2026037309号-2</a></p>
+      <p>
+        <span>© DONGYAN DESIGN</span>
+        <span class="legal-separator" aria-hidden="true">｜</span>
+        <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">苏ICP备2026037309号-2</a>
+      </p>
     </div>`;
 
   const ensureLegalFooter = () => {
