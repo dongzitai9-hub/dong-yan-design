@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "check:prepublish": "node tools/prepublish-check.mjs",
-    "check:prepublish:render": "node tools/prepublish-check.mjs --render"
+    "check:prepublish:render": "node tools/prepublish-check.mjs --render",
+    "submit:indexnow": "node tools/submit-indexnow.mjs"
   },
   "devDependencies": {
     "playwright": "^1.61.0"
