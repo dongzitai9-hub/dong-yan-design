@@ -43,58 +43,8 @@ const serviceNote = document.querySelector('[data-service-note]');
 const serviceRail = document.querySelector('[data-service-rail]');
 const serviceTrack = document.querySelector('[data-service-track]');
 const serviceCards = serviceTrack ? [...serviceTrack.querySelectorAll('[data-service-index]')] : [];
-const lazyVideos = [...document.querySelectorAll('[data-lazy-video]')];
 const isCompactMedia = () =>
   window.matchMedia("(max-width: 720px), (hover: none) and (pointer: coarse)").matches;
-
-function loadLazyVideo(video) {
-  if (!video || video.dataset.videoLoaded === "true") return;
-  if (video.dataset.poster) {
-    video.poster = video.dataset.poster;
-    video.removeAttribute("data-poster");
-  }
-  if (isCompactMedia()) {
-    video.removeAttribute("autoplay");
-    video.removeAttribute("loop");
-    video.dataset.videoLoaded = "static";
-    return;
-  }
-  video.querySelectorAll("source[data-src]").forEach((source) => {
-    source.src = source.dataset.src;
-    source.removeAttribute("data-src");
-  });
-  video.dataset.videoLoaded = "true";
-  video.load();
-  video.play?.().catch(() => {});
-}
-
-function bindLazyVideos() {
-  if (!lazyVideos.length) return;
-  if (isCompactMedia()) {
-    lazyVideos.forEach((video) => {
-      video.removeAttribute("autoplay");
-      video.removeAttribute("loop");
-    });
-  }
-  if (!("IntersectionObserver" in window)) {
-    window.addEventListener("load", () => {
-      lazyVideos.forEach(loadLazyVideo);
-    }, { once: true });
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        loadLazyVideo(entry.target);
-        observer.unobserve(entry.target);
-      });
-    },
-    { rootMargin: "700px 0px" },
-  );
-  lazyVideos.forEach((video) => observer.observe(video));
-}
 
 function loadDeferredImage(image) {
   if (!image || !image.dataset.deferSrc) return;
@@ -311,6 +261,5 @@ const serviceTrackMorphDuration = 620;
 
 bindServiceShowcase();
 bindDeferredImages();
-bindLazyVideos();
 scheduleHomepageRoutePrefetch();
 })();
