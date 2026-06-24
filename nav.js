@@ -29,6 +29,8 @@
   const data = window.DONGYAN_SITE_DATA || fallbackData;
   const nav = data.nav || fallbackData.nav;
   const cssHref = "/assets/css/navigation.css?v=20260623-footer-polish";
+  const toutiaoAutoPushSrc =
+    "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?7f0dc5518716a6d12164a50869475b06f4dd2c2fa8b5a6ecc1af684cbf3128d9bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
 
   const ensureStylesheet = (href) => {
     if ([...document.styleSheets].some((sheet) => sheet.href?.includes(href.split("?")[0]))) return;
@@ -133,8 +135,34 @@
     footer.innerHTML = legalFooterMarkup();
   };
 
+  const loadToutiaoAutoPush = () => {
+    if (window.__dongyanToutiaoAutoPushLoaded || document.getElementById("ttzz")) return;
+    window.__dongyanToutiaoAutoPushLoaded = true;
+    const script = document.createElement("script");
+    script.id = "ttzz";
+    script.async = true;
+    script.src = toutiaoAutoPushSrc;
+    document.head.appendChild(script);
+  };
+
+  const scheduleToutiaoAutoPush = () => {
+    const run = () => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(loadToutiaoAutoPush, { timeout: 3200 });
+        return;
+      }
+      window.setTimeout(loadToutiaoAutoPush, 1400);
+    };
+    if (document.readyState === "complete") {
+      run();
+    } else {
+      window.addEventListener("load", run, { once: true });
+    }
+  };
+
   ensureStylesheet(cssHref);
   ensureLegalFooter();
+  scheduleToutiaoAutoPush();
 
   let header = document.querySelector(".site-header");
   if (!header) {
