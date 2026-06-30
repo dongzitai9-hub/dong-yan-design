@@ -39,6 +39,7 @@
   ];
 
   const notes = [
+    { href: "/notes/color-selection-1/", title: "颜色怎么选？我的理解思路（一）" },
     { href: "/notes/style-selection-5/", title: "选什么风格？我的理解思路（二）" },
     { href: "/notes/style-selection-4/", title: "选什么风格？我的理解思路（一）" },
     { href: "/notes/kitchen-open-layout-3/", title: "厨房要不要打开？先看餐厨怎么交流" },
