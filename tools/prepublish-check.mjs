@@ -145,9 +145,12 @@ async function checkStaticStructure() {
   nav.includes("/assets/css/navigation.css")
     ? pass("导航样式已拆到独立 CSS")
     : fail("导航样式未使用独立 CSS");
-  nav.includes("苏ICP备2026037309号-2") && nav.includes("https://beian.miit.gov.cn")
-    ? pass("共享脚本包含 ICP 备案号")
-    : fail("共享脚本缺少 ICP 备案号");
+  data.includes("苏ICP备2026037309号-2") && data.includes("https://beian.miit.gov.cn")
+    ? pass("共享数据包含 ICP 备案号")
+    : fail("共享数据缺少 ICP 备案号");
+  data.includes("苏公网安备32041202004025号") && data.includes("beian.mps.gov.cn")
+    ? pass("共享数据包含公安备案号")
+    : fail("共享数据缺少公安备案号");
   const homeIndex = nav.indexOf('<span>主页</span>');
   const spacesIndex = nav.indexOf('cn: "空间"');
   homeIndex > -1 && spacesIndex > -1 && homeIndex < spacesIndex
@@ -259,6 +262,9 @@ async function checkRendered() {
           legalHref: document
             .querySelector('.global-site-footer a[href="https://beian.miit.gov.cn"]')
             ?.getAttribute("href") || "",
+          policeHref: document
+            .querySelector('.global-site-footer a[href*="beian.mps.gov.cn"][href*="32041202004025"]')
+            ?.getAttribute("href") || "",
           primaryNav: (() => {
             const navRoot = document.querySelector(".global-site-header .site-nav");
             if (!navRoot) return [];
@@ -295,6 +301,9 @@ async function checkRendered() {
         metrics.legalHref === "https://beian.miit.gov.cn"
           ? pass(`${viewport.label} ${item.route} ICP 备案号存在`)
           : fail(`${viewport.label} ${item.route} ICP 备案号缺失`);
+        metrics.legalText.includes("苏公网安备32041202004025号") && metrics.policeHref.includes("32041202004025")
+          ? pass(`${viewport.label} ${item.route} 公安备案号存在`)
+          : fail(`${viewport.label} ${item.route} 公安备案号缺失`);
       }
       await page.goto(`${base}/contact/`, { waitUntil: "networkidle" });
       await Promise.all([

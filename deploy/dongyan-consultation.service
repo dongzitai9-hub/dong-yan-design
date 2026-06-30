@@ -1,0 +1,24 @@
+[Unit]
+Description=Dongyan consultation form API
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/dongyan-consultation.env
+Environment=DONGYAN_CONSULTATION_HOST=127.0.0.1
+Environment=DONGYAN_CONSULTATION_PORT=8787
+Environment=DONGYAN_CONSULTATION_STATE_DIR=/var/lib/dongyan-consultations
+WorkingDirectory=/opt/dongyan-consultation
+ExecStart=/usr/bin/python3 /opt/dongyan-consultation/consultation_api.py
+Restart=on-failure
+RestartSec=5
+DynamicUser=yes
+StateDirectory=dongyan-consultations
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/dongyan-consultations
+
+[Install]
+WantedBy=multi-user.target

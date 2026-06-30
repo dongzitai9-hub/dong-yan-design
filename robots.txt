@@ -1,3 +1,13 @@
+# AI search and answer engines are intentionally allowed to read public pages.
+# AI-readable site overview: https://dongyandesign.cn/llms.txt
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: Bytespider
+User-agent: DeepSeekBot
+User-agent: DeepSeek-Crawler
+Allow: /
+
 User-agent: *
 Allow: /
 

@@ -39,6 +39,8 @@
   ];
 
   const notes = [
+    { href: "/notes/style-selection-5/", title: "选什么风格？我的理解思路（二）" },
+    { href: "/notes/style-selection-4/", title: "选什么风格？我的理解思路（一）" },
     { href: "/notes/kitchen-open-layout-3/", title: "厨房要不要打开？先看餐厨怎么交流" },
     { href: "/notes/kitchen-cabinet-design-2/", title: "厨房怎么收纳？从我自己厨房的改动说起" },
     { href: "/notes/kitchen-cabinet-design-1/", title: "厨房好不好用，先看橱柜怎么设计" },
@@ -50,8 +52,30 @@
     { href: "/contact/", title: "联系咨询" },
   ];
 
+  const brand = {
+    name: "董揅",
+    englishName: "Dongyan Design",
+    logoAlt: "董揅 Dongyan Design",
+  };
+
+  const legalFooter = {
+    copyright: "© 董揅 DONGYAN DESIGN",
+    records: [
+      { href: "https://beian.miit.gov.cn", title: "苏ICP备2026037309号-2" },
+      {
+        href: "https://beian.mps.gov.cn/#/query/webSearch?code=32041202004025",
+        title: "苏公网安备32041202004025号",
+      },
+    ],
+  };
+
   window.DONGYAN_SITE_DATA = Object.freeze({
+    brand: Object.freeze(brand),
     logoUrl,
+    legalFooter: Object.freeze({
+      copyright: legalFooter.copyright,
+      records: Object.freeze(legalFooter.records.map((record) => Object.freeze(record))),
+    }),
     primary: Object.freeze([
       { href: "/", title: "主页" },
       { href: "/cases/", title: "空间" },

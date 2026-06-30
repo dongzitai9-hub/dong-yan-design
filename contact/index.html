@@ -6,10 +6,10 @@
     <link rel="preconnect" href="https://dongyan-design.oss-cn-shanghai.aliyuncs.com" />
     <link rel="dns-prefetch" href="//dongyan-design.oss-cn-shanghai.aliyuncs.com" />
     <meta name="robots" content="index,follow" />
-    <title>咨询｜董揅室内空间设计顾问</title>
+    <title>联系咨询｜董揅室内空间设计顾问｜常州住宅设计</title>
     <meta
       name="description"
-      content="联系董揅，咨询常州及江浙沪住宅空间设计、户型优化、收纳系统、灯光设备、软装陈设和施工落地配合。可通过微信或二维码沟通房屋基础、家庭成员、生活习惯、预算范围和改造重点。"
+      content="联系董揅，沟通常州及江浙沪住宅空间设计咨询、户型优化、收纳系统和装修前设计判断。可先了解董揅、查看服务范围与常州住宅设计咨询，再通过微信提交房屋基础、家庭成员、预算范围和改造重点。"
     />
     <meta
       name="keywords"
@@ -17,10 +17,10 @@
     />
     <link rel="canonical" href="https://dongyandesign.cn/contact/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="咨询｜董揅室内空间设计顾问" />
+    <meta property="og:title" content="联系咨询｜董揅室内空间设计顾问｜常州住宅设计" />
     <meta
       property="og:description"
-      content="通过微信或二维码联系董揅，沟通常州及江浙沪住宅空间、户型方案和长期居住体验。"
+      content="通过微信或二维码联系董揅，沟通常州及江浙沪住宅空间、户型方案、服务范围和长期居住体验。"
     />
     <meta property="og:url" content="https://dongyandesign.cn/contact/" />
     <meta
@@ -116,7 +116,11 @@
       }
       .discover-link::before { content: "↓"; margin-right: 16px; font-size: 21px; }
       .consult-hero-media { height: calc(100vh - var(--nav-offset)); min-height: 0; margin: 0; }
-      .consult-hero-media img { height: 100%; object-fit: cover; }
+      .consult-hero-media img {
+        height: 100%;
+        object-fit: cover;
+        transform: scaleX(-1);
+      }
 
       .center-screen {
         display: grid;
@@ -175,6 +179,45 @@
         line-height: 1.95;
       }
 
+      .hero-service-links {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        gap: clamp(20px, 2vw, 34px);
+        width: min(100%, 620px);
+        margin-top: 34px;
+      }
+      .hero-service-links a {
+        display: grid;
+        gap: 8px;
+        min-height: 88px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        color: inherit;
+      }
+      .hero-service-links strong {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(15px, 1.08vw, 18px);
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        line-height: 1.45;
+      }
+      .hero-title-line {
+        display: block;
+        white-space: nowrap;
+      }
+      .hero-service-links small {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+      .hero-service-links a > span {
+        align-self: end;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+      }
+
       .split-screen {
         display: grid;
         grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
@@ -197,6 +240,30 @@
         opacity: 0.66;
       }
       .split-meta { color: var(--soft); font-size: 13px; letter-spacing: 0.06em; }
+      .split-profile-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 12px;
+        color: var(--soft);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-decoration: none;
+        opacity: 0.68;
+        transition: color 0.2s ease, opacity 0.2s ease;
+      }
+      .split-profile-link::before {
+        content: "";
+        width: 26px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.55;
+      }
+      .split-profile-link:hover,
+      .split-profile-link:focus-visible {
+        color: var(--ink);
+        opacity: 1;
+      }
 
       .methods-screen {
         display: grid;
@@ -235,7 +302,8 @@
       .method-copy-wechat { grid-column: 1; grid-row: 1; }
       .method-copy-booking { grid-column: 3; grid-row: 1; }
       .method-card svg { width: 32px; height: 32px; margin-bottom: 24px; stroke-width: 1.6; }
-      .booking-action a {
+      .booking-open {
+        appearance: none;
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
@@ -243,14 +311,138 @@
         margin-top: 24px;
         padding: 0 0 10px;
         border-bottom: 1px solid var(--line-strong);
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
         font-size: 15px;
+        cursor: pointer;
       }
-      .booking-action a::after {
+      .booking-open::after {
         content: "→";
         font-family: var(--serif);
         font-size: 22px;
         line-height: 1;
       }
+      .faq-helper {
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+      .booking-action .faq-helper a {
+        display: inline;
+        margin: 0;
+        padding: 0 0 2px;
+        border-bottom: 1px solid rgba(31, 33, 31, 0.28);
+        font-size: inherit;
+      }
+      .booking-action .faq-helper a::after {
+        content: none;
+      }
+      .booking-form-panel {
+        display: none;
+        margin-top: 24px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+      }
+      .booking-form-panel.is-open { display: block; }
+      .booking-form-tools {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 16px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.7;
+      }
+      .booking-close {
+        appearance: none;
+        flex: 0 0 auto;
+        padding: 0 0 3px;
+        border: 0;
+        border-bottom: 1px solid rgba(31, 33, 31, 0.22);
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+      }
+      .booking-form {
+        display: grid;
+        gap: 14px;
+      }
+      .booking-form-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .booking-form label {
+        display: grid;
+        gap: 7px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .booking-form input,
+      .booking-form select,
+      .booking-form textarea {
+        width: 100%;
+        min-height: 42px;
+        padding: 10px 12px;
+        border: 1px solid rgba(31, 33, 31, 0.18);
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0.42);
+        color: var(--ink);
+        font: inherit;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      .booking-form textarea {
+        min-height: 108px;
+        resize: vertical;
+      }
+      .booking-form input:focus,
+      .booking-form select:focus,
+      .booking-form textarea:focus {
+        outline: 1px solid rgba(31, 33, 31, 0.48);
+        outline-offset: 0;
+      }
+      .booking-form .form-trap {
+        position: absolute;
+        left: -100vw;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .booking-submit {
+        justify-self: start;
+        min-width: 132px;
+        min-height: 42px;
+        padding: 0 20px;
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: var(--white);
+        font: inherit;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .booking-submit:disabled {
+        cursor: wait;
+        opacity: 0.62;
+      }
+      .booking-result {
+        display: none;
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+      .booking-result.is-visible { display: block; }
+      .booking-result.is-success { color: var(--ink); }
+      .booking-result.is-error { color: #8b2f2f; }
       .contact-brief-list {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -455,14 +647,16 @@
         text-align: center;
         white-space: nowrap;
       }
-
       @media (max-width: 980px) {
         :root { --nav-offset: 82px; }
         .consult-hero,
         .split-screen { grid-template-columns: 1fr; }
         .consult-hero-copy,
         .consult-hero-media { min-height: auto; height: auto; }
-        .consult-hero-media img { aspect-ratio: 4 / 5; height: auto; }
+        .consult-hero-media img {
+          aspect-ratio: 4 / 5;
+          height: auto;
+        }
         .prep-grid,
         .method-grid,
         .service-panel { grid-template-columns: 1fr; }
@@ -481,6 +675,14 @@
         }
         .portrait-frame img { height: auto; max-height: none; aspect-ratio: 4 / 5; }
       }
+      @media (min-width: 981px) and (max-width: 1500px) {
+        .consult-hero { grid-template-columns: minmax(460px, 38vw) minmax(0, 1fr); }
+        .consult-hero-copy {
+          padding-right: clamp(28px, 4vw, 56px);
+          padding-left: clamp(52px, 7vw, 92px);
+        }
+        .hero-service-links { width: min(100%, 420px); }
+      }
       @media (max-width: 640px) {
         :root { --nav-offset: 72px; }
         .contact-screen,
@@ -490,6 +692,8 @@
         .split-screen,
         .methods-screen,
         .service-screen { padding: 56px 18px; }
+        .hero-service-links { grid-template-columns: 1fr; margin-top: 28px; }
+        .hero-service-links a { min-height: 0; }
         .methods-heading h2,
         .service-heading h2 { font-size: clamp(32px, 13vw, 48px); }
         .service-screen { gap: 34px; }
@@ -508,9 +712,14 @@
           grid-row: auto;
         }
         .qr-panel { height: auto; align-items: flex-start; }
-        .qr-image-frame { width: min(148px, 100%); }
+        .qr-image-frame {
+          width: min(148px, 100%);
+          margin-left: 18px;
+        }
         .qr-panel figcaption { text-align: left; }
         .contact-brief-list { grid-template-columns: 1fr; }
+        .booking-form-row { grid-template-columns: 1fr; }
+        .booking-form-tools { align-items: flex-start; }
         .method-card { min-height: 0; }
         .service-note { text-align: left; white-space: normal; }
       }
@@ -522,18 +731,25 @@
     {
       "@type": "ContactPage",
       "@id": "https://dongyandesign.cn/contact/#page",
-      "name": "咨询｜董揅室内空间设计顾问",
+      "name": "联系咨询｜董揅室内空间设计顾问｜常州住宅设计",
       "url": "https://dongyandesign.cn/contact/",
-      "description": "联系董揅，咨询常州及江浙沪住宅空间设计、户型优化、收纳系统、灯光设备、软装陈设和施工落地配合。",
-      "isPartOf": { "@type": "WebSite", "name": "董揅官网", "url": "https://dongyandesign.cn/" },
-      "about": { "@id": "https://dongyandesign.cn/#business" }
+      "description": "联系董揅，沟通常州及江浙沪住宅空间设计咨询、户型优化、收纳系统和装修前设计判断。",
+      "isPartOf": { "@type": "WebSite", "name": "董揅", "alternateName": "Dongyan Design", "url": "https://dongyandesign.cn/" },
+      "about": { "@id": "https://dongyandesign.cn/#business" },
+      "mainEntity": { "@id": "https://dongyandesign.cn/about/#person" },
+      "relatedLink": [
+        "https://dongyandesign.cn/about/",
+        "https://dongyandesign.cn/services/",
+        "https://dongyandesign.cn/services/changzhou/"
+      ]
     },
     {
       "@type": "ProfessionalService",
       "@id": "https://dongyandesign.cn/#business",
       "name": "董揅",
-      "alternateName": ["董揅官网", "董揅设计"],
+      "alternateName": ["Dongyan Design"],
       "url": "https://dongyandesign.cn/",
+      "founder": { "@id": "https://dongyandesign.cn/about/#person" },
       "areaServed": ["常州", "无锡", "苏州", "南京", "连云港", "徐州", "合肥", "安徽", "上海", "杭州", "江浙沪"],
       "serviceType": ["住宅空间设计", "私宅设计", "改善型住宅设计", "大平层设计", "户型优化", "收纳系统", "施工落地配合"]
     }
@@ -549,7 +765,19 @@
         <div class="consult-hero-copy">
           <h1 id="contact-title">Contact<small>空间咨询</small></h1>
           <p class="hero-line">让生活里的问题被看见。</p>
-          <p class="hero-copy-body">咨询不是急着给答案，而是理解房子、家庭成员、生活习惯、预算边界和真正困扰你的问题。把这些信息梳理清楚，后面的空间方向、户型方案和落地节奏才会稳定。</p>
+          <p class="hero-copy-body">这里是董揅的咨询入口。咨询不是急着给答案，而是理解房子、家庭成员、生活习惯、预算边界和真正困扰你的问题；如果你还在判断适不适合，可以先了解董揅、查看服务范围，常州业主也可以先看常州住宅设计咨询。</p>
+          <div class="hero-service-links" aria-label="服务入口">
+            <a href="/services/changzhou/?v=20260628-unified-service-layout">
+              <strong><span class="hero-title-line">常州住宅设计</span><span class="hero-title-line">咨询</span></strong>
+              <small>户型、动线、收纳、预算边界，先判断再沟通。</small>
+              <span>查看常州服务</span>
+            </a>
+            <a href="/services/?v=20260628-unified-service-layout">
+              <strong><span class="hero-title-line">服务范围与设计</span><span class="hero-title-line">方向</span></strong>
+              <small>私宅、改善型住宅、大平层、公寓和户型优化。</small>
+              <span>查看服务范围</span>
+            </a>
+          </div>
           <a class="discover-link" href="#before-contact">继续了解</a>
         </div>
         <figure class="consult-hero-media">
@@ -604,10 +832,11 @@
           <p style="margin-top:18px">不追求风格标签，而是创造经得起时间的空间体验；不急于给结论，而是把问题慢慢看清楚。</p>
           <img class="signature" src="https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/images/generated/editorial/story-handwriting-english-transparent-20260615.webp" alt="Dongyan handwritten signature" loading="lazy" decoding="async" />
           <div class="split-meta">董揅｜室内空间设计顾问</div>
+          <a class="split-profile-link" href="/about/?v=20260628-unified-service-layout" aria-label="了解董揅的设计经历与服务方向">了解董揅</a>
         </div>
       </section>
 
-      <section class="methods-screen contact-screen" aria-labelledby="methods-title">
+      <section class="methods-screen contact-screen" id="consultation" aria-labelledby="methods-title">
         <div class="methods-heading">
           <p class="kicker">下一步</p>
           <h2 id="methods-title">让问题先变得清楚，再开始深入沟通</h2>
@@ -650,7 +879,67 @@
               <li><span>2</span>集中沟通问题优先级、预算边界与后续推进方式。</li>
               <li><span>3</span>根据判断结果，确认是否进入现场沟通或完整设计服务。</li>
             </ol>
-            <a href="#wechat-contact">预约沟通时间</a>
+            <button class="booking-open" type="button" data-open-consultation-form aria-controls="consultation-form-panel" aria-expanded="false">预约沟通时间</button>
+            <p class="faq-helper">如果还不确定是否适合，可以先看 <a href="/faq/?v=20260628-unified-service-layout">常见问题</a>。</p>
+            <div class="booking-form-panel" id="consultation-form-panel">
+              <div class="booking-form-tools">
+                <span>填写后会优先通过微信联系，也可以先不填写。</span>
+                <button class="booking-close" type="button" data-close-consultation-form>暂不填写，收起</button>
+              </div>
+              <form class="booking-form" data-consultation-form>
+                <div class="booking-form-row">
+                  <label>
+                    称呼
+                    <input name="name" autocomplete="name" required placeholder="例如：王女士" />
+                  </label>
+                  <label>
+                    微信
+                    <input name="wechat" autocomplete="off" required placeholder="方便后续联系" />
+                  </label>
+                </div>
+                <div class="booking-form-row">
+                  <label>
+                    城市
+                    <input name="city" autocomplete="address-level2" placeholder="例如：常州" />
+                  </label>
+                  <label>
+                    面积
+                    <input name="area" inputmode="decimal" placeholder="例如：120m²" />
+                  </label>
+                </div>
+                <div class="booking-form-row">
+                  <label>
+                    项目阶段
+                    <select name="stage">
+                      <option value="">请选择</option>
+                      <option>准备买房</option>
+                      <option>毛坯交付</option>
+                      <option>旧房改造</option>
+                      <option>已入住优化</option>
+                      <option>其他阶段</option>
+                    </select>
+                  </label>
+                  <label>
+                    希望沟通时间
+                    <input name="preferredTime" placeholder="例如：工作日晚上" />
+                  </label>
+                </div>
+                <label>
+                  预算边界
+                  <input name="budget" placeholder="可填写大致范围，也可以先留空" />
+                </label>
+                <label>
+                  主要想解决的问题
+                  <textarea name="problem" required placeholder="例如：收纳不够、动线不顺、餐厨关系需要重新判断"></textarea>
+                </label>
+                <label class="form-trap">
+                  网站
+                  <input name="website" tabindex="-1" autocomplete="off" />
+                </label>
+                <button class="booking-submit" type="submit">提交预约</button>
+                <p class="booking-result" data-consultation-result aria-live="polite"></p>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -698,7 +987,94 @@
       </section>
     </main>
 
-    <script src="/assets/js/site-data.js?v=20260621-nav-unified"></script>
-    <script src="/nav.js?v=20260624-toutiao-auto"></script>
+    <script>
+      (() => {
+        const scrollToConsultation = () => {
+          if (window.location.hash !== "#consultation") return;
+          const target = document.getElementById("consultation");
+          if (!target) return;
+          window.setTimeout(() => {
+            target.scrollIntoView({ block: "start" });
+          }, 80);
+        };
+        scrollToConsultation();
+        window.addEventListener("load", scrollToConsultation, { once: true });
+
+        const openButton = document.querySelector("[data-open-consultation-form]");
+        const closeButton = document.querySelector("[data-close-consultation-form]");
+        const panel = document.getElementById("consultation-form-panel");
+        const form = document.querySelector("[data-consultation-form]");
+        const result = document.querySelector("[data-consultation-result]");
+        if (!openButton || !panel || !form || !result) return;
+
+        const closePanel = ({ restoreFocus = true } = {}) => {
+          panel.classList.remove("is-open");
+          openButton.setAttribute("aria-expanded", "false");
+          result.className = "booking-result";
+          result.textContent = "";
+          if (restoreFocus) {
+            openButton.focus({ preventScroll: true });
+          }
+        };
+
+        openButton.addEventListener("click", () => {
+          if (panel.classList.contains("is-open")) {
+            closePanel();
+            return;
+          }
+          panel.classList.add("is-open");
+          openButton.setAttribute("aria-expanded", "true");
+          const firstInput = form.querySelector("input, select, textarea");
+          if (firstInput) firstInput.focus({ preventScroll: true });
+        });
+
+        if (closeButton) {
+          closeButton.addEventListener("click", closePanel);
+        }
+
+        if ("IntersectionObserver" in window) {
+          const panelObserver = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (panel.classList.contains("is-open") && !entry.isIntersecting) {
+              closePanel({ restoreFocus: false });
+            }
+          }, { threshold: 0.01 });
+          panelObserver.observe(panel);
+        }
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const submitButton = form.querySelector(".booking-submit");
+          const payload = Object.fromEntries(new FormData(form).entries());
+          result.className = "booking-result";
+          result.textContent = "";
+          submitButton.disabled = true;
+          submitButton.textContent = "提交中";
+
+          try {
+            const response = await fetch("/api/consultation", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload)
+            });
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok || !data.ok) {
+              throw new Error(data.message || "提交失败，请先扫码添加微信。");
+            }
+            form.reset();
+            result.className = "booking-result is-visible is-success";
+            result.textContent = "已收到预约信息。为了避免错过沟通，请继续扫码添加微信，并备注「预约沟通」。";
+          } catch (error) {
+            result.className = "booking-result is-visible is-error";
+            result.textContent = error.message || "暂时无法提交，请先扫码添加微信。";
+          } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "提交预约";
+          }
+        });
+      })();
+    </script>
+    <script src="/assets/js/site-data.js?v=20260629-notes-series-v4"></script>
+    <script src="/nav.js?v=20260629-notes-series-v4"></script>
   </body>
 </html>

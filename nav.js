@@ -5,30 +5,17 @@
   const fallbackLogo =
     "https://dongyan-design.oss-cn-shanghai.aliyuncs.com/dong-yan-design/website/assets/logo/dong-design-wordmark-light.png?v=20260614";
 
-  const fallbackData = {
-    logoUrl: fallbackLogo,
-    nav: {
-      spaces: [
-        { href: "/cases/space-015/", title: "静蓝之家" },
-        { href: "/cases/space-014/", title: "柔序之家" },
-        { href: "/cases/space-012/", title: "温润之家" },
-      ],
-      plans: [
-        { href: "/cases/scheme-001/", title: "格局推演" },
-        { href: "/cases/scheme-002/", title: "功能重组" },
-        { href: "/cases/scheme-003/", title: "动线优化" },
-      ],
-      notes: [{ href: "/notes/", title: "全部札记" }],
-      contacts: [
-        { href: "/faq/", title: "常见问题" },
-        { href: "/contact/", title: "联系咨询" },
-      ],
-    },
+  const fallbackBrand = {
+    name: "董揅",
+    englishName: "Dongyan Design",
+    logoAlt: "董揅 Dongyan Design",
   };
 
-  const data = window.DONGYAN_SITE_DATA || fallbackData;
-  const nav = data.nav || fallbackData.nav;
-  const cssHref = "/assets/css/navigation.css?v=20260623-footer-polish";
+  const data = window.DONGYAN_SITE_DATA || {};
+  const brand = data.brand || fallbackBrand;
+  const legalFooter = data.legalFooter || { copyright: "", records: [] };
+  const nav = data.nav || {};
+  const cssHref = "/assets/css/navigation.css?v=20260628-global-chrome";
   const toutiaoAutoPushSrc =
     "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?7f0dc5518716a6d12164a50869475b06f4dd2c2fa8b5a6ecc1af684cbf3128d9bc434964556b7d7129e9b750ed197d397efd7b0c6c715c1701396e1af40cec962b8d7c8c6655c9b00211740aa8a98e2e";
 
@@ -101,7 +88,7 @@
 
   const brandMarkup = (extra = "") => `
     <a class="brand" href="/" aria-label="返回首页" ${extra}>
-      <img class="brand-logo" src="${html(data.logoUrl || fallbackLogo)}" alt="董 DESIGN" />
+      <img class="brand-logo" src="${html(data.logoUrl || fallbackLogo)}" alt="${html(brand.logoAlt || `${brand.name} ${brand.englishName}`)}" />
     </a>`;
 
   const navMarkup = () => `
@@ -113,9 +100,14 @@
   const legalFooterMarkup = () => `
     <div class="footer-legal global-footer-legal">
       <p>
-        <span>© DONGYAN DESIGN</span>
-        <span class="legal-separator" aria-hidden="true">｜</span>
-        <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">苏ICP备2026037309号-2</a>
+        <span>${html(legalFooter.copyright)}</span>
+        ${(legalFooter.records || [])
+          .map(
+            (record) => `
+              <span class="legal-separator" aria-hidden="true">｜</span>
+              <a href="${html(record.href)}" target="_blank" rel="noopener">${html(record.title)}</a>`,
+          )
+          .join("")}
       </p>
     </div>`;
 

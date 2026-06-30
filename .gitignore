@@ -4,6 +4,7 @@ tmp/
 output/
 drafts/
 wenanziliao/
+assets/notes/style-selection-*/
 *.zip
 *.rar
 *.7z
